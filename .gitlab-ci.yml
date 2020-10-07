@@ -5,16 +5,28 @@ stages:
 
 
 build-bot: #used to build the bot's docker image
-  stage: images
-  image: docker.io/buildah/buildah
-  needs: []
+  image: docker:19.03.12
+  stage: build
+  services:
+    - docker:19.03.12-dind
+  variables:
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_SLUG
   script:
-    - export _BUILDAH_STARTED_IN_USERNS=''
-    - export BUILDAH_ISOLATION=chroot
-    - export STORAGE_DRIVER=vfs
-    - export BUILDAH_FORMAT=docker
-    - buildah build-using-dockerfile --tag "rost-bot" "rostbot"
-    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rost-bot" "docker://${CI_REGISTRY_IMAGE}/rost-bot:latest"
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
+    - docker build -t $IMAGE_TAG .
+    - docker push $IMAGE_TAG
+
+# build-bot: #used to build the bot's docker image
+#   stage: images
+#   image: docker.io/buildah/buildah
+#   needs: []
+#   script:
+#     - export _BUILDAH_STARTED_IN_USERNS=''
+#     - export BUILDAH_ISOLATION=chroot
+#     - export STORAGE_DRIVER=vfs
+#     - export BUILDAH_FORMAT=docker
+#     - buildah build-using-dockerfile --tag "rost-bot" "rostbot"
+#     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rost-bot" "docker://${CI_REGISTRY_IMAGE}/rost-bot:latest"
 
 #deploy-bot:
 #  environment: 'production'
