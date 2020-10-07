@@ -13,8 +13,8 @@ build-bot: #used to build the bot's docker image
     - export BUILDAH_ISOLATION=chroot
     - export STORAGE_DRIVER=vfs
     - export BUILDAH_FORMAT=docker
-    - buildah build-using-dockerfile --tag "bot" "rostbot/"
-    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "bot" "docker://${CI_REGISTRY_IMAGE}/bot:latest"
+    - buildah build-using-dockerfile --tag "rost-bot" "rostbot"
+    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rost-bot" "docker://${CI_REGISTRY_IMAGE}/rost-bot:latest"
 
 #deploy-bot:
 #  environment: 'production'

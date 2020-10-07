@@ -3,18 +3,18 @@ kind: Deployment
 metadata:
   name: deploy-bot
   labels:
-    app: bot
+    app: rost-bot
     service: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: bot
+      app: rost-bot
       service: backend
   template:
     metadata:
       labels:
-        app: bot
+        app: rost-bot
         service: backend
     spec:
       containers:
