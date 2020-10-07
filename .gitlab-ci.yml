@@ -18,8 +18,8 @@ build-bot: #used to build the bot's docker image
 
 deploy-bot:
  environment: 'production'
- needs:
-   - build-bot
+ needs: []
+   #- build-bot
  rules: 
    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
 

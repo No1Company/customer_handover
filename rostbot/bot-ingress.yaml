@@ -8,7 +8,7 @@ metadata:
     app: rostbot
 spec:
   rules:
-    - host: TDDC88-company-1-2020.kubernetes-public.it.liu.se
+    - host: tddc88-company-1-2020.kubernetes-public.it.liu.se
       http:
         paths:
         - backend:
