@@ -3,26 +3,26 @@ kind: Deployment
 metadata:
   name: deploy-bot
   labels:
-    app: rost-bot
+    app: rostbot
     service: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: rost-bot
+      app: rostbot
       service: backend
   template:
     metadata:
       labels:
-        app: rost-bot
+        app: rostbot
         service: backend
     spec:
       containers:
         - name: bot
-          image: gitlab.liu.se:5000/henhe83/kubernetes-krash/realworld-frontend
+          image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/rostbot
           env:
           ports:
-            - containerPort: 8000
+            - containerPort: 3978
               protocol: TCP
           resources:
             limits:
