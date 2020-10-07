@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-bot
+  labels:
+    app: bot
+    service: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bot
+      service: backend
+  template:
+    metadata:
+      labels:
+        app: bot
+        service: backend
+    spec:
+      containers:
+        - name: bot
+          image: gitlab.liu.se:5000/henhe83/kubernetes-krash/realworld-frontend
+          env:
+          ports:
+            - containerPort: 8000
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 80Mi
+            requests:
+              cpu: 10m
+              memory: 42Mi
