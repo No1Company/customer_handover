@@ -13,7 +13,7 @@ build-bot: #used to build the bot's docker image
     - export BUILDAH_FORMAT=docker
     - buildah build-using-dockerfile --tag "${CI_REGISTRY_IMAGE}rostbot:latest" "rostbot"
     - echo "${CI_REGISTRY_IMAGE}/rostbot:latest"
-    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rost-bot" "${CI_REGISTRY_IMAGE}rostbot:latest"
+    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "${CI_REGISTRY_IMAGE}rostbot:latest"
 
 #deploy-bot:
 #  environment: 'production'
