@@ -16,21 +16,21 @@ build-bot: #used to build the bot's docker image
     - buildah build-using-dockerfile --tag "bot" "rostbot/"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "bot" "docker://${CI_REGISTRY_IMAGE}/bot:latest"
 
-deploy-bot:
-  environment: 'production'
-  needs:
-    - build-bot
-  rules: 
-    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
-
-  stage: deploy
-  image: lachlanevenson/k8s-kubectl
-  script:
-    - kubectl get all
-    - kubectl apply -f rostbot/deploy-bot.yaml
-    - kubectl apply -f rostbot/bot-service.yaml
-    - kubectl apply -f rostbot/bot-ingress.yaml
-    - sleep 5 
-    - kubectl get all # display container status
+#deploy-bot:
+#  environment: 'production'
+#  needs:
+#    - build-bot
+#  rules: 
+#    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
+#
+#  stage: deploy
+#  image: lachlanevenson/k8s-kubectl
+#  script:
+#    - kubectl get all
+ #   - kubectl apply -f rostbot/deploy-bot.yaml
+ #   - kubectl apply -f rostbot/bot-service.yaml
+ #   - kubectl apply -f rostbot/bot-ingress.yaml
+ #   - sleep 5 
+ #   - kubectl get all # display container status
 
   
