@@ -13,8 +13,8 @@ build-bot: #used to build the bot's docker image
     - export BUILDAH_FORMAT=docker
     
     - buildah build-using-dockerfile --tag "rostbot" "rostbot"
-    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://registries.gitlab.liu.se/groups/TDDC88-company-1-2020/deploy/rostbot"
-    #- buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
+    #- buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://registries.gitlab.liu.se/groups/TDDC88-company-1-2020/deploy/rostbot"
+    - buildah push --creds="${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
 
 #deploy-bot:
 #  environment: 'production'
