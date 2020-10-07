@@ -29,24 +29,32 @@
   ],
   "actions": [
     {
-      "type": "Action.OpenUrl",
+      "type": "Action.Submit",
       "title": "Registrera värden",
-      "url": "https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0"
+      "data": {
+        "choice": "register"
+      }
     },
     {
-      "type": "Action.OpenUrl",
+      "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "url": "https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0"
+      "data": {
+        "choice": "settings"
+      }
     },
     {
-      "type": "Action.OpenUrl",
+      "type": "Action.Submit",
       "title": "Boka konsultation",
-      "url": "https://stackoverflow.com/questions/tagged/botframework"
+      "data": {
+        "choice": "booking"
+      }
     },
     {
-      "type": "Action.OpenUrl",
+      "type": "Action.Submit",
       "title": "Övriga frågor",
-      "url": "https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-deploy-azure?view=azure-bot-service-4.0"
+      "data": {
+        "choice": "other"
+      }
     }
   ]
 }
