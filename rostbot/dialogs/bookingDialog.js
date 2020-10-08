@@ -25,6 +25,7 @@ class BookingDialog extends CancelAndHelpDialog {
                 this.travelDateStep.bind(this),
                 this.confirmStep.bind(this),
                 this.finalStep.bind(this)
+                
             ]));
 
         this.initialDialogId = WATERFALL_DIALOG;
@@ -35,12 +36,14 @@ class BookingDialog extends CancelAndHelpDialog {
      */
     async destinationStep(stepContext) {
         const bookingDetails = stepContext.options;
-
+        
         if (!bookingDetails.destination) {
-            const messageText = 'To what city would you like to travel?';
+            const messageText = 'Vilket värde vill du registrera?';
             const msg = MessageFactory.text(messageText, messageText, InputHints.ExpectingInput);
             return await stepContext.prompt(TEXT_PROMPT, { prompt: msg });
         }
+        //Här
+       
         return await stepContext.next(bookingDetails.destination);
     }
 
@@ -53,8 +56,8 @@ class BookingDialog extends CancelAndHelpDialog {
         // Capture the response to the previous step's prompt
         bookingDetails.destination = stepContext.result;
         if (!bookingDetails.origin) {
-            const messageText = 'From what city will you be travelling?';
-            const msg = MessageFactory.text(messageText, 'From what city will you be travelling?', InputHints.ExpectingInput);
+            const messageText = 'Ändra inställningar';
+            const msg = MessageFactory.text(messageText, 'Ändra inställningar', InputHints.ExpectingInput);
             return await stepContext.prompt(TEXT_PROMPT, { prompt: msg });
         }
         return await stepContext.next(bookingDetails.origin);
@@ -66,7 +69,7 @@ class BookingDialog extends CancelAndHelpDialog {
      */
     async travelDateStep(stepContext) {
         const bookingDetails = stepContext.options;
-
+        console.log(bookingDetails.destination);
         // Capture the results of the previous step
         bookingDetails.origin = stepContext.result;
         if (!bookingDetails.travelDate || this.isAmbiguous(bookingDetails.travelDate)) {
@@ -83,6 +86,8 @@ class BookingDialog extends CancelAndHelpDialog {
 
         // Capture the results of the previous step
         bookingDetails.travelDate = stepContext.result;
+        console.log("stepContext.result");
+        console.log(stepContext.result);
         const messageText = `Please confirm, I have you traveling to: ${ bookingDetails.destination } from: ${ bookingDetails.origin } on: ${ bookingDetails.travelDate }. Is this correct?`;
         const msg = MessageFactory.text(messageText, messageText, InputHints.ExpectingInput);
 

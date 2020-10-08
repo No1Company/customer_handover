@@ -23,8 +23,8 @@ const { DialogAndWelcomeBot } = require('./bots/dialogAndWelcomeBot');
 const { MainDialog } = require('./dialogs/mainDialog');
 
 // the bot's booking dialog
-const { BookingDialog } = require('./dialogs/bookingDialog');
-const BOOKING_DIALOG = 'bookingDialog';
+const { CancelAndHelpDialog } = require('./dialogs/cancelAndHelpDialog');
+const CANCEL_AND_HELP_DIALOG = 'cancelAndHelpDialog';
 
 // Create adapter.
 // See https://aka.ms/about-bot-adapter to learn more about adapters.
@@ -77,8 +77,9 @@ const luisConfig = { applicationId: LuisAppId, endpointKey: LuisAPIKey, endpoint
 const luisRecognizer = new FlightBookingRecognizer(luisConfig);
 
 // Create the main dialog.
-const bookingDialog = new BookingDialog(BOOKING_DIALOG);
-const dialog = new MainDialog(luisRecognizer, bookingDialog);
+//const bookingDialog = new BookingDialog(BOOKING_DIALOG);
+const cancelAndHelpDialog = new CancelAndHelpDialog(CANCEL_AND_HELP_DIALOG);
+const dialog = new MainDialog(luisRecognizer, cancelAndHelpDialog);
 const bot = new DialogAndWelcomeBot(conversationState, userState, dialog);
 
 // Create HTTP server
