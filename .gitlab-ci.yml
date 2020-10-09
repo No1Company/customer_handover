@@ -1,22 +1,6 @@
-stages: 
-  - build
+stages:
   - build-images
   - deploy
-  
-
-debug:
-  stage: build
-  script:
-    - export
-
-build-bot:
-  stage: build
-  image: node:current-slim
-  needs: []
-  script:
-    - cd rostbot
-    - npm install
-    - cd ..
   
 
 build-bot-image: #used to build the bot's docker image
@@ -34,15 +18,15 @@ build-bot-image: #used to build the bot's docker image
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
 
 deploy-bot:
- environment: 'production'
- needs:
+  environment: 'production'
+  needs:
    - build-bot-image
- rules: 
+  rules: 
    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
 
- stage: deploy
- image: lachlanevenson/k8s-kubectl
- script:
+  stage: deploy
+  image: lachlanevenson/k8s-kubectl
+  script:
    #- kubectl create secret docker-registry gitlab.liu.se --docker-server=${​​​​​CI_REGISTRY}​​​​​ --docker-username=${​​​​​CI_DEPLOY_USER}​​​​​ --docker-password=${​​​​​CI_DEPLOY_PASSWORD}​​​​​ --dry-run -o yaml | kubectl apply -f -
    - kubectl get all
    - kubectl apply -f rostbot/bot-deploy.yaml
