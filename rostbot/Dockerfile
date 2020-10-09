@@ -6,7 +6,7 @@ COPY package.json .
 
 RUN npm install
 
-EXPOSE 3978:4000
+EXPOSE 4000:3978
 
 CMD ["node", "index.js", "--host 0.0.0.0"]
 
