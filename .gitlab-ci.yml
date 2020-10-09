@@ -29,6 +29,22 @@ build-directline-image:
     - buildah build-using-dockerfile --tag "directline" "dline"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "directline" "docker://${CI_REGISTRY_IMAGE}/directline:latest"
 
+deploy-directline:
+  environment: 'production'
+  needs:
+   - build-directline-image
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
+
+  stage: deploy
+  image: lachlanevenson/k8s-kubectl
+  script:
+   - kubectl get all
+   - kubectl apply -f dline/directline-deploy.yaml
+   - kubectl apply -f dline/directline-service.yaml
+   #- kubectl apply -f ingress.yaml
+   - sleep 10
+   - kubectl get all # display container status
 
 deploy-bot:
   environment: 'production'
@@ -45,22 +61,5 @@ deploy-bot:
    - kubectl apply -f rostbot/bot-deploy.yaml
    - kubectl apply -f rostbot/bot-service.yaml
    - kubectl apply -f ingress.yaml
-   - sleep 10
-   - kubectl get all # display container status
-
-deploy-directline:
-  environment: 'production'
-  needs:
-   - build-directline-image
-  rules: 
-   - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
-
-  stage: deploy
-  image: lachlanevenson/k8s-kubectl
-  script:
-   - kubectl get all
-   - kubectl apply -f dline/directline-deploy.yaml
-   - kubectl apply -f dline/directline-service.yaml
-   #- kubectl apply -f ingress.yaml
    - sleep 10
    - kubectl get all # display container status
