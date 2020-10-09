@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-directline
+  labels:
+    app: directline
+    service: backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: directline
+      service: backend
+  template:
+    metadata:
+      labels:
+        app: directline
+        service: backend
+    spec:
+      imagePullSecrets:
+        - 
+          name: gitlab-registry
+      containers:
+        - name: directline
+          image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/directline
+          env:
+          ports:
+            - containerPort: 3000
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 80Mi
+            requests:
+              cpu: 10m
+              memory: 42Mi

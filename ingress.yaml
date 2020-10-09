@@ -11,7 +11,13 @@ spec:
     - host: tddc88-company-1-2020.kubernetes-public.it.liu.se
       http:
         paths:
-        - backend:
-            serviceName: bot-backend-service
-            servicePort: 80
-          path: /api/messages/
+          - path: /api/messages
+            backend:
+              serviceName: bot-backend-service
+              servicePort: 80
+          - path: /api/messages
+            backend:
+              serviceName: directline-backend-service
+              servicePort: 80
+            
+          

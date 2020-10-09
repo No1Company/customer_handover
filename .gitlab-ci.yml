@@ -16,10 +16,25 @@ build-bot-image: #used to build the bot's docker image
     - buildah build-using-dockerfile --tag "rostbot" "rostbot"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
 
+build-directline-image:
+  stage: build-images
+  image: docker.io/buildah/buildah
+  needs: []
+  script:
+    - export _BUILDAH_STARTED_IN_USERNS=''
+    - export BUILDAH_ISOLATION=chroot
+    - export STORAGE_DRIVER=vfs
+    - export BUILDAH_FORMAT=docker
+    
+    - buildah build-using-dockerfile --tag "directline" "dline"
+    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "directline" "docker://${CI_REGISTRY_IMAGE}/directline:latest"
+
+
 deploy-bot:
   environment: 'production'
   needs:
    - build-bot-image
+   - deploy-directline
   rules: 
    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
 
@@ -29,6 +44,23 @@ deploy-bot:
    - kubectl get all
    - kubectl apply -f rostbot/bot-deploy.yaml
    - kubectl apply -f rostbot/bot-service.yaml
-   - kubectl apply -f rostbot/bot-ingress.yaml
+   - kubectl apply -f ingress.yaml
+   - sleep 10
+   - kubectl get all # display container status
+
+deploy-directline:
+  environment: 'production'
+  needs:
+   - build-directline-image
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
+
+  stage: deploy
+  image: lachlanevenson/k8s-kubectl
+  script:
+   - kubectl get all
+   - kubectl apply -f dline/directline-deploy.yaml
+   - kubectl apply -f dline/directline-service.yaml
+   #- kubectl apply -f ingress.yaml
    - sleep 10
    - kubectl get all # display container status

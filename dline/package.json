@@ -1,0 +1,14 @@
+{
+  "name": "index.js",
+  "version": "1.0.0",
+  "description": "reroutes direct line calls",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Erik Lundin",
+  "license": "ISC",
+  "dependencies": {
+    "offline-directline": "^1.3.1"
+  }
+}
