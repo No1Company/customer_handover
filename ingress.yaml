@@ -15,7 +15,7 @@ spec:
             backend:
               serviceName: bot-backend-service
               servicePort: 80
-          - path: /api/messages
+          - path: /api/connect
             backend:
               serviceName: directline-backend-service
               servicePort: 80
