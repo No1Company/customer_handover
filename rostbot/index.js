@@ -92,6 +92,7 @@ server.listen(process.env.port || process.env.PORT || 3978, function() {
 // Listen for incoming activities and route them to your bot main dialog.
 server.post('/', (req, res) => {
     // Route received a request to adapter for processing
+    console.log('Någon anslöt');
     adapter.processActivity(req, res, async (turnContext) => {
         // route to bot activity handler.
         await bot.run(turnContext);
