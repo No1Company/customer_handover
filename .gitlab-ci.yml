@@ -1,7 +1,7 @@
 stages:
   - build-images
   - deploy
-  
+  - ingress
 
 build-bot-image: #used to build the bot's docker image
   stage: build-images
@@ -50,7 +50,6 @@ deploy-bot:
   environment: 'production'
   needs:
    - build-bot-image
-   - deploy-directline
   rules: 
    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
 
@@ -60,6 +59,20 @@ deploy-bot:
    - kubectl get all
    - kubectl apply -f rostbot/bot-deploy.yaml
    - kubectl apply -f rostbot/bot-service.yaml
+   - kubectl get all # display container status
+
+deploy-ingress:
+  environment: 'production'
+  needs:
+    - build-bot-image
+    - build-directline-image
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
+
+  stage: deploy
+  image: lachlanevenson/k8s-kubectl
+  script:
+   
    - kubectl apply -f ingress.yaml
-   - sleep 10
+   - sleep 5
    - kubectl get all # display container status
