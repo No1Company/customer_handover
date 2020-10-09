@@ -16,7 +16,8 @@ build-bot:
 build-bot-image: #used to build the bot's docker image
   stage: build-images
   image: docker.io/buildah/buildah
-  needs: build-bot
+  needs: 
+    - build-bot
   script:
     - export _BUILDAH_STARTED_IN_USERNS=''
     - export BUILDAH_ISOLATION=chroot
