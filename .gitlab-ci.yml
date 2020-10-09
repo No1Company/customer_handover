@@ -30,7 +30,7 @@ deploy-bot:
    - kubectl apply -f rostbot/bot-deploy.yaml
    - kubectl apply -f rostbot/bot-service.yaml
    - kubectl apply -f rostbot/bot-ingress.yaml
-   - sleep 5 
+   - sleep 10
    - kubectl get all # display container status
 
   
