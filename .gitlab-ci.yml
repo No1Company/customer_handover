@@ -3,6 +3,12 @@ stages:
   - build-images
   - deploy
   
+
+debug:
+  stage: build
+  script:
+    - export
+    
 build-bot:
   stage: build
   image: node:current-slim
