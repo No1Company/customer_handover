@@ -26,9 +26,7 @@ deploy-bot:
   stage: deploy
   image: lachlanevenson/k8s-kubectl
   script:
-   #- kubectl create secret docker-registry gitlab.liu.se --docker-server=${​​​​​CI_REGISTRY}​​​​​ --docker-username=${​​​​​CI_DEPLOY_USER}​​​​​ --docker-password=${​​​​​CI_DEPLOY_PASSWORD}​​​​​ --dry-run -o yaml | kubectl apply -f -
    - kubectl get all
-   - kubectl apply -f https://k8s.io/examples/application/guestbook/redis-master-deployment.yaml
    - kubectl apply -f rostbot/bot-deploy.yaml
    - kubectl apply -f rostbot/bot-service.yaml
    - kubectl apply -f rostbot/bot-ingress.yaml
