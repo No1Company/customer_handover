@@ -3,9 +3,9 @@ stages:
   - build-images
   - deploy
   
-build-bot:
-  stage: build
-  image: node
+#build-bot:
+#  stage: build
+#  image: node
 
 build-bot-image: #used to build the bot's docker image
   stage: build-images
