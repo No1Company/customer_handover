@@ -4,15 +4,15 @@
 const { TimexProperty } = require('@microsoft/recognizers-text-data-types-timex-expression');
 const { InputHints, MessageFactory } = require('botbuilder');
 const { ConfirmPrompt, TextPrompt, WaterfallDialog } = require('botbuilder-dialogs');
-const { CancelAndHelpDialog } = require('./cancelAndHelpDialog');
-const { DateResolverDialog } = require('./dateResolverDialog');
+const { InitialDialog } = require('../dialogs/initialDialog');
+const { DateResolverDialog } = require('../dialogs/dateResolverDialog');
 
 const CONFIRM_PROMPT = 'confirmPrompt';
 const DATE_RESOLVER_DIALOG = 'dateResolverDialog';
 const TEXT_PROMPT = 'textPrompt';
 const WATERFALL_DIALOG = 'waterfallDialog';
 
-class BookingDialog extends CancelAndHelpDialog {
+class BookingDialog extends InitialDialog {
     constructor(id) {
         super(id || 'bookingDialog');
 

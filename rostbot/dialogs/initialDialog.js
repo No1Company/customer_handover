@@ -9,9 +9,9 @@ const WATERFALL_DIALOG = 'waterfallDialog';
  * This base class watches for common phrases like "help" and "cancel" and takes action on them
  * BEFORE they reach the normal bot logic.
  */
-class CancelAndHelpDialog extends ComponentDialog {
+class InitialDialog extends ComponentDialog {
     constructor(id) {
-        super(id || 'cancelAndHelpDialog');
+        super(id || 'initialDialog');
         
         
         this.addDialog(new WaterfallDialog(WATERFALL_DIALOG, [
@@ -73,4 +73,4 @@ class CancelAndHelpDialog extends ComponentDialog {
     }
 }
 
-module.exports.CancelAndHelpDialog = CancelAndHelpDialog;
+module.exports.InitialDialog = InitialDialog;
