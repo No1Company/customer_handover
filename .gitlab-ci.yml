@@ -8,7 +8,7 @@ debug:
   stage: build
   script:
     - export
-    
+
 build-bot:
   stage: build
   image: node:current-slim
@@ -43,7 +43,7 @@ deploy-bot:
  stage: deploy
  image: lachlanevenson/k8s-kubectl
  script:
-   - kubectl create secret docker-registry gitlab.liu.se --docker-server=${​​​​​CI_REGISTRY}​​​​​ --docker-username=${​​​​​CI_DEPLOY_USER}​​​​​ --docker-password=${​​​​​CI_DEPLOY_PASSWORD}​​​​​ --dry-run -o yaml | kubectl apply -f -
+   #- kubectl create secret docker-registry gitlab.liu.se --docker-server=${​​​​​CI_REGISTRY}​​​​​ --docker-username=${​​​​​CI_DEPLOY_USER}​​​​​ --docker-password=${​​​​​CI_DEPLOY_PASSWORD}​​​​​ --dry-run -o yaml | kubectl apply -f -
    - kubectl get all
    - kubectl apply -f rostbot/bot-deploy.yaml
    - kubectl apply -f rostbot/bot-service.yaml
