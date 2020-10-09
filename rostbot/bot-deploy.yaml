@@ -4,18 +4,18 @@ metadata:
   name: deploy-bot
   labels:
     app: rostbot
-    service: bot-backend-service
+    service: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: rostbot
-      service: bot-backend-service
+      service: backend
   template:
     metadata:
       labels:
         app: rostbot
-        service: bot-backend-service
+        service: backend
     spec:
       imagePullSecrets:
         - 
