@@ -12,6 +12,6 @@ spec:
       http:
         paths:
         - backend:
-            serviceName: rostbot-service
+            serviceName: bot-backend-service
             servicePort: 80
           path: /api/messages/
