@@ -26,6 +26,7 @@ spec:
           env:
           ports:
             - containerPort: 4000
+            - containerPort: 3978
               protocol: TCP
           resources:
             limits:
