@@ -1,10 +1,14 @@
 stages: 
-  - build
+  #- build
+  - build-images
   - deploy
   
-
-build-bot: #used to build the bot's docker image
+build-bot:
   stage: build
+  image: node
+
+build-bot-image: #used to build the bot's docker image
+  stage: build-images
   image: docker.io/buildah/buildah
   needs: []
   script:

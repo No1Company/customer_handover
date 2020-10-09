@@ -18,7 +18,8 @@ spec:
         service: backend
     spec:
       imagePullSecrets:
-        - name: gitlab.liu.se
+        - 
+        name: gitlab.liu.se
       containers:
         - name: bot
           image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/rostbot
