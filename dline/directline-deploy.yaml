@@ -9,12 +9,12 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: directline
+      app: rostbot
       service: backend
   template:
     metadata:
       labels:
-        app: directline
+        app: rostbot
         service: backend
     spec:
       imagePullSecrets:
