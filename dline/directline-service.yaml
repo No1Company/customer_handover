@@ -9,7 +9,7 @@ spec:
   - name: web
     port: 80
     protocol: TCP
-    targetPort: 4000
+    targetPort: 3000
   selector:
     app: rostbot
     service: backend

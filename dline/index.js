@@ -14,4 +14,4 @@ directline.initializeRoutes = function(app, botUrl, conversationInitRequired = t
     });
 }
 
-directline.initializeRoutes(app, 'http://0.0.0.0:8080', true);
+directline.initializeRoutes(app, 'http://tddc88-company-1-2020.kubernetes-public.it.liu.se/api/messages', true);
