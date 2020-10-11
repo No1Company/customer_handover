@@ -2,8 +2,8 @@ const directline = require('offline-directline');
 const express = require('express');
 
 const app = express();
-app.listen(3000, '0.0.0.0'); //Make server listen on 0.0.0.0
-directline.initializeRoutes(app, 3000, 'http://0.0.0.0:8080', false);
+app.listen(4000, '0.0.0.0'); //Make server listen on 0.0.0.0
+directline.initializeRoutes(app, 4000, 'http://0.0.0.0:8080', false);
 
 app.get("/",function(request, response){
     var id = request.params.id;
@@ -13,4 +13,4 @@ app.get("/",function(request, response){
     console.log("someone accessed our site");
 });
 
-console.log("directline rerouter created, listening on http://0.0.0.0:3000");
+console.log("directline rerouter created, listening on http://0.0.0.0:4000");
