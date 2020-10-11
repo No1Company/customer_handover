@@ -67,7 +67,7 @@ deploy-ingress:
   rules: 
    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
 
-  stage: deploy
+  stage: ingress
   image: lachlanevenson/k8s-kubectl
   script:
    - kubectl apply -f ingress.yaml
