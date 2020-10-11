@@ -1,7 +1,45 @@
 <!DOCTYPE html>
 <html>
   <head>
-</head>
-<body>
-  <iframe src='https://webchat.botframework.com/embed/rostbot?s=Ks-wupu28CM.hH4wO8aICSQBFD2vTH5NP-nf1C-_EBUnXFaEiLteGSM'  style='min-width: 400px; width: 100%; min-height: 500px;'></iframe>
-</body>
+    <script
+      crossorigin="anonymous"
+      src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"
+    ></script>
+    <style>
+      html,
+      body {
+         height: 100%;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      #webchat {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="webchat" role="main"></div>
+    <script>
+      window.WebChat.renderWebChat(
+        {
+          directLine: window.WebChat.createDirectLine({
+            secret: '',
+            token: '',
+            domain: 'http://tddc88-company-1-2020.kubernetes-public.it.liu.se/api/connect/directline',
+            webSocket: false // defaults to true
+          }),
+          userID: 'YOUR_USER_ID',
+          username: 'Web Chat User',
+          locale: 'en-US',
+          botAvatarInitials: 'WC',
+          userAvatarInitials: 'WW',
+        },
+        document.getElementById('webchat')
+      );
+    </script>
+  </body>
+</html>
