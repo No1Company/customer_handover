@@ -8,6 +8,6 @@ RUN npm install
 
 EXPOSE 4000
 
-CMD ["sudo", "node", "index.js"]
+CMD ["node", "index.js"]
 
 COPY . .

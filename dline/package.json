@@ -9,6 +9,7 @@
   "author": "Erik Lundin",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^8.2.0",
     "offline-directline": "^1.3.1"
   }
 }
