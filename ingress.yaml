@@ -4,7 +4,6 @@ metadata:
   annotations: # This is information to the Ingress modules of kubernetes, to note that you want the endpoint publicly accessible.
     kubernetes.io/ingress.class: nginx-public
     nginx.ingress.kubernetes.io/enable-cors: "true"
-    nginx.ingress.kubernetes.io/cors-allow-methods: "PUT, GET, POST, OPTIONS"
   name: rostbot-public
   labels:
     app: rostbot

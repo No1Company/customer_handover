@@ -3,18 +3,18 @@ stages:
   - deploy
   - ingress
 
-build-index-image:
-  stage: build-images
-  image: docker.io/buildah/buildah
-  needs: []
-  script:
-    - export _BUILDAH_STARTED_IN_USERNS=''
-    - export BUILDAH_ISOLATION=chroot
-    - export STORAGE_DRIVER=vfs
-    - export BUILDAH_FORMAT=docker
+# build-index-image:
+#   stage: build-images
+#   image: docker.io/buildah/buildah
+#   needs: []
+#   script:
+#     - export _BUILDAH_STARTED_IN_USERNS=''
+#     - export BUILDAH_ISOLATION=chroot
+#     - export STORAGE_DRIVER=vfs
+#     - export BUILDAH_FORMAT=docker
     
-    - buildah build-using-dockerfile --tag "index" "bot-site/deploy"
-    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "index" "docker://${CI_REGISTRY_IMAGE}/index:latest"
+#     - buildah build-using-dockerfile --tag "index" "bot-site/deploy"
+#     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "index" "docker://${CI_REGISTRY_IMAGE}/index:latest"
 
 build-bot-image: #used to build the bot's docker image
   stage: build-images
@@ -41,11 +41,13 @@ build-directline-image:
     
     - buildah build-using-dockerfile --tag "directline" "dline"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "directline" "docker://${CI_REGISTRY_IMAGE}/directline:latest"
+    - buildah build-using-dockerfile --tag "index" "bot-site/deploy"
+    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "index" "docker://${CI_REGISTRY_IMAGE}/index:latest"
 
 deploy-index:
   environment: 'production'
   needs:
-    - build-index-image
+    - build-directline-image
   rules: 
     - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
 
