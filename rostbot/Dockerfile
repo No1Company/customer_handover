@@ -8,6 +8,6 @@ RUN npm install
 
 EXPOSE 8080
 
-CMD ["node", "index.js", "--host 0.0.0.0"]
+CMD ["node", "index.js"]
 
 COPY . .
