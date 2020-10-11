@@ -14,4 +14,10 @@ directline.initializeRoutes = function(app, botUrl, conversationInitRequired = t
     });
 }
 
+app.get('/', function(req, res) {
+    res.status(200).send("welcome!");
+    console.log("någon anslöt");
+});
+
+
 directline.initializeRoutes(app, 'http://tddc88-company-1-2020.kubernetes-public.it.liu.se/api/messages', true);

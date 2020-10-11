@@ -98,10 +98,9 @@ server.post('/', (req, res) => {
         await bot.run(turnContext);
     });
 });
-
-server.get('/', (req, res) => {
-    // Route received a request to adapter for processing
-    console.log('Någon anslöt');
+server.get('/', function(req, res) {
+    res.send(200);
+    console.log('någon anslöt');
 });
 
 // Listen for Upgrade requests for Streaming.
