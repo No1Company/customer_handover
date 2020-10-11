@@ -22,7 +22,7 @@ spec:
           name: gitlab-registry
       containers:
         - name: bot
-          image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/rostbot
+          image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/rostbot:latest
           env:
           ports:
             - containerPort: 8080

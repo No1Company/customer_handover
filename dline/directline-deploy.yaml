@@ -22,7 +22,7 @@ spec:
           name: gitlab-registry
       containers:
         - name: directline
-          image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/directline
+          image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/directline:latest
           env:
           ports:
             - containerPort: 3000
