@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: deploy-directline
   labels:
-    app: directline
+    app: rostbot
     service: backend
 spec:
   replicas: 1
