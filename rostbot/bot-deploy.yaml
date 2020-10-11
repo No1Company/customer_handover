@@ -25,7 +25,7 @@ spec:
           image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/rostbot:latest
           env:
           ports:
-            - containerPort: 8080
+            - containerPort: 80
               protocol: TCP
           resources:
             limits:
