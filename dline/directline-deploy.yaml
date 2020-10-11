@@ -4,18 +4,18 @@ metadata:
   name: deploy-directline
   labels:
     app: rostbot
-    service: backend
+    service: directline
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: rostbot
-      service: backend
+      service: directline
   template:
     metadata:
       labels:
         app: rostbot
-        service: backend
+        service: directline
     spec:
       imagePullSecrets:
         - 
