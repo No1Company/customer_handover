@@ -13,7 +13,7 @@ build-index-image:
     - export STORAGE_DRIVER=vfs
     - export BUILDAH_FORMAT=docker
     
-    - buildah build-using-dockerfile --tag "index" "bot-site"
+    - buildah build-using-dockerfile --tag "index" "bot-site/deploy"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "index" "docker://${CI_REGISTRY_IMAGE}/index:latest"
 
 build-bot-image: #used to build the bot's docker image
