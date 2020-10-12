@@ -82,7 +82,7 @@ const bot = new DialogAndWelcomeBot(conversationState, userState, dialog);
 
 // Create HTTP server
 const server = restify.createServer();
-server.listen(80, '0.0.0.0', function() {
+server.listen(80, '0.0.0.0/api/messages', function() {
     console.log(`\n${ server.name } listening to ${ server.url }`);
     console.log('\nGet Bot Framework Emulator: https://aka.ms/botframework-emulator');
     console.log('\nTo talk to your bot, open the emulator select "Open Bot"');

@@ -3,12 +3,12 @@ const express = require('express');
 
 const app = express();
 directline.initializeRoutes = function(app, botUrl, conversationInitRequired = true) {
-    directLineEndpoint = 'http://0.0.0.0:80';
+    directLineEndpoint = 'http://0.0.0.0:80/api/directline';
     const router = directline.getRouter(directLineEndpoint, botUrl, conversationInitRequired);
     app.use(router);
     app.listen(3000, () => {
         console.log("Custom init...");
-        console.log('Listening for messages on ' + directLineEndpoint + '/directline');
+        console.log('Listening for messages on ' + directLineEndpoint);
         console.log('Routing messages to bot on ' + botUrl);
         
     });
