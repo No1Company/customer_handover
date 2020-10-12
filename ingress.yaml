@@ -12,9 +12,10 @@ spec:
     - host: tddc88-company-1-2020.kubernetes-public.it.liu.se
       http:
         paths:
-          - path: /
+          
+          - path: /directline/
             backend:
-              serviceName: rostbot-frontend-service
+              serviceName: directline-backend-service
               servicePort: 80
 
           - path: /chat/messages/
@@ -22,9 +23,9 @@ spec:
               serviceName: bot-backend-service
               servicePort: 80
 
-          - path: /directline/
+          - path: /
             backend:
-              serviceName: directline-backend-service
+              serviceName: rostbot-frontend-service
               servicePort: 80
             
           
