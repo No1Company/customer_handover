@@ -3,7 +3,7 @@ const express = require('express');
 
 const app = express();
 directline.initializeRoutes = function(app, botUrl, conversationInitRequired = true) {
-    directLineEndpoint = 'http://0.0.0.0:80/api';
+    directLineEndpoint = 'http://0.0.0.0:3000';
     const router = directline.getRouter(directLineEndpoint, botUrl, conversationInitRequired);
     app.use(router);
     app.listen(3000, () => {
@@ -13,11 +13,6 @@ directline.initializeRoutes = function(app, botUrl, conversationInitRequired = t
         
     });
 }
-
-app.get('/', function(req, res) {
-    res.status(200).send("welcome!");
-    console.log("somebody connected");
-});
 
 
 directline.initializeRoutes(app, 'http://tddc88-company-1-2020.kubernetes-public.it.liu.se/chat/messages', true); //Change to local ip if offline

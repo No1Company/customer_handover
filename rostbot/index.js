@@ -82,7 +82,7 @@ const bot = new DialogAndWelcomeBot(conversationState, userState, dialog);
 
 // Create HTTP server
 const server = restify.createServer();
-server.listen(80, '0.0.0.0/chat/messages', function() {
+server.listen(80, '0.0.0.0', function() {
     console.log(`\n${ server.name } listening to ${ server.url }`);
     console.log('\nGet Bot Framework Emulator: https://aka.ms/botframework-emulator');
     console.log('\nTo talk to your bot, open the emulator select "Open Bot"');
@@ -90,7 +90,7 @@ server.listen(80, '0.0.0.0/chat/messages', function() {
 });
 
 // Listen for incoming activities and route them to your bot main dialog.
-server.post('/', (req, res) => {
+server.post('/chat/messages', (req, res) => {
     // Route received a request to adapter for processing
     console.log('Någon anslöt');
     adapter.processActivity(req, res, async (turnContext) => {
@@ -98,11 +98,6 @@ server.post('/', (req, res) => {
         await bot.run(turnContext);
     });
 });
-server.get('/', function(req, res) {
-    res.send(200);
-    console.log('någon anslöt');
-});
-
 // Listen for Upgrade requests for Streaming.
 server.on('upgrade', (req, socket, head) => {
     // Create an adapter scoped to this WebSocket connection to allow storing session data.
