@@ -22,6 +22,14 @@ spec:
               serviceName: bot-backend-service
               servicePort: 80
 
+          - path: /directline
+            backend:
+              serviceName: directline-backend-service
+              servicePort: 80
+          - path: /directline/conversations
+            backend:
+              serviceName: directline-backend-service
+              servicePort: 80
           - path: /directline/*
             backend:
               serviceName: directline-backend-service
