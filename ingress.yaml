@@ -16,11 +16,11 @@ spec:
             backend:
               serviceName: rostbot-frontend-service
               servicePort: 80
-          - path: /api/messages
+          - path: /chat/messages
             backend:
               serviceName: bot-backend-service
               servicePort: 80
-          - path: /api/directline
+          - path: /api
             backend:
               serviceName: directline-backend-service
               servicePort: 80
