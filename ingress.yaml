@@ -13,14 +13,17 @@ spec:
       http:
         paths:
           - path: /
+            pathtype: Prefix
             backend:
               serviceName: rostbot-frontend-service
               servicePort: 80
           - path: /chat/messages
+            pathtype: Prefix
             backend:
               serviceName: bot-backend-service
               servicePort: 80
-          - path: /directline
+          - path: /connect
+            pathtype: Prefix
             backend:
               serviceName: directline-backend-service
               servicePort: 80

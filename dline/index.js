@@ -3,7 +3,7 @@ const express = require('express');
 
 const app = express();
 directline.initializeRoutes = function(app, botUrl, conversationInitRequired = true) {
-    directLineEndpoint = 'http://0.0.0.0:3000';
+    directLineEndpoint = 'http://0.0.0.0:3000/connect';
     const router = directline.getRouter(directLineEndpoint, botUrl, conversationInitRequired);
     app.use(router);
     app.listen(3000, () => {
