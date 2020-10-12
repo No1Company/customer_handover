@@ -90,7 +90,7 @@ server.listen(80, '0.0.0.0', function() {
 });
 
 // Listen for incoming activities and route them to your bot main dialog.
-server.post('/chat/messages', (req, res) => {
+server.post('/chat/messages/', (req, res) => {
     // Route received a request to adapter for processing
     console.log('Någon anslöt');
     adapter.processActivity(req, res, async (turnContext) => {

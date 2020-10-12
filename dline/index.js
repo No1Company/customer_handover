@@ -16,4 +16,4 @@ directline.initializeRoutes = function(app, botUrl, conversationInitRequired = t
 
 
 
-directline.initializeRoutes(app, 'http://tddc88-company-1-2020.kubernetes-public.it.liu.se/chat/messages', true); //Change to local ip if offline
+directline.initializeRoutes(app, 'http://tddc88-company-1-2020.kubernetes-public.it.liu.se/chat/messages/', true); //Change to local ip if offline
