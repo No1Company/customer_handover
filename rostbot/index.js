@@ -92,7 +92,7 @@ server.listen(80, '0.0.0.0', function() {
 // Listen for incoming activities and route them to your bot main dialog.
 server.post('/chat/messages/', (req, res) => {
     // Route received a request to adapter for processing
-    console.log('Någon anslöt');
+    console.log('Someone connected');
     adapter.processActivity(req, res, async (turnContext) => {
         // route to bot activity handler.
         await bot.run(turnContext);

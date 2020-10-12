@@ -7,7 +7,7 @@ directline.initializeRoutes = function(app, botUrl, conversationInitRequired = t
     const router = directline.getRouter(directLineEndpoint, botUrl, conversationInitRequired);
     app.use(router);
     app.listen(3000, () => {
-        console.log("Custom init...");
+        console.log("Custom init... rerouter");
         console.log('Listening for messages on ' + directLineEndpoint);
         console.log('Routing messages to bot on ' + botUrl);
         
