@@ -3,13 +3,13 @@
 
 const { InputHints, MessageFactory } = require('botbuilder');
 const { DateTimePrompt, WaterfallDialog } = require('botbuilder-dialogs');
-const { CancelAndHelpDialog } = require('./cancelAndHelpDialog');
+const { InitialDialog } = require('./initialDialog');
 const { TimexProperty } = require('@microsoft/recognizers-text-data-types-timex-expression');
 
 const DATETIME_PROMPT = 'datetimePrompt';
 const WATERFALL_DIALOG = 'waterfallDialog';
 
-class DateResolverDialog extends CancelAndHelpDialog {
+class DateResolverDialog extends InitialDialog {
     constructor(id) {
         super(id || 'dateResolverDialog');
         this.addDialog(new DateTimePrompt(DATETIME_PROMPT, this.dateTimePromptValidator.bind(this)))

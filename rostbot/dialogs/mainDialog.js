@@ -73,7 +73,7 @@ class MainDialog extends ComponentDialog {
 
         if (!this.luisRecognizer.isConfigured) {
             // LUIS is not configured, we just run the BookingDialog path.
-            return await stepContext.beginDialog('bookingDialog', bookingDetails);
+            return await stepContext.beginDialog('initialDialog');
         }
 
         // Call LUIS and gather any potential booking details. (Note the TurnContext has the response to the prompt)
@@ -93,8 +93,8 @@ class MainDialog extends ComponentDialog {
             bookingDetails.travelDate = this.luisRecognizer.getTravelDate(luisResult);
             console.log('LUIS extracted these booking details:', JSON.stringify(bookingDetails));
 
-            // Run the BookingDialog passing in whatever details we have from the LUIS call, it will fill out the remainder.
-            return await stepContext.beginDialog('bookingDialog', bookingDetails);
+            // RokingDialog passing in whatever details we have from the LUIS call, it will fill out the remainder.
+            return await stepContext.beginDialog('initialDialog', bookingDetails);
         }
 
         case 'GetWeather': {
