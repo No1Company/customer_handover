@@ -5,15 +5,15 @@
   "body": [
     {
       "type": "Image",
-      "url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtB3AwMUeNoq4gUBGe6Ocj8kyh3bXa9ZbV7u1fVKQoyKFHdkqU",
-      "size": "stretch"
+      "url": "https://yt3.ggpht.com/a-/AAuE7mDUQNiMilc9lbjLzB0kxGpeehgqWJ3ba8Wn0A=s900-mo-c-c0xffffffff-rj-k-no",
+      "size": "auto"
     },
     {
       "type": "TextBlock",
       "spacing": "medium",
-      "size": "default",
+      "size": "large",
       "weight": "bolder",
-      "text": "Welcome to Bot Framework!",
+      "text": "Hej Björn!",
       "wrap": true,
       "maxLines": 0
     },
@@ -21,26 +21,40 @@
       "type": "TextBlock",
       "size": "default",
       "isSubtle": true,
-      "text": "Now that you have successfully run your bot, follow the links in this Adaptive Card to expand your knowledge of Bot Framework.",
+      "text": "Vad vill du göra idag? Välj från alternativen nedan.",
       "wrap": true,
       "maxLines": 0
+      
     }
   ],
   "actions": [
     {
-      "type": "Action.OpenUrl",
-      "title": "Get an overview",
-      "url": "https://docs.microsoft.com/en-us/azure/bot-service/?view=azure-bot-service-4.0"
+      "type": "Action.Submit",
+      "title": "Registrera värden",
+      "data": {
+        "choice": "register"
+      }
     },
     {
-      "type": "Action.OpenUrl",
-      "title": "Ask a question",
-      "url": "https://stackoverflow.com/questions/tagged/botframework"
+      "type": "Action.Submit",
+      "title": "Ändra inställningar",
+      "data": {
+        "choice": "settings"
+      }
     },
     {
-      "type": "Action.OpenUrl",
-      "title": "Learn how to deploy",
-      "url": "https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-deploy-azure?view=azure-bot-service-4.0"
+      "type": "Action.Submit",
+      "title": "Boka konsultation",
+      "data": {
+        "choice": "booking"
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Övriga frågor",
+      "data": {
+        "choice": "other"
+      }
     }
   ]
 }
