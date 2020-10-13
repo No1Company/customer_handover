@@ -28,5 +28,5 @@ spec:
             backend:
               serviceName: rostbot-frontend-service
               servicePort: 80
-            
+          
           
