@@ -17,13 +17,6 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "xI8SFQ"
-          },
-          "activity": "${SendActivity_xI8SFQ()}"
-        },
-        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "id": "518944",
@@ -42,10 +35,9 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "859266",
-                    "name": "Send a response"
+                    "id": "gzmItl"
                   },
-                  "activity": "${SendActivity_Welcome()}"
+                  "activity": "${SendActivity_gzmItl()}"
                 }
               ]
             }
