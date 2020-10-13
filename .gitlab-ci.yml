@@ -29,18 +29,18 @@ build-bot-image: #used to build the bot's docker image
     - buildah build-using-dockerfile --tag "rostbot" "rostbot"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
 
-build-directline-image:
-  stage: build-images
-  image: docker.io/buildah/buildah
-  needs: []
-  script:
-    - export _BUILDAH_STARTED_IN_USERNS=''
-    - export BUILDAH_ISOLATION=chroot
-    - export STORAGE_DRIVER=vfs
-    - export BUILDAH_FORMAT=docker
+# build-directline-image:
+#   stage: build-images
+#   image: docker.io/buildah/buildah
+#   needs: []
+#   script:
+#     - export _BUILDAH_STARTED_IN_USERNS=''
+#     - export BUILDAH_ISOLATION=chroot
+#     - export STORAGE_DRIVER=vfs
+#     - export BUILDAH_FORMAT=docker
     
-    - buildah build-using-dockerfile --tag "directline" "dline"
-    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "directline" "docker://${CI_REGISTRY_IMAGE}/directline:latest"
+#     - buildah build-using-dockerfile --tag "directline" "dline"
+#     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "directline" "docker://${CI_REGISTRY_IMAGE}/directline:latest"
 
 deploy-index:
   environment: 'production'
@@ -57,20 +57,20 @@ deploy-index:
     - kubectl apply -f bot-site/index-service.yaml
     - kubectl get all # display container status
 
-deploy-directline:
-  environment: 'production'
-  needs:
-   - build-directline-image
-  rules: 
-   - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
+# deploy-directline:
+#   environment: 'production'
+#   needs:
+#    - build-directline-image
+#   rules: 
+#    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
 
-  stage: deploy
-  image: lachlanevenson/k8s-kubectl
-  script:
-   - kubectl get all
-   - kubectl apply -f dline/directline-deploy.yaml
-   - kubectl apply -f dline/directline-service.yaml
-   - kubectl get all # display container status
+#   stage: deploy
+#   image: lachlanevenson/k8s-kubectl
+#   script:
+#    - kubectl get all
+#    - kubectl apply -f dline/directline-deploy.yaml
+#    - kubectl apply -f dline/directline-service.yaml
+#    - kubectl get all # display container status
 
 deploy-bot:
   environment: 'production'
@@ -91,7 +91,7 @@ deploy-ingress:
   environment: 'production'
   needs:
     - deploy-bot
-    - deploy-directline
+#    - deploy-directline
     - deploy-index
   rules: 
    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master

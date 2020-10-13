@@ -14,10 +14,10 @@ spec:
       http:
         paths:
 
-          - path: /directline/
-            backend:
-              serviceName: directline-backend-service
-              servicePort: 80
+          # - path: /directline/
+          #   backend:
+          #     serviceName: directline-backend-service
+          #     servicePort: 80
 
           - path: /chat/messages/
             backend:
