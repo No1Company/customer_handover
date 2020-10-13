@@ -34,11 +34,7 @@
                 {
                     "type": "Action.Submit",
                     "title": "Boka konsultation",
-                    "id": "consultation"
-                    "data": {
-                    "choice": "consultation"
-                    }
-                 
+                    "id": "consultation"          
                 }
             ]
         },
