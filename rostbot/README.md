@@ -1,86 +1,73 @@
-# rostbot
+This folder contains a Bot Project created with Bot Framework Composer.
 
-Bot for assisting health care patients
+The full documentation for Composer lives here:
+https://github.com/microsoft/botframework-composer
 
-This bot has been created using [Bot Framework](https://dev.botframework.com), it shows how to:
+To test this bot locally, open this folder in Composer, then click "Start Bot"
 
-- Use [LUIS](https://www.luis.ai) to implement core AI capabilities
-- Implement a multi-turn conversation using Dialogs
-- Handle user interruptions for such things as `Help` or `Cancel`
-- Prompt for and validate requests for information from the user
+## Provision Azure Resources to Host Bot
 
-## Prerequisites
+This project includes a script that can be used to provision the resources necessary to run your bot in the Azure cloud. Running this script will create all of the necessary resources and return a publishing profile in the form of a JSON object.  This JSON object can be imported into Composer's "Publish" tab and used to deploy the bot.
 
-This sample **requires** prerequisites in order to run.
+* From this project folder, navigate to the scripts/ folder
+* Run `npm install`
+* Run `node provisionComposer.js --subscriptionId=<YOUR AZURE SUBSCRIPTION ID> --name=<NAME OF YOUR RESOURCE GROUP> --appPassword=<APP PASSWORD> --environment=<NAME FOR ENVIRONMENT DEFAULT to dev>`
+* You will be asked to login to the Azure portal in your browser.
+* You will see progress indicators as the provision process runs. Note that it will take roughly 10 minutes to fully provision the resources.
 
-### Overview
-
-This bot uses [LUIS](https://www.luis.ai), an AI based cognitive service, to implement language understanding.
-
-- [Node.js](https://nodejs.org) version 10.14.1 or higher
-
-    ```bash
-    # determine node version
-    node --version
-    ```
-
-### Create a LUIS Application to enable language understanding
-
-The LUIS model for this example can be found under `cognitiveModels/FlightBooking.json` and the LUIS language model setup, training, and application configuration steps can be found [here](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-howto-v4-luis?view=azure-bot-service-4.0&tabs=javascript).
-
-Once you created the LUIS model, update `.env` with your `LuisAppId`, `LuisAPIKey` and `LuisAPIHostName`.
-
-```text
-LuisAppId="Your LUIS App Id"
-LuisAPIKey="Your LUIS Subscription key here"
-LuisAPIHostName="Your LUIS App region here (i.e: westus.api.cognitive.microsoft.com)"
+It will look like this:
 ```
+{
+  "accessToken": "<SOME VALUE>",
+  "name": "<NAME OF YOUR RESOURCE GROUP>",
+  "environment": "<ENVIRONMENT>",
+  "settings": {
+    "applicationInsights": {
+      "InstrumentationKey": "<SOME VALUE>"
+    },
+    "cosmosDb": {
+      "cosmosDBEndpoint": "<SOME VALUE>",
+      "authKey": "<SOME VALUE>",
+      "databaseId": "botstate-db",
+      "collectionId": "botstate-collection",
+      "containerId": "botstate-container"
+    },
+    "blobStorage": {
+      "connectionString": "<SOME VALUE>",
+      "container": "transcripts"
+    },
+    "luis": {
+      "endpointKey": "<SOME VALUE>",
+      "authoringKey": "<SOME VALUE>",
+      "region": "westus"
+    },
+    "MicrosoftAppId": "<SOME VALUE>",
+    "MicrosoftAppPassword": "<SOME VALUE>"
+  }
+}```
 
-# To run the bot
-
-- Install modules
-
-    ```bash
-    npm install
-    ```
-- Setup LUIS
-
-The prerequisite outlined above contain the steps necessary to provision a language understanding model on www.luis.ai.  Refer to _Create a LUIS Application to enable language understanding_ above for directions to setup and configure LUIS.
-
-- Start the bot
-
-    ```bash
-    npm start
-    ```
-## Testing the bot using Bot Framework Emulator
-
-[Bot Framework Emulator](https://github.com/microsoft/botframework-emulator) is a desktop application that allows bot developers to test and debug their bots on localhost or running remotely through a tunnel.
-
-- Install the Bot Framework Emulator version 4.9.0 or greater from [here](https://github.com/Microsoft/BotFramework-Emulator/releases)
-
-### Connect to the bot using Bot Framework Emulator
-
-- Launch Bot Framework Emulator
-- File -> Open Bot
-- Enter a Bot URL of `http://localhost:3978/api/messages`
-
-## Deploy the bot to Azure
-
-To learn more about deploying a bot to Azure, see [Deploy your bot to Azure](https://aka.ms/azuredeployment) for a complete list of deployment instructions.
+When completed, you will see a message with a JSON "publishing profile" and instructions for using it in Composer.
 
 
-## Further reading
+## Publish bot to Azure
 
-- [Bot Framework Documentation](https://docs.botframework.com)
-- [Bot Basics](https://docs.microsoft.com/azure/bot-service/bot-builder-basics?view=azure-bot-service-4.0)
-- [Dialogs](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-dialog?view=azure-bot-service-4.0)
-- [Gathering Input Using Prompts](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-prompts?view=azure-bot-service-4.0)
-- [Activity processing](https://docs.microsoft.com/en-us/azure/bot-service/bot-builder-concept-activity-processing?view=azure-bot-service-4.0)
-- [Azure Bot Service Introduction](https://docs.microsoft.com/azure/bot-service/bot-service-overview-introduction?view=azure-bot-service-4.0)
-- [Azure Bot Service Documentation](https://docs.microsoft.com/azure/bot-service/?view=azure-bot-service-4.0)
-- [Azure CLI](https://docs.microsoft.com/cli/azure/?view=azure-cli-latest)
-- [Azure Portal](https://portal.azure.com)
-- [Language Understanding using LUIS](https://docs.microsoft.com/en-us/azure/cognitive-services/luis/)
-- [Channels and Bot Connector Service](https://docs.microsoft.com/en-us/azure/bot-service/bot-concepts?view=azure-bot-service-4.0)
-- [Restify](https://www.npmjs.com/package/restify)
-- [dotenv](https://www.npmjs.com/package/dotenv)
+To publish your bot to a Azure resources provisioned using the process above:
+
+* Open your bot in Composer
+* Navigate to the "Publish" tab
+* Select "Add new profile" from the toolbar
+* In the resulting dialog box, choose "azurePublish" from the "Publish Destination Type" dropdown
+* Paste in the profile you received from the provisioning script
+
+When you are ready to publish your bot to Azure, select the newly created profile from the sidebar and click "Publish to selected profile" in the toolbar.
+
+## Refresh your Azure Token
+
+When publishing, you may encounter an error about your access token being expired. This happens when the access token used to provision your bot expires.
+
+To get a new token:
+
+* Open a terminal window
+* Run `az account get-access-token`
+* This will result in a JSON object printed to the console, containing a new `accessToken` field.
+* Copy the value of the accessToken from the terminal and into the publish `accessToken` field in the profile in Composer.

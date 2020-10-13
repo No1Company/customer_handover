@@ -1,0 +1,102 @@
+[import](common.lg)
+
+# SendActivity_Welcome()
+- ${Introduction()}
+
+# SendActivity_VvcgOJ()
+- Jag förstår tyvärr inte vad du menar, använd "hjälp" för att se vad jag kan hjälpa dig med, eller "avbryt" för att avsluta konversationen. 
+
+#AdaptiveCard
+[Activity
+    Attachments = ${json(adaptivecardjson())}
+]
+
+# adaptivecardjson() 
+
+-  ```
+{
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Välkommen till RostBot!"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Här kan du få hjälp med ditt ärende, välj något av alternativen nedan, eller skriv \"hjälp\". ",
+            "wrap": true
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Boka konsultation",
+                    "id": "consultation"
+                    "data": {
+                    "choice": "consultation"
+                    }
+                 
+                }
+            ]
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.OpenUrl",
+                    "title": "Öppna 1177.se",
+                    "url": "https://www.1177.se/",
+                    "id": "link1177"
+                }
+            ]
+        },
+        {
+            "type": "ActionSet",
+            "actions": [
+                {
+                    "type": "Action.Submit",
+                    "title": "Övriga frågor",
+                    "id": "otherquestions"
+                }
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.ShowCard",
+            "title": "Registrera mätvärden",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "Input.Date",
+                        "id": "dueDate"
+                    },
+                    {
+                        "type": "Input.Text",
+                        "id": "comment",
+                        "placeholder": "Add a comment",
+                        "isMultiline": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "OK"
+                    }
+                ],
+                "$schema": "http://adaptivecards.io/schemas/adaptive-card.json"
+            },
+            "style": "positive",
+            "id": "measuring"
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2"
+}
+```
+# SendActivity_xI8SFQ()
+-${AdaptiveCard()}

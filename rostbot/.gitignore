@@ -1,6 +1,2 @@
-lib/
-node_modules/
-.nyc_output/
-.vscode/
-.env 
-package-lock.json
+# prevent appsettings.json get checked in
+**/appsettings.json
