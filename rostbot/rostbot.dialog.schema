@@ -4,11 +4,6 @@
   "title": "rostbot",
   "type": "object",
   "properties": {
-    "Registrera värden": {
-      "description": "Register",
-      "title": "Registrera Varden",
-      "$ref": "#/definitions/stringExpression"
-    },
     "Ändra inställningar": {
       "description": "Settings",
       "$ref": "#/definitions/stringExpression",
@@ -23,6 +18,10 @@
       "description": "Questions",
       "$ref": "#/definitions/stringExpression",
       "title": "Ovriga Fragor"
+    },
+    "Registrera värden": {
+      "description": "Register",
+      "title": "Registrera Varden"
     }
   },
   "$result": {

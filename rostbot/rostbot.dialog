@@ -64,24 +64,6 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "1dBcdz",
-        "name": "Register-measurements"
-      },
-      "intent": "Register-measurements",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "xfQ4tE"
-          },
-          "activityProcessed": true,
-          "dialog": "RegisterMeasurments"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
         "id": "nW2GGt",
         "name": "Settings"
       },
@@ -102,6 +84,24 @@
         "name": "Questions"
       },
       "intent": "Questions"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "pZWzTm",
+        "name": "Register-measurement"
+      },
+      "intent": "Register-measurement",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "NOVnk5"
+          },
+          "activityProcessed": true,
+          "dialog": "RegisterMeasurments"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -111,20 +111,8 @@
     "$kind": "Microsoft.RegexRecognizer",
     "intents": [
       {
-        "intent": "Register-measurements",
+        "intent": "Register-measurement",
         "pattern": "Registrera värden"
-      },
-      {
-        "intent": "Settings",
-        "pattern": "Ändra inställningar"
-      },
-      {
-        "intent": "Consultation",
-        "pattern": "Boka konsultation"
-      },
-      {
-        "intent": "Questions",
-        "pattern": "Övriga frågor"
       }
     ]
   }
