@@ -11,31 +11,27 @@
     {
       "$kind": "Microsoft.OnBeginDialog",
       "$designer": {
-        "name": "BeginDialog",
-        "description": "",
-        "id": "0NWYl5"
+        "id": "hgMxpP"
       },
       "actions": [
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "odusAY"
+            "id": "Izl4lH"
           },
-          "activity": "${SendActivity_odusAY()}"
+          "activity": "${SendActivity_Izl4lH()}"
         },
         {
-          "$kind": "Microsoft.IfCondition",
+          "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "PFUVo0"
-          }
+            "id": "Sc7mGJ"
+          },
+          "activity": "${SendActivity_Sc7mGJ()}"
         }
       ]
     }
   ],
   "generator": "SettingsDialog.lg",
-  "recognizer": {
-    "$kind": "Microsoft.RegexRecognizer",
-    "intents": []
-  },
+  "recognizer": "SettingsDialog.lu.qna",
   "id": "SettingsDialog"
 }

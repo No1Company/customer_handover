@@ -10,58 +10,88 @@
 {
     "type": "AdaptiveCard",
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "version": "1.0",
-    "actions": 
-    [
+    "version": "1.2",
+    "actions": [
         {
             "type": "Action.Submit",
             "title": "Notiser",
-            "data": "Notiser"
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg"
+            
         },
         {
             "type": "Action.Submit",
-            "title": "Chattinställningar",
-            "data": "Chattinställningar"
+            "title": "Chatt",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/61/61559.svg",
+            "data": {}
         },
         {
             "type": "Action.Submit",
             "title": "Annat",
-            "data": "Annat"
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/0/859.svg"
+        }
+    ],
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Inställningar",
+            "wrap": true,
+            "size": "Medium",
+            "weight": "Bolder",
+            "fontType": "Default",
+            "color": "Accent",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Här kan du se över dina inställningar i applikationen",
+            "wrap": true,
+            "horizontalAlignment": "Center"
         }
     ]
 }
 ```
-# SendActivity_odusAY()
--${AdaptiveCardSettings()}
+# SendActivity_Izl4lH()
+ -${AdaptiveCardSettings()}
 
-#AdaptiveCardSettingsTest
-[Activity 
-	Attachments = $(json{settingscardtestjson())}
- ]
+ #AdaptiveCardNotificationSettings
+[Activity
+    Attachments = ${json(settingnotifications())}
+]
 
-#settingscardtestjson()
+# settingnotifications()
 -```
 {
     "type": "AdaptiveCard",
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-    "version": "1.0",
-    "actions": 
-    [
+    "version": "1.2",
+    "actions": [
         {
             "type": "Action.Submit",
-            "title": "Notiser",
-            "data": "Notiser"
+            "title": "Skapa ny notis",
+            "style": "positive",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg"
+        }
+    ],
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Notiser",
+            "wrap": true,
+            "horizontalAlignment": "Center",
+            "size": "Medium",
+            "weight": "Bolder",
+            "color": "Accent",
+            "isSubtle": true
         },
         {
-            "type": "Action.Submit",
-            "title": "Chattinställningar",
-            "data": "Chattinställningar"
-        },
-        {
-            "type": "Action.Submit",
-            "title": "Annat",
-            "data": "Annat"
+            "type": "TextBlock",
+            "text": "Här kan du skapa nya notiser och styra vilka av dina notiser du vill ta emot för tillfället.",
+            "wrap": true,
+            "fontType": "Default",
+            "isSubtle": true
         }
     ]
 }
 ```
+# SendActivity_Sc7mGJ()
+-${settingnotifications()}

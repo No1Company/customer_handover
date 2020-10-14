@@ -90,7 +90,7 @@
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "ZysQS2"
+            "id": "vlz9sK"
           },
           "activityProcessed": true,
           "dialog": "SettingsDialog"
