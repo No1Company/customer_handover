@@ -78,6 +78,30 @@
           "dialog": "RegisterMeasurments"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "nW2GGt",
+        "name": "Settings"
+      },
+      "intent": "Settings"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "95zDOa",
+        "name": "Consultation"
+      },
+      "intent": "Consultation"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Uq3ZgS",
+        "name": "Questions"
+      },
+      "intent": "Questions"
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -89,6 +113,18 @@
       {
         "intent": "Register-measurements",
         "pattern": "Registrera värden"
+      },
+      {
+        "intent": "Settings",
+        "pattern": "Ändra inställningar"
+      },
+      {
+        "intent": "Consultation",
+        "pattern": "Boka konsultation"
+      },
+      {
+        "intent": "Questions",
+        "pattern": "Övriga frågor"
       }
     ]
   }
