@@ -17,69 +17,153 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "vHxF89"
-          },
-          "activity": "${SendActivity_vHxF89()}"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "sqsPBs"
-          },
-          "activity": "${SendActivity_sqsPBs()}"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "fxwPJN"
-          },
-          "activity": "${SendActivity_fxwPJN()}"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "ii8Yn4"
-          },
-          "activity": "${SendActivity_ii8Yn4()}"
-        },
-        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "gb8LYk"
+            "id": "xK6dPh"
           },
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_gb8LYk()}",
+          "prompt": "${TextInput_Prompt_xK6dPh()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
-          "property": "user.sysvalue"
+          "property": "user.answer"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "cOTLpU"
+          },
+          "condition": "user.answer == \"Avbryt\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "zfAHNt"
+              }
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "6QHcO8"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_6QHcO8()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": ""
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "7NIQcq"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_7NIQcq()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": ""
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "WC3g0M"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_WC3g0M()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": ""
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "ke7IXh"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_ke7IXh()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": ""
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "2la5gn"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.sysvalue",
+          "prompt": "${TextInput_Prompt_2la5gn()}"
         },
         {
           "$kind": "Microsoft.ConfirmInput",
           "$designer": {
-            "id": "I3d2H7"
+            "id": "eqiWOr"
           },
           "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${ConfirmInput_Prompt_I3d2H7()}",
+          "prompt": "${ConfirmInput_Prompt_eqiWOr()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true
+          },
+          "confirmChoices": "[\"Ja\", \"Nej\"]"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "tajAnX"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_tajAnX()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": ""
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "VpMT1s"
+            "id": "k4xYdL"
           },
-          "activity": "${SendActivity_VpMT1s()}"
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.diavalue",
+          "prompt": "${TextInput_Prompt_k4xYdL()}"
         },
         {
           "$kind": "Microsoft.TextInput",
@@ -111,15 +195,52 @@
           "invalidPrompt": "",
           "defaultValueResponse": "",
           "choiceOptions": {
-            "includeNumbers": true
-          }
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "confirmChoices": "[\"Ja\", \"Nej\"]"
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "zDeW1O"
+            "id": "qnot0w"
           },
-          "activity": "${SendActivity_zDeW1O()}"
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "prompt": "${TextInput_Prompt_qnot0w()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "E0E3Qv"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_E0E3Qv()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": ""
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "6qD0sT"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_6qD0sT()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": ""
         },
         {
           "$kind": "Microsoft.EndDialog",

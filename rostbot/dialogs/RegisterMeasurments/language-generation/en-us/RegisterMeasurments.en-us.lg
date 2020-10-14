@@ -1,23 +1,84 @@
 [import](common.lg)
 
-# SendActivity_vHxF89()
-- Start av blodtrycksmätning <Knapp?>
-# SendActivity_sqsPBs()
-- Först och främst ser du till att du är lugn och avslappnad för att kunna mäta blodtrycket korrekt. Slappna av, ta djupa andetag, se till att du inte får i dig något som kan öka hjärtslagen som till exempel kaffe eller tobak. Det bästa är om du har haft möjlighet att vila dig en stund innan <Knapp?>
-
-# SendActivity_fxwPJN()
-- <Bild?> Placera manschetten på överarmen i höjd med hjärtat. Tänk på att hålla armen så att mätaren befinner sig i hjärthöjd <Knapp?>
-# SendActivity_ii8Yn4()
-- <Bild?> Manschetten fylls nu med luft och klämmer åt. Detta gör den för att stoppa upp blodet i pulsådern några sekunder. Töm manschetten på luft och mät övertrycket.
-# TextInput_Prompt_gb8LYk()
-- Vilket värde har du på det systoliska trycket (övertrycket)? <Knapp?>
-# ConfirmInput_Prompt_I3d2H7()
-- Du skrev in ${user.sysvalue}, är detta korrekt?
-# SendActivity_VpMT1s()
-- Vänta tills blodtryckmätaren inte kan höra pulsen längre och mät undertrycket <Knapp?>
 # TextInput_Prompt_Qpcijg()
 - Vilket värde har du på det diastoliska trycket (undertrycket)?
 # ConfirmInput_Prompt_nkaFPW()
 - Du skrev in ${user.diavalue}, är detta korrekt?
-# SendActivity_zDeW1O()
-- Bra jobbat, du är klar med din mätning!
+
+# ConfirmInput_Prompt_eqiWOr()
+- Du skrev in ${user.sysvalue}, är detta korrekt?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# TextInput_Prompt_xK6dPh()
+[HeroCard
+    title = Blodtrycksmätning
+    text = Ett för högt blodtryck märks oftast inte men kan leda till dödliga sjukdomar.
+    buttons = Start av mätning | Avbryt
+    image = https://skapandeavmening.files.wordpress.com/2015/10/hjc3a4rta2_big.jpg?w=301&h=283
+ ]
+# TextInput_Prompt_6QHcO8()
+[SigninCard
+    text = Först och främst ser du till att du är lugn och avslappnad för att kunna mäta blodtrycket korrekt. \n\nSlappna av, ta djupa andetag, se till att du inte får i dig något som kan öka hjärtslagen som till exempel kaffe eller tobak. Det bästa är om du har haft möjlighet att vila dig en stund innan.
+
+    buttons = Nästa steg
+]
+# TextInput_Prompt_7NIQcq()
+[HeroCard
+    text = Placera manschetten på överarmen i höjd med hjärtat. \n\nTänk på att hålla armen så att mätaren befinner sig i hjärthöjd.
+    buttons = Nästa steg
+    image = https://i.imgur.com/xfU9B3m.png
+ ]
+# TextInput_Prompt_WC3g0M()
+[HeroCard
+    text = Manschetten fylls nu med luft och klämmer åt. Detta gör den för att stoppa upp blodet i pulsådern några sekunder. Töm manschetten på luft och mät övertrycket.
+    image = https://i.ytimg.com/vi/gSK5curwV_o/maxresdefault.jpg
+    buttons = Nästa steg
+]
+# TextInput_Prompt_ke7IXh()
+[SigninCard
+    text = Vilket värde har du på det systoliska trycket (övertrycket)?
+    buttons = Fyll i värde
+]
+# TextInput_Prompt_tajAnX()
+[SigninCard
+    text = Vänta tills blodtryckmätaren inte kan höra pulsen längre och mät undertrycket.
+    buttons = Fyll i värde
+]
+# TextInput_Prompt_2la5gn()
+-
+
+# TextInput_Prompt_k4xYdL()
+-
+# TextInput_Prompt_qnot0w()
+[SigninCard
+    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
+    buttons = Ja värden stämmer | Nej värdena stämmer inte
+    ]
+# TextInput_Prompt_6qD0sT()
+[SigninCard
+    text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
+    buttons= Återgå till start
+    ]
+# TextInput_Prompt_E0E3Qv()
+[SigninCard
+    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDU är nu klar med mätningen, dina värden är sparade.
+    buttons= Avsluta mätning
+    ]
+
