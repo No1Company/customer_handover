@@ -1,0 +1,16 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/botframework-sdk/master/schemas/component/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "rostbot",
+  "type": "object",
+  "properties": {
+    "Registrera värden": {
+      "description": "Register",
+      "title": "Registrera Varden"
+    }
+  },
+  "$result": {
+    "type": "object",
+    "properties": {}
+  }
+}

@@ -1,1 +1,23 @@
 [import](common.lg)
+
+# SendActivity_vHxF89()
+- Start av blodtrycksmätning <Knapp?>
+# SendActivity_sqsPBs()
+- Först och främst ser du till att du är lugn och avslappnad för att kunna mäta blodtrycket korrekt. Slappna av, ta djupa andetag, se till att du inte får i dig något som kan öka hjärtslagen som till exempel kaffe eller tobak. Det bästa är om du har haft möjlighet att vila dig en stund innan <Knapp?>
+
+# SendActivity_fxwPJN()
+- <Bild?> Placera manschetten på överarmen i höjd med hjärtat. Tänk på att hålla armen så att mätaren befinner sig i hjärthöjd <Knapp?>
+# SendActivity_ii8Yn4()
+- <Bild?> Manschetten fylls nu med luft och klämmer åt. Detta gör den för att stoppa upp blodet i pulsådern några sekunder. Töm manschetten på luft och mät övertrycket.
+# TextInput_Prompt_gb8LYk()
+- Vilket värde har du på det systoliska trycket (övertrycket)? <Knapp?>
+# ConfirmInput_Prompt_I3d2H7()
+- Du skrev in ${user.sysvalue}, är detta korrekt?
+# SendActivity_VpMT1s()
+- Vänta tills blodtryckmätaren inte kan höra pulsen längre och mät undertrycket <Knapp?>
+# TextInput_Prompt_Qpcijg()
+- Vilket värde har du på det diastoliska trycket (undertrycket)?
+# ConfirmInput_Prompt_nkaFPW()
+- Du skrev in ${user.diavalue}, är detta korrekt?
+# SendActivity_zDeW1O()
+- Bra jobbat, du är klar med din mätning!

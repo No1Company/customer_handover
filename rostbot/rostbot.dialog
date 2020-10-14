@@ -60,10 +60,36 @@
           "activity": "${SendActivity_VvcgOJ()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "1dBcdz",
+        "name": "Register-measurements"
+      },
+      "intent": "Register-measurements",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "xfQ4tE"
+          },
+          "activityProcessed": true,
+          "dialog": "RegisterMeasurments"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
   "generator": "rostbot.lg",
   "id": "rostbot",
-  "recognizer": "rostbot.lu.qna"
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "Register-measurements",
+        "pattern": "Registrera värden"
+      }
+    ]
+  }
 }
