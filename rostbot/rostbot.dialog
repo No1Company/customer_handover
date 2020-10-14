@@ -85,7 +85,17 @@
         "id": "nW2GGt",
         "name": "Settings"
       },
-      "intent": "Settings"
+      "intent": "Settings",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "ZysQS2"
+          },
+          "activityProcessed": true,
+          "dialog": "SettingsDialog"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",

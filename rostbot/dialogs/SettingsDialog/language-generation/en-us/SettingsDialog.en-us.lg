@@ -1,0 +1,67 @@
+[import](common.lg)
+
+#AdaptiveCardSettings
+[Activity
+    Attachments = ${json(settingscardjson())}
+]
+
+# settingscardjson()
+-```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0",
+    "actions": 
+    [
+        {
+            "type": "Action.Submit",
+            "title": "Notiser",
+            "data": "Notiser"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Chattinställningar",
+            "data": "Chattinställningar"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Annat",
+            "data": "Annat"
+        }
+    ]
+}
+```
+# SendActivity_odusAY()
+-${AdaptiveCardSettings()}
+
+#AdaptiveCardSettingsTest
+[Activity 
+	Attachments = $(json{settingscardtestjson())}
+ ]
+
+#settingscardtestjson()
+-```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.0",
+    "actions": 
+    [
+        {
+            "type": "Action.Submit",
+            "title": "Notiser",
+            "data": "Notiser"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Chattinställningar",
+            "data": "Chattinställningar"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Annat",
+            "data": "Annat"
+        }
+    ]
+}
+```
