@@ -1,0 +1,65 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/botframework-sdk/master/schemas/component/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "rostbot",
+  "type": "object",
+  "properties": {
+    "Ändra inställningar": {
+      "description": "Settings",
+      "$ref": "#/definitions/stringExpression",
+      "title": "Andra Installningar"
+    },
+    "Boka konsultation": {
+      "description": "Consultation",
+      "$ref": "#/definitions/stringExpression",
+      "title": "Boka Konsultation"
+    },
+    "Övriga frågor": {
+      "description": "Questions",
+      "$ref": "#/definitions/stringExpression",
+      "title": "Ovriga Fragor"
+    },
+    "Registrera värden": {
+      "description": "Register",
+      "title": "Registrera Varden"
+    }
+  },
+  "$result": {
+    "type": "object",
+    "properties": {}
+  },
+  "definitions": {
+    "equalsExpression": {
+      "$role": "expression",
+      "type": "string",
+      "title": "Equals Expression",
+      "description": "Expression starting with =.",
+      "pattern": "^=.*\\S.*",
+      "examples": [
+        "=user.name"
+      ]
+    },
+    "stringExpression": {
+      "$role": "expression",
+      "title": "String or expression",
+      "description": "Interpolated string or expression to evaluate.",
+      "oneOf": [
+        {
+          "type": "string",
+          "title": "String",
+          "description": "Interpolated string",
+          "pattern": "^(?!(=)).*",
+          "examples": [
+            "Hello ${user.name}"
+          ]
+        },
+        {
+          "$ref": "#/definitions/equalsExpression",
+          "examples": [
+            "=concat('x','y','z')"
+          ]
+        }
+      ]
+    }
+  }
+}

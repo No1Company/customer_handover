@@ -17,13 +17,6 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "xI8SFQ"
-          },
-          "activity": "${SendActivity_xI8SFQ()}"
-        },
-        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "id": "518944",
@@ -42,10 +35,9 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "859266",
-                    "name": "Send a response"
+                    "id": "gzmItl"
                   },
-                  "activity": "${SendActivity_Welcome()}"
+                  "activity": "${SendActivity_gzmItl()}"
                 }
               ]
             }
@@ -68,10 +60,60 @@
           "activity": "${SendActivity_VvcgOJ()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "nW2GGt",
+        "name": "Settings"
+      },
+      "intent": "Settings"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "95zDOa",
+        "name": "Consultation"
+      },
+      "intent": "Consultation"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Uq3ZgS",
+        "name": "Questions"
+      },
+      "intent": "Questions"
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "pZWzTm",
+        "name": "Register-measurement"
+      },
+      "intent": "Register-measurement",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "NOVnk5"
+          },
+          "activityProcessed": true,
+          "dialog": "RegisterMeasurments"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
   "generator": "rostbot.lg",
   "id": "rostbot",
-  "recognizer": "rostbot.lu.qna"
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "Register-measurement",
+        "pattern": "Registrera värden"
+      }
+    ]
+  }
 }
