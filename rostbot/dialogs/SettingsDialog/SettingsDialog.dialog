@@ -15,18 +15,52 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "Izl4lH"
+            "id": "12D1pq"
           },
-          "activity": "${SendActivity_Izl4lH()}"
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_12D1pq()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.choice "
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "Sc7mGJ"
+            "id": "OjOO4K"
           },
-          "activity": "${SendActivity_Sc7mGJ()}"
+          "condition": "user.choice",
+          "cases": [
+            {
+              "value": "Notiser",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "MrvVGG"
+                  },
+                  "activity": "${SendActivity_MrvVGG()}"
+                }
+              ]
+            },
+            {
+              "value": "Chatt"
+            },
+            {
+              "value": "Annat"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "s1Ofv5"
+          }
         }
       ]
     }

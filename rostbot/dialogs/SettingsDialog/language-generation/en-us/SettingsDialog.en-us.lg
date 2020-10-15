@@ -15,19 +15,21 @@
         {
             "type": "Action.Submit",
             "title": "Notiser",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg"
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg",
+            "data": "Notiser"
             
         },
         {
             "type": "Action.Submit",
             "title": "Chatt",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/61/61559.svg",
-            "data": {}
+            "data": "Chatt"
         },
         {
             "type": "Action.Submit",
             "title": "Annat",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/0/859.svg"
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/0/859.svg",
+            "data": "Annat"
         }
     ],
     "body": [
@@ -50,8 +52,6 @@
     ]
 }
 ```
-# SendActivity_Izl4lH()
- -${AdaptiveCardSettings()}
 
  #AdaptiveCardNotificationSettings
 [Activity
@@ -69,7 +69,8 @@
             "type": "Action.Submit",
             "title": "Skapa ny notis",
             "style": "positive",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg"
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
+            "data": "Skapa ny notis"
         }
     ],
     "body": [
@@ -93,5 +94,7 @@
     ]
 }
 ```
-# SendActivity_Sc7mGJ()
--${settingnotifications()}
+# TextInput_Prompt_12D1pq()
+ -${AdaptiveCardSettings()}
+# SendActivity_MrvVGG()
+-${AdaptiveCardNotificationSettings()}
