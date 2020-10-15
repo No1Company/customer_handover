@@ -31,7 +31,7 @@
     title = Blodtrycksmätning
     text = Ett för högt blodtryck märks oftast inte men kan leda till dödliga sjukdomar.
     buttons = Start av mätning | Avbryt
-    image = https://skapandeavmening.files.wordpress.com/2015/10/hjc3a4rta2_big.jpg?w=301&h=283
+    image = http://www.todayifoundout.com/wp-content/uploads/2013/03/blood-pressure.jpg
  ]
 # TextInput_Prompt_6QHcO8()
 [SigninCard
@@ -43,12 +43,12 @@
 [HeroCard
     text = Placera manschetten på överarmen i höjd med hjärtat. \n\nTänk på att hålla armen så att mätaren befinner sig i hjärthöjd.
     buttons = Nästa steg
-    image = https://i.imgur.com/xfU9B3m.png
+    image = https://m.media-amazon.com/images/S/aplus-seller-content-images-us-east-1/ATVPDKIKX0DER/A1XLIDN9XQ0PZA/ccd53d24-3514-427a-b46c-0f0f067c4962._CR0,0,300,300_PT0_SX300__.jpg
  ]
 # TextInput_Prompt_WC3g0M()
 [HeroCard
     text = Manschetten fylls nu med luft och klämmer åt. Detta gör den för att stoppa upp blodet i pulsådern några sekunder. Töm manschetten på luft och mät övertrycket.
-    image = https://i.ytimg.com/vi/gSK5curwV_o/maxresdefault.jpg
+    image = http://www.salterhousewares.co.uk/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/b/p/bpa9200_3.jpg
     buttons = Nästa steg
 ]
 # TextInput_Prompt_ke7IXh()
