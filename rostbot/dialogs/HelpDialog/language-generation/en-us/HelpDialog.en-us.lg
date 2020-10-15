@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_ybBsNE()
+- Jag är Region Östergötlands Chattbot! Av mig kan du få hjälp att registrera mätvärden, sätta notifikationer för mätningar och boka tid för konsultation. 
+# SendActivity_PKPwQ6()
+- Du kan antingen använda knapparna i början av konversationen, eller så kan du skriva det du vill göra, t.ex. "Registrera värden" eller "Ändra inställningar".  
+# SendActivity_NJeL8b()
+- Du kan även skriva "avbryt" för att avsluta konversationen. 

@@ -112,6 +112,24 @@
           "dialog": "RegisterMeasurments"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "kgPRAT",
+        "name": "HelpTriggerMenuDialog"
+      },
+      "intent": "HelpTriggerMenuDialog",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "HLT8qq"
+          },
+          "activityProcessed": true,
+          "dialog": "HelpDialog"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -127,6 +145,10 @@
       {
         "intent": "Settings",
         "pattern": "Ändra inställningar"
+      },
+      {
+        "intent": "HelpTriggerMenuDialog",
+        "pattern": "hjälp"
       }
     ]
   }
