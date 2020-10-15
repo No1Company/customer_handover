@@ -1,0 +1,100 @@
+[import](common.lg)
+
+#AdaptiveCardSettings
+[Activity
+    Attachments = ${json(settingscardjson())}
+]
+
+# settingscardjson()
+-```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Notiser",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg",
+            "data": "Notiser"
+            
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Chatt",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/61/61559.svg",
+            "data": "Chatt"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Annat",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/0/859.svg",
+            "data": "Annat"
+        }
+    ],
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Inställningar",
+            "wrap": true,
+            "size": "Medium",
+            "weight": "Bolder",
+            "fontType": "Default",
+            "color": "Accent",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Här kan du se över dina inställningar i applikationen",
+            "wrap": true,
+            "horizontalAlignment": "Center"
+        }
+    ]
+}
+```
+
+ #AdaptiveCardNotificationSettings
+[Activity
+    Attachments = ${json(settingnotifications())}
+]
+
+# settingnotifications()
+-```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Skapa ny notis",
+            "style": "positive",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
+            "data": "Skapa ny notis"
+        }
+    ],
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Notiser",
+            "wrap": true,
+            "horizontalAlignment": "Center",
+            "size": "Medium",
+            "weight": "Bolder",
+            "color": "Accent",
+            "isSubtle": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Här kan du skapa nya notiser och styra vilka av dina notiser du vill ta emot för tillfället.",
+            "wrap": true,
+            "fontType": "Default",
+            "isSubtle": true
+        }
+    ]
+}
+```
+# TextInput_Prompt_12D1pq()
+ -${AdaptiveCardSettings()}
+# SendActivity_MrvVGG()
+-${AdaptiveCardNotificationSettings()}
