@@ -123,6 +123,10 @@
       {
         "intent": "Register-measurement",
         "pattern": "Registrera värden"
+      },
+      {
+        "intent": "Settings",
+        "pattern": "Ändra inställningar"
       }
     ]
   }
