@@ -1,0 +1,24 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "qpy6QW",
+    "name": "MeasureWithoutGuide",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "7n8kmE"
+      },
+      "actions": []
+    }
+  ],
+  "generator": "MeasureWithoutGuide.lg",
+  "recognizer": "MeasureWithoutGuide.lu.qna",
+  "id": "MeasureWithoutGuide"
+}

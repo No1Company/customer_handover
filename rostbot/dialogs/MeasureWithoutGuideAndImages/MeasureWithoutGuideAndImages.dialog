@@ -1,0 +1,24 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "nxV2Nn",
+    "name": "MeasureWithoutGuideAndImages",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "EG2HDV"
+      },
+      "actions": []
+    }
+  ],
+  "generator": "MeasureWithoutGuideAndImages.lg",
+  "recognizer": "MeasureWithoutGuideAndImages.lu.qna",
+  "id": "MeasureWithoutGuideAndImages"
+}
