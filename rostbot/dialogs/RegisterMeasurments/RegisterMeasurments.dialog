@@ -17,6 +17,21 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "yKOMgf"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_yKOMgf()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.guideType"
+        },
+        {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
             "id": "ScO3s3"
@@ -24,7 +39,7 @@
           "condition": "user.guideType",
           "cases": [
             {
-              "value": "MeasureWithGuide",
+              "value": "Med guide",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -37,7 +52,7 @@
               ]
             },
             {
-              "value": "MeasureWithoutGuide",
+              "value": "Utan guide",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -50,7 +65,7 @@
               ]
             },
             {
-              "value": "MeasureWithoutGuideAndImages",
+              "value": "Utan guide och bilder",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",

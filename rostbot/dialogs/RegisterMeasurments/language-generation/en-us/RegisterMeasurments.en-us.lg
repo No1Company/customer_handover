@@ -82,3 +82,11 @@
     buttons= Avsluta mätning
     ]
 
+
+# TextInput_Prompt_yKOMgf()
+> Move this to settings maybe? Maybe make it a global variable that is saved and re-used.
+
+[SigninCard
+    text = Hur vill du bli instruerad vid mätning?
+    buttons = Med guide | Utan guide | Utan guide och bilder
+    ]

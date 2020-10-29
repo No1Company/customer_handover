@@ -57,7 +57,7 @@
     ]
 # TextInput_Prompt_EiyBbs()
 [SigninCard
-    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDU är nu klar med mätningen, dina värden är sparade.
+    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
     buttons= Avsluta mätning
     ]
 

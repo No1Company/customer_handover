@@ -1,1 +1,39 @@
 [import](common.lg)
+
+# TextInput_Prompt_7EGcQt()
+[SigninCard
+    text = Vilket värde har du på det systoliska trycket (övertrycket)?
+    buttons = Fyll i värde
+]
+# TextInput_Prompt_XB2ax9()
+-
+
+# ConfirmInput_Prompt_1vsir6()
+- Du skrev in ${user.sysvalue}, är detta korrekt?
+
+
+
+# ConfirmInput_Prompt_IAACY1()
+- Du skrev in ${user.diavalue}, är detta korrekt?
+
+# TextInput_Prompt_PQy3DT()
+[SigninCard
+    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
+    buttons = Ja värden stämmer | Nej värdena stämmer inte
+    ]
+# TextInput_Prompt_EaMzxv()
+[SigninCard
+    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
+    buttons= Avsluta mätning
+    ]
+
+
+# TextInput_Prompt_8junFl()
+[SigninCard
+    text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
+    buttons= Återgå till start
+    ]
+# SendActivity_gBSwxl()
+- Du har i inställningarna valt att inte ha en guide för din mätning av blodtryck, stämmer inte detta så kan du ändra detta i inställningar. \n\n Okej då kör vi igång!
+# TextInput_Prompt_nUrdou()
+- Vad har du för värde på det diastoliska trycket (undertrycket)?
