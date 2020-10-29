@@ -53,11 +53,10 @@
 }
 ```
 
- #AdaptiveCardNotificationSettings
+# AdaptiveCardNotificationSettings()
 [Activity
     Attachments = ${json(settingnotifications())}
 ]
-
 # settingnotifications()
 -```
 {
