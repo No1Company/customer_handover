@@ -26,94 +26,94 @@
                 "type": "AdaptiveCard",
                 "body": [
                 {
-            "type": "TextBlock",
-            "size": "default",
-            "weight": "Bolder",
-            "text": " Detaljer",
-            "horizontalAlignment": "Center",
-            "wrap": true,
-            "separator": true
-        },
-        {
-            "type": "TextBlock",
-            "text": "Välj mätningar",
-            "size": "Medium",
-            "wrap": true,
-            "weight": "Bolder"
-        },
-        {
-            "type": "Input.ChoiceSet",
-            "choices": [
-                {
-                    "title": "Blodtryck",
-                    "value": "notblod"
+                    "type": "TextBlock",
+                    "size": "default",
+                    "weight": "Bolder",
+                    "text": " Detaljer",
+                    "horizontalAlignment": "Center",
+                    "wrap": true,
+                    "separator": true
                 },
                 {
-                    "title": "Vikt",
-                    "value": "notvikt"
+                    "type": "TextBlock",
+                    "text": "Välj mätningar",
+                    "size": "Medium",
+                    "wrap": true,
+                    "weight": "Bolder"
                 },
                 {
-                    "title": "Kroppstemperatur",
-                    "value": "nottemp"
+                    "type": "Input.ChoiceSet",
+                    "choices": [
+                        {
+                            "title": "Blodtryck",
+                            "value": "notblod"
+                        },
+                        {
+                            "title": "Vikt",
+                            "value": "notvikt"
+                        },
+                        {
+                            "title": "Kroppstemperatur",
+                            "value": "nottemp"
+                        }
+                    ],
+                    "placeholder": "Placeholder text",
+                    "style": "expanded",
+                    "id": "notisMeasurments",
+                    "isVisible": true,
+                    "isMultiSelect": true,
+                    "value": ""
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Påminnelse före mätning",
+                    "wrap": true,
+                    "weight": "Bolder",
+                    "size": "Medium"
+                },
+                {
+                    "type": "Input.Time",
+                    "id": "p1"
+                },
+                {
+                    "type": "TextBlock",
+                    "text": "Påminnelse vid utebliven mätning",
+                    "wrap": true,
+                    "size": "Medium",
+                    "weight": "Bolder"
+                },
+                {
+                    "type": "Input.Time",
+                    "id": "p2"
+                },
+                {
+                    "type": "TextBlock",
+                    "size": "Medium",
+                    "weight": "Bolder",
+                    "text": "Notis via",
+                    "wrap": true
+                },
+                {
+                    "type": "Input.ChoiceSet",
+                    "choices": [
+                        {
+                            "title": "Meddelande",
+                            "value": "meddelande"
+                        },
+                        {
+                            "title": "Chat",
+                            "value": "chat"
+                        },
+                        {
+                            "title": "E-mail",
+                            "value": "mail"
+                        }
+                    ],
+                    "placeholder": "Placeholder text",
+                    "style": "expanded",
+                    "id": "notisVia"
                 }
-            ],
-            "placeholder": "Placeholder text",
-            "style": "expanded",
-            "id": "notisMeasurments",
-            "isVisible": true,
-            "isMultiSelect": true,
-            "value": ""
-        },
-        {
-            "type": "TextBlock",
-            "text": "Påminnelse före mätning",
-            "wrap": true,
-            "weight": "Bolder",
-            "size": "Medium"
-        },
-        {
-            "type": "Input.Time",
-            "id": "p1"
-        },
-        {
-            "type": "TextBlock",
-            "text": "Påminnelse vid utebliven mätning",
-            "wrap": true,
-            "size": "Medium",
-            "weight": "Bolder"
-        },
-        {
-            "type": "Input.Time",
-            "id": "p2"
-        },
-        {
-            "type": "TextBlock",
-            "size": "Medium",
-            "weight": "Bolder",
-            "text": "Notis via",
-            "wrap": true
-        },
-        {
-            "type": "Input.ChoiceSet",
-            "choices": [
-                {
-                    "title": "Meddelande",
-                    "value": "meddelande"
-                },
-                {
-                    "title": "Chat",
-                    "value": "chat"
-                },
-                {
-                    "title": "E-mail",
-                    "value": "mail"
-                }
-            ],
-            "placeholder": "Placeholder text",
-            "style": "expanded",
-            "id": "notisVia2"
-        }
-    ],
+        ],
     "actions": [
         {
             "type": "Action.Submit",
@@ -173,7 +173,7 @@
                     ],
             "placeholder": "Placeholder text",
             "style": "expanded",
-            "id": "notisVia"
+            "id": "notisVia2"
         }
                 ],
                 "actions": [
