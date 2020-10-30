@@ -30,6 +30,46 @@
             "data": "Chatt"
         },
         {
+            "type": "Action.ShowCard",
+            "title": "Guide-inställningar",
+            "data": {
+                "id": "1234567890"
+            },
+            "style": "positive",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+            "type": "Input.ChoiceSet",
+            "choices": [
+                {
+                    "title": "Meddelande",
+                    "value": "meddelande"
+                },
+                {
+                    "title": "Chat",
+                    "value": "chat"
+                },
+                {
+                    "title": "E-mail",
+                    "value": "mail"
+                }
+            ],
+            "placeholder": "Placeholder text",
+            "style": "expanded",
+            "id": "notisVia"
+        }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "OK"
+                    }
+                ]
+            }
+        },
+        {
             "type": "Action.Submit",
             "title": "Annat",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/0/859.svg",
@@ -56,11 +96,6 @@
     ]
 }
 ```
-
-# AdaptiveCardNotificationSettings()
-[Activity
-    Attachments = ${json(settingnotifications())}
-]
 # settingnotifications()
 -```
 {
@@ -219,6 +254,7 @@
         }
     ]
 }
+
     
 
 ```

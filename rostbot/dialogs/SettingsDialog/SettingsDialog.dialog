@@ -97,6 +97,9 @@
     }
   ],
   "generator": "SettingsDialog.lg",
-  "recognizer": "SettingsDialog.lu.qna",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
   "id": "SettingsDialog"
 }
