@@ -130,6 +130,30 @@
           "dialog": "HelpDialog"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "wQlnrc",
+        "name": "Cancel"
+      },
+      "intent": "Cancel",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rYwnTV"
+          },
+          "activity": "${SendActivity_rYwnTV()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "L5kFuL"
+          },
+          "activityProcessed": true
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -149,6 +173,10 @@
       {
         "intent": "HelpTriggerMenuDialog",
         "pattern": "Hjälp"
+      },
+      {
+        "intent": "Cancel",
+        "pattern": "Avbryt"
       }
     ]
   }

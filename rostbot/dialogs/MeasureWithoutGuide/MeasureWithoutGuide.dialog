@@ -156,41 +156,12 @@
           }
         }
       ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "IigM8Q",
-        "name": "Cancel"
-      },
-      "intent": "Cancel",
-      "actions": [
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "yYucZ6"
-          },
-          "activity": "${SendActivity_yYucZ6()}"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "Oa8ACW"
-          },
-          "activityProcessed": true
-        }
-      ]
     }
   ],
   "generator": "MeasureWithoutGuide.lg",
   "recognizer": {
     "$kind": "Microsoft.RegexRecognizer",
-    "intents": [
-      {
-        "intent": "Cancel",
-        "pattern": "Avbryt"
-      }
-    ]
+    "intents": []
   },
   "id": "MeasureWithoutGuide"
 }

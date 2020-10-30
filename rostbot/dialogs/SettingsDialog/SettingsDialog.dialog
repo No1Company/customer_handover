@@ -87,30 +87,6 @@
           }
         }
       ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "EhhgZi",
-        "name": "Cancel"
-      },
-      "intent": "Cancel",
-      "actions": [
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "faPzGe"
-          },
-          "activity": "${SendActivity_faPzGe()}"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "rGK5Q3"
-          },
-          "activityProcessed": true
-        }
-      ]
     }
   ],
   "generator": "SettingsDialog.lg",
