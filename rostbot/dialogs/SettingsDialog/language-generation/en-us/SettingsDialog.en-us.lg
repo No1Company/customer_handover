@@ -17,124 +17,11 @@
     "version": "1.2",
     "actions": [
         {
-            "type": "Action.ShowCard",
+            "type": "Action.Submit",
             "title": "Notiser",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg",
             "data": "Notiser",
-            "version": "1.2",
-            "card":{
-                "type": "AdaptiveCard",
-                "body": [
-                {
-                    "type": "TextBlock",
-                    "size": "default",
-                    "weight": "Bolder",
-                    "text": " Detaljer",
-                    "horizontalAlignment": "Center",
-                    "wrap": true,
-                    "separator": true
-                },
-                {
-                    "type": "TextBlock",
-                    "text": "Välj mätningar",
-                    "size": "Medium",
-                    "wrap": true,
-                    "weight": "Bolder"
-                },
-                {
-                    "type": "Input.ChoiceSet",
-                    "choices": [
-                        {
-                            "title": "Blodtryck",
-                            "value": "notblod"
-                        },
-                        {
-                            "title": "Vikt",
-                            "value": "notvikt"
-                        },
-                        {
-                            "title": "Kroppstemperatur",
-                            "value": "nottemp"
-                        }
-                    ],
-                    "placeholder": "Placeholder text",
-                    "style": "expanded",
-                    "id": "notisMeasurments",
-                    "isVisible": true,
-                    "isMultiSelect": true,
-                    "value": ""
-                },
-                {
-                    "type": "TextBlock",
-                    "text": "Påminnelse före mätning",
-                    "wrap": true,
-                    "weight": "Bolder",
-                    "size": "Medium"
-                },
-                {
-                    "type": "Input.Time",
-                    "id": "p1"
-                },
-                {
-                    "type": "TextBlock",
-                    "text": "Påminnelse vid utebliven mätning",
-                    "wrap": true,
-                    "size": "Medium",
-                    "weight": "Bolder"
-                },
-                {
-                    "type": "Input.Time",
-                    "id": "p2"
-                },
-                {
-                    "type": "TextBlock",
-                    "size": "Medium",
-                    "weight": "Bolder",
-                    "text": "Notis via",
-                    "wrap": true
-                },
-                {
-                    "type": "Input.ChoiceSet",
-                    "choices": [
-                        {
-                            "title": "Meddelande",
-                            "value": "meddelande"
-                        },
-                        {
-                            "title": "Chat",
-                            "value": "chat"
-                        },
-                        {
-                            "title": "E-mail",
-                            "value": "mail"
-                        }
-                    ],
-                    "placeholder": "Placeholder text",
-                    "style": "expanded",
-                    "id": "notisVia"
-                }
-        ],
-    "actions": [
-        {
-            "type": "Action.Submit",
-            "title": "Lägg till notis",
-            "data": {
-                "id": "1234567890"
-            },
-            "style": "positive",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg"
-        },
-        {
-            "type": "Action.Submit",
-            "title": "Radera notis",
-            "data": {
-                "id": "1234567890"
-            },
-            "style": "destructive",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828843.svg"
-        }
-    ]
-            }
+            "version": "1.2"
             
         },
         {
@@ -152,29 +39,27 @@
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg",
             "card": {
                 "type": "AdaptiveCard",
-                "body": 
-                [
+                "body": [
                     {
-                    "type": "Input.ChoiceSet",
-                    "choices": 
-                    [
-                        {
-                            "title": "Med guide",
-                            "value": "Med guide"
-                        },
-                        {
-                            "title": "Utan guide",
-                            "value": "Utan guide"
-                        },
-                        {
-                            "title": "Utan guide och bilder",
-                            "value": "Utan guide och bilder"
-                        }
-                    ],
-            "placeholder": "Placeholder text",
-            "style": "expanded",
-            "id": "notisVia2"
-        }
+                        "type": "Input.ChoiceSet",
+                        "choices": [
+                            {
+                                "title": "Med guide",
+                                "value": "Med guide"
+                            },
+                            {
+                                "title": "Utan guide",
+                                "value": "Utan guide"
+                            },
+                            {
+                                "title": "Utan guide och bilder",
+                                "value": "Utan guide och bilder"
+                            }
+                        ],
+                        "placeholder": "Placeholder text",
+                        "style": "expanded",
+                        "id": "notisVia"
+                    }
                 ],
                 "actions": [
                     {
@@ -219,11 +104,124 @@
     "version": "1.2",
     "actions": [
         {
-            "type": "Action.Submit",
+            "type": "Action.ShowCard",
             "title": "Skapa ny notis",
             "style": "positive",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
-            "data": "Skapa ny notis"
+            "data": "Skapa ny notis",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "size": "default",
+                        "weight": "Bolder",
+                        "text": " Detaljer",
+                        "horizontalAlignment": "Center",
+                        "wrap": true,
+                        "separator": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Välj mätningar",
+                        "size": "Medium",
+                        "wrap": true,
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "Input.ChoiceSet",
+                        "choices": [
+                            {
+                                "title": "Blodtryck",
+                                "value": "notblod"
+                            },
+                            {
+                                "title": "Vikt",
+                                "value": "notvikt"
+                            },
+                            {
+                                "title": "Kroppstemperatur",
+                                "value": "nottemp"
+                            }
+                        ],
+                        "placeholder": "Placeholder text",
+                        "style": "expanded",
+                        "id": "notisMeasurments",
+                        "isVisible": true,
+                        "isMultiSelect": true,
+                        "value": ""
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Påminnelse före mätning",
+                        "wrap": true,
+                        "weight": "Bolder",
+                        "size": "Medium"
+                    },
+                    {
+                        "type": "Input.Time",
+                        "id": "p1"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Påminnelse vid utebliven mätning",
+                        "wrap": true,
+                        "size": "Medium",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "Input.Time",
+                        "id": "p2"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "size": "Medium",
+                        "weight": "Bolder",
+                        "text": "Notis via",
+                        "wrap": true
+                    },
+                    {
+                        "type": "Input.ChoiceSet",
+                        "choices": [
+                            {
+                                "title": "Meddelande",
+                                "value": "meddelande"
+                            },
+                            {
+                                "title": "Chat",
+                                "value": "chat"
+                            },
+                            {
+                                "title": "E-mail",
+                                "value": "mail"
+                            }
+                        ],
+                        "placeholder": "Placeholder text",
+                        "style": "expanded",
+                        "id": "notisVia"
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "Lägg till notis",
+                        "data": {
+                            "id": "1234567890"
+                        },
+                        "style": "positive",
+                        "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Radera notis",
+                        "data": {
+                            "id": "1234567890"
+                        },
+                        "style": "destructive",
+                        "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828843.svg"
+                    }
+                ]
+            }
         }
     ],
     "body": [
@@ -379,5 +377,5 @@
  -${AdaptiveCardNotificationSettings()}
 # SendActivity_ldgwps()
  -${AdaptiveCardNewNotification()}
-# SendActivity_faPzGe()
-- Avbryter!
+# SendActivity_amqybH()
+- §{notisMeasurments}
