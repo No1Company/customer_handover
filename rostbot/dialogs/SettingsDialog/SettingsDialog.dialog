@@ -116,12 +116,7 @@
   "generator": "SettingsDialog.lg",
   "recognizer": {
     "$kind": "Microsoft.RegexRecognizer",
-    "intents": [
-      {
-        "intent": "Cancel",
-        "pattern": "Avbryt"
-      }
-    ]
+    "intents": []
   },
   "id": "SettingsDialog"
 }
