@@ -22,7 +22,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${TextInput_Prompt_12D1pq()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
@@ -47,7 +47,7 @@
                   "disabled": false,
                   "maxTurnCount": 3,
                   "alwaysPrompt": false,
-                  "allowInterruptions": false,
+                  "allowInterruptions": true,
                   "prompt": "${TextInput_Prompt_Y1mgRM()}",
                   "unrecognizedPrompt": "",
                   "invalidPrompt": "",
@@ -66,13 +66,6 @@
                         "id": "ldgwps"
                       },
                       "activity": "${SendActivity_ldgwps()}"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "amqybH"
-                      },
-                      "activity": "${SendActivity_amqybH()}"
                     }
                   ],
                   "condition": "user.input == \"Skapa ny notis\""
@@ -94,9 +87,41 @@
           }
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "EhhgZi",
+        "name": "Cancel"
+      },
+      "intent": "Cancel",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "faPzGe"
+          },
+          "activity": "${SendActivity_faPzGe()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "rGK5Q3"
+          },
+          "activityProcessed": true
+        }
+      ]
     }
   ],
   "generator": "SettingsDialog.lg",
-  "recognizer": "SettingsDialog.lu.qna",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "Cancel",
+        "pattern": "Avbryt"
+      }
+    ]
+  },
   "id": "SettingsDialog"
 }

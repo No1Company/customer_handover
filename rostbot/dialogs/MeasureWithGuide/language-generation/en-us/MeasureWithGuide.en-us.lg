@@ -1,12 +1,5 @@
 [import](common.lg)
 
-# TextInput_Prompt_iGkzla()
-[HeroCard
-    title = Blodtrycksmätning
-    text = Ett för högt blodtryck märks oftast inte men kan leda till dödliga sjukdomar.
-    buttons = Start av mätning | Avbryt
-    image = http://www.todayifoundout.com/wp-content/uploads/2013/03/blood-pressure.jpg
- ]
 # TextInput_Prompt_UzXSq4()
 [SigninCard
     text = Först och främst ser du till att du är lugn och avslappnad för att kunna mäta blodtrycket korrekt. \n\nSlappna av, ta djupa andetag, se till att du inte får i dig något som kan öka hjärtslagen som till exempel kaffe eller tobak. Det bästa är om du har haft möjlighet att vila dig en stund innan.
@@ -67,3 +60,5 @@
     text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
     buttons= Återgå till start
     ]
+# SendActivity_SIjf3g()
+- Avbryter!

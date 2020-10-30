@@ -57,10 +57,6 @@
 }
 ```
 
-# AdaptiveCardNotificationSettings()
-[Activity
-    Attachments = ${json(settingnotifications())}
-]
 # settingnotifications()
 -```
 {
@@ -228,5 +224,5 @@
  -${AdaptiveCardNotificationSettings()}
 # SendActivity_ldgwps()
  -${AdaptiveCardNewNotification()}
-# SendActivity_amqybH()
-- §{notisMeasurments}
+# SendActivity_faPzGe()
+- Avbryter!

@@ -148,7 +148,7 @@
       },
       {
         "intent": "HelpTriggerMenuDialog",
-        "pattern": "hjälp"
+        "pattern": "Hjälp"
       }
     ]
   }

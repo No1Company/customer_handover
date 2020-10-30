@@ -19,42 +19,12 @@
         {
           "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "iGkzla"
-          },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_iGkzla()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "property": "user.answer"
-        },
-        {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "qykeWb"
-          },
-          "condition": "user.answer == \"Avbryt\"",
-          "actions": [
-            {
-              "$kind": "Microsoft.EndDialog",
-              "$designer": {
-                "id": "kpsMyS"
-              }
-            }
-          ]
-        },
-        {
-          "$kind": "Microsoft.TextInput",
-          "$designer": {
             "id": "UzXSq4"
           },
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${TextInput_Prompt_UzXSq4()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
@@ -68,7 +38,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${TextInput_Prompt_5y9Cuz()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
@@ -82,7 +52,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${TextInput_Prompt_iAb6Wf()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
@@ -248,10 +218,44 @@
             "id": "CStTIF"
           }
         }
-      ]
+      ],
+      "priority": 0
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "ezE7iV",
+        "name": "Cancel"
+      },
+      "intent": "Cancel",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SIjf3g"
+          },
+          "activity": "${SendActivity_SIjf3g()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "4qQXtE"
+          },
+          "activityProcessed": true
+        }
+      ],
+      "priority": 0
     }
   ],
   "generator": "MeasureWithGuide.lg",
-  "recognizer": "MeasureWithGuide.lu.qna",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "Cancel",
+        "pattern": "Avbryt"
+      }
+    ]
+  },
   "id": "MeasureWithGuide"
 }

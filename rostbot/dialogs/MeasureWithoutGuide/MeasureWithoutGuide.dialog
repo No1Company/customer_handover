@@ -31,7 +31,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${TextInput_Prompt_7EGcQt()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
@@ -45,7 +45,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
@@ -102,7 +102,8 @@
           "defaultValueResponse": "",
           "choiceOptions": {
             "includeNumbers": true,
-            "inlineOrMore": ", or "
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
           },
           "confirmChoices": "[\"Ja\", \"Nej\"]"
         },
@@ -155,9 +156,41 @@
           }
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "IigM8Q",
+        "name": "Cancel"
+      },
+      "intent": "Cancel",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "yYucZ6"
+          },
+          "activity": "${SendActivity_yYucZ6()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "Oa8ACW"
+          },
+          "activityProcessed": true
+        }
+      ]
     }
   ],
   "generator": "MeasureWithoutGuide.lg",
-  "recognizer": "MeasureWithoutGuide.lu.qna",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "Cancel",
+        "pattern": "Avbryt"
+      }
+    ]
+  },
   "id": "MeasureWithoutGuide"
 }
