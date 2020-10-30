@@ -376,9 +376,6 @@
 # TextInput_Prompt_Y1mgRM()
  -${AdaptiveCardNotificationSettings()}
 # SendActivity_ldgwps()
-<<<<<<< HEAD
- -${AdaptiveCardNewNotification()}
-=======
  -${AdaptiveCardNewNotification()}
 # SendActivity_amqybH()
 - §{notisMeasurments}

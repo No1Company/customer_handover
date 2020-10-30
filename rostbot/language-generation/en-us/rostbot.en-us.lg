@@ -102,7 +102,56 @@
 }
 ```
 
+#UpdateCard
+[Activity
+    Attachments = ${json(updatecardjson())}
+]
+
+# updatecardjson()
+-```
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+         {
+      "type": "TextBlock",
+      "size": "default",
+      "isSubtle": true,
+      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
+      "wrap": true,
+      "maxLines": 0
+      
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Registrera värden",
+      "data": "Registrera värden"
+      
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Ändra inställningar",
+      "data": "Ändra inställningar"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Boka konsultation",
+      "data": "Boka konsultation"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Övriga frågor",
+      "data": "Övriga frågor"
+    }
+  ]
+}
+```
 # SendActivity_gzmItl()
  -${AdaptiveCard()}
 # SendActivity_rYwnTV()
-- Avbryter
+- Avbryter!
+# SendActivity_3RIa5x()
+-${UpdateCard()}
