@@ -40,35 +40,11 @@
               "value": "Notiser",
               "actions": [
                 {
-                  "$kind": "Microsoft.TextInput",
+                  "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "Y1mgRM"
+                    "id": "oZyyuy"
                   },
-                  "disabled": false,
-                  "maxTurnCount": 3,
-                  "alwaysPrompt": false,
-                  "allowInterruptions": true,
-                  "prompt": "${TextInput_Prompt_Y1mgRM()}",
-                  "unrecognizedPrompt": "",
-                  "invalidPrompt": "",
-                  "defaultValueResponse": "",
-                  "property": "user.input"
-                },
-                {
-                  "$kind": "Microsoft.IfCondition",
-                  "$designer": {
-                    "id": "8Clggz"
-                  },
-                  "actions": [
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "ldgwps"
-                      },
-                      "activity": "${SendActivity_ldgwps()}"
-                    }
-                  ],
-                  "condition": "user.input == \"Skapa ny notis\""
+                  "activity": "${SendActivity_oZyyuy()}"
                 }
               ]
             },

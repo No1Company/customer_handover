@@ -22,7 +22,6 @@
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg",
             "data": "Notiser",
             "version": "1.2"
-            
         },
         {
             "type": "Action.Submit",
@@ -74,6 +73,11 @@
             "title": "Annat",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/0/859.svg",
             "data": "Annat"
+        },
+        {
+            "type": "Action.Submit",
+            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
+            "data": "Avbryt"
         }
     ],
     "body": [
@@ -133,15 +137,15 @@
                         "choices": [
                             {
                                 "title": "Blodtryck",
-                                "value": "notblod"
+                                "value": "Blodtryck"
                             },
                             {
                                 "title": "Vikt",
-                                "value": "notvikt"
+                                "value": "Vikt"
                             },
                             {
                                 "title": "Kroppstemperatur",
-                                "value": "nottemp"
+                                "value": "Kroppstemperatur"
                             }
                         ],
                         "placeholder": "Placeholder text",
@@ -185,20 +189,21 @@
                         "choices": [
                             {
                                 "title": "Meddelande",
-                                "value": "meddelande"
+                                "value": "Meddelande"
                             },
                             {
                                 "title": "Chat",
-                                "value": "chat"
+                                "value": "Chat"
                             },
                             {
                                 "title": "E-mail",
-                                "value": "mail"
+                                "value": "E-mail"
                             }
                         ],
                         "placeholder": "Placeholder text",
                         "style": "expanded",
-                        "id": "notisVia"
+                        "id": "notisVia",
+                        "isMultiSelect": true
                     }
                 ],
                 "actions": [
@@ -222,6 +227,11 @@
                     }
                 ]
             }
+        },
+        {
+            "type": "Action.Submit",
+            "data": "Avbryt",
+            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg"
         }
     ],
     "body": [
@@ -237,10 +247,28 @@
         },
         {
             "type": "TextBlock",
-            "text": "Här kan du skapa nya notiser och styra vilka av dina notiser du vill ta emot för tillfället.",
+            "text": "Blodtryck",
             "wrap": true,
-            "fontType": "Default",
-            "isSubtle": true
+            "size": "Medium",
+            "weight": "Bolder"
+        },
+        {
+            "type": "TextBlock",
+            "text": "New TextBlock",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Vikt",
+            "wrap": true,
+            "size": "Medium",
+            "weight": "Bolder",
+            "spacing": "ExtraLarge"
+        },
+        {
+            "type": "TextBlock",
+            "text": "New TextBlock",
+            "wrap": true
         }
     ]
 }
@@ -373,10 +401,6 @@
 ```
 # TextInput_Prompt_12D1pq()
  -${AdaptiveCardSettings()}
-# TextInput_Prompt_Y1mgRM()
- -${AdaptiveCardNotificationSettings()}
-# SendActivity_ldgwps()
- -${AdaptiveCardNewNotification()}
-# SendActivity_amqybH()
-- §{notisMeasurments}
->>>>>>> 0c13f20a2d8fc8787b156f91b6cdf458348e4470
+
+# SendActivity_oZyyuy()
+- ${AdaptiveCardNotificationSettings()}
