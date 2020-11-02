@@ -9,6 +9,10 @@ metadata:
   labels:
     app: rostbot
 spec:
+  tls:
+    - hosts:
+        - tddc88-company-1-2020.kubernetes-public.it.liu.se
+      secretName: ssl-cert
   rules:
     - host: tddc88-company-1-2020.kubernetes-public.it.liu.se
       http:
