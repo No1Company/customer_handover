@@ -22,7 +22,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${TextInput_Prompt_12D1pq()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
@@ -42,9 +42,9 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "MrvVGG"
+                    "id": "oZyyuy"
                   },
-                  "activity": "${SendActivity_MrvVGG()}"
+                  "activity": "${SendActivity_oZyyuy()}"
                 }
               ]
             },
@@ -66,6 +66,9 @@
     }
   ],
   "generator": "SettingsDialog.lg",
-  "recognizer": "SettingsDialog.lu.qna",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
   "id": "SettingsDialog"
 }
