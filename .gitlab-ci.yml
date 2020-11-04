@@ -29,7 +29,7 @@ build-bot-image: #used to build the bot's docker image
     - buildah build-using-dockerfile --tag "rostbot" "rostbot"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
 
-# build-directline-image:
+## build-directline-image:
 #   stage: build-images
 #   image: docker.io/buildah/buildah
 #   needs: []
