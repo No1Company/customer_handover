@@ -85,7 +85,17 @@
         "id": "95zDOa",
         "name": "Consultation"
       },
-      "intent": "Consultation"
+      "intent": "Consultation",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "7NjWQo"
+          },
+          "activityProcessed": true,
+          "dialog": "ConsultationDialog"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -184,6 +194,10 @@
       {
         "intent": "Cancel",
         "pattern": "Avbryt"
+      },
+      {
+        "intent": "Consultation",
+        "pattern": "Boka konsultation"
       }
     ]
   }

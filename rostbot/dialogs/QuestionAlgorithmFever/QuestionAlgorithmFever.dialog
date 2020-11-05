@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "O7ABfl",
+    "name": "QuestionAlgorithmFever",
+    "description": "An algorithm to understand symtoms related to fever."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "A4AGN7"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "768a0C"
+          },
+          "activity": "${SendActivity_768a0C()}"
+        }
+      ]
+    }
+  ],
+  "generator": "QuestionAlgorithmFever.lg",
+  "recognizer": "QuestionAlgorithmFever.lu.qna",
+  "id": "QuestionAlgorithmFever"
+}

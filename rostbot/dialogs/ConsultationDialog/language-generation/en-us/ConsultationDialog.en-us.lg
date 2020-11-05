@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# TextInput_Prompt_WCVirs()
+[SigninCard
+    text = Vad är anledningen till att du vill boka en konsultation med läkare?
+]
+# SendActivity_OVN7B9()
+- Du vill alltså boka en konsultation med din läkare. \n\n Ring 112 vid akuta fall.
