@@ -99,6 +99,10 @@ server.post('/chat/messages/', (req, res) => {
         await bot.run(turnContext);
     });
 });
+server.get('/chat/messages/', (req, res) => {
+    // Route received a request to adapter for processing
+    console.log('GET request on chat/messages');
+});
 // Listen for Upgrade requests for Streaming.
 server.on('upgrade', (req, socket, head) => {
     // Create an adapter scoped to this WebSocket connection to allow storing session data.
