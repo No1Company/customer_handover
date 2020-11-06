@@ -40,6 +40,30 @@
               "value": "Notiser",
               "actions": [
                 {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "QYntVu"
+                  },
+                  "assignments": [
+                    {
+                      "property": "user.notis.via",
+                      "value": "=\"\""
+                    },
+                    {
+                      "property": "user.notis.time.after",
+                      "value": "=\"\""
+                    },
+                    {
+                      "property": "user.notis.time.before",
+                      "value": "=\"\""
+                    },
+                    {
+                      "value": "=\"\"",
+                      "property": "user.notis.measurments"
+                    }
+                  ]
+                },
+                {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
                     "id": "RIUJOg"
@@ -82,6 +106,12 @@
                     "id": "g9o1s4"
                   },
                   "activity": "${SendActivity_g9o1s4()}"
+                },
+                {
+                  "$kind": "Microsoft.EndTurn",
+                  "$designer": {
+                    "id": "mavvaV"
+                  }
                 }
               ]
             },

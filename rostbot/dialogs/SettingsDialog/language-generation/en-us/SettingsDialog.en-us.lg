@@ -136,15 +136,15 @@
                         "choices": [
                             {
                                 "title": "Blodtryck",
-                                "value": "Blodtryck"
+                                "value": " Blodtryck"
                             },
                             {
                                 "title": "Vikt",
-                                "value": "Vikt"
+                                "value": " Vikt"
                             },
                             {
                                 "title": "Kroppstemperatur",
-                                "value": "Kroppstemperatur"
+                                "value": " Kroppstemperatur"
                             }
                         ],
                         "placeholder": "Placeholder text",
@@ -179,7 +179,7 @@
                             },
                             {
                                 "title": "Ingen påminnelse",
-                                "value": " "
+                                "value": "Ingen påminnelse"
                             }
                         ]
                     },
@@ -208,7 +208,7 @@
                             },
                             {
                                 "title": "Ingen påminnelse",
-                                "value": " "
+                                "value": "Ingen påminnelse"
                             }
                         ]
                     },
@@ -224,15 +224,15 @@
                         "choices": [
                             {
                                 "title": "Meddelande",
-                                "value": "Meddelande"
+                                "value": " Meddelande"
                             },
                             {
                                 "title": "Chat",
-                                "value": "Chat"
+                                "value": " Chat"
                             },
                             {
                                 "title": "E-mail",
-                                "value": "E-mail"
+                                "value": " E-mail"
                             }
                         ],
                         "placeholder": "Placeholder text",
@@ -288,22 +288,25 @@
             "weight": "Bolder"
         },
         {
-            "type": "TextBlock",
-            "text": "${user.notis.measurments} \n ${user.notis.time.before} \n ${user.notis.time.after} \n ${user.notis.via}",
-            "wrap": true
-        },
-        {
-            "type": "TextBlock",
-            "text": "Vikt",
-            "wrap": true,
-            "size": "Medium",
-            "weight": "Bolder",
-            "spacing": "ExtraLarge"
-        },
-        {
-            "type": "TextBlock",
-            "text": "New TextBlock",
-            "wrap": true
+            "type": "FactSet",
+            "facts": [
+                {
+                    "title": "Typ: ",
+                    "value": "${user.notis.measurments}"
+                },
+                {
+                    "title": "Via: ",
+                    "value": "${user.notis.via}"
+                },
+                {
+                    "title": "Innan: ",
+                    "value": "${user.notis.time.before}"
+                },
+                {
+                    "title": "Snooze: ",
+                    "value": "${user.notis.time.after}"
+                }
+            ]
         }
     ]
 }
