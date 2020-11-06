@@ -6,7 +6,7 @@
     "description": ""
   },
   "autoEndDialog": true,
-  "defaultResultProperty": "dialog.result",
+  "defaultResultProperty": "dialog.symptom",
   "triggers": [
     {
       "$kind": "Microsoft.OnBeginDialog",
@@ -52,7 +52,8 @@
                     "id": "d8JXI6"
                   },
                   "activityProcessed": true,
-                  "dialog": "QuestionAlgorithmHeadache"
+                  "dialog": "QuestionAlgorithmHeadache",
+                  "options": "[user.symtoms]"
                 }
               ]
             },
@@ -65,7 +66,8 @@
                     "id": "Xb7G4I"
                   },
                   "activityProcessed": true,
-                  "dialog": "QuestionAlgorithmFever"
+                  "dialog": "QuestionAlgorithmFever",
+                  "options": "[user.symtoms]"
                 }
               ]
             },
@@ -78,9 +80,19 @@
                     "id": "xogwnP"
                   },
                   "activityProcessed": true,
-                  "dialog": "QuestionAlgorithmStomacheache"
+                  "dialog": "QuestionAlgorithmStomacheache",
+                  "options": "[user.symtoms]"
                 }
               ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Y3hB0L"
+              },
+              "activity": "${SendActivity_Y3hB0L()}"
             }
           ]
         }

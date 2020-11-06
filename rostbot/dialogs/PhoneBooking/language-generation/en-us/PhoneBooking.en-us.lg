@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# SendActivity_FjcnHh()
+- Du kommer nedan få förslag på lediga tider för att bli uppringd
+# SendActivity_4xoh9j()
+- [här vill vi ta in tiderna från HTTP request, eller från custom action och skriva ut dem, 3st värden i taget, lägg till dem i en intern array och använd nedan loop för att skriva ut dem]
+# SendActivity_pGLZUI()
+- [sätt user.bookingdate till valt värde]

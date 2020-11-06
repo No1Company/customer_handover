@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# TextInput_Prompt_0yWOPt()
+- Vad är din emailadress? 
+# ConfirmInput_Prompt_4GGvax()
+- Stämmer ${user.email}?

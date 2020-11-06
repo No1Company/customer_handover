@@ -1,0 +1,70 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "6b9eqx",
+    "name": "PhoneBooking",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "jnqCMD"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "FjcnHh"
+          },
+          "activity": "${SendActivity_FjcnHh()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "4xoh9j"
+          },
+          "activity": "${SendActivity_4xoh9j()}"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "bhZjJB"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "user.availabletimes",
+          "actions": [
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "SitR9r"
+              },
+              "changeType": "pop"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "pGLZUI"
+          },
+          "activity": "${SendActivity_pGLZUI()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "PIVcN6"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "PhoneBooking.lg",
+  "recognizer": "PhoneBooking.lu.qna",
+  "id": "PhoneBooking"
+}
