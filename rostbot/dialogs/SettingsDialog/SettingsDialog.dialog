@@ -42,9 +42,46 @@
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "oZyyuy"
+                    "id": "RIUJOg"
                   },
-                  "activity": "${SendActivity_oZyyuy()}"
+                  "activity": "${SendActivity_RIUJOg()}"
+                },
+                {
+                  "$kind": "Microsoft.EndTurn",
+                  "$designer": {
+                    "id": "r6ueZD"
+                  }
+                },
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "1zgvIR"
+                  },
+                  "assignments": [
+                    {
+                      "property": "user.notis.via",
+                      "value": "=@notisVia"
+                    },
+                    {
+                      "property": "user.notis.time.after",
+                      "value": "=@timeAfter"
+                    },
+                    {
+                      "property": "user.notis.time.before",
+                      "value": "=@timeBefore"
+                    },
+                    {
+                      "value": "=@notisMeasurments",
+                      "property": "user.notis.measurments"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "g9o1s4"
+                  },
+                  "activity": "${SendActivity_g9o1s4()}"
                 }
               ]
             },

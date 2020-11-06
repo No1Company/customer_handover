@@ -282,14 +282,14 @@
         },
         {
             "type": "TextBlock",
-            "text": "Blodtryck",
+            "text": "Mina notiser",
             "wrap": true,
             "size": "Medium",
             "weight": "Bolder"
         },
         {
             "type": "TextBlock",
-            "text": "New TextBlock",
+            "text": "${user.notis.measurments} \n ${user.notis.time.before} \n ${user.notis.time.after} \n ${user.notis.via}",
             "wrap": true
         },
         {
@@ -437,5 +437,7 @@
 # TextInput_Prompt_12D1pq()
  -${AdaptiveCardSettings()}
 
-# SendActivity_oZyyuy()
+# SendActivity_RIUJOg()
+- ${AdaptiveCardNotificationSettings()}
+# SendActivity_g9o1s4()
 - ${AdaptiveCardNotificationSettings()}
