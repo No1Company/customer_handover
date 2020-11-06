@@ -42,7 +42,7 @@
                 {
                   "$kind": "Microsoft.SetProperties",
                   "$designer": {
-                    "id": "QYntVu"
+                    "id": "ct64FV"
                   },
                   "assignments": [
                     {
@@ -64,54 +64,114 @@
                   ]
                 },
                 {
-                  "$kind": "Microsoft.SendActivity",
+                  "$kind": "Microsoft.SetProperty",
                   "$designer": {
-                    "id": "RIUJOg"
+                    "id": "G3CGJB"
                   },
-                  "activity": "${SendActivity_RIUJOg()}"
-                },
-                {
-                  "$kind": "Microsoft.EndTurn",
-                  "$designer": {
-                    "id": "r6ueZD"
-                  }
-                },
-                {
-                  "$kind": "Microsoft.SetProperties",
-                  "$designer": {
-                    "id": "1zgvIR"
-                  },
-                  "assignments": [
-                    {
-                      "property": "user.notis.via",
-                      "value": "=@notisVia"
-                    },
-                    {
-                      "property": "user.notis.time.after",
-                      "value": "=@timeAfter"
-                    },
-                    {
-                      "property": "user.notis.time.before",
-                      "value": "=@timeBefore"
-                    },
-                    {
-                      "value": "=@notisMeasurments",
-                      "property": "user.notis.measurments"
-                    }
+                  "property": "user.test.array",
+                  "value": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
                   ]
                 },
                 {
-                  "$kind": "Microsoft.SendActivity",
+                  "$kind": "Microsoft.Foreach",
                   "$designer": {
-                    "id": "g9o1s4"
+                    "id": "8gvJe5"
                   },
-                  "activity": "${SendActivity_g9o1s4()}"
-                },
-                {
-                  "$kind": "Microsoft.EndTurn",
-                  "$designer": {
-                    "id": "mavvaV"
-                  }
+                  "value": "dialog.foreach.value",
+                  "itemsProperty": "user.test.array",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "QjPFXw"
+                      },
+                      "activity": "${SendActivity_QjPFXw()}"
+                    },
+                    {
+                      "$kind": "Microsoft.EndTurn",
+                      "$designer": {
+                        "id": "L7bJvT"
+                      }
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "hYf4as"
+                      },
+                      "assignments": [
+                        {
+                          "property": "user.notis.via",
+                          "value": "=@notisVia"
+                        },
+                        {
+                          "property": "user.notis.time.after",
+                          "value": "=@timeAfter"
+                        },
+                        {
+                          "property": "user.notis.time.before",
+                          "value": "=@timeBefore"
+                        },
+                        {
+                          "value": "=@notisMeasurments",
+                          "property": "user.notis.measurments"
+                        }
+                      ]
+                    }
+                  ],
+                  "index": "dialog.foreach.index"
                 }
               ]
             },
