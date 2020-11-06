@@ -161,12 +161,11 @@
                         "weight": "Bolder",
                         "size": "Medium"
                     },
-                    { 
-                        "type": "Input.ChoiceSet", 
-                        "id": "timeBefore", 
-                        "choices": [ 
-                      
-                         {
+                    {
+                        "type": "Input.ChoiceSet",
+                        "id": "timeBefore",
+                        "choices": [
+                            {
                                 "title": "1 timme innan",
                                 "value": "1 timme innan"
                             },
@@ -177,9 +176,11 @@
                             {
                                 "title": "3 timmar innan",
                                 "value": "3 timmar innan"
+                            },
+                            {
+                                "title": "Ingen påminnelse",
+                                "value": " "
                             }
-                    
-                    
                         ]
                     },
                     {
@@ -189,12 +190,11 @@
                         "size": "Medium",
                         "weight": "Bolder"
                     },
-                    { 
-                        "type": "Input.ChoiceSet", 
-                        "id": "timeAfter", 
-                        "choices": [ 
-                      
-                         {
+                    {
+                        "type": "Input.ChoiceSet",
+                        "id": "timeAfter",
+                        "choices": [
+                            {
                                 "title": "1 timme efter",
                                 "value": "1 timme efter"
                             },
@@ -205,12 +205,13 @@
                             {
                                 "title": "3 timmar efter",
                                 "value": "3 timmar efter"
+                            },
+                            {
+                                "title": "Ingen påminnelse",
+                                "value": " "
                             }
-                    
-                    
                         ]
                     },
-        
                     {
                         "type": "TextBlock",
                         "size": "Medium",
