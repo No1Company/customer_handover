@@ -1,0 +1,99 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "L8KVV3",
+    "name": "PhysicalMeetBooking",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "3TZVOh"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "HdFaua"
+          },
+          "activity": "${SendActivity_HdFaua()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "yNyr2T"
+          },
+          "activity": "${SendActivity_yNyr2T()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "jvxMry"
+          },
+          "activity": "${SendActivity_jvxMry()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "X43pXl"
+          },
+          "condition": "!user.availabletimes == null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "UQPhL3"
+              },
+              "activity": "${SendActivity_UQPhL3()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "j95oBo"
+              },
+              "activity": "${SendActivity_j95oBo()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "CgJxPV"
+              },
+              "value": "='16e november'"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "uBwBBi"
+              },
+              "activity": "${SendActivity_uBwBBi()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "LJojg4"
+              },
+              "activity": "${SendActivity_LJojg4()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "hgBJuT"
+              },
+              "value": "='16e november'"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "PhysicalMeetBooking.lg",
+  "recognizer": "PhysicalMeetBooking.lu.qna",
+  "id": "PhysicalMeetBooking"
+}

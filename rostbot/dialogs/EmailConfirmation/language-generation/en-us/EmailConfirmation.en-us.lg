@@ -1,6 +1,10 @@
 [import](common.lg)
 
-# TextInput_Prompt_0yWOPt()
+# ConfirmInput_Prompt_vlh3nH()
+- Vill du även ha en bekräftelse via mail? 
+# TextInput_Prompt_g6v2ky()
 - Vad är din emailadress? 
-# ConfirmInput_Prompt_4GGvax()
+# ConfirmInput_Prompt_M0rHZt()
 - Stämmer ${user.email}?
+# SendActivity_qiNvko()
+- [skicka iväg ett mail med bekräftelse här]

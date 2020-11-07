@@ -17,55 +17,75 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.IfCondition",
+          "$kind": "Microsoft.ConfirmInput",
           "$designer": {
-            "id": "II8mHl"
+            "id": "vlh3nH"
           },
-          "condition": "user.choice == Ja",
-          "actions": [
-            {
-              "$kind": "Microsoft.TextInput",
-              "$designer": {
-                "id": "0yWOPt"
-              },
-              "disabled": false,
-              "maxTurnCount": 3,
-              "alwaysPrompt": false,
-              "allowInterruptions": false,
-              "prompt": "${TextInput_Prompt_0yWOPt()}",
-              "unrecognizedPrompt": "",
-              "invalidPrompt": "",
-              "defaultValueResponse": "",
-              "property": "$user.email"
-            },
-            {
-              "$kind": "Microsoft.Foreach",
-              "$designer": {
-                "id": "orhon8"
-              },
-              "value": "dialog.foreach.value"
-            },
-            {
-              "$kind": "Microsoft.ConfirmInput",
-              "$designer": {
-                "id": "4GGvax"
-              },
-              "defaultLocale": "en-us",
-              "disabled": false,
-              "maxTurnCount": 3,
-              "alwaysPrompt": false,
-              "allowInterruptions": false,
-              "prompt": "${ConfirmInput_Prompt_4GGvax()}",
-              "unrecognizedPrompt": "",
-              "invalidPrompt": "",
-              "defaultValueResponse": "",
-              "choiceOptions": {
-                "includeNumbers": true,
-                "inlineOrMore": ", or "
-              },
-              "confirmChoices": "['Ja', 'Nej']"
-            }
-          ]
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_vlh3nH()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "confirmChoices": "[\"Ja\", \"Nej\"]",
+          "property": "user.choice "
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "g6v2ky"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_g6v2ky()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.email"
+        },
+        {
+          "$kind": "Microsoft.ConfirmInput",
+          "$designer": {
+            "id": "M0rHZt"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_M0rHZt()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "confirmChoices": "['Ja', 'Nej']"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "qiNvko"
+          },
+          "activity": "${SendActivity_qiNvko()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "9L59g4"
+          }
         }
       ]
     }

@@ -19,20 +19,21 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "Bcv5fi"
+            "id": "CcYAMU"
           },
-          "activity": "${SendActivity_Bcv5fi()}"
+          "activity": "${SendActivity_CcYAMU()}"
         },
         {
-          "$kind": "Microsoft.TextInput",
+          "$kind": "Microsoft.NumberInput",
           "$designer": {
-            "id": "qdzcWA"
+            "id": "k0qbAS"
           },
+          "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_qdzcWA()}",
+          "prompt": "${NumberInput_Prompt_k0qbAS()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
@@ -41,53 +42,23 @@
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "g1jNah"
+            "id": "Vriy0X"
           },
-          "condition": "user.weeksvalue >= 2",
+          "condition": "user.weeksvalue > 2",
           "actions": [
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "G3sW52"
+                "id": "uHklQr"
               },
-              "activity": "${SendActivity_G3sW52()}"
-            },
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "BoLy9c"
-              },
-              "activity": "${SendActivity_BoLy9c()}"
-            },
-            {
-              "$kind": "Microsoft.Foreach",
-              "$designer": {
-                "id": "j14wYz"
-              },
-              "index": "dialog.foreach.index",
-              "value": "dialog.foreach.value",
-              "itemsProperty": "user.availabletimes",
-              "actions": [
-                {
-                  "$kind": "Microsoft.EditArray",
-                  "$designer": {
-                    "id": "lcYjxx"
-                  },
-                  "changeType": "pop"
-                }
-              ]
-            },
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "bkzyeV"
-              },
-              "activity": "${SendActivity_bkzyeV()}"
+              "activityProcessed": true,
+              "dialog": "PhysicalMeetBooking",
+              "resultProperty": "user.bookingdate"
             },
             {
               "$kind": "Microsoft.SetProperty",
               "$designer": {
-                "id": "oR3BHk"
+                "id": "9PqWpp"
               },
               "property": "user.bookingtype",
               "value": "='fysiskt'"
@@ -95,139 +66,92 @@
           ],
           "elseActions": [
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "AjvCGo"
+                "id": "oYSfTc"
               },
-              "activity": "${SendActivity_AjvCGo()}"
+              "activityProcessed": true,
+              "dialog": "PhoneBooking",
+              "resultProperty": "user.bookingdate"
             },
             {
-              "$kind": "Microsoft.ConfirmInput",
+              "$kind": "Microsoft.SetProperty",
               "$designer": {
-                "id": "4QjbJh"
+                "id": "9oEosL"
               },
-              "defaultLocale": "en-us",
-              "disabled": false,
-              "maxTurnCount": 3,
-              "alwaysPrompt": false,
-              "allowInterruptions": false,
-              "prompt": "${ConfirmInput_Prompt_4QjbJh()}",
-              "unrecognizedPrompt": "",
-              "invalidPrompt": "",
-              "defaultValueResponse": "",
-              "choiceOptions": {
-                "includeNumbers": true,
-                "inlineOrMore": ", or "
-              },
-              "confirmChoices": [
-                "Ja",
-                "Nej"
-              ],
-              "property": "{user.confirmphonebooking}"
-            },
-            {
-              "$kind": "Microsoft.IfCondition",
-              "$designer": {
-                "id": "Irpxyd"
-              },
-              "condition": "(user.confirmphonebooking == Ja)",
-              "actions": [
-                {
-                  "$kind": "Microsoft.BeginDialog",
-                  "$designer": {
-                    "id": "REm45O"
-                  },
-                  "activityProcessed": true,
-                  "dialog": "PhoneBooking"
-                },
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "0FlqNG"
-                  },
-                  "activity": "${SendActivity_0FlqNG()}"
-                },
-                {
-                  "$kind": "Microsoft.SetProperty",
-                  "$designer": {
-                    "id": "h0xwNe"
-                  },
-                  "property": "user.bookingtype",
-                  "value": "='telefon'"
-                }
-              ],
-              "elseActions": [
-                {
-                  "$kind": "Microsoft.EndDialog",
-                  "$designer": {
-                    "id": "eIRolX"
-                  }
-                }
-              ]
+              "property": "user.bookingtype",
+              "value": "='telefon'"
             }
           ]
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "WtOPLH"
+            "id": "ytYqDt"
           },
-          "activity": "${SendActivity_WtOPLH()}"
-        },
-        {
-          "$kind": "Microsoft.ConfirmInput",
-          "$designer": {
-            "id": "BBwIsL"
-          },
-          "defaultLocale": "en-us",
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${ConfirmInput_Prompt_BBwIsL()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "choiceOptions": {
-            "includeNumbers": true,
-            "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ", "
-          },
-          "confirmChoices": "['Ja', 'Nej']",
-          "property": "user.choice "
-        },
-        {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "4rhQyz"
-          },
-          "condition": "user.choice == 'Ja'",
-          "actions": [
+          "condition": "user.bookingtype",
+          "cases": [
             {
-              "$kind": "Microsoft.BeginDialog",
-              "$designer": {
-                "id": "AGDBk2"
-              },
-              "activityProcessed": true,
-              "dialog": "EmailConfirmation"
+              "value": "fysiskt",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "DhQOtw"
+                  },
+                  "activity": "${SendActivity_DhQOtw()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "223oi4"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "EmailConfirmation"
+                }
+              ]
+            },
+            {
+              "value": "telefon",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "eKYv35"
+                  },
+                  "activity": "${SendActivity_eKYv35()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "4H0ksM"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "EmailConfirmation"
+                }
+              ]
             }
           ],
-          "elseActions": [
+          "default": [
             {
-              "$kind": "Microsoft.BeginDialog",
+              "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "IKNgKx"
+                "id": "Jr7Spc"
               },
-              "activityProcessed": true,
-              "dialog": "rostbot"
+              "activity": "${SendActivity_Jr7Spc()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "UExowk"
+              }
             }
           ]
         },
         {
           "$kind": "Microsoft.EndDialog",
           "$designer": {
-            "id": "wGpghj"
+            "id": "Yl5GmQ"
           }
         }
       ]

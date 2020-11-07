@@ -102,7 +102,9 @@
           "invalidPrompt": "",
           "defaultValueResponse": "",
           "choiceOptions": {
-            "includeNumbers": true
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
           },
           "confirmChoices": "[\"Ja\", \"Nej\"]"
         },

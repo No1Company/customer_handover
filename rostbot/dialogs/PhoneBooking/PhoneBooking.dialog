@@ -19,47 +19,94 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "FjcnHh"
+            "id": "DJ7jQx"
           },
-          "activity": "${SendActivity_FjcnHh()}"
+          "activity": "${SendActivity_DJ7jQx()}"
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.ConfirmInput",
           "$designer": {
-            "id": "4xoh9j"
+            "id": "G6vt5a"
           },
-          "activity": "${SendActivity_4xoh9j()}"
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ConfirmInput_Prompt_G6vt5a()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "confirmChoices": "[\"Ja\",\"Nej\"]",
+          "property": "user.confirm",
+          "outputFormat": ""
         },
         {
-          "$kind": "Microsoft.Foreach",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "bhZjJB"
+            "id": "toiLSt"
           },
-          "index": "dialog.foreach.index",
-          "value": "dialog.foreach.value",
-          "itemsProperty": "user.availabletimes",
+          "condition": "!user.availabletimes == null",
           "actions": [
             {
-              "$kind": "Microsoft.EditArray",
+              "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "SitR9r"
+                "id": "O04b9g"
               },
-              "changeType": "pop"
+              "activity": "${SendActivity_O04b9g()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "KFbca8"
+              },
+              "activity": "${SendActivity_KFbca8()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "GQcF9u"
+              },
+              "value": "='16e november'"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "zwAELe"
+              },
+              "activity": "${SendActivity_zwAELe()}"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ywtJT8"
+              },
+              "activity": "${SendActivity_ywtJT8()}"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "CNeLS7"
+              },
+              "property": "user.bookingdate",
+              "value": "= '16 november'"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "VLJZ0u"
+              },
+              "value": "=user.bookingdate"
             }
           ]
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "pGLZUI"
-          },
-          "activity": "${SendActivity_pGLZUI()}"
-        },
-        {
-          "$kind": "Microsoft.EndDialog",
-          "$designer": {
-            "id": "PIVcN6"
-          }
         }
       ]
     }

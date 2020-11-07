@@ -24,24 +24,23 @@
         {
           "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "WCVirs"
+            "id": "tklNbb"
           },
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": true,
-          "prompt": "${TextInput_Prompt_WCVirs()}",
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_tklNbb()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
-          "property": "user.symtoms"
+          "property": "user.symptoms"
         },
         {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
             "id": "dpWB4q"
           },
-          "condition": "user.symtoms",
           "cases": [
             {
               "value": "Huvudvärk",
@@ -53,7 +52,8 @@
                   },
                   "activityProcessed": true,
                   "dialog": "QuestionAlgorithmHeadache",
-                  "options": "[user.symtoms]"
+                  "options": "user.symtoms",
+                  "resultProperty": "user.bookingdate"
                 }
               ]
             },
@@ -67,7 +67,7 @@
                   },
                   "activityProcessed": true,
                   "dialog": "QuestionAlgorithmFever",
-                  "options": "[user.symtoms]"
+                  "resultProperty": "user.bookingdate"
                 }
               ]
             },
@@ -81,7 +81,7 @@
                   },
                   "activityProcessed": true,
                   "dialog": "QuestionAlgorithmStomacheache",
-                  "options": "[user.symtoms]"
+                  "resultProperty": "user.bookingdate"
                 }
               ]
             }
@@ -94,7 +94,14 @@
               },
               "activity": "${SendActivity_Y3hB0L()}"
             }
-          ]
+          ],
+          "condition": "user.symptoms"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "3vAfYm"
+          }
         }
       ]
     }

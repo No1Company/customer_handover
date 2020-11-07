@@ -1,27 +1,12 @@
 [import](common.lg)
 
-# SendActivity_Bcv5fi()
--Du kommer nu få svara på ett par frågor gällande ${user.symtoms}
-# TextInput_Prompt_qdzcWA()
-- Hur många veckor skulle du säga att du har haft besvär? (Detta kommer ersättas av vårdenhetens algoritmer/frågeformulering)
-# SendActivity_G3sW52()
-- Jag bedömer att du behöver boka tid på vårdcentralen, välj bland lediga tider som följer
-# SendActivity_BoLy9c()
-- [här vill vi ta in tiderna från HTTP request, eller från custom action och skriva ut dem, 3st värden i taget, lägg till dem i en intern array och använd nedan loop för att skriva ut dem]
-# SendActivity_bkzyeV()
-- [sätt user.bookingdate till valt värde]
-# SendActivity_AjvCGo()
-- Jag bedömer att du inte behöver besöka en vårdcentral, men ifall du ändå vill prata med vårdcentralen direkt kan du ringa [nummber till vårdcentralen], eller 1177 för rådgivning. 
-# ConfirmInput_Prompt_4QjbJh()
-- Du kan även genom mig välja att boka en telefontid, skulle du vilja göra det? 
-# SendActivity_0FlqNG()
-- [sätt user.bookingdate till valt värde]
-# SendActivity_WtOPLH()
--IF: (${user.bookingtype} == "fysiskt") 
-    -Jag har bokat en tid hos vårdcentralen den ${user.bookingdate}.
-- ELSEIF: (${user.bookingtype} == "telefon")
-    -Jag har bokat en telefontid den ${user.bookingdate}.
-- ELSE:
-    -Jag har inte bokat någon tid. 
-# ConfirmInput_Prompt_BBwIsL()
-- Vill du även ha en bekräftelse via mail? 
+# SendActivity_CcYAMU()
+-Du kommer nu få svara på ett par frågor om din feber
+# SendActivity_Jr7Spc()
+- Jag har inte bokat någon tid. 
+# SendActivity_DhQOtw()
+- Jag har bokat en tid på vårdcentralen den ${user.bookingdate}
+# SendActivity_eKYv35()
+- Jag har bokat en telefontid den ${user.bookingdate}
+# NumberInput_Prompt_k0qbAS()
+- Hur många veckor skulle du säga att du har haft dessa symptom? 
