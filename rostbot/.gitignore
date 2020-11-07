@@ -1,4 +1,2 @@
 # prevent appsettings.json get checked in
 **/appsettings.json
-**/runtime
-**/schemas
