@@ -31,7 +31,7 @@ python run.py
 
 ### Windows
 1. Install [Python](https://www.python.org/downloads/). Choose a version greater than 3.8.
-2. Try running the command `python3 --version` in powershell. This can be done inside of vscode by opening a terminal. The command should output `Python 3.x.x`. If it doesn't find the install path of python3, mine was installed in `C:\Users\USERNAME\AppData\Local\Programs\Python\Python3VERSION`. Locate that path and copy it. To test it, you can run `C:\PATH\TO\PYTHON\python.exe --version`. It should output the same thing as below, with a differing verison number.
+2. Try running the command `python3 --version` in powershell. This can be done inside of vscode by opening a terminal. The command should output `Python 3.x.x`. If it doesn't find the install path of python3, locate it. Mine was installed in `C:\Users\USERNAME\AppData\Local\Programs\Python\Python3VERSION`. Copy the found path. To test it, you can run `C:\PATH\TO\PYTHON\python.exe --version`. It should output the same thing as below, maybe with a differing verison number.
 
 
 ![](./readme-pictures/version.png)
