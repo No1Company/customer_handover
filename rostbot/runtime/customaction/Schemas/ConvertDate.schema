@@ -9,7 +9,7 @@
         "arg1": {
             "$ref": "schema:#/definitions/stringExpression",
             "title": "InputString",
-            "description": "Value from callers memory to use as arg 1"
+            "description": "Value from callers memory to use as InputString"
         },
         "resultProperty": {
             "$ref": "schema:#/definitions/stringExpression",

@@ -10,3 +10,5 @@
 - Jag har bokat en telefontid den ${user.bookingdate}
 # NumberInput_Prompt_k0qbAS()
 - Hur många veckor skulle du säga att du har haft dessa symptom? 
+# SendActivity_4qY955()
+- ${user.multi}

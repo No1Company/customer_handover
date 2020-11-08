@@ -45,14 +45,9 @@ namespace Microsoft.BotFramework.Composer.CustomAction
 
         public override Task<DialogTurnResult> BeginDialogAsync(DialogContext dc, object options = null, CancellationToken cancellationToken = default(CancellationToken))
         {
-            var inputString = InputString.GetValue(dc.State);
-
-            var result = inputString + "it works"; 
-            
-            if (this.DateResult != null)
-            {
-                dc.State.SetValue(this.DateResult.GetValue(dc.State), result);
-            }
+           
+           var result = InputString.GetValue(dc.State); 
+          
 
             return dc.EndDialogAsync(result: result, cancellationToken: cancellationToken);
         }
