@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "T77RTT",
-    "name": "HTTPtest",
+    "id": "IErb7d",
+    "name": "ExampleDialogHTTPRequest",
     "description": ""
   },
   "autoEndDialog": true,
@@ -13,30 +13,30 @@
       "$designer": {
         "name": "BeginDialog",
         "description": "",
-        "id": "muuhv5"
+        "id": "LV51Hs"
       },
       "actions": [
         {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "C3hK9A"
+            "id": "HaGCom"
           },
           "method": "GET",
-          "url": "http://127.0.0.1:5000/available-times",
-          "contentType": "application/json",
-          "resultProperty": "dialog.resultProperty"
+          "url": "http://localhost:5000/available-times",
+          "resultProperty": "dialog.getResponse",
+          "contentType": "application/json"
         },
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "ndVWqt"
+            "id": "y5w1e2"
           },
-          "activity": "${SendActivity_ndVWqt()}"
+          "activity": "${SendActivity_y5w1e2()}"
         }
       ]
     }
   ],
-  "generator": "HTTPtest.lg",
-  "recognizer": "HTTPtest.lu.qna",
-  "id": "HTTPtest"
+  "generator": "ExampleDialogHTTPRequest.lg",
+  "recognizer": "ExampleDialogHTTPRequest.lu.qna",
+  "id": "ExampleDialogHTTPRequest"
 }
