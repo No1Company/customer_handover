@@ -13,6 +13,8 @@ python run.py
 ```
 ![](./readme-pictures/finished.png)
 
+You should now be able to access the routes defined in bot_backend/\_\_init\_\_.py. Test this by visiting [localhost:5000/available-times]() in a browser.
+
 ### Linux (and probably mac os)
 1. Navigate to "deploy" inside of a terminal.
 2. Run the command `source venv/bin/activate`. A "(venv)" should pop up in front of your command line prompt.
