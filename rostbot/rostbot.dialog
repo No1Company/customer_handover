@@ -161,6 +161,24 @@
           "activityProcessed": true
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "5M33dn",
+        "name": "HTTPTestTrigger"
+      },
+      "intent": "HTTPTestTrigger",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "6RtJXd"
+          },
+          "activityProcessed": true,
+          "dialog": "HTTPtest"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -184,6 +202,10 @@
       {
         "intent": "Cancel",
         "pattern": "Avbryt"
+      },
+      {
+        "intent": "HTTPTestTrigger",
+        "pattern": "http"
       }
     ]
   }
