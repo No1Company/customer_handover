@@ -24,20 +24,6 @@
           "activity": "${SendActivity_HdFaua()}"
         },
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "yNyr2T"
-          },
-          "activity": "${SendActivity_yNyr2T()}"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "jvxMry"
-          },
-          "activity": "${SendActivity_jvxMry()}"
-        },
-        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "X43pXl"

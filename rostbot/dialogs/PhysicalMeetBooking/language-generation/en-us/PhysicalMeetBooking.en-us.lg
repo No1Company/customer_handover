@@ -2,10 +2,6 @@
 
 # SendActivity_HdFaua()
 - Jag bedömer att du behöver boka tid på vårdcentralen, välj bland lediga tider som följer
-# SendActivity_yNyr2T()
-- [här vill vi ta in tiderna från HTTP request, eller från custom action och skriva ut dem, 3st värden i taget, lägg till dem i en intern array och använd nedan loop för att skriva ut dem]
-# SendActivity_jvxMry()
-- [sätt user.bookingdate till valt värde]
 # SendActivity_UQPhL3()
 - [här vill vi ta in tiderna från HTTP request, eller från custom action och skriva ut dem, 3st värden i taget, lägg till dem i en intern array och använd nedan loop för att skriva ut dem]
 # SendActivity_j95oBo()
@@ -14,3 +10,17 @@
 - Det fanns inga lediga tider, eller så fungerar min åtkomst inte för tillfället. Försök igen senare eller ring direkt till din vårdenhet för tidsbokning. 
 # SendActivity_LJojg4()
 - Detta nedanför ska ersättas med att avbryta alla dialoger. För tillfället används detta i testningssyfte till efterföljande konversationer. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -48,32 +48,42 @@
           "outputFormat": ""
         },
         {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "AJZLrP"
+          },
+          "method": "GET",
+          "url": "http://localhost:5000/available-times",
+          "resultProperty": "dialog.result",
+          "contentType": "application/json"
+        },
+        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "toiLSt"
           },
-          "condition": "!user.availabletimes == null",
           "actions": [
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "O04b9g"
+                "id": "d7PN0P"
               },
-              "activity": "${SendActivity_O04b9g()}"
+              "activity": "${SendActivity_d7PN0P()}"
             },
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.SetProperty",
               "$designer": {
-                "id": "KFbca8"
+                "id": "XurgT1"
               },
-              "activity": "${SendActivity_KFbca8()}"
+              "property": "user.bookingdate",
+              "value": "${dialog.result.content[0].start}"
             },
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
                 "id": "GQcF9u"
               },
-              "value": "='16e november'"
+              "value": "=user.bookingdate"
             }
           ],
           "elseActions": [
@@ -85,28 +95,14 @@
               "activity": "${SendActivity_zwAELe()}"
             },
             {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "ywtJT8"
-              },
-              "activity": "${SendActivity_ywtJT8()}"
-            },
-            {
-              "$kind": "Microsoft.SetProperty",
-              "$designer": {
-                "id": "CNeLS7"
-              },
-              "property": "user.bookingdate",
-              "value": "= '16 november'"
-            },
-            {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
                 "id": "VLJZ0u"
               },
-              "value": "=user.bookingdate"
+              "value": "= '0000/00/00'"
             }
-          ]
+          ],
+          "condition": "dialog.result.statusCode == 200"
         }
       ]
     }

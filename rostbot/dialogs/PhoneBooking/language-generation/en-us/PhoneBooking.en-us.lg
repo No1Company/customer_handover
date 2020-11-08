@@ -4,11 +4,45 @@
 - Jag bedömer att du inte behöver besöka en vårdcentral, men ifall du ändå vill prata med vårdcentralen direkt kan du ringa [nummber till vårdcentralen], eller 1177 för rådgivning. 
 # ConfirmInput_Prompt_G6vt5a()
 - Du kan även genom mig välja att boka en telefontid. Vill du göra det? 
-# SendActivity_O04b9g()
-- [här vill vi ta in tiderna från HTTP request, eller från custom action och skriva ut dem, 3st värden i taget, lägg till dem i en intern array och använd nedan loop för att skriva ut dem]
-# SendActivity_KFbca8()
 - [sätt user.bookingdate till valt värde]
 # SendActivity_zwAELe()
-- Det fanns inga lediga tider, eller så fungerar min åtkomst inte för tillfället. Försök igen senare eller ring direkt till din vårdenhet för tidsbokning. 
-# SendActivity_ywtJT8()
 - Detta nedanför ska ersättas med att avbryta alla dialoger. För tillfället används detta i testningssyfte till efterföljande konversationer. 
+# SendActivity_d7PN0P()
+-De lediga tiderna som finns tillgängliga är\n\n${dialog.result.content[0].start}\n\n${dialog.result.content[1].start}\n\n${dialog.result.content[2].start}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

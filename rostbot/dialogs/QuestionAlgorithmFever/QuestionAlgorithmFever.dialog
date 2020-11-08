@@ -17,22 +17,6 @@
       },
       "actions": [
         {
-          "$kind": "MultiplyDialog",
-          "$designer": {
-            "id": "QiC6k6"
-          },
-          "arg1": 89,
-          "arg2": 54,
-          "resultProperty": "user.multi"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "4qY955"
-          },
-          "activity": "${SendActivity_4qY955()}"
-        },
-        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "CcYAMU"
