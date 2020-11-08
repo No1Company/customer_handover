@@ -1,4 +1,0 @@
-[import](common.lg)
-
-# SendActivity_y5w1e2()
-- ${dialog.getResponse.content[0].start}
