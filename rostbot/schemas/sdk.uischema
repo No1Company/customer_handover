@@ -23,6 +23,7 @@
       }
     }
   },
+<<<<<<< HEAD
   "Microsoft.AttachmentInput": {
     "form": {
       "helpLink": "https://aka.ms/bfc-ask-for-user-input",
@@ -76,6 +77,8 @@
       "subtitle": "Text Input"
     }
   },
+=======
+>>>>>>> http-request-functionality
   "Microsoft.BeginDialog": {
     "form": {
       "helpLink": "https://aka.ms/bfc-understanding-dialogs",
@@ -307,6 +310,62 @@
       "subtitle": "Trace Activity"
     }
   },
+<<<<<<< HEAD
+=======
+  "Microsoft.AttachmentInput": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for a file or an attachment",
+      "subtitle": "Attachment Input"
+    }
+  },
+  "Microsoft.ChoiceInput": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt with multi-choice",
+      "subtitle": "Choice Input"
+    }
+  },
+  "Microsoft.ConfirmInput": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for confirmation",
+      "subtitle": "Confirm Input"
+    }
+  },
+  "Microsoft.DateTimeInput": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for a date or a time",
+      "subtitle": "Date Time Input"
+    }
+  },
+  "Microsoft.NumberInput": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for a number",
+      "subtitle": "Number Input"
+    }
+  },
+  "Microsoft.OAuthInput": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-using-oauth",
+      "label": "OAuth login",
+      "order": [
+        "connectionName",
+        "*"
+      ],
+      "subtitle": "OAuth Input"
+    }
+  },
+  "Microsoft.TextInput": {
+    "form": {
+      "helpLink": "https://aka.ms/bfc-ask-for-user-input",
+      "label": "Prompt for text",
+      "subtitle": "Text Input"
+    }
+  },
+>>>>>>> http-request-functionality
   "Microsoft.RegexRecognizer": {
     "form": {
       "hidden": [
