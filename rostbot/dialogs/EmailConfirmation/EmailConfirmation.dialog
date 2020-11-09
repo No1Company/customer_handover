@@ -36,23 +36,30 @@
             "inlineOr": " or ",
             "inlineSeparator": ", "
           },
-          "confirmChoices": "[\"Ja\", \"Nej\"]",
-          "property": "user.choice "
+          "confirmChoices": "['Ja', 'Nej']",
+          "property": "dialog.confirm"
         },
         {
-          "$kind": "Microsoft.TextInput",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "g6v2ky"
+            "id": "g3oWry"
           },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_g6v2ky()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "property": "user.email"
+          "condition": "dialog.confirm == 'Ja'",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "plts39"
+              },
+              "activity": "${SendActivity_plts39()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "jTUjyW"
+              }
+            }
+          ]
         },
         {
           "$kind": "Microsoft.ConfirmInput",

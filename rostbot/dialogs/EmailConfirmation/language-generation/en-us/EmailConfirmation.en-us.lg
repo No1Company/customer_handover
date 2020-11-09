@@ -2,11 +2,11 @@
 
 # ConfirmInput_Prompt_vlh3nH()
 - Vill du även ha en bekräftelse via mail? 
-# TextInput_Prompt_g6v2ky()
-- Vad är din emailadress? 
 # ConfirmInput_Prompt_M0rHZt()
 - Stämmer ${user.email}?
 # SendActivity_qiNvko()
-- [skicka iväg ett mail med bekräftelse här]
+-Mail skickat! 
 # SendActivity_4sCcDg()
 - 
+# SendActivity_plts39()
+- Okej, då syns vi ${user.bookingdate}!

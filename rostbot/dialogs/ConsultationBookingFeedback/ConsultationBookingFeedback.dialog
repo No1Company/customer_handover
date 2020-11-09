@@ -17,6 +17,19 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "jAMrgh"
+          },
+          "method": "POST",
+          "url": "http://127.0.0.1:5000/current-bookings",
+          "body": {
+            "bookingdate": "${user.bookingdate}",
+            "type": "${user.bookingtype}"
+          },
+          "contentType": "application/json"
+        },
+        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "dqCqZy"

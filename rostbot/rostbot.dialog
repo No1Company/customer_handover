@@ -172,6 +172,55 @@
           "activityProcessed": true
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "FBumgz",
+        "name": "ShowBookings"
+      },
+      "intent": "ShowBookings",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "9ILt8b"
+          },
+          "activityProcessed": true,
+          "dialog": "ShowCurrentBookings"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "mMJnPr",
+        "name": "Restart"
+      },
+      "intent": "Restart",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "xWt6Lm"
+          },
+          "activity": "${SendActivity_xWt6Lm()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ptzoFF"
+          },
+          "activity": "${SendActivity_ptzoFF()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "TMsAyz"
+          },
+          "activityProcessed": true
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -199,6 +248,14 @@
       {
         "intent": "Consultation",
         "pattern": "Boka konsultation"
+      },
+      {
+        "intent": "ShowBookings",
+        "pattern": "Visa mina bokningar"
+      },
+      {
+        "intent": "Restart",
+        "pattern": "Starta om"
       }
     ]
   }
