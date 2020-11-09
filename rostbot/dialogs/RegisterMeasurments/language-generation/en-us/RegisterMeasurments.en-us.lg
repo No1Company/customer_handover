@@ -83,7 +83,10 @@
     ]
 
 
-# TextInput_Prompt_yKOMgf()
+# TextInput_Prompt_It3ZFc()
+>Use this value for determining which type of value to register. We currently only have bloodpressure, but it would be nice if we had at least two. We need to list the possible values as well. 
+- Vad vill du registrera för värde? Du kan för tillfället välja blodtryck
+# TextInput_Prompt_EEwR2t()
 > Move this to settings maybe? Maybe make it a global variable that is saved and re-used.
 
 [SigninCard

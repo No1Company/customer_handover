@@ -19,13 +19,28 @@
         {
           "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "yKOMgf"
+            "id": "It3ZFc"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_It3ZFc()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "dialog.registertype"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "EEwR2t"
           },
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": true,
-          "prompt": "${TextInput_Prompt_yKOMgf()}",
+          "prompt": "${TextInput_Prompt_EEwR2t()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
@@ -47,7 +62,8 @@
                     "id": "YB5tUG"
                   },
                   "activityProcessed": true,
-                  "dialog": "MeasureWithGuide"
+                  "dialog": "MeasureWithGuide",
+                  "options": "dialog.type"
                 }
               ]
             },
@@ -60,7 +76,8 @@
                     "id": "6Nkn9r"
                   },
                   "activityProcessed": true,
-                  "dialog": "MeasureWithoutGuide"
+                  "dialog": "MeasureWithoutGuide",
+                  "options": "dialog.type"
                 }
               ]
             },
@@ -73,7 +90,8 @@
                     "id": "g4u1qo"
                   },
                   "activityProcessed": true,
-                  "dialog": "MeasureWithoutGuideAndImages"
+                  "dialog": "MeasureWithoutGuideAndImages",
+                  "options": "dialog.type"
                 }
               ]
             }
