@@ -17,64 +17,70 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "HdFaua"
+            "id": "LiS2Dk"
           },
-          "activity": "${SendActivity_HdFaua()}"
+          "method": "GET",
+          "url": "http://localhost:5000/available-times",
+          "resultProperty": "dialog.result",
+          "contentType": "application/json"
         },
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "X43pXl"
+            "id": "cqjam7"
           },
-          "condition": "!user.availabletimes == null",
           "actions": [
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "UQPhL3"
+                "id": "mV3BLG"
               },
-              "activity": "${SendActivity_UQPhL3()}"
+              "activity": "${SendActivity_mV3BLG()}"
             },
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.NumberInput",
               "$designer": {
-                "id": "j95oBo"
+                "id": "iHR6jL"
               },
-              "activity": "${SendActivity_j95oBo()}"
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${NumberInput_Prompt_iHR6jL()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "dialog.datechoice"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "uAKuhT"
+              },
+              "property": "user.bookingdate",
+              "value": "${dialog.result.content[${dialog.datechoice}].start}"
             },
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "CgJxPV"
+                "id": "IRsXC3"
               },
-              "value": "='16e november'"
+              "value": "=user.bookingdate"
             }
           ],
           "elseActions": [
             {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "uBwBBi"
-              },
-              "activity": "${SendActivity_uBwBBi()}"
-            },
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "LJojg4"
-              },
-              "activity": "${SendActivity_LJojg4()}"
-            },
-            {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "hgBJuT"
+                "id": "WNblWK"
               },
-              "value": "='16e november'"
+              "value": "= '0000/00/00'"
             }
-          ]
+          ],
+          "condition": "dialog.result.statusCode == 200"
         }
       ]
     }

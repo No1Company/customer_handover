@@ -71,12 +71,28 @@
               "activity": "${SendActivity_d7PN0P()}"
             },
             {
+              "$kind": "Microsoft.NumberInput",
+              "$designer": {
+                "id": "HCBe3t"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${NumberInput_Prompt_HCBe3t()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "dialog.datechoice"
+            },
+            {
               "$kind": "Microsoft.SetProperty",
               "$designer": {
                 "id": "XurgT1"
               },
               "property": "user.bookingdate",
-              "value": "${dialog.result.content[0].start}"
+              "value": "${dialog.result.content[${dialog.datechoice}].start}"
             },
             {
               "$kind": "Microsoft.EndDialog",
@@ -87,13 +103,6 @@
             }
           ],
           "elseActions": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "zwAELe"
-              },
-              "activity": "${SendActivity_zwAELe()}"
-            },
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {

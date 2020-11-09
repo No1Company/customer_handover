@@ -37,6 +37,13 @@
           "property": "user.symptoms"
         },
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "WiLWxu"
+          },
+          "activity": "${SendActivity_WiLWxu()}"
+        },
+        {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
             "id": "dpWB4q"

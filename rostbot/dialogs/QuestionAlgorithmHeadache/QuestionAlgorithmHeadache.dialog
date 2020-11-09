@@ -47,6 +47,13 @@
           "condition": "user.weeksvalue > 2",
           "actions": [
             {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "86qiez"
+              },
+              "activity": "${SendActivity_86qiez()}"
+            },
+            {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
                 "id": "5LFjH4"
@@ -87,47 +94,33 @@
         {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "SbI2nF"
+            "id": "qKvmBe"
           },
           "condition": "user.bookingtype",
           "cases": [
             {
-              "value": "fysiskt",
+              "value": "tid på vårdcentralen",
               "actions": [
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "Lp45oO"
-                  },
-                  "activity": "${SendActivity_Lp45oO()}"
-                },
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "qRoKLH"
+                    "id": "KUKuGA"
                   },
                   "activityProcessed": true,
-                  "dialog": "EmailConfirmation"
+                  "dialog": "ConsultationBookingFeedback"
                 }
               ]
             },
             {
-              "value": "telefon",
+              "value": "telefontid",
               "actions": [
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "GZl0cr"
-                  },
-                  "activity": "${SendActivity_GZl0cr()}"
-                },
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "tAF04J"
+                    "id": "6exT8x"
                   },
                   "activityProcessed": true,
-                  "dialog": "EmailConfirmation"
+                  "dialog": "ConsultationBookingFeedback"
                 }
               ]
             }
@@ -136,14 +129,14 @@
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "apU1LF"
+                "id": "PuyUVh"
               },
-              "activity": "${SendActivity_apU1LF()}"
+              "activity": "${SendActivity_PuyUVh()}"
             },
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "wjtaBz"
+                "id": "71ItIV"
               }
             }
           ]

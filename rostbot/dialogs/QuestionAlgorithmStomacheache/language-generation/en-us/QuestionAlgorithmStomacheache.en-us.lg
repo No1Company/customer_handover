@@ -4,9 +4,7 @@
 -Du kommer nu få svara på ett par frågor om din buksmärta
 # NumberInput_Prompt_gqq9cK()
 - Hur många veckor skulle du säga att du har haft dessa symptom? 
-# SendActivity_UWFXe5()
+# SendActivity_CzYkvq()
+- Jag bedömer att du behöver boka tid på vårdcentralen, välj bland lediga tider som följer
+# SendActivity_LGpcKx()
 - Jag har inte bokat någon tid. 
-# SendActivity_DOXHvV()
-- Jag har bokat en tid på vårdcentralen den ${user.bookingdate}
-# SendActivity_6ViZrt()
-- Jag har bokat en telefontid den ${user.bookingdate}

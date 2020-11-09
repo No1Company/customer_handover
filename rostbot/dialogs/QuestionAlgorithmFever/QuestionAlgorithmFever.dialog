@@ -47,6 +47,13 @@
           "condition": "user.weeksvalue > 2",
           "actions": [
             {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ZvZ2Un"
+              },
+              "activity": "${SendActivity_ZvZ2Un()}"
+            },
+            {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
                 "id": "uHklQr"
@@ -61,7 +68,7 @@
                 "id": "9PqWpp"
               },
               "property": "user.bookingtype",
-              "value": "='fysiskt'"
+              "value": "='tid på vårdcentralen'"
             }
           ],
           "elseActions": [
@@ -80,7 +87,7 @@
                 "id": "9oEosL"
               },
               "property": "user.bookingtype",
-              "value": "='telefon'"
+              "value": "='telefontid'"
             }
           ]
         },
@@ -92,42 +99,28 @@
           "condition": "user.bookingtype",
           "cases": [
             {
-              "value": "fysiskt",
+              "value": "tid på vårdcentralen",
               "actions": [
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "DhQOtw"
-                  },
-                  "activity": "${SendActivity_DhQOtw()}"
-                },
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "223oi4"
+                    "id": "2OViTE"
                   },
                   "activityProcessed": true,
-                  "dialog": "EmailConfirmation"
+                  "dialog": "ConsultationBookingFeedback"
                 }
               ]
             },
             {
-              "value": "telefon",
+              "value": "telefontid",
               "actions": [
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "eKYv35"
-                  },
-                  "activity": "${SendActivity_eKYv35()}"
-                },
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "4H0ksM"
+                    "id": "f9vJ68"
                   },
                   "activityProcessed": true,
-                  "dialog": "EmailConfirmation"
+                  "dialog": "ConsultationBookingFeedback"
                 }
               ]
             }
