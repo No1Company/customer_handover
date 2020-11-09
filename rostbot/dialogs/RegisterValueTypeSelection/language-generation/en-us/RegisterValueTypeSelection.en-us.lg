@@ -1,0 +1,7 @@
+[import](common.lg)
+
+# TextInput_Prompt_1FVIbz()
+[SigninCard
+    text = Vilket värde vill du registrera? 
+    buttons = Blodtryck | Placeholder | Placeholder
+    ]

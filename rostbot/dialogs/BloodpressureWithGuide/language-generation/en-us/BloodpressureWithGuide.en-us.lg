@@ -1,0 +1,35 @@
+[import](common.lg)
+
+
+
+
+
+
+
+
+# TextInput_Prompt_h5Ktbw()
+[SigninCard
+    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${turn.diavalue}\n\nStämmer detta?
+    buttons = Ja värdena stämmer | Nej värdena stämmer inte
+    ]
+# TextInput_Prompt_moza65()
+[SigninCard
+    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
+    buttons= Avsluta mätning
+    ]
+
+
+# TextInput_Prompt_ouIfx9()
+[SigninCard
+    text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
+    buttons= Återgå till start | Registrera ytterligare värden
+    ]
+
+
+
+
+# NumberInput_Prompt_VsXcIN()
+-Vilket värde har du på det systoliska trycket (övertrycket)?
+
+# NumberInput_Prompt_Yu9Psp()
+-Vänta tills blodtryckmätaren inte kan höra pulsen längre och mät undertrycket. Vad är resultatet?
