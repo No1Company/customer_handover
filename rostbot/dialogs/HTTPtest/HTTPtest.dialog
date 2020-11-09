@@ -47,6 +47,24 @@
             "id": "HnHccm"
           },
           "activity": "${SendActivity_HnHccm()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "bKzPD7"
+          },
+          "url": "http://127.0.0.1:5000/current-notifications",
+          "method": "POST",
+          "headers": {},
+          "contentType": "application/json",
+          "responseType": "json",
+          "resultProperty": "dialog.resultProperty",
+          "body": {
+            "noticemediatype": "test",
+            "timeafter": "test",
+            "timebefore": "test",
+            "type": "test"
+          }
         }
       ]
     }

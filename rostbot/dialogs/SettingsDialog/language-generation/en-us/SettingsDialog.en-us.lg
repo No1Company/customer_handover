@@ -108,7 +108,7 @@
     "actions": [
         {
             "type": "Action.ShowCard",
-            "title": "Skapa ny notis",
+            "title": "Hantera notiser",
             "style": "positive",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
             "data": "Skapa ny notis",
@@ -288,25 +288,61 @@
             "weight": "Bolder"
         },
         {
-            "type": "FactSet",
-            "facts": [
+            "type": "ColumnSet",
+            "bleed": true,
+            "columns": [
                 {
-                    "title": "Typ: ",
-                    "value": "${user.notis.measurments}"
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "FactSet",
+                            "facts": [
+                                {
+                                    "title": "Typ: ",
+                                    "value": "${user.notis.measurments}"
+                                },
+                                {
+                                    "title": "Via: ",
+                                    "value": "${user.notis.via}"
+                                },
+                                {
+                                    "title": "Innan: ",
+                                    "value": "${user.notis.time.before}"
+                                },
+                                {
+                                    "title": "Snooze: ",
+                                    "value": "${user.notis.time.after}"
+                                }
+                            ],
+                            "separator": true,
+                            "height": "stretch",
+                            "isVisible": true,
+                            "$when": "${user.notis.measurments} != null"
+                        }
+                    ]
                 },
                 {
-                    "title": "Via: ",
-                    "value": "${user.notis.via}"
-                },
-                {
-                    "title": "Innan: ",
-                    "value": "${user.notis.time.before}"
-                },
-                {
-                    "title": "Snooze: ",
-                    "value": "${user.notis.time.after}"
+                    "type": "Column",
+                    "width": "20px",
+                    "selectAction": {
+                        "type": "Action.Submit",
+                        "id": "cancelbutton",
+                        "value": "true"
+                    },
+                    "backgroundImage": {
+                        "horizontalAlignment": "Center",
+                        "url": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
+                        "verticalAlignment": "Center"
+                    },
+                    "style": "default",
+                    "verticalContentAlignment": "Center",
+                    "horizontalAlignment": "Center",
+                    "separator": true
                 }
-            ]
+            ],
+            "isVisible": true,
+            "height": "stretch"
         }
     ]
 }
@@ -442,3 +478,7 @@
 
 # SendActivity_QjPFXw()
 - ${AdaptiveCardNotificationSettings()}
+# SendActivity_yrWU4A()
+- test
+# SendActivity_K8Rn8I()
+- ${user.notis.cancelbutton}

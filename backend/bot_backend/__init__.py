@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from datetime import datetime as d
 
 app = Flask(__name__, static_folder = 'static', static_url_path = '/')
@@ -37,22 +37,26 @@ def avail_times():
         ]
     return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
 
-@app.route('/current-notifications', methods=['GET'])
-def curr_notifications():
-    notifications = [
+notifications = [
         {
-            "noticemediatype" : "E-mail",
-            "timeafter" : "2 timmar",
-            "timebefore" : "Ingen påminnelse", 
-            "type" : "Blodtryck"
-        },
-        {
-            "noticemediatype" : "SMS",
-            "timeafter" : "1 timme",
-            "timebefore" : "3 timmar", 
-            "type" : "Vikt"
+            # "noticemediatype" : "",
+            # "timeafter" : "",
+            # "timebefore" : "", 
+            # "type" : ""
         }
     ]
+
+
+@app.route('/current-notifications', methods=['GET', 'POST'])
+def curr_notifications():
+
+    
+
+    if request.method == "POST":
+        
+        notifications.append(request.get_json())
+        print(notifications)
+
 
     return jsonify([ {"type": notification["type"], "timeafter": notification["timeafter"],
      "timebefore": notification["timebefore"], "noticemediatype": notification["noticemediatype"]} for notification in notifications])
