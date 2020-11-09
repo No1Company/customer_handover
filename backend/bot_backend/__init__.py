@@ -41,18 +41,18 @@ def avail_times():
 def curr_notifications():
     notifications = [
         {
-            "notice-media-type" : "E-mail",
-            "time-after" : "2 timmar",
-            "time-before" : "Ingen påminnelse", 
+            "noticemediatype" : "E-mail",
+            "timeafter" : "2 timmar",
+            "timebefore" : "Ingen påminnelse", 
             "type" : "Blodtryck"
         },
         {
-            "notice-media-type" : "SMS",
-            "time-after" : "1 timme",
-            "time-before" : "3 timmar", 
+            "noticemediatype" : "SMS",
+            "timeafter" : "1 timme",
+            "timebefore" : "3 timmar", 
             "type" : "Vikt"
         }
     ]
 
-    return jsonify([ {"type": notification["type"], "time-after": notification["time-after"], "time-before": notification["time-before"], "notice-media-type": notification["notice-media-type]"} for notification in notifications:
-        ])
+    return jsonify([ {"type": notification["type"], "timeafter": notification["timeafter"],
+     "timebefore": notification["timebefore"], "noticemediatype": notification["noticemediatype"]} for notification in notifications])
