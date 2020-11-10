@@ -47,7 +47,7 @@ notifications = [
     ]
 
 
-@app.route('/current-notifications', methods=['GET', 'POST'])
+@app.route('/current-notifications', methods=['GET', 'POST', 'PUT'])
 def curr_notifications():
 
     
@@ -56,6 +56,9 @@ def curr_notifications():
         
         notifications.append(request.get_json())
         print(notifications)
+
+    if request.method == "PUT":
+        notifications[0] = request.get_json()
 
 
     return jsonify([ {"type": notification["type"], "timeafter": notification["timeafter"],

@@ -54,7 +54,7 @@
             "id": "bKzPD7"
           },
           "url": "http://127.0.0.1:5000/current-notifications",
-          "method": "POST",
+          "method": "PUT",
           "headers": {},
           "contentType": "application/json",
           "responseType": "json",

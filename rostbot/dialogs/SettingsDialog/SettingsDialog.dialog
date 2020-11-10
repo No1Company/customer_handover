@@ -40,6 +40,30 @@
               "value": "Notiser",
               "actions": [
                 {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "aUyA6r"
+                  },
+                  "assignments": [
+                    {
+                      "property": "user.notis.via",
+                      "value": "${dialog.resultProperty.content[0].noticemediatype}"
+                    },
+                    {
+                      "property": "user.notis.time.after",
+                      "value": "${dialog.resultProperty.content[0].timeafter}"
+                    },
+                    {
+                      "property": "user.notis.time.before",
+                      "value": "${dialog.resultProperty.content[0].timebefore}"
+                    },
+                    {
+                      "value": "${dialog.resultProperty.content[0].type}",
+                      "property": "user.notis.measurments"
+                    }
+                  ]
+                },
+                {
                   "$kind": "Microsoft.SetProperty",
                   "$designer": {
                     "id": "G3CGJB"
@@ -156,7 +180,7 @@
                         "id": "E6OZyE"
                       },
                       "url": "http://127.0.0.1:5000/current-notifications",
-                      "method": "POST",
+                      "method": "PUT",
                       "headers": {},
                       "contentType": "application/json",
                       "responseType": "json",
@@ -185,18 +209,18 @@
                       "assignments": [
                         {
                           "property": "user.notis.via",
-                          "value": "${dialog.resultProperty.content[1].noticemediatype}"
+                          "value": "${dialog.resultProperty.content[0].noticemediatype}"
                         },
                         {
                           "property": "user.notis.time.after",
-                          "value": "${dialog.resultProperty.content[1].timeafter}"
+                          "value": "${dialog.resultProperty.content[0].timeafter}"
                         },
                         {
                           "property": "user.notis.time.before",
-                          "value": "${dialog.resultProperty.content[1].timebefore}"
+                          "value": "${dialog.resultProperty.content[0].timebefore}"
                         },
                         {
-                          "value": "${dialog.resultProperty.content[1].type}",
+                          "value": "${dialog.resultProperty.content[0].type}",
                           "property": "user.notis.measurments"
                         }
                       ]
