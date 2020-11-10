@@ -1,4 +1,8 @@
 [import](common.lg)
 
 # SendActivity_ndVWqt()
-- ${dialog.resultProperty.content[0].start}
+- ${dialog.resultProperty.content[0].timebefore}
+# SendActivity_A3MPij()
+- ${dialog.resultProperty.content[0].timeafter}
+# SendActivity_HnHccm()
+- ${dialog.resultProperty.content[0].noticemediatype}
