@@ -109,7 +109,7 @@
             "id": "NOVnk5"
           },
           "activityProcessed": true,
-          "dialog": "RegisterMeasurments"
+          "dialog": "RegisterValueTypeSelection"
         }
       ]
     },
