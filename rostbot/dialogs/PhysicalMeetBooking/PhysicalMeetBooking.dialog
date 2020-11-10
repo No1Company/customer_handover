@@ -76,8 +76,7 @@
               "$kind": "Microsoft.EndDialog",
               "$designer": {
                 "id": "WNblWK"
-              },
-              "value": "= '0000/00/00'"
+              }
             }
           ],
           "condition": "dialog.result.statusCode == 200"

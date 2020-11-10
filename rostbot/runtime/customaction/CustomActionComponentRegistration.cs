@@ -11,9 +11,12 @@ namespace Microsoft.BotFramework.Composer.CustomAction
     {
         public IEnumerable<DeclarativeType> GetDeclarativeTypes(ResourceExplorer resourceExplorer)
         {
-            // Actions
-            yield return new DeclarativeType<MultiplyDialog>(MultiplyDialog.Kind);
+            // Custom Actions
+            yield return new DeclarativeType<AddThreeStrings>(AddThreeStrings.Kind);
+            yield return new DeclarativeType<AddString>(AddString.Kind);
+            yield return new DeclarativeType<TwoNumbers>(TwoNumbers.Kind);
             yield return new DeclarativeType<ConvertDate>(ConvertDate.Kind);
+
         }
 
         public IEnumerable<JsonConverter> GetConverters(ResourceExplorer resourceExplorer, SourceContext sourceContext)

@@ -24,28 +24,49 @@
           "activity": "${SendActivity_DJ7jQx()}"
         },
         {
-          "$kind": "Microsoft.ConfirmInput",
+          "$kind": "Microsoft.ChoiceInput",
           "$designer": {
-            "id": "G6vt5a"
+            "id": "KIyFFR"
           },
           "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${ConfirmInput_Prompt_G6vt5a()}",
+          "prompt": "${ChoiceInput_Prompt_KIyFFR()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
           "choiceOptions": {
-            "includeNumbers": true,
-            "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ", "
+            "includeNumbers": true
           },
-          "confirmChoices": "[\"Ja\",\"Nej\"]",
-          "property": "user.confirm",
-          "outputFormat": ""
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "turn.confirm"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "AR3ABV"
+          },
+          "condition": "turn.confirm == 'Ja'",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "WASoIJ"
+              },
+              "activity": "${SendActivity_WASoIJ()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "gwQ3gS"
+              }
+            }
+          ]
         },
         {
           "$kind": "Microsoft.HttpRequest",
@@ -107,8 +128,7 @@
               "$kind": "Microsoft.EndDialog",
               "$designer": {
                 "id": "VLJZ0u"
-              },
-              "value": "= '0000/00/00'"
+              }
             }
           ],
           "condition": "dialog.result.statusCode == 200"

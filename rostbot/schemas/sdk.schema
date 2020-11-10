@@ -5,6 +5,12 @@
   "description": "These are all of the kinds that can be created by the loader.",
   "oneOf": [
     {
+      "$ref": "#/definitions/AddString"
+    },
+    {
+      "$ref": "#/definitions/AddThreeStrings"
+    },
+    {
       "$ref": "#/definitions/ConvertDate"
     },
     {
@@ -317,14 +323,14 @@
       "$ref": "#/definitions/Microsoft.UrlEntityRecognizer"
     },
     {
-      "$ref": "#/definitions/MultiplyDialog"
+      "$ref": "#/definitions/TwoNumbers"
     }
   ],
   "definitions": {
-    "ConvertDate": {
+    "AddString": {
       "$role": "implements(Microsoft.IDialog)",
-      "title": "ConvertDate",
-      "description": "This will return the stringvalue in a unified way from multiple types of date inputs, to enable the user to type next monday",
+      "title": "AddString",
+      "description": "This will return the result of arg1*arg2",
       "type": "object",
       "required": [
         "$kind"
@@ -339,13 +345,113 @@
       "properties": {
         "arg1": {
           "$ref": "#/definitions/stringExpression",
-          "title": "InputString",
+          "title": "Arg1",
           "description": "Value from callers memory to use as arg 1"
+        },
+        "arg2": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Arg2",
+          "description": "Value from callers memory to use as arg 2"
         },
         "resultProperty": {
           "$ref": "#/definitions/stringExpression",
-          "title": "DateResult",
-          "description": "Value from callers memory to store the resulting date string"
+          "title": "Result",
+          "description": "Value from callers memory to store the result"
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "AddString"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "AddThreeStrings": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "AddThreeStrings",
+      "description": "This will return the result of arg1+arg2+arg3",
+      "type": "object",
+      "required": [
+        "$kind"
+      ],
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "arg1": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Arg1",
+          "description": "Value from callers memory to use as arg 1"
+        },
+        "arg2": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Arg2",
+          "description": "Value from callers memory to use as arg 2"
+        },
+        "arg3": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Arg3",
+          "description": "Value from callers memory to use as arg 3"
+        },
+        "resultProperty": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Result",
+          "description": "Value from callers memory to store the result"
+        },
+        "$kind": {
+          "title": "Kind of dialog object",
+          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
+          "type": "string",
+          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
+          "const": "AddThreeStrings"
+        },
+        "$designer": {
+          "title": "Designer information",
+          "type": "object",
+          "description": "Extra information for the Bot Framework Composer."
+        }
+      }
+    },
+    "ConvertDate": {
+      "$role": "implements(Microsoft.IDialog)",
+      "title": "ConvertDate",
+      "description": "This will return the result of arg1*arg2",
+      "type": "object",
+      "required": [
+        "$kind"
+      ],
+      "additionalProperties": false,
+      "patternProperties": {
+        "^\\$": {
+          "title": "Tooling property",
+          "description": "Open ended property for tooling."
+        }
+      },
+      "properties": {
+        "arg1": {
+          "$ref": "#/definitions/integerExpression",
+          "title": "Arg1",
+          "description": "Value from callers memory to use as arg 1"
+        },
+        "arg2": {
+          "$ref": "#/definitions/integerExpression",
+          "title": "Arg2",
+          "description": "Value from callers memory to use as arg 2"
+        },
+        "resultProperty": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Result",
+          "description": "Value from callers memory to store the result"
         },
         "$kind": {
           "title": "Kind of dialog object",
@@ -4234,10 +4340,16 @@
           "type": "string"
         },
         {
+          "$ref": "#/definitions/AddString"
+        },
+        {
+          "$ref": "#/definitions/AddThreeStrings"
+        },
+        {
           "$ref": "#/definitions/ConvertDate"
         },
         {
-          "$ref": "#/definitions/MultiplyDialog"
+          "$ref": "#/definitions/TwoNumbers"
         },
         {
           "$ref": "#/definitions/Microsoft.QnAMakerDialog"
@@ -9301,9 +9413,9 @@
         }
       }
     },
-    "MultiplyDialog": {
+    "TwoNumbers": {
       "$role": "implements(Microsoft.IDialog)",
-      "title": "Multiply",
+      "title": "TwoNumbers",
       "description": "This will return the result of arg1*arg2",
       "type": "object",
       "required": [
@@ -9337,7 +9449,7 @@
           "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
           "type": "string",
           "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
-          "const": "MultiplyDialog"
+          "const": "TwoNumbers"
         },
         "$designer": {
           "title": "Designer information",
