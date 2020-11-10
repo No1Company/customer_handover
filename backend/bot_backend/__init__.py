@@ -1,15 +1,8 @@
 from flask import Flask, jsonify, request
 from datetime import datetime as d
 import pickle
-import requests
-from bot_backend.blueprints import openehr
 
 app = Flask(__name__, static_folder = 'static', static_url_path = '/')
-app.register_blueprint(openehr.openehr)
-
-loginfile = open("login.txt")
-username = loginfile.readline()
-password = loginfile.readline()
 
 DATA_PATH = 'backend/bot_backend/data/data.txt'
 
@@ -26,7 +19,6 @@ def load_data(data_path):
     
     return file
 
-ehrid = "8521e620-d38e-4fd6-9071-f785c2ece9b3"
 @app.route('/')
 def main():
     return 'Hello world'
@@ -125,5 +117,3 @@ def specific_current_booking(booking_id):
         return "200"
         
     
-    return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
-
