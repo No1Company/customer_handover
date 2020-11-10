@@ -6,8 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Action\" />
-    <Folder Include="Schemas\" />
+    <Folder Include="Action/" />
+    <Folder Include="Schemas/" />
   </ItemGroup>
 
   <ItemGroup>

@@ -1,0 +1,4 @@
+[import](common.lg)
+
+# SendActivity_tJK6k8()
+-Du har en ${dialog.result.content[1].type} den ${dialog.result.content[1].bookingdate} med id:t 1.
