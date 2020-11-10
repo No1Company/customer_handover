@@ -40,6 +40,16 @@
               "value": "Notiser",
               "actions": [
                 {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "xX4vmH"
+                  },
+                  "method": "GET",
+                  "url": "http://127.0.0.1:5000/current-notifications",
+                  "resultProperty": "dialog.resultProperty",
+                  "contentType": "application/json"
+                },
+                {
                   "$kind": "Microsoft.SetProperties",
                   "$designer": {
                     "id": "aUyA6r"
