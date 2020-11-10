@@ -15,6 +15,13 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.DeleteProperty",
+          "$designer": {
+            "id": "FzNwOd"
+          },
+          "property": "user.choice"
+        },
+        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "12D1pq"
