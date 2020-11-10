@@ -40,11 +40,193 @@
               "value": "Notiser",
               "actions": [
                 {
-                  "$kind": "Microsoft.SendActivity",
+                  "$kind": "Microsoft.SetProperties",
                   "$designer": {
-                    "id": "oZyyuy"
+                    "id": "aUyA6r"
                   },
-                  "activity": "${SendActivity_oZyyuy()}"
+                  "assignments": [
+                    {
+                      "property": "user.notis.via",
+                      "value": "${dialog.resultProperty.content[0].noticemediatype}"
+                    },
+                    {
+                      "property": "user.notis.time.after",
+                      "value": "${dialog.resultProperty.content[0].timeafter}"
+                    },
+                    {
+                      "property": "user.notis.time.before",
+                      "value": "${dialog.resultProperty.content[0].timebefore}"
+                    },
+                    {
+                      "value": "${dialog.resultProperty.content[0].type}",
+                      "property": "user.notis.measurments"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "G3CGJB"
+                  },
+                  "property": "user.test.array",
+                  "value": [
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.Foreach",
+                  "$designer": {
+                    "id": "8gvJe5"
+                  },
+                  "value": "dialog.foreach.value",
+                  "itemsProperty": "user.test.array",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "QjPFXw"
+                      },
+                      "activity": "${SendActivity_QjPFXw()}"
+                    },
+                    {
+                      "$kind": "Microsoft.EndTurn",
+                      "$designer": {
+                        "id": "L7bJvT"
+                      }
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "hYf4as"
+                      },
+                      "assignments": [
+                        {
+                          "property": "user.notis.via",
+                          "value": "=@notisVia"
+                        },
+                        {
+                          "property": "user.notis.time.after",
+                          "value": "=@timeAfter"
+                        },
+                        {
+                          "property": "user.notis.time.before",
+                          "value": "=@timeBefore"
+                        },
+                        {
+                          "value": "=@notisMeasurments",
+                          "property": "user.notis.measurments"
+                        },
+                        {
+                          "property": "dialog.show.notifications",
+                          "value": true
+                        }
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.HttpRequest",
+                      "$designer": {
+                        "id": "E6OZyE"
+                      },
+                      "url": "http://127.0.0.1:5000/current-notifications",
+                      "method": "PUT",
+                      "headers": {},
+                      "contentType": "application/json",
+                      "responseType": "json",
+                      "body": {
+                        "noticemediatype": "${user.notis.via}",
+                        "timeafter": "${user.notis.time.after}",
+                        "timebefore": "${user.notis.time.before}",
+                        "type": "${user.notis.measurments}"
+                      }
+                    },
+                    {
+                      "$kind": "Microsoft.HttpRequest",
+                      "$designer": {
+                        "id": "3teq80"
+                      },
+                      "method": "GET",
+                      "url": "http://127.0.0.1:5000/current-notifications",
+                      "resultProperty": "dialog.resultProperty",
+                      "contentType": "application/json"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "WnpHWM"
+                      },
+                      "assignments": [
+                        {
+                          "property": "user.notis.via",
+                          "value": "${dialog.resultProperty.content[0].noticemediatype}"
+                        },
+                        {
+                          "property": "user.notis.time.after",
+                          "value": "${dialog.resultProperty.content[0].timeafter}"
+                        },
+                        {
+                          "property": "user.notis.time.before",
+                          "value": "${dialog.resultProperty.content[0].timebefore}"
+                        },
+                        {
+                          "value": "${dialog.resultProperty.content[0].type}",
+                          "property": "user.notis.measurments"
+                        }
+                      ]
+                    }
+                  ],
+                  "index": "dialog.foreach.index"
                 }
               ]
             },

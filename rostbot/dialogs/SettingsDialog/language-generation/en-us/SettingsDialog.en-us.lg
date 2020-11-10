@@ -4,7 +4,6 @@
 [Activity
     Attachments = ${json(settingscardjson())}
 ]
-
 # AdaptiveCardNotificationSettings()
 [Activity
     Attachments = ${json(settingnotifications())}
@@ -109,7 +108,7 @@
     "actions": [
         {
             "type": "Action.ShowCard",
-            "title": "Skapa ny notis",
+            "title": "Hantera notiser",
             "style": "positive",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
             "data": "Skapa ny notis",
@@ -137,21 +136,20 @@
                         "choices": [
                             {
                                 "title": "Blodtryck",
-                                "value": "Blodtryck"
+                                "value": " Blodtryck"
                             },
                             {
                                 "title": "Vikt",
-                                "value": "Vikt"
+                                "value": " Vikt"
                             },
                             {
                                 "title": "Kroppstemperatur",
-                                "value": "Kroppstemperatur"
+                                "value": " Kroppstemperatur"
                             }
                         ],
                         "placeholder": "Placeholder text",
                         "style": "expanded",
                         "id": "notisMeasurments",
-                        "isVisible": true,
                         "isMultiSelect": true,
                         "value": ""
                     },
@@ -163,8 +161,27 @@
                         "size": "Medium"
                     },
                     {
-                        "type": "Input.Time",
-                        "id": "p1"
+                        "type": "Input.ChoiceSet",
+                        "id": "timeBefore",
+                        "value": "1 timme innan",
+                        "choices": [
+                            {
+                                "title": "1 timme innan",
+                                "value": "1 timme innan"
+                            },
+                            {
+                                "title": "2 timmar innan",
+                                "value": "2 timmar innan"
+                            },
+                            {
+                                "title": "3 timmar innan",
+                                "value": "3 timmar innan"
+                            },
+                            {
+                                "title": "Ingen påminnelse",
+                                "value": "Ingen påminnelse"
+                            }
+                        ]
                     },
                     {
                         "type": "TextBlock",
@@ -174,8 +191,27 @@
                         "weight": "Bolder"
                     },
                     {
-                        "type": "Input.Time",
-                        "id": "p2"
+                        "type": "Input.ChoiceSet",
+                        "id": "timeAfter",
+                        "value": "Ingen påminnelse",
+                        "choices": [
+                            {
+                                "title": "1 timme efter",
+                                "value": "1 timme efter"
+                            },
+                            {
+                                "title": "2 timmar efter",
+                                "value": "2 timmar efter"
+                            },
+                            {
+                                "title": "3 timmar efter",
+                                "value": "3 timmar efter"
+                            },
+                            {
+                                "title": "Ingen påminnelse",
+                                "value": "Ingen påminnelse"
+                            }
+                        ]
                     },
                     {
                         "type": "TextBlock",
@@ -189,15 +225,15 @@
                         "choices": [
                             {
                                 "title": "Meddelande",
-                                "value": "Meddelande"
+                                "value": " Meddelande"
                             },
                             {
                                 "title": "Chat",
-                                "value": "Chat"
+                                "value": " Chat"
                             },
                             {
                                 "title": "E-mail",
-                                "value": "E-mail"
+                                "value": " E-mail"
                             }
                         ],
                         "placeholder": "Placeholder text",
@@ -247,28 +283,65 @@
         },
         {
             "type": "TextBlock",
-            "text": "Blodtryck",
+            "text": "Mina notiser",
             "wrap": true,
             "size": "Medium",
             "weight": "Bolder"
         },
         {
-            "type": "TextBlock",
-            "text": "New TextBlock",
-            "wrap": true
-        },
-        {
-            "type": "TextBlock",
-            "text": "Vikt",
-            "wrap": true,
-            "size": "Medium",
-            "weight": "Bolder",
-            "spacing": "ExtraLarge"
-        },
-        {
-            "type": "TextBlock",
-            "text": "New TextBlock",
-            "wrap": true
+            "type": "ColumnSet",
+            "bleed": true,
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "FactSet",
+                            "facts": [
+                                {
+                                    "title": "Typ: ",
+                                    "value": "${user.notis.measurments}"
+                                },
+                                {
+                                    "title": "Via: ",
+                                    "value": "${user.notis.via}"
+                                },
+                                {
+                                    "title": "Innan: ",
+                                    "value": "${user.notis.time.before}"
+                                },
+                                {
+                                    "title": "Snooze: ",
+                                    "value": "${user.notis.time.after}"
+                                }
+                            ],
+                            "separator": true,
+                            "height": "stretch"
+                        }
+                    ]
+                },
+                {
+                    "type": "Column",
+                    "width": "20px",
+                    "selectAction": {
+                        "type": "Action.Submit",
+                        "id": "cancelbutton",
+                        "value": "true"
+                    },
+                    "isVisible": false,
+                    "backgroundImage": {
+                        "horizontalAlignment": "Center",
+                        "url": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
+                        "verticalAlignment": "Center"
+                    },
+                    "style": "default",
+                    "verticalContentAlignment": "Center",
+                    "horizontalAlignment": "Center",
+                    "separator": true
+                }
+            ],
+            "height": "stretch"
         }
     ]
 }
@@ -402,5 +475,5 @@
 # TextInput_Prompt_12D1pq()
  -${AdaptiveCardSettings()}
 
-# SendActivity_oZyyuy()
+# SendActivity_QjPFXw()
 - ${AdaptiveCardNotificationSettings()}
