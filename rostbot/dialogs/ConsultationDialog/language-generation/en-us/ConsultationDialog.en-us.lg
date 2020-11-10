@@ -8,10 +8,3 @@
 - Vad är anledningen till att du vill boka en konsultation med läkare? 
 # SendActivity_WiLWxu()
 - Tack för ditt svar.
-
-# SendActivity_3TrNOR()
-- ${user.resultstring}
-# TextInput_Prompt_32z5aT()
-- arg1c
-# TextInput_Prompt_dgw8G0()
-- arg2c

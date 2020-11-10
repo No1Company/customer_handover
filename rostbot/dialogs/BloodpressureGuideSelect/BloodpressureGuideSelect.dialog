@@ -1,0 +1,87 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "rj3SfI",
+    "name": "BloodpressureGuideSelect",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "yu4q9k"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "3d4A6a"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "prompt": "${TextInput_Prompt_3d4A6a()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.guideType"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "udj9lj"
+          },
+          "condition": "user.guideType",
+          "cases": [
+            {
+              "value": "Utan guide",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "EqJmcI"
+                  },
+                  "activity": "${SendActivity_EqJmcI()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "mDRMlG"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "BloodpressureWithGuide"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "Ceg6gP"
+              },
+              "activityProcessed": true,
+              "dialog": "BloodpressureGuide"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "ghkbsK"
+              },
+              "activityProcessed": true,
+              "dialog": "BloodpressureWithGuide"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "BloodpressureGuideSelect.lg",
+  "recognizer": "BloodpressureGuideSelect.lu.qna",
+  "id": "BloodpressureGuideSelect"
+}
