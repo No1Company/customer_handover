@@ -22,7 +22,7 @@
             "id": "LiS2Dk"
           },
           "method": "GET",
-          "url": "http://localhost:5000/available-times",
+          "url": "http://127.0.0.1:5000/available-times",
           "resultProperty": "dialog.result",
           "contentType": "application/json"
         },

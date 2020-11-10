@@ -4,9 +4,13 @@
 - Vill du även ha en bekräftelse via mail? 
 # ConfirmInput_Prompt_M0rHZt()
 - Stämmer ${user.email}?
-# SendActivity_qiNvko()
--Mail skickat! 
 # SendActivity_4sCcDg()
 - 
-# SendActivity_plts39()
+# SendActivity_HgEFXA()
 - Okej, då syns vi ${user.bookingdate}!
+# TextInput_Prompt_jb9xcj()
+-Vad är din email? 
+# SendActivity_KjFVJi()
+- Jag är "Nej"
+# SendActivity_9RVpkn()
+-Mail skickat! 

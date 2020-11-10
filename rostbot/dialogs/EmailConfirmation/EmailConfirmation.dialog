@@ -37,29 +37,52 @@
             "inlineSeparator": ", "
           },
           "confirmChoices": "['Ja', 'Nej']",
-          "property": "dialog.confirm"
+          "property": "user.confirm_1"
         },
         {
-          "$kind": "Microsoft.IfCondition",
+          "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "g3oWry"
+            "id": "csuZZW"
           },
-          "condition": "dialog.confirm == 'Ja'",
-          "elseActions": [
+          "condition": "user.confirm_1",
+          "cases": [
             {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "plts39"
-              },
-              "activity": "${SendActivity_plts39()}"
+              "value": "Ja"
             },
             {
-              "$kind": "Microsoft.EndDialog",
-              "$designer": {
-                "id": "jTUjyW"
-              }
+              "value": "Nej",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "HgEFXA"
+                  },
+                  "activity": "${SendActivity_HgEFXA()}"
+                },
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "mpHXCQ"
+                  }
+                }
+              ]
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "jb9xcj"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_jb9xcj()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.email"
         },
         {
           "$kind": "Microsoft.ConfirmInput",
@@ -77,22 +100,69 @@
           "defaultValueResponse": "",
           "choiceOptions": {
             "includeNumbers": true,
-            "inlineOrMore": ", or "
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
           },
-          "confirmChoices": "['Ja', 'Nej']"
+          "confirmChoices": "['Ja', 'Nej']",
+          "property": "user.confirm_2"
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "qiNvko"
+            "id": "97PPZL"
           },
-          "activity": "${SendActivity_qiNvko()}"
-        },
-        {
-          "$kind": "Microsoft.EndDialog",
-          "$designer": {
-            "id": "9L59g4"
-          }
+          "condition": "user.confim_2",
+          "cases": [
+            {
+              "actions": [
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "Nfwaux"
+                  },
+                  "property": "user.email",
+                  "value": "=\"\""
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "KjFVJi"
+                  },
+                  "activity": "${SendActivity_KjFVJi()}"
+                },
+                {
+                  "$kind": "Microsoft.RepeatDialog",
+                  "$designer": {
+                    "id": "lGWU6o"
+                  },
+                  "activityProcessed": true
+                },
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "ilF4zI"
+                  }
+                }
+              ],
+              "value": "Nej"
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "9RVpkn"
+              },
+              "activity": "${SendActivity_9RVpkn()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "VtkMeU"
+              }
+            }
+          ]
         }
       ]
     }
