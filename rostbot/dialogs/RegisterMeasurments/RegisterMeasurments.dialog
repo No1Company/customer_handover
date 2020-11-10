@@ -40,42 +40,15 @@
           "cases": [
             {
               "value": "Med guide",
-              "actions": [
-                {
-                  "$kind": "Microsoft.BeginDialog",
-                  "$designer": {
-                    "id": "YB5tUG"
-                  },
-                  "activityProcessed": true,
-                  "dialog": "MeasureWithGuide"
-                }
-              ]
+              "actions": []
             },
             {
               "value": "Utan guide",
-              "actions": [
-                {
-                  "$kind": "Microsoft.BeginDialog",
-                  "$designer": {
-                    "id": "6Nkn9r"
-                  },
-                  "activityProcessed": true,
-                  "dialog": "MeasureWithoutGuide"
-                }
-              ]
+              "actions": []
             },
             {
               "value": "Utan guide och bilder",
-              "actions": [
-                {
-                  "$kind": "Microsoft.BeginDialog",
-                  "$designer": {
-                    "id": "g4u1qo"
-                  },
-                  "activityProcessed": true,
-                  "dialog": "MeasureWithoutGuideAndImages"
-                }
-              ]
+              "actions": []
             }
           ]
         }
