@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "jpRoNN",
-    "name": "SettingsDialog",
+    "id": "NlZnib",
+    "name": "RegisterValueTypeSelection",
     "description": ""
   },
   "autoEndDialog": true,
@@ -11,64 +11,52 @@
     {
       "$kind": "Microsoft.OnBeginDialog",
       "$designer": {
-        "id": "hgMxpP"
+        "name": "BeginDialog",
+        "description": "",
+        "id": "oKhTzU"
       },
       "actions": [
         {
           "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "12D1pq"
+            "id": "1FVIbz"
           },
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": true,
-          "prompt": "${TextInput_Prompt_12D1pq()}",
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_1FVIbz()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
-          "property": "user.choice "
+          "property": "dialog.registertype"
         },
         {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "OjOO4K"
+            "id": "HSb1RU"
           },
-          "condition": "user.choice",
+          "condition": "dialog.registertype",
           "cases": [
             {
-              "value": "Notiser",
+              "value": "Blodtryck",
               "actions": [
                 {
-                  "$kind": "Microsoft.SendActivity",
+                  "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "oZyyuy"
+                    "id": "SayO6L"
                   },
-                  "activity": "${SendActivity_oZyyuy()}"
+                  "activityProcessed": true,
+                  "dialog": "BloodpressureGuideSelect"
                 }
               ]
-            },
-            {
-              "value": "Chatt"
-            },
-            {
-              "value": "Annat"
             }
           ]
-        },
-        {
-          "$kind": "Microsoft.EndDialog",
-          "$designer": {
-            "id": "s1Ofv5"
-          }
         }
       ]
     }
   ],
-  "generator": "SettingsDialog.lg",
-  "recognizer": {
-    "$kind": "Microsoft.RegexRecognizer",
-    "intents": []
-  },
-  "id": "SettingsDialog"
+  "generator": "RegisterValueTypeSelection.lg",
+  "recognizer": "RegisterValueTypeSelection.lu.qna",
+  "id": "RegisterValueTypeSelection"
 }

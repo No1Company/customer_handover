@@ -1,5 +1,0 @@
-[import](common.lg)
-
-
-# TextInput_Prompt_dqCqZy()
--Du har valt att boka en ${user.bookingtype} den ${user.bookingdate}.  Bokningen är nu registrerad. Var vänlig att svara på några frågor för att göra mötet smidigare. Varför bokade du detta möte? 
