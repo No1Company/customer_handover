@@ -1,10 +1,12 @@
 from flask import Flask, jsonify, request
 from datetime import datetime as d
 import pickle
+import os
 
 app = Flask(__name__, static_folder = 'static', static_url_path = '/')
 
-DATA_PATH = 'backend/bot_backend/data/data.txt'
+cwd_data_path = os.getcwd() + "\\bot_backend\data\data.txt"
+DATA_PATH = os.path.abspath(cwd_data_path)
 
 def save_data(data, data_path):
     file = open(data_path, 'wb')
@@ -12,6 +14,7 @@ def save_data(data, data_path):
     file.close()
 
 def load_data(data_path):
+    
     try: 
         file = pickle.load(open(data_path, 'rb'))
     except EOFError:
@@ -54,6 +57,34 @@ def avail_times():
 
 
     return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
+
+notifications = [
+        {
+            "noticemediatype" : "",
+            "timeafter" : "",
+            "timebefore" : "", 
+            "type" : ""
+        }
+    ]
+
+
+@app.route('/current-notifications', methods=['GET', 'POST', 'PUT'])
+def curr_notifications():
+
+    
+
+    if request.method == "POST":
+        
+        notifications.append(request.get_json())
+        print(notifications)
+
+    if request.method == "PUT":
+        notifications[0] = request.get_json()
+
+
+    return jsonify([ {"type": notification["type"], "timeafter": notification["timeafter"],
+     "timebefore": notification["timebefore"], "noticemediatype": notification["noticemediatype"]} for notification in notifications])
+
 
 current_bookings = [
         {

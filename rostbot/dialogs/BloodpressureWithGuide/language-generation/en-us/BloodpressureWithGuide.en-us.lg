@@ -9,7 +9,7 @@
 
 # TextInput_Prompt_h5Ktbw()
 [SigninCard
-    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${turn.diavalue}\n\nStämmer detta?
+    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
     buttons = Ja värdena stämmer | Nej värdena stämmer inte
     ]
 # TextInput_Prompt_moza65()
@@ -34,4 +34,4 @@
 
 
 # NumberInput_Prompt_Yu9Psp()
--Vänta tills blodtryckmätaren inte kan höra pulsen längre och mät undertrycket. Vad är resultatet?
+-Vad är resultatet för undertrycket?

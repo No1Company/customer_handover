@@ -29,18 +29,24 @@
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "eQh5IT"
+            "id": "1NLGEh"
           },
-          "condition": "dialog.result.statusCode == 200",
-          "actions": [
+          "condition": "dialog.result != {}",
+          "elseActions": [
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "tJK6k8"
-              },
-              "activity": "${SendActivity_tJK6k8()}"
+                "id": "CoMjdH"
+              }
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "LTVlXc"
+          },
+          "activity": "${SendActivity_LTVlXc()}"
         },
         {
           "$kind": "Microsoft.ChoiceInput",
@@ -81,7 +87,14 @@
                 "id": "ItRopo"
               },
               "method": "DELETE",
-              "url": "http://127.0.0.1:5000/current-times"
+              "url": "http://127.0.0.1:5000/current-bookings/1"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "KTHVQ2"
+              },
+              "activity": "${SendActivity_KTHVQ2()}"
             }
           ]
         },

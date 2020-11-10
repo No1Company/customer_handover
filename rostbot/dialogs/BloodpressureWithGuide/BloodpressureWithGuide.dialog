@@ -46,7 +46,7 @@
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
-          "property": "turn.diavalue"
+          "property": "user.diavalue"
         },
         {
           "$kind": "Microsoft.TextInput",
@@ -76,6 +76,22 @@
             {
               "value": "Nej värdena stämmer inte",
               "actions": [
+                {
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "FuaAUE"
+                  },
+                  "assignments": [
+                    {
+                      "property": "user.sysvalue",
+                      "value": "=null"
+                    },
+                    {
+                      "property": "user.diavalue",
+                      "value": "=null"
+                    }
+                  ]
+                },
                 {
                   "$kind": "Microsoft.RepeatDialog",
                   "$designer": {
