@@ -36,6 +36,5 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\core\Microsoft.BotFramework.Composer.Core.csproj" />
-    <ProjectReference Include="..\customaction\Microsoft.BotFramework.Composer.CustomAction.csproj" />
   </ItemGroup>
 </Project>

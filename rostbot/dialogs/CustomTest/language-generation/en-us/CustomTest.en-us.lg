@@ -1,8 +1,0 @@
-[import](common.lg)
-
-# NumberInput_Prompt_f7aAsG()
-- Conv1
-# NumberInput_Prompt_13hpFv()
-- Conv2
-# SendActivity_x3nRhZ()
--${user.result}
