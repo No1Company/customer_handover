@@ -50,7 +50,7 @@
           },
           "cases": [
             {
-              "value": "Huvudvärk",
+              "value": "huvudvärk",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -58,36 +58,35 @@
                     "id": "d8JXI6"
                   },
                   "activityProcessed": true,
-                  "dialog": "QuestionAlgorithmHeadache",
-                  "options": "user.symtoms",
+                  "dialog": "QuestionsConsultation",
                   "resultProperty": "user.bookingdate"
                 }
               ]
             },
             {
-              "value": "Feber",
+              "value": "feber",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "Xb7G4I"
+                    "id": "8fPutb"
                   },
                   "activityProcessed": true,
-                  "dialog": "QuestionAlgorithmFever",
+                  "dialog": "QuestionsConsultation",
                   "resultProperty": "user.bookingdate"
                 }
               ]
             },
             {
-              "value": "Buksmärtor",
+              "value": "buksmärtor",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "xogwnP"
+                    "id": "LzylfM"
                   },
                   "activityProcessed": true,
-                  "dialog": "QuestionAlgorithmStomacheache",
+                  "dialog": "QuestionsConsultation",
                   "resultProperty": "user.bookingdate"
                 }
               ]
@@ -103,6 +102,14 @@
             }
           ],
           "condition": "user.symptoms"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "QBouzl"
+          },
+          "property": "user.symptoms",
+          "value": "= null"
         },
         {
           "$kind": "Microsoft.EndDialog",

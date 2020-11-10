@@ -17,34 +17,35 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.ConfirmInput",
+          "$kind": "Microsoft.ChoiceInput",
           "$designer": {
-            "id": "vlh3nH"
+            "id": "lJCkPr"
           },
           "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${ConfirmInput_Prompt_vlh3nH()}",
+          "prompt": "${ChoiceInput_Prompt_lJCkPr()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
           "choiceOptions": {
             "includeNumbers": true,
             "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ", "
+            "inlineOr": " or "
           },
-          "confirmChoices": "['Ja', 'Nej']",
-          "property": "user.confirm_1"
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "turn.confirm"
         },
         {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
             "id": "csuZZW"
           },
-          "condition": "user.confirm_1",
           "cases": [
             {
               "value": "Ja"
@@ -67,102 +68,16 @@
                 }
               ]
             }
-          ]
-        },
-        {
-          "$kind": "Microsoft.TextInput",
-          "$designer": {
-            "id": "jb9xcj"
-          },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_jb9xcj()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "property": "user.email"
-        },
-        {
-          "$kind": "Microsoft.ConfirmInput",
-          "$designer": {
-            "id": "M0rHZt"
-          },
-          "defaultLocale": "en-us",
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${ConfirmInput_Prompt_M0rHZt()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "choiceOptions": {
-            "includeNumbers": true,
-            "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ", "
-          },
-          "confirmChoices": "['Ja', 'Nej']",
-          "property": "user.confirm_2"
-        },
-        {
-          "$kind": "Microsoft.SwitchCondition",
-          "$designer": {
-            "id": "97PPZL"
-          },
-          "condition": "user.confim_2",
-          "cases": [
-            {
-              "actions": [
-                {
-                  "$kind": "Microsoft.SetProperty",
-                  "$designer": {
-                    "id": "Nfwaux"
-                  },
-                  "property": "user.email",
-                  "value": "=\"\""
-                },
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "KjFVJi"
-                  },
-                  "activity": "${SendActivity_KjFVJi()}"
-                },
-                {
-                  "$kind": "Microsoft.RepeatDialog",
-                  "$designer": {
-                    "id": "lGWU6o"
-                  },
-                  "activityProcessed": true
-                },
-                {
-                  "$kind": "Microsoft.EndDialog",
-                  "$designer": {
-                    "id": "ilF4zI"
-                  }
-                }
-              ],
-              "value": "Nej"
-            }
           ],
-          "default": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "9RVpkn"
-              },
-              "activity": "${SendActivity_9RVpkn()}"
-            },
-            {
-              "$kind": "Microsoft.EndDialog",
-              "$designer": {
-                "id": "VtkMeU"
-              }
-            }
-          ]
+          "condition": "turn.confirm"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "EINCP6"
+          },
+          "activityProcessed": true,
+          "dialog": "EmailGather"
         }
       ]
     }

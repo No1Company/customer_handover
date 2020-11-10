@@ -43,6 +43,49 @@
           ]
         },
         {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "561cED"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_561cED()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "turn.choice"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "n3FYnr"
+          },
+          "condition": "turn.choice == Nej",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "ItRopo"
+              },
+              "method": "DELETE",
+              "url": "http://127.0.0.1:5000/current-times"
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.EndDialog",
           "$designer": {
             "id": "R3dygq"

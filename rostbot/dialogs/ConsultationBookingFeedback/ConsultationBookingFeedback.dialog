@@ -1,0 +1,103 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "PTtunS",
+    "name": "ConsultationBookingFeedback",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "jjhwnY"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "jAMrgh"
+          },
+          "method": "POST",
+          "url": "http://127.0.0.1:5000/current-bookings",
+          "body": {
+            "bookingdate": "${user.bookingdate}",
+            "type": "${user.bookingtype}"
+          },
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "GuCMjZ"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_GuCMjZ()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "turn.choice"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "rkJOUt"
+          },
+          "condition": "turn.choice == 'Ja'",
+          "actions": [
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "TFyExH"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "dialog.consultationcontext",
+              "prompt": "${TextInput_Prompt_TFyExH()}"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "1oVfhV"
+              },
+              "activity": "${SendActivity_1oVfhV()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Yt7EmI"
+          },
+          "activityProcessed": true,
+          "dialog": "EmailConfirmation"
+        }
+      ]
+    }
+  ],
+  "generator": "ConsultationBookingFeedback.lg",
+  "recognizer": "ConsultationBookingFeedback.lu.qna",
+  "id": "ConsultationBookingFeedback"
+}
