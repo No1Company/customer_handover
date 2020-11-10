@@ -51,34 +51,9 @@ def avail_times():
                 "stop"  : d(2020, 11, 9, 11, 00, 0)
             }
         ]
+
+
     return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
-
-notifications = [
-        {
-            "noticemediatype" : "",
-            "timeafter" : "",
-            "timebefore" : "", 
-            "type" : ""
-        }
-    ]
-
-
-@app.route('/current-notifications', methods=['GET', 'POST', 'PUT'])
-def curr_notifications():
-
-    
-
-    if request.method == "POST":
-        
-        notifications.append(request.get_json())
-        print(notifications)
-
-    if request.method == "PUT":
-        notifications[0] = request.get_json()
-
-
-    return jsonify([ {"type": notification["type"], "timeafter": notification["timeafter"],
-     "timebefore": notification["timebefore"], "noticemediatype": notification["noticemediatype"]} for notification in notifications])
 
 current_bookings = [
         {
@@ -101,8 +76,6 @@ def all_current_bookings():
     elif request.method == "GET":
         return jsonify(current_bookings)
 
-    return jsonify([ {"bookingdate": booking["bookingdate"], "type": booking["type"]} for booking in current_bookings])
-    
 @app.route('/current-bookings/<int:booking_id>', methods=['GET', 'DELETE'])
 def specific_current_booking(booking_id):
 
