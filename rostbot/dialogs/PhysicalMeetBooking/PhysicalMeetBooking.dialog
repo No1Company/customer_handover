@@ -1,0 +1,90 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "L8KVV3",
+    "name": "PhysicalMeetBooking",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "3TZVOh"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "LiS2Dk"
+          },
+          "method": "GET",
+          "url": "http://127.0.0.1:5000/available-times",
+          "resultProperty": "dialog.result",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "cqjam7"
+          },
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "mV3BLG"
+              },
+              "activity": "${SendActivity_mV3BLG()}"
+            },
+            {
+              "$kind": "Microsoft.NumberInput",
+              "$designer": {
+                "id": "iHR6jL"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${NumberInput_Prompt_iHR6jL()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "dialog.datechoice"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "uAKuhT"
+              },
+              "property": "user.bookingdate",
+              "value": "${dialog.result.content[${dialog.datechoice}].start}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "IRsXC3"
+              },
+              "value": "=user.bookingdate"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "WNblWK"
+              }
+            }
+          ],
+          "condition": "dialog.result.statusCode == 200"
+        }
+      ]
+    }
+  ],
+  "generator": "PhysicalMeetBooking.lg",
+  "recognizer": "PhysicalMeetBooking.lu.qna",
+  "id": "PhysicalMeetBooking"
+}

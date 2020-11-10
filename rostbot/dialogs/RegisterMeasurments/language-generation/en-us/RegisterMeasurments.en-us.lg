@@ -1,0 +1,92 @@
+[import](common.lg)
+
+# TextInput_Prompt_Qpcijg()
+- Vilket värde har du på det diastoliska trycket (undertrycket)?
+# ConfirmInput_Prompt_nkaFPW()
+- Du skrev in ${user.diavalue}, är detta korrekt?
+
+# ConfirmInput_Prompt_eqiWOr()
+- Du skrev in ${user.sysvalue}, är detta korrekt?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# TextInput_Prompt_xK6dPh()
+[HeroCard
+    title = Blodtrycksmätning
+    text = Ett för högt blodtryck märks oftast inte men kan leda till dödliga sjukdomar.
+    buttons = Start av mätning | Avbryt
+    image = http://www.todayifoundout.com/wp-content/uploads/2013/03/blood-pressure.jpg
+ ]
+# TextInput_Prompt_6QHcO8()
+[SigninCard
+    text = Först och främst ser du till att du är lugn och avslappnad för att kunna mäta blodtrycket korrekt. \n\nSlappna av, ta djupa andetag, se till att du inte får i dig något som kan öka hjärtslagen som till exempel kaffe eller tobak. Det bästa är om du har haft möjlighet att vila dig en stund innan.
+
+    buttons = Nästa steg
+]
+# TextInput_Prompt_7NIQcq()
+[HeroCard
+    text = Placera manschetten på överarmen i höjd med hjärtat. \n\nTänk på att hålla armen så att mätaren befinner sig i hjärthöjd.
+    buttons = Nästa steg
+    image = https://m.media-amazon.com/images/S/aplus-seller-content-images-us-east-1/ATVPDKIKX0DER/A1XLIDN9XQ0PZA/ccd53d24-3514-427a-b46c-0f0f067c4962._CR0,0,300,300_PT0_SX300__.jpg
+ ]
+# TextInput_Prompt_WC3g0M()
+[HeroCard
+    text = Manschetten fylls nu med luft och klämmer åt. Detta gör den för att stoppa upp blodet i pulsådern några sekunder. Töm manschetten på luft och mät övertrycket.
+    image = http://www.salterhousewares.co.uk/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/b/p/bpa9200_3.jpg
+    buttons = Nästa steg
+]
+# TextInput_Prompt_ke7IXh()
+[SigninCard
+    text = Vilket värde har du på det systoliska trycket (övertrycket)?
+    buttons = Fyll i värde
+]
+# TextInput_Prompt_tajAnX()
+[SigninCard
+    text = Vänta tills blodtryckmätaren inte kan höra pulsen längre och mät undertrycket.
+    buttons = Fyll i värde
+]
+# TextInput_Prompt_2la5gn()
+-
+
+# TextInput_Prompt_k4xYdL()
+-
+# TextInput_Prompt_qnot0w()
+[SigninCard
+    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
+    buttons = Ja värden stämmer | Nej värdena stämmer inte
+    ]
+# TextInput_Prompt_6qD0sT()
+[SigninCard
+    text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
+    buttons= Återgå till start
+    ]
+# TextInput_Prompt_E0E3Qv()
+[SigninCard
+    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDU är nu klar med mätningen, dina värden är sparade.
+    buttons= Avsluta mätning
+    ]
+
+
+# TextInput_Prompt_yKOMgf()
+> Move this to settings maybe? Maybe make it a global variable that is saved and re-used.
+
+[SigninCard
+    text = Hur vill du bli instruerad vid mätning?
+    buttons = Med guide | Utan guide | Utan guide och bilder
+    ]

@@ -1,0 +1,99 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "X02wWZ",
+    "name": "ShowCurrentBookings",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "p9RYaU"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "0jrkPN"
+          },
+          "method": "GET",
+          "url": "http://127.0.0.1:5000/current-bookings",
+          "resultProperty": "dialog.result",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "eQh5IT"
+          },
+          "condition": "dialog.result.statusCode == 200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "tJK6k8"
+              },
+              "activity": "${SendActivity_tJK6k8()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "561cED"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_561cED()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "turn.choice"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "n3FYnr"
+          },
+          "condition": "turn.choice == Nej",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "ItRopo"
+              },
+              "method": "DELETE",
+              "url": "http://127.0.0.1:5000/current-times"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "R3dygq"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "ShowCurrentBookings.lg",
+  "recognizer": "ShowCurrentBookings.lu.qna",
+  "id": "ShowCurrentBookings"
+}

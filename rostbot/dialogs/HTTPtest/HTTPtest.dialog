@@ -22,9 +22,10 @@
             "id": "C3hK9A"
           },
           "method": "GET",
-          "url": "http://127.0.0.1:5000/available-times",
+          "url": "http://127.0.0.1:5000/current-notifications",
           "contentType": "application/json",
-          "resultProperty": "dialog.resultProperty"
+          "resultProperty": "dialog.resultProperty",
+          "headers": {}
         },
         {
           "$kind": "Microsoft.SendActivity",
@@ -32,6 +33,38 @@
             "id": "ndVWqt"
           },
           "activity": "${SendActivity_ndVWqt()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "A3MPij"
+          },
+          "activity": "${SendActivity_A3MPij()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "HnHccm"
+          },
+          "activity": "${SendActivity_HnHccm()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "bKzPD7"
+          },
+          "url": "http://127.0.0.1:5000/current-notifications",
+          "method": "PUT",
+          "headers": {},
+          "contentType": "application/json",
+          "responseType": "json",
+          "resultProperty": "dialog.resultProperty",
+          "body": {
+            "noticemediatype": "test",
+            "timeafter": "test",
+            "timebefore": "test",
+            "type": "test"
+          }
         }
       ]
     }
