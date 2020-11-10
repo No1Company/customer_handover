@@ -1,0 +1,122 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "jpRoNN",
+    "name": "SettingsDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.symptom",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "id": "hgMxpP"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "OVN7B9"
+          },
+          "activity": "${SendActivity_OVN7B9()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "tklNbb"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_tklNbb()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.symptoms"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "WiLWxu"
+          },
+          "activity": "${SendActivity_WiLWxu()}"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "dpWB4q"
+          },
+          "cases": [
+            {
+              "value": "Huvudvärk",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "d8JXI6"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "QuestionAlgorithmHeadache",
+                  "options": "user.symtoms",
+                  "resultProperty": "user.bookingdate"
+                }
+              ]
+            },
+            {
+              "value": "Feber",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "Xb7G4I"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "QuestionAlgorithmFever",
+                  "resultProperty": "user.bookingdate"
+                }
+              ]
+            },
+            {
+              "value": "Buksmärtor",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "xogwnP"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "QuestionAlgorithmStomacheache",
+                  "resultProperty": "user.bookingdate"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "Y3hB0L"
+              },
+              "activity": "${SendActivity_Y3hB0L()}"
+            }
+          ],
+          "condition": "user.symptoms"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "3vAfYm"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "ConsultationDialog.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "SettingsDialog"
+}

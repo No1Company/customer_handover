@@ -1,0 +1,78 @@
+[import](common.lg)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# SendActivity_6mbO86()
+-Du kommer nu få svara på ett par frågor om din huvudvärk
+# NumberInput_Prompt_6JOnpH()
+- Hur många veckor skulle du säga att du har haft dessa symptom? 
+# SendActivity_Glvf5E()
+- Jag har inte bokat någon tid. 
+# SendActivity_ODuO8C()
+- Jag har bokat en tid på vårdcentralen den ${user.bookingdate}
+# SendActivity_BqEdRq()
+- Jag har bokat en telefontid den ${user.bookingdate}
+# SendActivity_DnWLa4()
+-Du kommer nu få svara på ett par frågor om din huvudvärk
+# NumberInput_Prompt_qjFtqc()
+- Hur många veckor skulle du säga att du har haft dessa symptom? 
+# SendActivity_86qiez()
+- Jag bedömer att du behöver boka tid på vårdcentralen, välj bland lediga tider som följer
+# SendActivity_PuyUVh()
+- Jag har inte bokat någon tid. 

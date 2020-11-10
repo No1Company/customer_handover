@@ -41,7 +41,7 @@ python run.py
 3. Navigate to the folder "deploy" (The project folder) inside of powershell.
 4. Run the following commands:
 ```PowerShell
-python3 -m venv venv (or 'py -3 -m venv venv' if the other doesnt work)
+python3 -m venv venv
 venv\scripts\Activate.ps1
 pip install -r requirements.txt
 ```

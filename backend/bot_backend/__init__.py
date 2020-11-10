@@ -1,4 +1,4 @@
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from datetime import datetime as d
 
 app = Flask(__name__, static_folder = 'static', static_url_path = '/')
@@ -38,3 +38,20 @@ def avail_times():
 
 
     return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
+
+current_bookings = [
+        {
+            "bookingdate" : "",
+            "type" : ""
+        }
+    ]
+
+@app.route('/current-bookings', methods=['GET', 'POST'])
+def curr_bookings():
+
+    if request.method == "POST":
+        
+        current_bookings.append(request.get_json())
+        print(current_bookings)
+
+    return jsonify([ {"bookingdate": booking["bookingdate"], "type": booking["type"]} for booking in current_bookings])
