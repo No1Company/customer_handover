@@ -1,8 +1,17 @@
 from flask import Flask, jsonify
 from datetime import datetime as d
+import requests
+
+from bot_backend.blueprints import openehr
 
 app = Flask(__name__, static_folder = 'static', static_url_path = '/')
+app.register_blueprint(openehr.openehr)
 
+loginfile = open("login.txt")
+username = loginfile.readline()
+password = loginfile.readline()
+
+ehrid = "8521e620-d38e-4fd6-9071-f785c2ece9b3"
 @app.route('/')
 def main():
     return 'Hello world'
@@ -38,3 +47,4 @@ def avail_times():
 
 
     return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
+
