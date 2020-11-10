@@ -29,7 +29,60 @@
 
 
 # NumberInput_Prompt_VsXcIN()
+>User.sysvalue kommer finnas kvar vid repetitioner av dialogen, det gör inte turn, men använder man turn på sysvalue finns den inte kvar tillräckligt länge för att hämtas i bekräftelserutan. 
 -Vilket värde har du på det systoliska trycket (övertrycket)?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # NumberInput_Prompt_Yu9Psp()
 -Vänta tills blodtryckmätaren inte kan höra pulsen längre och mät undertrycket. Vad är resultatet?
