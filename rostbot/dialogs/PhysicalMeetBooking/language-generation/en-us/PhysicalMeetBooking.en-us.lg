@@ -1,7 +1,0 @@
-[import](common.lg)
-
-
-# SendActivity_mV3BLG()
--De lediga tiderna som finns tillgängliga är\n\n 1: ${dialog.result.content[1].start}\n\n 2: ${dialog.result.content[2].start}\n\n 3: ${dialog.result.content[3].start}
-# NumberInput_Prompt_iHR6jL()
-- Välj en siffra (1-3)
