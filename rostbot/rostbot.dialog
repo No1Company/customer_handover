@@ -104,7 +104,17 @@
         "id": "Uq3ZgS",
         "name": "Questions"
       },
-      "intent": "Questions"
+      "intent": "Questions",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "W6qxJs"
+          },
+          "activityProcessed": true,
+          "dialog": "CustomTest"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -256,6 +266,10 @@
       {
         "intent": "Restart",
         "pattern": "Starta om"
+      },
+      {
+        "intent": "Questions",
+        "pattern": "Övriga frågor"
       }
     ]
   }

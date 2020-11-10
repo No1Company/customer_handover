@@ -11,10 +11,10 @@ namespace Microsoft.BotFramework.Composer.CustomAction
     /// <summary>
     /// Custom command which takes takes 2 data bound arguments (arg1 and arg2) and multiplies them returning that as a databound result.
     /// </summary>
-    public class MultiplyDialog : Dialog
+    public class TwoNumbers : Dialog
     {
         [JsonConstructor]
-        public MultiplyDialog([CallerFilePath] string sourceFilePath = "", [CallerLineNumber] int sourceLineNumber = 0)
+        public TwoNumbers([CallerFilePath] string sourceFilePath = "", [CallerLineNumber] int sourceLineNumber = 0)
             : base()
         {
             // enable instances of this command as debug break point
@@ -22,7 +22,7 @@ namespace Microsoft.BotFramework.Composer.CustomAction
         }
 
         [JsonProperty("$kind")]
-        public const string Kind = "MultiplyDialog";
+        public const string Kind = "TwoNumbers";
 
         /// <summary>
         /// Gets or sets memory path to bind to arg1 (ex: conversation.width).
@@ -56,7 +56,7 @@ namespace Microsoft.BotFramework.Composer.CustomAction
             var arg1 = Arg1.GetValue(dc.State);
             var arg2 = Arg2.GetValue(dc.State);
 
-            var result = Convert.ToInt32(arg1) * Convert.ToInt32(arg2);
+            var result = Convert.ToInt32(arg1) + Convert.ToInt32(arg2);
             if (this.ResultProperty != null)
             {
                 dc.State.SetValue(this.ResultProperty.GetValue(dc.State), result);

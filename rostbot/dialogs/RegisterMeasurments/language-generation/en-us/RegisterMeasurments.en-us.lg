@@ -90,3 +90,11 @@
     text = Hur vill du bli instruerad vid mätning?
     buttons = Med guide | Utan guide | Utan guide och bilder
     ]
+# TextInput_Prompt_fmZ56s()
+- arg1c
+# TextInput_Prompt_JgOprz()
+- arg2c
+# TextInput_Prompt_yMNawy()
+- arg3
+# SendActivity_UouAmr()
+- ${user.resultstring}
