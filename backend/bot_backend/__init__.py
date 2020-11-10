@@ -39,10 +39,10 @@ def avail_times():
 
 notifications = [
         {
-            # "noticemediatype" : "",
-            # "timeafter" : "",
-            # "timebefore" : "", 
-            # "type" : ""
+            "noticemediatype" : "",
+            "timeafter" : "",
+            "timebefore" : "", 
+            "type" : ""
         }
     ]
 

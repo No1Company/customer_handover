@@ -40,30 +40,6 @@
               "value": "Notiser",
               "actions": [
                 {
-                  "$kind": "Microsoft.SetProperties",
-                  "$designer": {
-                    "id": "ct64FV"
-                  },
-                  "assignments": [
-                    {
-                      "property": "user.notis.via",
-                      "value": "=\"\""
-                    },
-                    {
-                      "property": "user.notis.time.after",
-                      "value": "=\"\""
-                    },
-                    {
-                      "property": "user.notis.time.before",
-                      "value": "=\"\""
-                    },
-                    {
-                      "value": "=\"\"",
-                      "property": "user.notis.measurments"
-                    }
-                  ]
-                },
-                {
                   "$kind": "Microsoft.SetProperty",
                   "$designer": {
                     "id": "G3CGJB"
@@ -134,70 +110,6 @@
                   "itemsProperty": "user.test.array",
                   "actions": [
                     {
-                      "$kind": "Microsoft.SetProperty",
-                      "$designer": {
-                        "id": "0UTyWU"
-                      },
-                      "property": "user.notis.cancelbutton",
-                      "value": "=@cancelbutton"
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "K8Rn8I"
-                      },
-                      "activity": "${SendActivity_K8Rn8I()}"
-                    },
-                    {
-                      "$kind": "Microsoft.IfCondition",
-                      "$designer": {
-                        "id": "GoptWy"
-                      },
-                      "actions": [
-                        {
-                          "$kind": "Microsoft.SendActivity",
-                          "$designer": {
-                            "id": "yrWU4A"
-                          },
-                          "activity": "${SendActivity_yrWU4A()}"
-                        },
-                        {
-                          "$kind": "Microsoft.SetProperties",
-                          "$designer": {
-                            "id": "YWfSEO"
-                          },
-                          "assignments": [
-                            {
-                              "property": "user.notis.via",
-                              "value": "=\"\""
-                            },
-                            {
-                              "property": "user.notis.time.after",
-                              "value": "=\"\""
-                            },
-                            {
-                              "property": "user.notis.time.before",
-                              "value": "=\"\""
-                            },
-                            {
-                              "value": "=\"\"",
-                              "property": "user.notis.measurments"
-                            }
-                          ]
-                        },
-                        {
-                          "$kind": "Microsoft.SetProperty",
-                          "$designer": {
-                            "id": "DNnUDy"
-                          },
-                          "property": "user.notis.cancelbutton",
-                          "value": false
-                        }
-                      ],
-                      "condition": "user.notis.cancelbutton == \"true\"",
-                      "elseActions": []
-                    },
-                    {
                       "$kind": "Microsoft.SendActivity",
                       "$designer": {
                         "id": "QjPFXw"
@@ -231,6 +143,10 @@
                         {
                           "value": "=@notisMeasurments",
                           "property": "user.notis.measurments"
+                        },
+                        {
+                          "property": "dialog.show.notifications",
+                          "value": true
                         }
                       ]
                     },
@@ -260,6 +176,30 @@
                       "url": "http://127.0.0.1:5000/current-notifications",
                       "resultProperty": "dialog.resultProperty",
                       "contentType": "application/json"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "WnpHWM"
+                      },
+                      "assignments": [
+                        {
+                          "property": "user.notis.via",
+                          "value": "${dialog.resultProperty.content[1].noticemediatype}"
+                        },
+                        {
+                          "property": "user.notis.time.after",
+                          "value": "${dialog.resultProperty.content[1].timeafter}"
+                        },
+                        {
+                          "property": "user.notis.time.before",
+                          "value": "${dialog.resultProperty.content[1].timebefore}"
+                        },
+                        {
+                          "value": "${dialog.resultProperty.content[1].type}",
+                          "property": "user.notis.measurments"
+                        }
+                      ]
                     }
                   ],
                   "index": "dialog.foreach.index"
