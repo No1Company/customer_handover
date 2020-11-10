@@ -2,7 +2,7 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "id": "O7ABfl",
-    "name": "QuestionAlgorithmFever",
+    "name": "QuestionConsultation",
     "description": "An algorithm to understand symtoms related to fever."
   },
   "autoEndDialog": true,
@@ -19,44 +19,44 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "CcYAMU"
+            "id": "jvXmW5"
           },
-          "activity": "${SendActivity_CcYAMU()}"
+          "activity": "${SendActivity_jvXmW5()}"
         },
         {
           "$kind": "Microsoft.NumberInput",
           "$designer": {
-            "id": "k0qbAS"
+            "id": "iqrgSe"
           },
           "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${NumberInput_Prompt_k0qbAS()}",
+          "prompt": "${NumberInput_Prompt_iqrgSe()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
-          "property": "user.weeksvalue"
+          "property": "turn.weeksvalue"
         },
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "Vriy0X"
+            "id": "Ho8iuA"
           },
-          "condition": "user.weeksvalue > 2",
+          "condition": "turn.weeksvalue > 2",
           "actions": [
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "ZvZ2Un"
+                "id": "7OGiuz"
               },
-              "activity": "${SendActivity_ZvZ2Un()}"
+              "activity": "${SendActivity_7OGiuz()}"
             },
             {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "uHklQr"
+                "id": "XurKMJ"
               },
               "activityProcessed": true,
               "dialog": "PhysicalMeetBooking",
@@ -65,7 +65,7 @@
             {
               "$kind": "Microsoft.SetProperty",
               "$designer": {
-                "id": "9PqWpp"
+                "id": "uwC3XI"
               },
               "property": "user.bookingtype",
               "value": "='tid på vårdcentralen'"
@@ -75,7 +75,7 @@
             {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "oYSfTc"
+                "id": "g6bjh4"
               },
               "activityProcessed": true,
               "dialog": "PhoneBooking",
@@ -84,7 +84,7 @@
             {
               "$kind": "Microsoft.SetProperty",
               "$designer": {
-                "id": "9oEosL"
+                "id": "1FYBdo"
               },
               "property": "user.bookingtype",
               "value": "='telefontid'"
@@ -92,9 +92,26 @@
           ]
         },
         {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "uLffAA"
+          },
+          "condition": "user.bookingdate != null",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "MEi7ZO"
+              },
+              "property": "user.bookingtype",
+              "value": "= null"
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "ytYqDt"
+            "id": "unNEJp"
           },
           "condition": "user.bookingtype",
           "cases": [
@@ -104,7 +121,7 @@
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "2OViTE"
+                    "id": "tJJjzw"
                   },
                   "activityProcessed": true,
                   "dialog": "ConsultationBookingFeedback"
@@ -117,7 +134,7 @@
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "f9vJ68"
+                    "id": "4qeXKY"
                   },
                   "activityProcessed": true,
                   "dialog": "ConsultationBookingFeedback"
@@ -129,14 +146,14 @@
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "Jr7Spc"
+                "id": "CkC30S"
               },
-              "activity": "${SendActivity_Jr7Spc()}"
+              "activity": "${SendActivity_CkC30S()}"
             },
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "UExowk"
+                "id": "0Nx9Z1"
               }
             }
           ]
@@ -144,13 +161,13 @@
         {
           "$kind": "Microsoft.EndDialog",
           "$designer": {
-            "id": "Yl5GmQ"
+            "id": "mKNK56"
           }
         }
       ]
     }
   ],
-  "generator": "QuestionAlgorithmFever.lg",
-  "recognizer": "QuestionAlgorithmFever.lu.qna",
+  "generator": "QuestionsConsultation.lg",
+  "recognizer": "QuestionsConsultation.lu.qna",
   "id": "QuestionAlgorithmFever"
 }

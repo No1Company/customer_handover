@@ -15,60 +15,6 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SetProperty",
-          "$designer": {
-            "id": "yya8zF"
-          },
-          "property": "user.resultstring",
-          "value": "= 0"
-        },
-        {
-          "$kind": "Microsoft.TextInput",
-          "$designer": {
-            "id": "32z5aT"
-          },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_32z5aT()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "property": "user.arg1c"
-        },
-        {
-          "$kind": "Microsoft.TextInput",
-          "$designer": {
-            "id": "dgw8G0"
-          },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_dgw8G0()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "property": "user.arg2c"
-        },
-        {
-          "$kind": "AddString",
-          "$designer": {
-            "id": "7z5s4U"
-          },
-          "resultProperty": "user.resultstring",
-          "arg1": "user.arg1c",
-          "arg2": "user.arg2c"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "3TrNOR"
-          },
-          "activity": "${SendActivity_3TrNOR()}"
-        },
-        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "OVN7B9"
@@ -104,7 +50,7 @@
           },
           "cases": [
             {
-              "value": "Huvudvärk",
+              "value": "huvudvärk",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -112,36 +58,35 @@
                     "id": "d8JXI6"
                   },
                   "activityProcessed": true,
-                  "dialog": "QuestionAlgorithmHeadache",
-                  "options": "user.symtoms",
+                  "dialog": "QuestionsConsultation",
                   "resultProperty": "user.bookingdate"
                 }
               ]
             },
             {
-              "value": "Feber",
+              "value": "feber",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "Xb7G4I"
+                    "id": "8fPutb"
                   },
                   "activityProcessed": true,
-                  "dialog": "QuestionAlgorithmFever",
+                  "dialog": "QuestionsConsultation",
                   "resultProperty": "user.bookingdate"
                 }
               ]
             },
             {
-              "value": "Buksmärtor",
+              "value": "buksmärtor",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "xogwnP"
+                    "id": "LzylfM"
                   },
                   "activityProcessed": true,
-                  "dialog": "QuestionAlgorithmStomacheache",
+                  "dialog": "QuestionsConsultation",
                   "resultProperty": "user.bookingdate"
                 }
               ]
@@ -157,6 +102,14 @@
             }
           ],
           "condition": "user.symptoms"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "QBouzl"
+          },
+          "property": "user.symptoms",
+          "value": "= null"
         },
         {
           "$kind": "Microsoft.EndDialog",
