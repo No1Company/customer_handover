@@ -42,7 +42,8 @@
               ]
             }
           ],
-          "value": "dialog.foreach.value"
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
         }
       ]
     },
@@ -85,7 +86,17 @@
         "id": "95zDOa",
         "name": "Consultation"
       },
-      "intent": "Consultation"
+      "intent": "Consultation",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "7NjWQo"
+          },
+          "activityProcessed": true,
+          "dialog": "ConsultationDialog"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -93,7 +104,17 @@
         "id": "Uq3ZgS",
         "name": "Questions"
       },
-      "intent": "Questions"
+      "intent": "Questions",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "W6qxJs"
+          },
+          "activityProcessed": true,
+          "dialog": "CustomTest"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -165,18 +186,49 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "5M33dn",
-        "name": "HTTPTestTrigger"
+        "id": "FBumgz",
+        "name": "ShowBookings"
       },
-      "intent": "HTTPTestTrigger",
+      "intent": "ShowBookings",
       "actions": [
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "6RtJXd"
+            "id": "9ILt8b"
           },
           "activityProcessed": true,
-          "dialog": "HTTPtest"
+          "dialog": "ShowCurrentBookings"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "mMJnPr",
+        "name": "Restart"
+      },
+      "intent": "Restart",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "xWt6Lm"
+          },
+          "activity": "${SendActivity_xWt6Lm()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ptzoFF"
+          },
+          "activity": "${SendActivity_ptzoFF()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "TMsAyz"
+          },
+          "activityProcessed": true
         }
       ]
     }
@@ -204,8 +256,20 @@
         "pattern": "Avbryt"
       },
       {
-        "intent": "HTTPTestTrigger",
-        "pattern": "http"
+        "intent": "Consultation",
+        "pattern": "Boka konsultation"
+      },
+      {
+        "intent": "ShowBookings",
+        "pattern": "Visa mina bokningar"
+      },
+      {
+        "intent": "Restart",
+        "pattern": "Starta om"
+      },
+      {
+        "intent": "Questions",
+        "pattern": "Övriga frågor"
       }
     ]
   }
