@@ -1,27 +1,15 @@
 {
   "$schema": "https://raw.githubusercontent.com/microsoft/botframework-sdk/master/schemas/component/component.schema",
   "$role": "implements(Microsoft.IDialog)",
-  "title": "rostbot",
+  "title": "MeasureWithGuide",
   "type": "object",
   "properties": {
-    "Ändra inställningar": {
-      "description": "Settings",
+    "Avbryt": {
       "$ref": "#/definitions/stringExpression",
-      "title": "Andra Installningar"
+      "title": "Avbryt"
     },
-    "Boka konsultation": {
-      "description": "Consultation",
-      "$ref": "#/definitions/stringExpression",
-      "title": "Boka Konsultation"
-    },
-    "Övriga frågor": {
-      "description": "Questions",
-      "$ref": "#/definitions/stringExpression",
-      "title": "Ovriga Fragor"
-    },
-    "Registrera värden": {
-      "description": "Register",
-      "title": "Registrera Varden"
+    "": {
+      "title": ""
     }
   },
   "$result": {
