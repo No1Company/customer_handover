@@ -152,10 +152,6 @@
 -${UpdateCard()}
 # SendActivity_URkjOi()
 - Hej ${dialog.first_name} ${dialog.last_name}
-# SendActivity_OugDVd()
-- Något gick fel i kommunikationen med servern. Dumpar svaret: ${dialog.resultProperty}
 
-
-
-# SendActivity_zwNrku()
+# SendActivity_g9skpW()
  -${AdaptiveCard()}

@@ -17,6 +17,14 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "abeYLt"
+          },
+          "value": "http://localhost:5000",
+          "property": "conversation.req_url"
+        },
+        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "id": "518944",
@@ -33,65 +41,35 @@
               "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
               "actions": [
                 {
-                  "$kind": "Microsoft.HttpRequest",
-                  "$designer": {
-                    "id": "qgQSXR"
-                  },
-                  "method": "GET",
-                  "url": "http://localhost:5001/openehr/generate-fake-user",
-                  "headers": {},
-                  "resultProperty": "dialog.resultProperty",
-                  "responseType": "json"
-                },
-                {
                   "$kind": "Microsoft.IfCondition",
                   "$designer": {
-                    "id": "qXTatW"
+                    "id": "GDiBO5"
                   },
-                  "condition": "dialog.resultProperty.statusCode == 200",
-                  "actions": [
-                    {
-                      "$kind": "Microsoft.SetProperties",
-                      "$designer": {
-                        "id": "OFp9yw"
-                      },
-                      "assignments": [
-                        {
-                          "value": "=dialog.resultProperty.content.additionalInfo.ehrId",
-                          "property": "user.ehr_id"
-                        },
-                        {
-                          "property": "user.first_name",
-                          "value": "=dialog.resultProperty.content.firstNames"
-                        },
-                        {
-                          "property": "user.last_name",
-                          "value": "=dialog.resultProperty.content.lastNames"
-                        }
-                      ]
-                    },
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "zwNrku"
-                      },
-                      "activity": "${SendActivity_zwNrku()}"
-                    }
-                  ],
+                  "actions": [],
+                  "condition": "user.has_fetched_data",
                   "elseActions": [
                     {
-                      "$kind": "Microsoft.SendActivity",
+                      "$kind": "Microsoft.BeginDialog",
                       "$designer": {
-                        "id": "OugDVd"
+                        "id": "Lij1Q5"
                       },
-                      "activity": "${SendActivity_OugDVd()}"
+                      "activityProcessed": true,
+                      "dialog": "FetchUserData"
                     }
                   ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "g9skpW"
+                  },
+                  "activity": "${SendActivity_g9skpW()}"
                 }
               ]
             }
           ],
-          "value": "dialog.foreach.value"
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
         }
       ]
     },
