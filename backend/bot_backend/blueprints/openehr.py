@@ -8,7 +8,7 @@ openehr = Blueprint('openehr', __name__, url_prefix='/openehr')
 # user. The most important parts of that json object is the ehr-id which
 # uniquely identifies a patient.
 ########################################################################
-@openehr.route('/generate-fake-user')
+@openehr.route('/generate-fake-user', methods=['GET'])
 def generate_fake_user():
     return ehr_com.generate_fake_user()["party"]
 
