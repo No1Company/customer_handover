@@ -1,8 +1,7 @@
 [import](common.lg)
 
 # TextInput_Prompt_3d4A6a()
-> Move this to settings maybe? Maybe make it a global variable that is saved and re-used.
-
+> Move this to settings maybe? Maybe make it a global variable that is saved and re-used. Something is weird
 [SigninCard
     text = Hur vill du bli instruerad vid mätning?
     buttons = Med guide | Utan guide   

@@ -1,0 +1,51 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "m6Q3cG",
+    "name": "JSONToArray",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "uADVNe"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "nGqy7I"
+          },
+          "activity": "${SendActivity_nGqy7I()}"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "Jg3ojp"
+          },
+          "method": "GET",
+          "url": "http://127.0.0.1:5000/current-bookings",
+          "resultProperty": "dialog.result",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.EditArray",
+          "$designer": {
+            "id": "H7yq8D"
+          },
+          "changeType": "push",
+          "itemsProperty": "user.dateArray",
+          "value": "${dialog.result.content}"
+        }
+      ]
+    }
+  ],
+  "generator": "JSONToArray.lg",
+  "recognizer": "JSONToArray.lu.qna",
+  "id": "JSONToArray"
+}
