@@ -33,11 +33,60 @@
               "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
               "actions": [
                 {
-                  "$kind": "Microsoft.SendActivity",
+                  "$kind": "Microsoft.HttpRequest",
                   "$designer": {
-                    "id": "gzmItl"
+                    "id": "qgQSXR"
                   },
-                  "activity": "${SendActivity_gzmItl()}"
+                  "method": "GET",
+                  "url": "http://localhost:5001/openehr/generate-fake-user",
+                  "headers": {},
+                  "resultProperty": "dialog.resultProperty",
+                  "responseType": "json"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "qXTatW"
+                  },
+                  "condition": "dialog.resultProperty.statusCode == 200",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SetProperties",
+                      "$designer": {
+                        "id": "OFp9yw"
+                      },
+                      "assignments": [
+                        {
+                          "value": "=dialog.resultProperty.content.additionalInfo.ehrId",
+                          "property": "user.ehr_id"
+                        },
+                        {
+                          "property": "user.first_name",
+                          "value": "=dialog.resultProperty.content.firstNames"
+                        },
+                        {
+                          "property": "user.last_name",
+                          "value": "=dialog.resultProperty.content.lastNames"
+                        }
+                      ]
+                    },
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "zwNrku"
+                      },
+                      "activity": "${SendActivity_zwNrku()}"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "OugDVd"
+                      },
+                      "activity": "${SendActivity_OugDVd()}"
+                    }
+                  ]
                 }
               ]
             }
@@ -170,6 +219,44 @@
       },
       "intent": "HTTPTestTrigger",
       "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "Cb2YSN"
+          },
+          "method": "GET",
+          "url": "http://localhost:5001/openehr/generate-fake-user",
+          "headers": {},
+          "resultProperty": "dialog.resultProperty",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "0wwwd8"
+          },
+          "assignments": [
+            {
+              "value": "=dialog.resultProperty.content.additionalInfo.ehrId",
+              "property": "dialog.ehr_id"
+            },
+            {
+              "property": "dialog.first_name",
+              "value": "=dialog.resultProperty.content.firstNames"
+            },
+            {
+              "property": "dialog.last_name",
+              "value": "=dialog.resultProperty.content.lastNames"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "URkjOi"
+          },
+          "activity": "${SendActivity_URkjOi()}"
+        },
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
