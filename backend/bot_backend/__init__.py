@@ -2,9 +2,11 @@ from flask import Flask, jsonify, request
 from datetime import datetime as d
 import pickle
 import os
+from bot_backend.blueprints import openehr
 
 app = Flask(__name__, static_folder = 'static', static_url_path = '/')
 
+app.register_blueprint(openehr.openehr)
 cwd_data_path = os.getcwd() + "\\bot_backend\data\data.txt"
 DATA_PATH = os.path.abspath(cwd_data_path)
 
