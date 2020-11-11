@@ -85,7 +85,17 @@
         "id": "95zDOa",
         "name": "Consultation"
       },
-      "intent": "Consultation"
+      "intent": "Consultation",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "tGetCF"
+          },
+          "activityProcessed": true,
+          "dialog": "ConsultationDialog"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -93,7 +103,8 @@
         "id": "Uq3ZgS",
         "name": "Questions"
       },
-      "intent": "Questions"
+      "intent": "Questions",
+      "actions": []
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -109,7 +120,7 @@
             "id": "NOVnk5"
           },
           "activityProcessed": true,
-          "dialog": "RegisterMeasurments"
+          "dialog": "RegisterValueTypeSelection"
         }
       ]
     },
@@ -179,6 +190,24 @@
           "dialog": "HTTPtest"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "FSYy31",
+        "name": "ShowBooking"
+      },
+      "intent": "ShowBooking",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "C7WkKZ"
+          },
+          "activityProcessed": true,
+          "dialog": "ShowCurrentBookings"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -206,6 +235,14 @@
       {
         "intent": "HTTPTestTrigger",
         "pattern": "http"
+      },
+      {
+        "intent": "Consultation",
+        "pattern": "Boka konsultation"
+      },
+      {
+        "intent": "ShowBooking",
+        "pattern": "Visa mina bokningar"
       }
     ]
   }
