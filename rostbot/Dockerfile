@@ -8,9 +8,9 @@ WORKDIR /rostbot/runtime/azurewebapp
 
 COPY . .
 
-RUN dotnet build
+RUN dotnet build Microsoft.BotFramework.Composer.WebApp.csproj
 
 EXPOSE 3979
 
-CMD dotnet run
+CMD dotnet run Microsoft.BotFramework.Composer.WebApp.csproj
 
