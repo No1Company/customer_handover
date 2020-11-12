@@ -203,62 +203,6 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "5M33dn",
-        "name": "HTTPTestTrigger"
-      },
-      "intent": "HTTPTestTrigger",
-      "actions": [
-        {
-          "$kind": "Microsoft.HttpRequest",
-          "$designer": {
-            "id": "Cb2YSN"
-          },
-          "method": "GET",
-          "url": "http://localhost:5001/openehr/generate-fake-user",
-          "headers": {},
-          "resultProperty": "dialog.resultProperty",
-          "responseType": "json"
-        },
-        {
-          "$kind": "Microsoft.SetProperties",
-          "$designer": {
-            "id": "0wwwd8"
-          },
-          "assignments": [
-            {
-              "value": "=dialog.resultProperty.content.additionalInfo.ehrId",
-              "property": "dialog.ehr_id"
-            },
-            {
-              "property": "dialog.first_name",
-              "value": "=dialog.resultProperty.content.firstNames"
-            },
-            {
-              "property": "dialog.last_name",
-              "value": "=dialog.resultProperty.content.lastNames"
-            }
-          ]
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "URkjOi"
-          },
-          "activity": "${SendActivity_URkjOi()}"
-        },
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "6RtJXd"
-          },
-          "activityProcessed": true,
-          "dialog": "HTTPtest"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
         "id": "FSYy31",
         "name": "ShowBooking"
       },
@@ -296,10 +240,6 @@
       {
         "intent": "Cancel",
         "pattern": "Avbryt"
-      },
-      {
-        "intent": "HTTPTestTrigger",
-        "pattern": "http"
       },
       {
         "intent": "Consultation",
