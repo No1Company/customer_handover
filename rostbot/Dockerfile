@@ -1,15 +1,15 @@
 FROM microsoft/dotnet
 
-WORKDIR usr/src/app
+WORKDIR /usr/src/app
 
 COPY . .
 
-RUN dotnet build --project rostbot/runtime/azurewebapp
+RUN dotnet build --project /runtime/azurewebapp
 
 COPY . .
 
 EXPOSE 3979
 
-CMD dotnet run --project rostbot/runtime/azurewebapp
+CMD dotnet run --project /runtime/azurewebapp
 
 COPY . .
