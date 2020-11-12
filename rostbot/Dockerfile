@@ -4,12 +4,11 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-RUN dotnet build --project /runtime/azurewebapp
+WORKDIR /rostbot/runtime/azurewebapp
+RUN dotnet build
 
 COPY . .
 
 EXPOSE 3979
 
-CMD dotnet run --project /runtime/azurewebapp
-
-COPY . .
+RUN dotnet run
