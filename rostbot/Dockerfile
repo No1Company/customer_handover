@@ -4,13 +4,10 @@ WORKDIR usr/src/app
 
 COPY . .
 
-WORKDIR /rostbot/runtime/azurewebapp
-
-COPY . .
-
-RUN dotnet build Microsoft.BotFramework.Composer.WebApp.csproj
+RUN dotnet build /rostbot/runtime/azurewebapp/Microsoft.BotFramework.Composer.WebApp.csproj
 
 EXPOSE 3979
 
-CMD dotnet run Microsoft.BotFramework.Composer.WebApp.csproj
+CMD dotnet run /rostbot/runtime/azurewebapp/Microsoft.BotFramework.Composer.WebApp.csproj
 
+COPY . .
