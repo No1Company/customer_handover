@@ -4,8 +4,8 @@ WORKDIR /usr/src/app
 
 COPY . .
 
-WORKDIR /rostbot/runtime/
-RUN dotnet build /core/Microsoft.BotFramework.Composer.Core.csproj
+WORKDIR /rostbot/runtime/core
+RUN dotnet build 
 
 COPY . .
 
