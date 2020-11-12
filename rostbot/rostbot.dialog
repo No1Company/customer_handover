@@ -17,6 +17,14 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "abeYLt"
+          },
+          "value": "http://localhost:5000",
+          "property": "conversation.req_url"
+        },
+        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "id": "518944",
@@ -33,16 +41,35 @@
               "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
               "actions": [
                 {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "GDiBO5"
+                  },
+                  "actions": [],
+                  "condition": "user.has_fetched_data",
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "Lij1Q5"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "FetchUserData"
+                    }
+                  ]
+                },
+                {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "gzmItl"
+                    "id": "g9skpW"
                   },
-                  "activity": "${SendActivity_gzmItl()}"
+                  "activity": "${SendActivity_g9skpW()}"
                 }
               ]
             }
           ],
-          "value": "dialog.foreach.value"
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
         }
       ]
     },
@@ -176,24 +203,6 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "5M33dn",
-        "name": "HTTPTestTrigger"
-      },
-      "intent": "HTTPTestTrigger",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "6RtJXd"
-          },
-          "activityProcessed": true,
-          "dialog": "HTTPtest"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
         "id": "FSYy31",
         "name": "ShowBooking"
       },
@@ -231,10 +240,6 @@
       {
         "intent": "Cancel",
         "pattern": "Avbryt"
-      },
-      {
-        "intent": "HTTPTestTrigger",
-        "pattern": "http"
       },
       {
         "intent": "Consultation",

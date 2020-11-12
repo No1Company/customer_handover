@@ -38,13 +38,10 @@
 }
 ```
 
-#AdaptiveCard
+# AdaptiveCard()
 [Activity
     Attachments = ${json(adaptivecardjson())}
 ]
-
-
-
 # adaptivecardjson()
 -```
 {
@@ -62,7 +59,7 @@
       "spacing": "medium",
       "size": "large",
       "weight": "bolder",
-      "text": "Hej Björn!",
+      "text": "Hej ${user.first_name} ${user.last_name}!",
       "wrap": true,
       "maxLines": 0
     },
@@ -149,9 +146,9 @@
   ]
 }
 ```
-# SendActivity_gzmItl()
- -${AdaptiveCard()}
 # SendActivity_rYwnTV()
 - Avbryter!
 # SendActivity_3RIa5x()
 -${UpdateCard()}
+# SendActivity_g9skpW()
+ -${AdaptiveCard()}
