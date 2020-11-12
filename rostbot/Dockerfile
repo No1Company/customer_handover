@@ -3,8 +3,9 @@ FROM microsoft/dotnet
 WORKDIR /usr/src/app
 
 COPY . .
-
+RUN ls
 WORKDIR /rostbot/runtime/core
+RUN ls
 RUN dotnet build 
 
 COPY . .
