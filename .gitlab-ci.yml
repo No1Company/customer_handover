@@ -35,7 +35,7 @@ deploy-index:
   needs:
     - build-index-image
   rules: 
-    - if: '$CI_COMMIT_BRANCH == "18-misc-add-continuous-integration"' #Change to master
+    - if: '$CI_COMMIT_BRANCH == "ci-cd-composer"' #Change to master
 
   stage: deploy
   image: lachlanevenson/k8s-kubectl
