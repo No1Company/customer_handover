@@ -9,7 +9,7 @@ baseUrl = 'https://rest.ehrscape.com/rest/v1'
 queryUrl = baseUrl + '/query'
 
 loginfile = open('login.txt')
-authorization = loginfile.read()
+authorization = loginfile.read().split('\n')[0]
 authorization_header = {'Authorization': authorization}
 
 
