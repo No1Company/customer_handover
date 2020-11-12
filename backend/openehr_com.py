@@ -1,4 +1,5 @@
 import json
+import os
 import requests
 from urllib.parse import quote
 
@@ -8,7 +9,7 @@ class NetworkError(Exception):
 baseUrl = 'https://rest.ehrscape.com/rest/v1'
 queryUrl = baseUrl + '/query'
 
-loginfile = open('login.txt')
+loginfile = open(os.path.join("..","..",'login.txt'))
 authorization = loginfile.read().split('\n')[0]
 authorization_header = {'Authorization': authorization}
 
