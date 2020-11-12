@@ -11,4 +11,6 @@ COPY . .
 
 EXPOSE 3979
 
-RUN dotnet run
+CMD ["dotnet", "run"]
+
+COPY . .
