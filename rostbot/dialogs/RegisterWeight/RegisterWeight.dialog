@@ -72,19 +72,26 @@
             {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "d5apHn"
-              },
-              "activityProcessed": true
-            },
-            {
-              "$kind": "Microsoft.BeginDialog",
-              "$designer": {
                 "id": "Jm3hMQ"
               },
               "activityProcessed": true,
-              "dialog": "AddWeightOpenEhr"
+              "dialog": "AddWeightOpenEhr",
+              "options": {
+                "weight": "${user.weight}"
+              }
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "SIJM0m"
+          },
+          "activityProcessed": true,
+          "dialog": "AddWeightOpenEhr",
+          "options": {
+            "weight": "${user.weight}"
+          }
         }
       ]
     }

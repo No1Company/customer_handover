@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "gVsS64",
-    "name": "AddWeightOpenEhr",
+    "id": "B8RNWp",
+    "name": "AddMeasurement",
     "description": ""
   },
   "autoEndDialog": true,
@@ -13,34 +13,32 @@
       "$designer": {
         "name": "BeginDialog",
         "description": "",
-        "id": "y9Cxad"
+        "id": "wru346"
       },
       "actions": [
         {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "kq6ghl"
+            "id": "qdOepV"
           },
           "method": "POST",
-          "url": "${conversation.req_url}/openehr/add-weight/${user.ehr_id}",
           "contentType": "application/json",
           "responseType": "json",
           "resultProperty": "turn.resultProperty",
-          "body": {
-            "weight": "${dialog.weight}"
-          }
+          "url": "${conversation.req_url}/${dialog.url_ending}",
+          "body": "${dialog.body}"
         },
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "k2jEYS"
+            "id": "Lg31YG"
           },
           "condition": "turn.resultProperty.statusCode < 300",
           "actions": [
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "ZeEUQy"
+                "id": "cE9plb"
               },
               "value": true
             }
@@ -49,7 +47,7 @@
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "wt0n7J"
+                "id": "EMiUTM"
               },
               "value": false
             }
@@ -58,7 +56,7 @@
       ]
     }
   ],
-  "generator": "AddWeightOpenEhr.lg",
-  "recognizer": "AddWeightOpenEhr.lu.qna",
-  "id": "AddWeightOpenEhr"
+  "generator": "AddMeasurement.lg",
+  "recognizer": "AddMeasurement.lu.qna",
+  "id": "AddMeasurement"
 }
