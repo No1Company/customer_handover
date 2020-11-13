@@ -92,6 +92,31 @@ def add_blood_pressure(ehr_id, systolic, diastolic, time):
     else:
         raise NetworkError("Could not post to ehrscape")
 
+def add_weight(ehr_id, weight, time):
+    composition_data = {
+        'ctx/time': time.isoformat(),
+        'ctx/language': 'en',
+        'ctx/territory': 'CA',
+        'self_monitoring/body_weight/any_event/weight': str(weight) ,
+        'self_monitoring/body_weight/any_event/weight/units': "kg" ,
+        'self_monitoring/body_weight/any_event/comment': 'inga kommentarer',
+        'self_monitoring/body_weight/any_event/state_of_dress': 'at0010'
+    }
+
+    query_params = {
+        'ehrId': ehr_id,
+        'templateId': 'sm_weight',
+        'format': 'FLAT',
+        'commiter': 'Patient'
+    }
+    url = baseUrl +\
+        '/composition?' + params(query_params)
+    req = requests.post(url, headers=authorization_header,
+                        json=composition_data)
+    if req.status_code < 300:
+        return req.json()
+    else:
+        raise NetworkError("Could not post to ehrscape" + str(req.json()))
 
 
 def make_aql_query(aql):

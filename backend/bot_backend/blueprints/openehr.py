@@ -30,6 +30,19 @@ def add_blood_pressure(ehr_id):
     else:
         return {"msg": "missing parameters"}, 400
 
+
+########################################################################
+# Route for adding weight measurements to a specified user.
+# Should be supplied with a json object containing the field "weight".
+########################################################################
+@openehr.route('/add-weight/<uuid:ehr_id>', methods=['POST'])
+def add_weight(ehr_id):
+    json = request.get_json()
+    if json['weight']:
+        return ehr_com.add_weight(ehr_id, json['weight'], datetime.now())
+    else:
+        return {"msg": "missing parameters"}, 400
+
 ########################################################################
 # Gets the blood pressure for a patient specified by the ehr-id.
 ########################################################################
