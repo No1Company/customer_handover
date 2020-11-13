@@ -17,19 +17,39 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.TextInput",
+          "$kind": "Microsoft.ChoiceInput",
           "$designer": {
-            "id": "1FVIbz"
+            "id": "bleO5O"
           },
+          "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_1FVIbz()}",
+          "prompt": "${ChoiceInput_Prompt_bleO5O()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
-          "property": "dialog.registertype"
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ","
+          },
+          "property": "dialog.registertype",
+          "choices": [
+            "Blodtryck",
+            "Vikt"
+          ],
+          "style": "auto"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "fFO1hl"
+          },
+          "property": "dialog.registertype",
+          "value": "=toLower(dialog.registertype)"
         },
         {
           "$kind": "Microsoft.SwitchCondition",
@@ -39,7 +59,7 @@
           "condition": "dialog.registertype",
           "cases": [
             {
-              "value": "Blodtryck",
+              "value": "blodtryck",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -52,7 +72,6 @@
               ]
             },
             {
-              "value": "Vikt",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -62,7 +81,17 @@
                   "activityProcessed": true,
                   "dialog": "RegisterWeight"
                 }
-              ]
+              ],
+              "value": "vikt"
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ToPmi7"
+              },
+              "activity": "${SendActivity_ToPmi7()}"
             }
           ]
         }

@@ -85,12 +85,15 @@
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "SIJM0m"
+            "id": "4epw0E"
           },
           "activityProcessed": true,
-          "dialog": "AddWeightOpenEhr",
+          "dialog": "AddMeasurement",
           "options": {
-            "weight": "${user.weight}"
+            "url_ending": "openehr/add-weight/${user.ehr_id}",
+            "body": {
+              "weight": "${user.weight}"
+            }
           }
         }
       ]
