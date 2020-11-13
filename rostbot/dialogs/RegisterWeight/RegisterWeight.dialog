@@ -1,0 +1,95 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "isTgWl",
+    "name": "RegisterWeight",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "KyGx2q"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "J8aA1s"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_J8aA1s()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "outputFormat": "this.value",
+          "property": "user.weight"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "zrVqh3"
+          },
+          "activityProcessed": true,
+          "dialog": "ConfirmationDialog",
+          "options": {
+            "confirmText": "Stämmer det att du väger ${user.weight} kg?"
+          },
+          "resultProperty": "dialog.confirmed"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "gP2W4A"
+          },
+          "condition": "dialog.confirmed",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "ucsnxU"
+              },
+              "property": "user.weight",
+              "value": "=null"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "BquYhV"
+              },
+              "activityProcessed": true
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "d5apHn"
+              },
+              "activityProcessed": true
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "Jm3hMQ"
+              },
+              "activityProcessed": true,
+              "dialog": "AddWeightOpenEhr"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "RegisterWeight.lg",
+  "recognizer": "RegisterWeight.lu.qna",
+  "id": "RegisterWeight"
+}

@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# SendActivity_jhx01T()
+- Något gick fel i kommunikationen med servern. Dumpar svaret: ${dialog.resultProperty}
+
+

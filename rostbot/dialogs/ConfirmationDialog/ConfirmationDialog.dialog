@@ -1,0 +1,114 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "p4e9lG",
+    "name": "ConfirmationDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "xFOX41"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "aC0dWC"
+          },
+          "property": "dialog.loopiter",
+          "value": [
+            1,
+            2,
+            3
+          ]
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "hoZAjj"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "actions": [
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "kOvy4a"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "prompt": "${TextInput_Prompt_kOvy4a()}",
+              "property": "turn.confirm",
+              "outputFormat": "=toUpper(this.value)"
+            },
+            {
+              "$kind": "Microsoft.SwitchCondition",
+              "$designer": {
+                "id": "I1E4z1"
+              },
+              "cases": [
+                {
+                  "value": "JA",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.EndDialog",
+                      "$designer": {
+                        "id": "ZgJGgF"
+                      },
+                      "value": "=true"
+                    }
+                  ]
+                },
+                {
+                  "value": "NEJ",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.EndDialog",
+                      "$designer": {
+                        "id": "4KecX7"
+                      },
+                      "value": "=false"
+                    }
+                  ]
+                }
+              ],
+              "default": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "AtdfvK"
+                  },
+                  "activity": "${SendActivity_AtdfvK()}"
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "jIlnAk"
+                  },
+                  "property": "turn.confirm",
+                  "value": "=null"
+                }
+              ],
+              "condition": "turn.confirm"
+            }
+          ],
+          "itemsProperty": "dialog.loopiter"
+        }
+      ]
+    }
+  ],
+  "generator": "ConfirmationDialog.lg",
+  "recognizer": "ConfirmationDialog.lu.qna",
+  "id": "ConfirmationDialog"
+}

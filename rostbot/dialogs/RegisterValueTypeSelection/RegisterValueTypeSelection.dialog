@@ -50,6 +50,19 @@
                   "dialog": "BloodpressureGuideSelect"
                 }
               ]
+            },
+            {
+              "value": "Vikt",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "P2CNmU"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "RegisterWeight"
+                }
+              ]
             }
           ]
         }
