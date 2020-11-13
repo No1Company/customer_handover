@@ -1,0 +1,84 @@
+[import](common.lg)
+
+
+# AdaptiveCardBloodPressureNoGuide()
+[Activity
+    Attachments = ${json(bloodpressurecardjson())}
+]
+
+
+
+
+
+# TextInput_Prompt_h5Ktbw()
+[SigninCard
+    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
+    buttons = Ja värdena stämmer | Nej värdena stämmer inte
+    ]
+# TextInput_Prompt_ouIfx9()
+[SigninCard
+    text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
+    buttons= Återgå till start | Registrera ytterligare värden
+    ]
+
+
+
+
+# SendActivity_44RmnG()
+- Något gick fel, vänligen testa igen senare!
+
+# TextInput_Prompt_MlpQ4j()
+[SigninCard
+    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
+    buttons= Avsluta mätning
+    ]
+
+# bloodpressurecardjson()
+-```
+
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "Blodtryck",
+            "horizontalAlignment": "Center",
+            "wrap": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Vilket värde har du på det systoliska trycket (övertrycket)?",
+            "wrap": true
+        },
+        {
+            "type": "Input.Number",
+            "id": "systolisk",
+            "placeholder": "Övertryck"
+        },
+        {
+            "type": "TextBlock",
+            "text": "Vilket värde har du på det diastoliska trycket (undertrycket)?",
+            "wrap": true
+        },
+        {
+            "type": "Input.Number",
+            "id": "diastolisk",
+            "placeholder": "Undertryck"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Skicka",
+            "style": "positive"
+        }
+    ]
+}
+```
+
+# SendActivity_DYsQGv()
+ -${AdaptiveCardBloodPressureNoGuide()}
