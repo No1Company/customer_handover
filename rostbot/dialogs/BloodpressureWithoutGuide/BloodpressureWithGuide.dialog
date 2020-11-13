@@ -178,14 +178,14 @@
               "dialog": "RegisterValueTypeSelection"
             }
           ],
-          "elseActions": [
-            {
-              "$kind": "Microsoft.EndDialog",
-              "$designer": {
-                "id": "TqhEsO"
-              }
-            }
-          ]
+          "elseActions": []
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Cll9rT"
+          },
+          "activity": "${SendActivity_Cll9rT()}"
         },
         {
           "$kind": "Microsoft.EndDialog",
