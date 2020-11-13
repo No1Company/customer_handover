@@ -49,6 +49,12 @@ def add_weight(ehr_id):
 
 
 @openehr.route('get-blood-pressure/<uuid:ehr_id>')
-@openehr.route('get-blood-pressure/<uuid:ehr_id>')
 def get_blood_pressure(ehr_id):
     return jsonify(ehr_com.get_blood_pressure(ehr_id))
+
+########################################################################
+# Gets the blood pressure for a patient specified by the ehr-id.
+########################################################################
+@openehr.route('get-weight/<uuid:ehr_id>')
+def get_weight(ehr_id):
+    return jsonify(ehr_com.get_weight(ehr_id))
