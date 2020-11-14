@@ -52,6 +52,13 @@
           "value": "=toLower(dialog.registertype)"
         },
         {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "AzmfmS"
+          },
+          "value": "="
+        },
+        {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
             "id": "HSb1RU"
