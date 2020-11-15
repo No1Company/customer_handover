@@ -22,6 +22,10 @@ def generate_fake_user():
     user["db_id"] = u.id
     return user
 
+########################################################################
+# Gets the user with the specified database id. Keep the difference
+# between database ids and ehr ids in mind. 
+########################################################################
 @openehr.route('get-user/<int:id>', methods=['get'])
 def get_user(id):
     u = User.query.get_or_404(id)
@@ -50,7 +54,6 @@ def add_blood_pressure(ehr_id):
 ########################################################################
 
 
-@openehr.route('get-blood-pressure/<uuid:ehr_id>')
 @openehr.route('get-blood-pressure/<uuid:ehr_id>')
 def get_blood_pressure(ehr_id):
     return jsonify(ehr_com.get_blood_pressure(ehr_id))
