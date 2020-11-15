@@ -1,6 +1,7 @@
 from flask import Blueprint, jsonify, request
 import openehr_com as ehr_com
 from datetime import datetime
+from bot_backend.models import db, User
 
 openehr = Blueprint('openehr', __name__, url_prefix='/openehr')
 
@@ -13,7 +14,25 @@ openehr = Blueprint('openehr', __name__, url_prefix='/openehr')
 
 @openehr.route('/generate-fake-user', methods=['GET'])
 def generate_fake_user():
-    return ehr_com.generate_fake_user()["party"]
+    user = ehr_com.generate_fake_user()["party"]
+    print(user)
+    u = User(ehr_id = user['additionalInfo']['ehrId'])
+    db.session.add(u)
+    db.session.commit()
+    user["db_id"] = u.id
+    return user
+
+########################################################################
+# Gets the user with the specified database id. Keep the difference
+# between database ids and ehr ids in mind. 
+########################################################################
+@openehr.route('get-user/<int:id>', methods=['get'])
+def get_user(id):
+    u = User.query.get_or_404(id)
+    u_ehr = ehr_com.get_user(u.ehr_id)
+    u_ehr["db_id"] = id
+    return u_ehr
+
 
 ########################################################################
 # Route for adding blood pressure measurements to a specified user.

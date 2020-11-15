@@ -60,6 +60,12 @@ def generate_fake_user():
     else:
         raise NetworkError("Could not post to ehrscape")
 
+def get_user(ehr_id):
+    req = requests.get("{}/demographics/ehr/{}/party".format(baseUrl, ehr_id), headers = authorization_header)
+    if req.status_code < 300:
+        return req.json()["party"]
+    else:
+        raise NetworkError("Could not get from ehrscape. json: " + str(req.json()))
 
 def params(dict):
     return_string = ''
@@ -126,13 +132,6 @@ def make_aql_query(aql):
     req = requests.get(baseUrl + '/query?' +
                        params({"aql": aql}), headers=authorization_header)
     return req
-
-
-def get_user(ehr_id):
-    req = requests.get(
-        baseUrl + '/demographics/ehr/{}/party'.format(ehr_id), headers=authorization_header)
-    return req.json()
-
 
 def get_blood_pressure(ehr_id, simplify=True, no = 5):
     aql = "SELECT c/context as context, " +\
