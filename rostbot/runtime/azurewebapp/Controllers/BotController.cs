@@ -3,6 +3,7 @@
 //
 // Generated with Bot Builder V4 SDK Template for Visual Studio EchoBot v4.3.0
 
+using System;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -35,6 +36,13 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
         {
             // Delegate the processing of the HTTP POST to the adapter.
             // The adapter will invoke the bot.
+            await this._adapter.ProcessAsync(Request, Response, _bot);
+        }
+
+        [HttpPut]
+        public async Task PutAsync()
+        {
+            Console.WriteLine("PUT request");
             await this._adapter.ProcessAsync(Request, Response, _bot);
         }
     }

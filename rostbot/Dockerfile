@@ -8,6 +8,6 @@ WORKDIR /usr/src/app/runtime
 RUN dotnet build 
 COPY . .
 EXPOSE 80
-CMD dotnet run --project azurewebapp --urls https://0.0.0.0:80
+CMD dotnet run --project azurewebapp --urls http://localhost:80
 
 COPY . .
