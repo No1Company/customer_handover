@@ -7,6 +7,7 @@ WORKDIR /usr/src/app
 COPY . .
 RUN ls
 WORKDIR /usr/src/app/runtime/azurewebapp
+RUN ls
 RUN dotnet build 
 
 COPY . .
