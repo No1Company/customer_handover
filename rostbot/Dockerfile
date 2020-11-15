@@ -6,14 +6,12 @@ WORKDIR /usr/src/app
 
 COPY . .
 RUN ls
-WORKDIR /usr/src/app/runtime/azurewebapp
+WORKDIR /usr/src/app/runtime
 RUN ls
 RUN dotnet build 
-
 COPY . .
-
 EXPOSE 3979
-
-CMD ["dotnet", "run"]
+CMD dotnet run --project azurewebapp --urls https://0.0.0.0:80
+#CMD dotnet run --project azurewebapp
 
 COPY . .
