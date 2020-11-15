@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Bot.Builder;
 using Microsoft.Bot.Builder.Dialogs.Debugging;
 using Microsoft.Bot.Builder.Integration.AspNet.Core;
+using Microsoft.Extensions.Configuration;
 
 namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
 {
@@ -36,6 +37,8 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
         {
             // Delegate the processing of the HTTP POST to the adapter.
             // The adapter will invoke the bot.
+            //var configuration = builder.Build();
+            //Console.WriteLine(configuration.GetValue<string>("bot"))
             await this._adapter.ProcessAsync(Request, Response, _bot);
         }
 
