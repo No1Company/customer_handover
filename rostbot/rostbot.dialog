@@ -229,6 +229,14 @@
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
+            "id": "XDUbSm"
+          },
+          "activityProcessed": true,
+          "dialog": "JSONToArray"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
             "id": "Jzv3Yh"
           },
           "activityProcessed": true,
