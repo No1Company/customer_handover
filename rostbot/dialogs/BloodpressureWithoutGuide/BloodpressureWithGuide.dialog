@@ -2,7 +2,7 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "id": "cecf7O",
-    "name": "MeasureWithGuide",
+    "name": "MeasureWithoutGuide",
     "description": ""
   },
   "autoEndDialog": true,
@@ -17,36 +17,33 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.NumberInput",
+          "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "VsXcIN"
+            "id": "DYsQGv"
           },
-          "defaultLocale": "en-us",
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${NumberInput_Prompt_VsXcIN()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "property": "user.sysvalue"
+          "activity": "${SendActivity_DYsQGv()}"
         },
         {
-          "$kind": "Microsoft.NumberInput",
+          "$kind": "Microsoft.EndTurn",
           "$designer": {
-            "id": "Yu9Psp"
+            "id": "HgKwWU"
+          }
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "EA0YMk"
           },
-          "defaultLocale": "en-us",
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": false,
-          "prompt": "${NumberInput_Prompt_Yu9Psp()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "property": "user.diavalue"
+          "assignments": [
+            {
+              "property": "user.sysvalue",
+              "value": "=@systolisk"
+            },
+            {
+              "property": "user.diavalue",
+              "value": "=@diastolisk"
+            }
+          ]
         },
         {
           "$kind": "Microsoft.TextInput",
@@ -181,14 +178,14 @@
               "dialog": "RegisterValueTypeSelection"
             }
           ],
-          "elseActions": [
-            {
-              "$kind": "Microsoft.EndDialog",
-              "$designer": {
-                "id": "TqhEsO"
-              }
-            }
-          ]
+          "elseActions": []
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Cll9rT"
+          },
+          "activity": "${SendActivity_Cll9rT()}"
         },
         {
           "$kind": "Microsoft.EndDialog",

@@ -24,7 +24,7 @@
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
-          "allowInterruptions": false,
+          "allowInterruptions": true,
           "prompt": "${TextInput_Prompt_1FVIbz()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
