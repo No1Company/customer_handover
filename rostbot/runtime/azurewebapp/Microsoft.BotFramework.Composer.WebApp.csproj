@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk.Web">
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UserSecretsId>8a42ae9f-b86e-4b8d-839d-1f128c93e6c1</UserSecretsId>
   </PropertyGroup>
   <ItemGroup>
     <None Include="ComposerDialogs\**">
@@ -36,5 +37,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\core\Microsoft.BotFramework.Composer.Core.csproj" />
+    <ProjectReference Include="..\customaction\Microsoft.BotFramework.Composer.CustomAction.csproj" />
   </ItemGroup>
 </Project>

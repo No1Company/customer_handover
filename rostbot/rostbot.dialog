@@ -85,6 +85,54 @@
             "id": "VvcgOJ"
           },
           "activity": "${SendActivity_VvcgOJ()}"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "0Uzagj"
+          },
+          "assignments": [
+            {
+              "property": "user.in",
+              "value": 8
+            },
+            {
+              "property": "user.in2",
+              "value": 9
+            }
+          ]
+        },
+        {
+          "$kind": "MultiplyDialog",
+          "$designer": {
+            "id": "5DAl6y"
+          },
+          "arg1": "=user.in",
+          "arg2": "=user.in2",
+          "resultProperty": "user.out"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "MdVk0k"
+          },
+          "activity": "${SendActivity_MdVk0k()}"
+        },
+        {
+          "$kind": "AddString",
+          "$designer": {
+            "id": "CnOyo7"
+          },
+          "arg1": "=user.in",
+          "arg2": "=user.in2",
+          "resultProperty": "user.out2"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "5ZKJfC"
+          },
+          "activity": "${SendActivity_5ZKJfC()}"
         }
       ]
     },
