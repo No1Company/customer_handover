@@ -1,0 +1,73 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "W9YHzP",
+    "name": "CustomActionTest",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "z2v5Cv"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "vRkMvI"
+          },
+          "assignments": [
+            {
+              "property": "user.in",
+              "value": 8
+            },
+            {
+              "property": "user.in2",
+              "value": 9
+            }
+          ]
+        },
+        {
+          "$kind": "MultiplyDialog",
+          "$designer": {
+            "id": "ijNswV"
+          },
+          "arg1": "=user.in",
+          "arg2": "=user.in2",
+          "resultProperty": "user.out"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "L7psDB"
+          },
+          "activity": "${SendActivity_L7psDB()}"
+        },
+        {
+          "$kind": "AddString",
+          "$designer": {
+            "id": "HNp4XP"
+          },
+          "arg1": "=user.in",
+          "arg2": "=user.in2",
+          "resultProperty": "user.out2"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "AHG7Nt"
+          },
+          "activity": "${SendActivity_AHG7Nt()}"
+        }
+      ]
+    }
+  ],
+  "generator": "CustomActionTest.lg",
+  "recognizer": "CustomActionTest.lu.qna",
+  "id": "CustomActionTest"
+}

@@ -152,7 +152,3 @@
 -${UpdateCard()}
 # SendActivity_g9skpW()
  -${AdaptiveCard()}
-# SendActivity_MdVk0k()
-- ${user.out}
-# SendActivity_5ZKJfC()
-- ${user.out2}
