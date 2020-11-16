@@ -22,7 +22,7 @@
             "id": "jAMrgh"
           },
           "method": "POST",
-          "url": "http://127.0.0.1:5000/current-bookings",
+          "url": "${conversation.req_url}/current-bookings",
           "body": {
             "bookingdate": "${user.bookingdate}",
             "type": "${user.bookingtype}"

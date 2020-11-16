@@ -29,18 +29,54 @@
             "id": "Jg3ojp"
           },
           "method": "GET",
-          "url": "http://127.0.0.1:5000/current-bookings",
+          "url": "${conversation.req_url}/current-bookings",
           "resultProperty": "dialog.result",
           "contentType": "application/json"
         },
         {
-          "$kind": "Microsoft.EditArray",
+          "$kind": "Microsoft.Foreach",
           "$designer": {
-            "id": "H7yq8D"
+            "id": "9KrEca"
           },
-          "changeType": "push",
-          "itemsProperty": "user.dateArray",
-          "value": "${dialog.result.content}"
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.result.content",
+          "actions": [
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "96HJET"
+              },
+              "changeType": "push",
+              "itemsProperty": "dialog.datearray",
+              "value": "= dialog.foreach.value"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "MBR1Vi"
+              },
+              "activity": "${SendActivity_MBR1Vi()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "Wh6m8d"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.datearray",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "nDmY4B"
+              },
+              "activity": "${SendActivity_nDmY4B()}"
+            }
+          ]
         }
       ]
     }
