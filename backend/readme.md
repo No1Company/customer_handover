@@ -1,6 +1,12 @@
 # Running instructions for python server
 
 ## All times
+### Database usage
+To use the database read through the [quickstart guide](https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart/). This will teach you the basics of SQLAlchemy. It is good to have some experience with SQL databases as SQLAlchemy uses a SQL (SQLite in our case) database. The actual database is stored in the file `database.db` in the bot_framework folder. If you want to reset the database navigate to `deploy/backend/` and run: 
+```Bash
+python resetDB.py
+```
+This will remove all database entries. The database is not, and should not be, version handled. It is included in .gitignore and should therefore not be manually added. This is because different programmers will need different data in their databases for testing purposes. 
 ### Windows
 1. Navigate to "deploy" inside of a powershell terminal.
 2. Run the command `venv\scripts\Activate.ps1`. A "(venv)" should pop up in front of your command line prompt.
