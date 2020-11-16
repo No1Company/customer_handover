@@ -217,6 +217,24 @@
           "dialog": "ShowCurrentBookings"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "SZXZ1w",
+        "name": "CustomAction"
+      },
+      "intent": "CustomAction",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Jzv3Yh"
+          },
+          "activityProcessed": true,
+          "dialog": "CustomActionTest"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -248,6 +266,10 @@
       {
         "intent": "ShowBooking",
         "pattern": "Visa mina bokningar"
+      },
+      {
+        "intent": "CustomAction",
+        "pattern": "custom"
       }
     ]
   }
