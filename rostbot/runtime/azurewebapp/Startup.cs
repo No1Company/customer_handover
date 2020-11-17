@@ -35,6 +35,8 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates
 {
     public class Startup
     {
+        private readonly string myAllowSpecificOrigins = "_myAllowSpecificOrigins";
+
         public Startup(IWebHostEnvironment env, IConfiguration configuration)
         {
             this.HostingEnvironment = env;
@@ -114,6 +116,19 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates
             services.AddControllers().AddNewtonsoftJson();
 
             services.AddSingleton<IConfiguration>(this.Configuration);
+
+            //CUSTOM CORS
+            services.AddCors(options =>
+            {
+                options.AddPolicy(
+                    name: myAllowSpecificOrigins,
+                    builder =>
+                    {
+                        builder.WithOrigins("https://portal.azure.com");
+                    });
+            });
+ 
+            services.AddControllers();
 
             // Load settings
             var settings = new BotSettings();
@@ -199,6 +214,9 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            //CUSTOM
+            app.UseCors(myAllowSpecificOrigins);
+
             app.UseDefaultFiles();
             app.UseStaticFiles();
             app.UseWebSockets();

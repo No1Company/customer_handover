@@ -53,7 +53,7 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
         [HttpOptions("{id}")]
         [HttpOptions]
         public async Task<StatusCodeResult> OptionsAsync()
-        {
+        {   
             Console.WriteLine("Somebody issued an OPTIONS request to ROSTBOT");
             return await Task.FromResult(StatusCode(200));
         }
