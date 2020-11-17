@@ -48,5 +48,10 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
             Console.WriteLine("PUT request");
             await this._adapter.ProcessAsync(Request, Response, _bot);
         }
+
+        [HttpOptions("{id}")]
+        public void DoNothing(string id)
+        {
+        }
     }
 }
