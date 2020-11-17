@@ -52,8 +52,10 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
 
         [HttpOptions("{id}")]
         [HttpOptions]
-        public void DoNothing(string id)
+        public async Task OptionsAsync(string id)
         {
+            Console.WriteLine("Somebody issued a POST request to ROSTBOT");
+            await this._adapter.ProcessAsync(Request, Response, _bot);
         }
     }
 }
