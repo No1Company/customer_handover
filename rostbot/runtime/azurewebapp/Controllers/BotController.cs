@@ -39,6 +39,7 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
             // The adapter will invoke the bot.
             //var configuration = builder.Build();
             //Console.WriteLine(configuration.GetValue<string>("bot"))
+            Console.WriteLine("Somebody issued a POST request to ROSTBOT");
             await this._adapter.ProcessAsync(Request, Response, _bot);
         }
 
@@ -50,6 +51,7 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
         }
 
         [HttpOptions("{id}")]
+        [HttpOptions]
         public void DoNothing(string id)
         {
         }
