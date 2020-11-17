@@ -3,10 +3,7 @@
 # SendActivity_EqJmcI()
 - Du har i inställningarna valt att inte ha en guide för din mätning av blodtryck, stämmer inte detta så kan du ändra detta i inställningar. \n\n Okej då kör vi igång!
 # TextInput_Prompt_iMYIXn()
-> Move this to settings maybe? Maybe make it a global variable that is saved and re-used. Something is weird
 [SigninCard
     text = Hur vill du bli instruerad vid mätning?
     buttons = Med guide | Utan guide   
      ]
-# SendActivity_QkKWbw()
-- ${user.guideType}

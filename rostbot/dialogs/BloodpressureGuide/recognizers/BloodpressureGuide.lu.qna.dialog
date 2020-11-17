@@ -1,4 +1,6 @@
 {
   "$kind": "Microsoft.CrossTrainedRecognizerSet",
-  "recognizers": []
+  "recognizers": [],
+  "id": "BloodpressureGuide.lu.qna",
+  "generator": "BloodpressureGuide.lu.qna.lg"
 }

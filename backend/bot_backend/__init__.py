@@ -66,7 +66,7 @@ def avail_times():
     return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
 
 
-userGuideTypes = [
+userguidetypes = [
     {
         "guidetype" : "0"
     }
@@ -76,9 +76,9 @@ userGuideTypes = [
 def curr_user_guide_type():
 
     if request.method == "PUT":
-        userGuideTypes[0] = request.get_json()
+        userguidetypes[0] = request.get_json()
 
-    return jsonify([{"guidetype": type["guidetype"]} for type in userGuideTypes])
+    return jsonify([{"guidetype": guides["guidetype"]} for guides in userguidetypes])
 
 notifications = [
         {

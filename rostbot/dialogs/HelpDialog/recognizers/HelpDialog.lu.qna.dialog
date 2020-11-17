@@ -1,4 +1,6 @@
 {
   "$kind": "Microsoft.CrossTrainedRecognizerSet",
-  "recognizers": []
+  "recognizers": [],
+  "id": "HelpDialog.lu.qna",
+  "generator": "HelpDialog.lu.qna.lg"
 }
