@@ -3,3 +3,4 @@ __pycache__/
 *.pyc
 *$py.class
 backend/login.txt
+backend/bot_backend/database.db
