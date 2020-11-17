@@ -22,6 +22,7 @@
             "id": "clAf9r"
           },
           "method": "GET",
+<<<<<<< HEAD
           "url": "${conversation.req_url}/guide-type",
           "contentType": "application/json",
           "resultProperty": "dialog.resultProperty"
@@ -35,11 +36,31 @@
           "value": "${dialog.resultProperty.content[0].guidetype}"
         },
         {
+=======
+          "url": "http://127.0.0.1:5000/guide-type",
+          "resultProperty": "dialog.api_response",
+          "contentType": "application/json",
+          "headers": {},
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "fcg99c"
+          },
+          "activity": "${SendActivity_fcg99c()}"
+        },
+        {
+>>>>>>> 1d930a62a1ac8c90da6c026de49165683a50dca2
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "GhuFPG"
           },
+<<<<<<< HEAD
           "condition": "user.guideType == \"0\"",
+=======
+          "condition": "=user.guideType == null",
+>>>>>>> 1d930a62a1ac8c90da6c026de49165683a50dca2
           "actions": [
             {
               "$kind": "Microsoft.DeleteProperty",
@@ -71,9 +92,13 @@
               "method": "PUT",
               "url": "${conversation.req_url}/guide-type",
               "contentType": "application/json",
+<<<<<<< HEAD
               "body": {
                 "guidetype": "${user.guideType}"
               }
+=======
+              "body": "\"guidetype\" = \"${user.guideType}\""
+>>>>>>> 1d930a62a1ac8c90da6c026de49165683a50dca2
             }
           ]
         },
