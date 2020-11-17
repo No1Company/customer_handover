@@ -23,30 +23,24 @@
           },
           "method": "GET",
           "url": "http://127.0.0.1:5000/guide-type",
-          "resultProperty": "dialog.resultProperty",
-          "contentType": "String"
-        },
-        {
-          "$kind": "Microsoft.SetProperty",
-          "$designer": {
-            "id": "7ppGEn"
-          },
-          "property": "user.guideType",
-          "value": "${dialog.resultProperty.content[0].guidetype}"
+          "resultProperty": "dialog.api_response",
+          "contentType": "application/json",
+          "headers": {},
+          "responseType": "json"
         },
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "QkKWbw"
+            "id": "fcg99c"
           },
-          "activity": "${SendActivity_QkKWbw()}"
+          "activity": "${SendActivity_fcg99c()}"
         },
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "GhuFPG"
           },
-          "condition": "=user.guideType == \"0\"",
+          "condition": "=user.guideType == null",
           "actions": [
             {
               "$kind": "Microsoft.TextInput",
@@ -71,7 +65,7 @@
               "method": "PUT",
               "url": "http://127.0.0.1:5000/guide-type",
               "contentType": "application/json",
-              "body": "\"userGuideType\" = \"${user.guideType}\""
+              "body": "\"guidetype\" = \"${user.guideType}\""
             }
           ]
         },

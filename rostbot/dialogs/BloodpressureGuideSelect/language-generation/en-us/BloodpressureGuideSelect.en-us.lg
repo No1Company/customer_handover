@@ -8,5 +8,5 @@
     text = Hur vill du bli instruerad vid mätning?
     buttons = Med guide | Utan guide   
      ]
-# SendActivity_QkKWbw()
-- ${user.guideType}
+# SendActivity_fcg99c()
+- ${dialog.api_response.content[0].guidetype}

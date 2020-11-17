@@ -40,15 +40,13 @@
                         "choices": [
                             {
                                 "title": "Med guide",
-                                "value": "Med guide"
+                                "value": "Med guide",
+                                "data": "Med guide"
                             },
                             {
                                 "title": "Utan guide",
-                                "value": "Utan guide"
-                            },
-                            {
-                                "title": "Utan guide och bilder",
-                                "value": "Utan guide och bilder"
+                                "value": "Utan guide",
+                                "data": "Utan guide"
                             }
                         ],
                         "placeholder": "Placeholder text",
