@@ -17,19 +17,63 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.TextInput",
+          "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "3d4A6a"
+            "id": "clAf9r"
           },
-          "disabled": false,
-          "maxTurnCount": 3,
-          "alwaysPrompt": false,
-          "allowInterruptions": true,
-          "prompt": "${TextInput_Prompt_3d4A6a()}",
-          "unrecognizedPrompt": "",
-          "invalidPrompt": "",
-          "defaultValueResponse": "",
-          "property": "user.guideType"
+          "method": "GET",
+          "url": "http://127.0.0.1:5000/guide-type",
+          "resultProperty": "dialog.resultProperty",
+          "contentType": "String"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "7ppGEn"
+          },
+          "property": "user.guideType",
+          "value": "${dialog.resultProperty.content[0].guidetype}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "QkKWbw"
+          },
+          "activity": "${SendActivity_QkKWbw()}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "GhuFPG"
+          },
+          "condition": "=user.guideType == \"0\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "iMYIXn"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": true,
+              "prompt": "${TextInput_Prompt_iMYIXn()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "user.guideType"
+            },
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "7N4gPd"
+              },
+              "method": "PUT",
+              "url": "http://127.0.0.1:5000/guide-type",
+              "contentType": "application/json",
+              "body": "\"userGuideType\" = \"${user.guideType}\""
+            }
+          ]
         },
         {
           "$kind": "Microsoft.SwitchCondition",
