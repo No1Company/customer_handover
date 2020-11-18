@@ -42,7 +42,13 @@
             "type": "Action.Submit",
             "title": "Ok",
             "style": "positive",
-            "id": "guideselection"
+            "id": "guideselection",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg"
+        },
+         {
+            "type": "Action.Submit",
+            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
+            "data": "Avbryt"
         }
     ]
 }
