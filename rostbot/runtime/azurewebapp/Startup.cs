@@ -124,7 +124,9 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates
                     name: myAllowSpecificOrigins,
                     builder =>
                     {
-                        builder.WithOrigins("https://portal.azure.com");
+                        builder.WithOrigins("https://portal.azure.com")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
                     });
             });
  
