@@ -26,41 +26,11 @@
             "data": "Chatt"
         },
         {
-            "type": "Action.ShowCard",
+            "type": "Action.Submit",
             "title": "Guide-inställningar",
-            "data": {
-                "id": "1234567890"
-            },
+            "data": "Guide-inställningar",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg",
-            "card": {
-                "type": "AdaptiveCard",
-                "body": [
-                    {
-                        "type": "Input.ChoiceSet",
-                        "choices": [
-                            {
-                                "title": "Med guide",
-                                "value": "Med guide",
-                                "data": "Med guide"
-                            },
-                            {
-                                "title": "Utan guide",
-                                "value": "Utan guide",
-                                "data": "Utan guide"
-                            }
-                        ],
-                        "placeholder": "Placeholder text",
-                        "style": "expanded",
-                        "id": "notisVia"
-                    }
-                ],
-                "actions": [
-                    {
-                        "type": "Action.Submit",
-                        "title": "OK"
-                    }
-                ]
-            }
+           
         },
         {
             "type": "Action.Submit",
@@ -93,7 +63,6 @@
         }
     ]
 }
-
 ```
 # TextInput_Prompt_12D1pq()
  -${AdaptiveCardSettings()}

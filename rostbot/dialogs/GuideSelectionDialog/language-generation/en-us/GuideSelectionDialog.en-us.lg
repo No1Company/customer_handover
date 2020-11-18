@@ -1,0 +1,104 @@
+[import](common.lg)
+
+
+# AdaptiveCardGuideSelection()
+[Activity
+    Attachments = ${json(guideselectcardjson())}
+]
+
+# guideselectcardjson()
+-```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Inställningar för registrering av värden",
+            "wrap": true,
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "Input.ChoiceSet",
+            "value": "${user.guideType}",
+            "choices": [
+                {
+                    "title": "Med guide",
+                    "value": "Med guide"
+                },
+                {
+                    "title": "Utan guide",
+                    "value": "Utan guide"
+                }
+            ],
+            "placeholder": "Placeholder text",
+            "style": "expanded",
+            "id": "guideselect"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Ok",
+            "style": "positive",
+            "id": "guideselection"
+        }
+    ]
+}
+```
+
+#UpdateCard
+[Activity
+    Attachments = ${json(updatecardjson())}
+]
+
+# updatecardjson()
+-```
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+         {
+      "type": "TextBlock",
+      "size": "default",
+      "isSubtle": true,
+      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
+      "wrap": true,
+      "maxLines": 0
+      
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Registrera värden",
+      "data": "Registrera värden"
+      
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Ändra inställningar",
+      "data": "Ändra inställningar"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Boka konsultation",
+      "data": "Boka konsultation"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Övriga frågor",
+      "data": "Övriga frågor"
+    }
+  ]
+}
+
+```
+# SendActivity_n9XBXG()
+ -${AdaptiveCardGuideSelection()}
+# SendActivity_usI5V2()
+- Du har nu ändrat till att registerera värden ${user.guideType}
+# SendActivity_4SQK4P()
+-${UpdateCard()}
