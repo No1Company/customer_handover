@@ -22,7 +22,7 @@
             "id": "qIec1U"
           },
           "method": "GET",
-          "url": "http://127.0.0.1:5000/current-notifications",
+          "url": "${conversation.req_url}/current-notifications",
           "resultProperty": "dialog.resultProperty",
           "contentType": "application/json"
         },
@@ -166,7 +166,7 @@
               "$designer": {
                 "id": "W0kGC8"
               },
-              "url": "http://127.0.0.1:5000/current-notifications",
+              "url": "${conversation.req_url}/current-notifications",
               "method": "PUT",
               "headers": {},
               "contentType": "application/json",
@@ -184,7 +184,7 @@
                 "id": "ajbY3X"
               },
               "method": "GET",
-              "url": "http://127.0.0.1:5000/current-notifications",
+              "url": "${conversation.req_url}/current-notifications",
               "resultProperty": "dialog.resultProperty",
               "contentType": "application/json"
             },
