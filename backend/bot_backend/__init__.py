@@ -65,14 +65,32 @@ def avail_times():
 
     return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
 
+
+userguidetypes = [
+    {
+        "guidetype" : "0"
+    }
+]
+
+@app.route('/guide-type', methods=['GET', 'PUT'])
+def curr_user_guide_type():
+
+    global userguidetype
+
+    if request.method == "PUT":
+        userguidetypes[0] = request.get_json()
+
+    return jsonify([{"guidetype": guides["guidetype"]} for guides in userguidetypes])
+
 notifications = [
-        {
-            "noticemediatype" : "",
-            "timeafter" : "",
-            "timebefore" : "", 
-            "type" : ""
-        }
-    ]
+    {
+        "noticemediatype" : "",
+        "timeafter" : "",
+        "timebefore" : "", 
+        "type" : ""
+    }
+]
+
 
 
 @app.route('/current-notifications', methods=['GET', 'POST', 'PUT'])

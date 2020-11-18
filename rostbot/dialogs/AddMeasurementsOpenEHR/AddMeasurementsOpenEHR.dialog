@@ -27,8 +27,8 @@
           "responseType": "json",
           "resultProperty": "turn.resultProperty",
           "body": {
-            "diastolic": "${dialog.systolic}",
-            "systolic": "${dialog.diastolic}"
+            "diastolic": "${user.diavalue}",
+            "systolic": "${user.sysvalue}"
           }
         },
         {

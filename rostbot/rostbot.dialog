@@ -21,7 +21,7 @@
           "$designer": {
             "id": "abeYLt"
           },
-          "value": "http://localhost:5000",
+          "value": "http://localhost:5020",
           "property": "conversation.req_url"
         },
         {
@@ -221,18 +221,26 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "GMBXbd",
-        "name": "vikt"
+        "id": "SZXZ1w",
+        "name": "CustomAction"
       },
-      "intent": "vikt",
+      "intent": "CustomAction",
       "actions": [
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "VkgfUr"
+            "id": "XDUbSm"
           },
           "activityProcessed": true,
-          "dialog": "RegisterWeight"
+          "dialog": "JSONToArray"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Jzv3Yh"
+          },
+          "activityProcessed": true,
+          "dialog": "CustomActionTest"
         }
       ]
     }
@@ -268,8 +276,8 @@
         "pattern": "Visa mina bokningar"
       },
       {
-        "intent": "vikt",
-        "pattern": "vikt"
+        "intent": "CustomAction",
+        "pattern": "custom"
       }
     ]
   }

@@ -1,0 +1,230 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "lmMIcd",
+    "name": "NotificationsSettingsDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "6HAJko"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "qIec1U"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}/current-notifications",
+          "resultProperty": "dialog.resultProperty",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "SBsOuE"
+          },
+          "assignments": [
+            {
+              "property": "user.notis.via",
+              "value": "${dialog.resultProperty.content[0].noticemediatype}"
+            },
+            {
+              "property": "user.notis.time.after",
+              "value": "${dialog.resultProperty.content[0].timeafter}"
+            },
+            {
+              "property": "user.notis.time.before",
+              "value": "${dialog.resultProperty.content[0].timebefore}"
+            },
+            {
+              "value": "${dialog.resultProperty.content[0].type}",
+              "property": "user.notis.measurments"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "3CykmE"
+          },
+          "property": "user.test.array",
+          "value": [
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            1,
+            2,
+            3,
+            4,
+            5
+          ]
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "TfJoKu"
+          },
+          "value": "dialog.foreach.value",
+          "itemsProperty": "user.test.array",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "jHELjD"
+              },
+              "activity": "${SendActivity_jHELjD()}"
+            },
+            {
+              "$kind": "Microsoft.EndTurn",
+              "$designer": {
+                "id": "ohsrev"
+              }
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "bjyKCu"
+              },
+              "assignments": [
+                {
+                  "property": "user.notis.via",
+                  "value": "=@notisVia"
+                },
+                {
+                  "property": "user.notis.time.after",
+                  "value": "=@timeAfter"
+                },
+                {
+                  "property": "user.notis.time.before",
+                  "value": "=@timeBefore"
+                },
+                {
+                  "value": "=@notisMeasurments",
+                  "property": "user.notis.measurments"
+                },
+                {
+                  "property": "dialog.show.notifications",
+                  "value": true
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "W0kGC8"
+              },
+              "url": "${conversation.req_url}/current-notifications",
+              "method": "PUT",
+              "headers": {},
+              "contentType": "application/json",
+              "responseType": "json",
+              "body": {
+                "noticemediatype": "${user.notis.via}",
+                "timeafter": "${user.notis.time.after}",
+                "timebefore": "${user.notis.time.before}",
+                "type": "${user.notis.measurments}"
+              }
+            },
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "ajbY3X"
+              },
+              "method": "GET",
+              "url": "${conversation.req_url}/current-notifications",
+              "resultProperty": "dialog.resultProperty",
+              "contentType": "application/json"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "VK1EOK"
+              },
+              "assignments": [
+                {
+                  "property": "user.notis.via",
+                  "value": "${dialog.resultProperty.content[0].noticemediatype}"
+                },
+                {
+                  "property": "user.notis.time.after",
+                  "value": "${dialog.resultProperty.content[0].timeafter}"
+                },
+                {
+                  "property": "user.notis.time.before",
+                  "value": "${dialog.resultProperty.content[0].timebefore}"
+                },
+                {
+                  "value": "${dialog.resultProperty.content[0].type}",
+                  "property": "user.notis.measurments"
+                }
+              ]
+            }
+          ],
+          "index": "dialog.foreach.index"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "RHnIr5"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "NotificationsSettingsDialog.lg",
+  "recognizer": "NotificationsSettingsDialog.lu.qna",
+  "id": "NotificationsSettingsDialog"
+}
