@@ -243,6 +243,100 @@
           "dialog": "CustomActionTest"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "qdNFqv",
+        "name": "HealthForm"
+      },
+      "intent": "HealthForm",
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "ihAq0M"
+          },
+          "value": {
+            "questions": [
+              {
+                "question": "Hur tycker du din hälsa är i allmänhet på en skala 1-5?",
+                "answer": [
+                  "5 – Utmärkt 4",
+                  "Mycket bra 3",
+                  "Bra 2",
+                  "Någorlunda 1",
+                  "Dålig/t"
+                ]
+              },
+              {
+                "question": "Hur tycker du din livskvalitet är i allmänhet?",
+                "answer": [
+                  "5 – Utmärkt 4",
+                  "Mycket bra 3",
+                  "Bra 2",
+                  "Någorlunda 1",
+                  "Dålig/t"
+                ]
+              }
+            ]
+          },
+          "property": "dialog.form"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "0t538y"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.form.questions",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "TSVeGa"
+              },
+              "activityProcessed": true,
+              "dialog": "HealthQuestion",
+              "resultProperty": "turn.answer",
+              "options": {
+                "question": "=dialog.foreach.value"
+              }
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "oCAzPq"
+              },
+              "activity": "${SendActivity_oCAzPq()}"
+            },
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "HXHqcv"
+              },
+              "changeType": "push",
+              "value": "=turn.answer",
+              "itemsProperty": "dialog.answers"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "C30k0d"
+              },
+              "activity": "${SendActivity_C30k0d()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "lePwRw"
+          },
+          "activity": "${SendActivity_lePwRw()}"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -278,6 +372,10 @@
       {
         "intent": "CustomAction",
         "pattern": "custom"
+      },
+      {
+        "intent": "HealthForm",
+        "pattern": "test"
       }
     ]
   }

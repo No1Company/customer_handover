@@ -1,0 +1,80 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "JBD2R1",
+    "name": "HealthQuestion",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "gxd9UG"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Q6q2zE"
+          },
+          "activity": "${SendActivity_Q6q2zE()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "oUPkEQ"
+          },
+          "activity": "${SendActivity_oUPkEQ()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "6dMFvi"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_6dMFvi()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "dialog.answer",
+          "choices": [
+            "1",
+            "2"
+          ],
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          }
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "RmO0bP"
+          },
+          "property": "dialog.result",
+          "value": "=dialog.answer"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "CpCvY4"
+          },
+          "activity": "${SendActivity_CpCvY4()}"
+        }
+      ]
+    }
+  ],
+  "generator": "HealthQuestion.lg",
+  "recognizer": "HealthQuestion.lu.qna",
+  "id": "HealthQuestion"
+}

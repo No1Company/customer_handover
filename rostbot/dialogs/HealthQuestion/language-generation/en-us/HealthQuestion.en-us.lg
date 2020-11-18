@@ -1,0 +1,17 @@
+[import](common.lg)
+
+# Templatetest(param)
+[Suggestions
+ text=param
+	SuggestionActions =  10 \| cards | 20 \| cards
+  ]
+# TemplateName()
+-TemplateValue
+# SendActivity_Q6q2zE()
+- ${dialog.question}
+# SendActivity_oUPkEQ()
+- ${dialog.question.answer}
+# ChoiceInput_Prompt_6dMFvi()
+- ${dialog.question.question}
+# SendActivity_CpCvY4()
+-${dialog.result} 3 ${dialog.answer}

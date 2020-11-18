@@ -1,0 +1,48 @@
+{
+  "$schema": "https://raw.githubusercontent.com/microsoft/botframework-sdk/master/schemas/component/component.schema",
+  "$role": "implements(Microsoft.IDialog)",
+  "title": "HealthQuestion",
+  "type": "object",
+  "properties": {
+    "question": {
+      "title": "Question",
+      "$ref": "#/definitions/objectExpression"
+    }
+  },
+  "$result": {
+    "type": "object",
+    "properties": {
+      "answer": {
+        "type": "string",
+        "title": "Answer"
+      }
+    }
+  },
+  "definitions": {
+    "equalsExpression": {
+      "$role": "expression",
+      "type": "string",
+      "title": "Equals Expression",
+      "description": "Expression starting with =.",
+      "pattern": "^=.*\\S.*",
+      "examples": [
+        "=user.name"
+      ]
+    },
+    "objectExpression": {
+      "$role": "expression",
+      "title": "Object or expression",
+      "description": "Object or expression to evaluate.",
+      "oneOf": [
+        {
+          "type": "object",
+          "title": "Object",
+          "description": "Object constant."
+        },
+        {
+          "$ref": "#/definitions/equalsExpression"
+        }
+      ]
+    }
+  }
+}
