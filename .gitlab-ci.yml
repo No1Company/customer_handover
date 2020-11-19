@@ -29,6 +29,19 @@ build-bot-image: #used to build the bot's docker image
     - buildah build-using-dockerfile --tag "rostbot" "rostbot"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
 
+build-flask-image: #used to build the bot's docker image
+  stage: build-images
+  image: docker.io/buildah/buildah
+  needs: []
+  script:
+    - export _BUILDAH_STARTED_IN_USERNS=''
+    - export BUILDAH_ISOLATION=chroot
+    - export STORAGE_DRIVER=vfs
+    - export BUILDAH_FORMAT=docker
+    
+    - buildah build-using-dockerfile --tag "flask" "backend"
+    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
+
 
 deploy-index:
   environment: 'production'
@@ -59,6 +72,21 @@ deploy-bot:
    - kubectl get all
    - kubectl apply -f continuous-integration/bot-deploy.yaml
    - kubectl apply -f continuous-integration/bot-service.yaml
+   - kubectl get all # display container status
+
+deploy-bot:
+  environment: 'production'
+  needs:
+   - build-flask-image
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "ci-cd-composer"' #Change to master
+
+  stage: deploy
+  image: lachlanevenson/k8s-kubectl
+  script:
+   - kubectl get all
+   - kubectl apply -f continuous-integration/backend-flask-deploy.yaml
+   - kubectl apply -f continuous-integration/backend-flask-service.yaml
    - kubectl get all # display container status
 
 deploy-ingress:
