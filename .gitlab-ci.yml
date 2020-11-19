@@ -94,6 +94,7 @@ deploy-ingress:
   needs:
     - deploy-bot
     - deploy-index
+    - deploy-flask
   rules: 
    - if: '$CI_COMMIT_BRANCH == "ci-cd-composer"' #Change to master
 
