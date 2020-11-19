@@ -17,20 +17,6 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "Q6q2zE"
-          },
-          "activity": "${SendActivity_Q6q2zE()}"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "oUPkEQ"
-          },
-          "activity": "${SendActivity_oUPkEQ()}"
-        },
-        {
           "$kind": "Microsoft.ChoiceInput",
           "$designer": {
             "id": "6dMFvi"
@@ -63,13 +49,6 @@
           },
           "property": "dialog.result",
           "value": "=dialog.answer"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "CpCvY4"
-          },
-          "activity": "${SendActivity_CpCvY4()}"
         }
       ]
     }

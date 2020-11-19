@@ -7,11 +7,5 @@
   ]
 # TemplateName()
 -TemplateValue
-# SendActivity_Q6q2zE()
-- ${dialog.question}
-# SendActivity_oUPkEQ()
-- ${dialog.question.answer}
 # ChoiceInput_Prompt_6dMFvi()
 - ${dialog.question.question}
-# SendActivity_CpCvY4()
--${dialog.result} 3 ${dialog.answer}

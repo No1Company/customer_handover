@@ -153,10 +153,8 @@
 # SendActivity_g9skpW()
  -${AdaptiveCard()}
 # SendActivity_lePwRw()
--klarst 
+-Tack för dina svar! Dom har nu registrerats.
 # SendActivity_73zBqG()
 -
 # SendActivity_C30k0d()
 - i loop ${dialog.answers}
-# SendActivity_oCAzPq()
-- ${turn.answer} i lopen
