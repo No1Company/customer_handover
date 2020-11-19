@@ -7,5 +7,6 @@ WORKDIR /usr/src/app/backend
 RUN pip install -r requirements.txt
 
 EXPOSE 80
-CMD python run.py
+ENTRYPOINT ["python"]
+CMD run.py
 COPY . .
