@@ -10,6 +10,5 @@ COPY . .
 WORKDIR /usr/src/app/backend
 
 EXPOSE 80
-ENTRYPOINT [ "python" ]
-CMD resetDBtest.py, run.py
+CMD ["python", "./resetDB.py", "./run.py" ]
 COPY . .
