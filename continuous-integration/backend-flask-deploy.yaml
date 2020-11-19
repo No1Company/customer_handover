@@ -21,8 +21,8 @@ spec:
         - 
           name: gitlab-registry
       containers:
-        - name: index
-          image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/index:latest
+        - name: flask
+          image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/flask:latest
           env:
           ports:
             - containerPort: 80
