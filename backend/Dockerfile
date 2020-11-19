@@ -11,5 +11,5 @@ WORKDIR /usr/src/app/backend
 
 EXPOSE 80
 ENTRYPOINT ["python"]
-CMD run.py
+CMD resetDB.py, run.py
 COPY . .
