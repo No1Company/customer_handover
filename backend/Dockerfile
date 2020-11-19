@@ -1,14 +1,15 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
+FROM python:3
 
 
 WORKDIR /usr/src/app
-COPY . .
 
-RUN pip install -r requirements.txt
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 WORKDIR /usr/src/app/backend
 
 EXPOSE 80
-CMD python resetDB.py, python run.py
+ENTRYPOINT [ "python" ]
+CMD resetDB.py, run.py
 COPY . .
