@@ -3,18 +3,6 @@ stages:
   - deploy
   - ingress
 
-build-index-image:
-  stage: build-images
-  image: docker.io/buildah/buildah
-  needs: []
-  script:
-    - export _BUILDAH_STARTED_IN_USERNS=''
-    - export BUILDAH_ISOLATION=chroot
-    - export STORAGE_DRIVER=vfs
-    - export BUILDAH_FORMAT=docker
-    
-    - buildah build-using-dockerfile --tag "index" "bot-site"
-    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "index" "docker://${CI_REGISTRY_IMAGE}/index:latest"
 
 build-bot-image: #used to build the bot's docker image
   stage: build-images
@@ -39,24 +27,8 @@ build-flask-image:
     - export STORAGE_DRIVER=vfs
     - export BUILDAH_FORMAT=docker
     
-    - buildah build-using-dockerfile --tag "flask" "backend"
+    - buildah build-using-dockerfile --build-arg ehr-pass="${K8S_SECRET_EHR}" --tag "flask" "backend"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "flask" "docker://${CI_REGISTRY_IMAGE}/flask:latest"
-
-
-deploy-index:
-  environment: 'production'
-  needs:
-    - build-index-image
-  rules: 
-    - if: '$CI_COMMIT_BRANCH == "ci-cd-composer"' #Change to master
-
-  stage: deploy
-  image: lachlanevenson/k8s-kubectl
-  script:
-    - kubectl get all
-    - kubectl apply -f continuous-integration/index-deploy.yaml
-    - kubectl apply -f continuous-integration/index-service.yaml
-    - kubectl get all # display container status
 
 
 deploy-bot:

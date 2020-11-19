@@ -2,6 +2,26 @@
 #Kod för att köra igång systemet.
 
 from bot_backend import app
+import sys
+import os
 
 if __name__ == "__main__":
-    app.run(port="5020", debug = True)
+
+    port = "5020"
+    host = "localhost"
+    args = sys.argv
+
+    if "--port" in args:
+        port = args[args.index("--port")+1]
+
+    if "--host" in args:
+        host = args[args.index("--host")+1]    
+    
+    # Let gitlab provide password as token
+    if "--ehrpassword" in args:
+        password = args[args.index("--ehrpassword")+1]
+
+        with open(os.path.join("..","..",'login.txt'), 'w') as f:
+            f.write("Basic " + password)
+            
+    app.run(port=port, host=host, debug = True)

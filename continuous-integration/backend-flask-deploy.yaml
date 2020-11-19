@@ -4,18 +4,18 @@ metadata:
   name: deploy-flask
   labels:
     app: rostbot
-    service: flask-backend
+    service: backend
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: rostbot
-      service: flask-backend
+      service: backend
   template:
     metadata:
       labels:
         app: rostbot
-        service: flask-backend
+        service: backend
     spec:
       imagePullSecrets:
         - 

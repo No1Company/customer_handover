@@ -24,10 +24,5 @@ spec:
 
           - path: /
             backend:
-              serviceName: rostbot-frontend-service
-              servicePort: 80
-
-          - path: /flask/
-            backend:
               serviceName: flask-backend-service
               servicePort: 80

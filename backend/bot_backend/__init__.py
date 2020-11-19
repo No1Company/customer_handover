@@ -12,7 +12,9 @@ from bot_backend.blueprints import openehr
 
 #db.init_app(app)
 app.register_blueprint(openehr.openehr)
+
 cwd_data_path = os.getcwd() + "\\bot_backend\data\data.txt"
+
 DATA_PATH = os.path.abspath(cwd_data_path)
 
 def save_data(data, data_path):
