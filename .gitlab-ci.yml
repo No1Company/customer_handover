@@ -35,7 +35,6 @@ deploy-bot:
   environment: 'production'
   needs:
    - build-bot-image
-   - build-flask-image
   rules: 
    - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
 
