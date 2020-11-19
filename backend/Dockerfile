@@ -2,7 +2,8 @@ FROM python:3
 
 
 WORKDIR /usr/src/app
-
+ADD run.py /
+ADD resetDB.py /
 COPY requirements.txt ./
 RUN pip install --no-cache-dir -r requirements.txt
 
@@ -10,5 +11,5 @@ COPY . .
 WORKDIR /usr/src/app/backend
 
 EXPOSE 80
-CMD ["python", "./run.py" ]
+CMD ["python", "./resetDB.py", "./run.py" ]
 COPY . .
