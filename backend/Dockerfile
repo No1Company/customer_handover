@@ -10,5 +10,5 @@ COPY . .
 WORKDIR /usr/src/app/backend
 
 EXPOSE 80
-CMD ["python", "./resetDB.py", "./run.py" ]
+CMD ["python", "./run.py" ]
 COPY . .
