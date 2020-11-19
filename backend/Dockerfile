@@ -2,7 +2,7 @@ FROM tiangolo/uvicorn-gunicorn-fastapi:python3.7
 
 WORKDIR /usr/src/app
 
-COPY ./app .
+COPY . .
 WORKDIR /usr/src/app/backend
 
 EXPOSE 80
