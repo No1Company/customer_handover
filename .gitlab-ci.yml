@@ -63,6 +63,7 @@ deploy-bot:
   environment: 'production'
   needs:
    - build-bot-image
+   - build-flask-image
   rules: 
    - if: '$CI_COMMIT_BRANCH == "ci-cd-composer"' #Change to master
 
