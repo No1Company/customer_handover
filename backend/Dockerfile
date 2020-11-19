@@ -6,10 +6,6 @@ COPY . .
 
 RUN pip install -r requirements.txt
 
-COPY . .
-WORKDIR /usr/src/app/backend
-
 EXPOSE 80
-ENTRYPOINT ["python"]
-CMD resetDB.py, run.py
+CMD python3 -m venv venv, venv\scripts\Activate.ps1, cd backend, python resetDB.py, python run.py
 COPY . .
