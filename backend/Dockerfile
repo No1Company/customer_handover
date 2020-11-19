@@ -4,7 +4,8 @@ WORKDIR /usr/src/app
 
 COPY . .
 WORKDIR /usr/src/app/backend
+RUN pip install -r requirements.txt
 
 EXPOSE 80
-CMD venv/scripts/activate.ps1, python run.py
+CMD python run.py
 COPY . .
