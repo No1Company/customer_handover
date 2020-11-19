@@ -29,7 +29,7 @@ build-bot-image: #used to build the bot's docker image
     - buildah build-using-dockerfile --tag "rostbot" "rostbot"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
 
-build-flask-image: #used to build the bot's docker image
+build-flask-image: 
   stage: build-images
   image: docker.io/buildah/buildah
   needs: []
@@ -40,7 +40,7 @@ build-flask-image: #used to build the bot's docker image
     - export BUILDAH_FORMAT=docker
     
     - buildah build-using-dockerfile --tag "flask" "backend"
-    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
+    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "flask" "docker://${CI_REGISTRY_IMAGE}/flask:latest"
 
 
 deploy-index:
@@ -74,7 +74,7 @@ deploy-bot:
    - kubectl apply -f continuous-integration/bot-service.yaml
    - kubectl get all # display container status
 
-deploy-bot:
+deploy-flask:
   environment: 'production'
   needs:
    - build-flask-image
