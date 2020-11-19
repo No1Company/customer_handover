@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: deploy-flask
+  labels:
+    app: rostbot
+    service: flask-backend
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: rostbot
+      service: flask-backend
+  template:
+    metadata:
+      labels:
+        app: rostbot
+        service: flask-backend
+    spec:
+      imagePullSecrets:
+        - 
+          name: gitlab-registry
+      containers:
+        - name: flask
+          image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/flask:latest
+          env:
+          ports:
+            - containerPort: 80
+              protocol: TCP
+          resources:
+            limits:
+              cpu: 100m
+              memory: 256Mi
+            requests:
+              cpu: 100m
+              memory: 100Mi
