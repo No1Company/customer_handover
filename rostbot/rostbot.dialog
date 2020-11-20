@@ -131,7 +131,16 @@
         "name": "Questions"
       },
       "intent": "Questions",
-      "actions": []
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "rBVTQQ"
+          },
+          "activityProcessed": true,
+          "dialog": "QuestionMainDialog"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -278,6 +287,10 @@
       {
         "intent": "CustomAction",
         "pattern": "custom"
+      },
+      {
+        "intent": "Questions",
+        "pattern": "Övriga frågor"
       }
     ]
   }
