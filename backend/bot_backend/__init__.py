@@ -8,10 +8,10 @@ app = Flask(__name__, static_folder = 'static', static_url_path = '/')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-from bot_backend.blueprints import openehr
-
-#db.init_app(app)
+from bot_backend.blueprints import openehr, user
 app.register_blueprint(openehr.openehr)
+app.register_blueprint(user.user)
+
 cwd_data_path = os.getcwd() + "\\bot_backend\data\data.txt"
 DATA_PATH = os.path.abspath(cwd_data_path)
 
@@ -65,14 +65,32 @@ def avail_times():
 
     return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
 
+
+userguidetypes = [
+    {
+        "guidetype" : "0"
+    }
+]
+
+@app.route('/guide-type', methods=['GET', 'PUT'])
+def curr_user_guide_type():
+
+    global userguidetype
+
+    if request.method == "PUT":
+        userguidetypes[0] = request.get_json()
+
+    return jsonify([{"guidetype": guides["guidetype"]} for guides in userguidetypes])
+
 notifications = [
-        {
-            "noticemediatype" : "",
-            "timeafter" : "",
-            "timebefore" : "", 
-            "type" : ""
-        }
-    ]
+    {
+        "noticemediatype" : "",
+        "timeafter" : "",
+        "timebefore" : "", 
+        "type" : ""
+    }
+]
+
 
 
 @app.route('/current-notifications', methods=['GET', 'POST', 'PUT'])

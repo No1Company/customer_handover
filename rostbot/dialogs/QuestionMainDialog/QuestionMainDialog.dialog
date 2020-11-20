@@ -1,0 +1,38 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "dlkoIF",
+    "name": "QuestionMainDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Eagbar"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "70Q5rT"
+          },
+          "activity": "${SendActivity_70Q5rT()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "v1Umn5"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "QuestionMainDialog.lg",
+  "recognizer": "QuestionMainDialog.lu.qna",
+  "id": "QuestionMainDialog"
+}

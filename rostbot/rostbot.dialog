@@ -131,7 +131,16 @@
         "name": "Questions"
       },
       "intent": "Questions",
-      "actions": []
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "rBVTQQ"
+          },
+          "activityProcessed": true,
+          "dialog": "QuestionMainDialog"
+        }
+      ]
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -450,6 +459,10 @@
       {
         "intent": "HealthForm",
         "pattern": "test"
+      },
+      {
+        "intent": "Questions",
+        "pattern": "Övriga frågor"
       }
     ]
   }
