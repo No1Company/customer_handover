@@ -151,9 +151,5 @@
 -${UpdateCard()}
 # SendActivity_g9skpW()
  -${AdaptiveCard()}
-# SendActivity_lePwRw()
--Tack för dina svar! Dom har nu registrerats.
 # SendActivity_73zBqG()
 -
-# SendActivity_D58ObP()
-- ${dialog.form.instructions}
