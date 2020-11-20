@@ -1,7 +1,6 @@
 [import](common.lg)
 
-# TextInput_Prompt_1FVIbz()
-[SigninCard
-    text = Vilket värde vill du registrera? 
-    buttons = Blodtryck | Placeholder | Placeholder
-    ]
+# ChoiceInput_Prompt_YzBp5p()
+- Vilken mätning vill du göra?
+# SendActivity_jh1se7()
+- Kunde tyvärr inte hämta dina tillgängliga mätningar. Fel: ${dialog.resultProperty}

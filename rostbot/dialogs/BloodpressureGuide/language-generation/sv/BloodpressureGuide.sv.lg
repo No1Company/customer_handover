@@ -1,0 +1,20 @@
+[import](common.lg)
+
+# TextInput_Prompt_7g4qoR()
+[SigninCard
+    text = Först och främst ser du till att du är lugn och avslappnad för att kunna mäta blodtrycket korrekt. \n\nSlappna av, ta djupa andetag, se till att du inte får i dig något som kan öka hjärtslagen som till exempel kaffe eller tobak. Det bästa är om du har haft möjlighet att vila dig en stund innan.
+
+    buttons = Nästa steg
+]
+# TextInput_Prompt_41FIq1()
+[HeroCard
+    text = Placera manschetten på överarmen i höjd med hjärtat. \n\nTänk på att hålla armen så att mätaren befinner sig i hjärthöjd.
+    buttons = Nästa steg
+    image = https://m.media-amazon.com/images/S/aplus-seller-content-images-us-east-1/ATVPDKIKX0DER/A1XLIDN9XQ0PZA/ccd53d24-3514-427a-b46c-0f0f067c4962._CR0,0,300,300_PT0_SX300__.jpg
+ ]
+# TextInput_Prompt_rSdvsW()
+[HeroCard
+    text = Manschetten fylls nu med luft och klämmer åt. Detta gör den för att stoppa upp blodet i pulsådern några sekunder. Töm manschetten på luft och mät övertrycket.
+    image = http://www.salterhousewares.co.uk/media/catalog/product/cache/1/image/1800x/040ec09b1e35df139433887a97daa66f/b/p/bpa9200_3.jpg
+    buttons = Nästa steg
+]

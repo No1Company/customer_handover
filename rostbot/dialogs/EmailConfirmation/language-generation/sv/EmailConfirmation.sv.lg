@@ -1,0 +1,18 @@
+[import](common.lg)
+
+# ConfirmInput_Prompt_vlh3nH()
+- Vill du även ha en bekräftelse via mail? 
+# ConfirmInput_Prompt_M0rHZt()
+- Stämmer ${user.email}?
+# SendActivity_4sCcDg()
+- 
+# SendActivity_HgEFXA()
+- Okej, då syns vi ${user.bookingdate}!
+# TextInput_Prompt_jb9xcj()
+-Vad är din email? 
+# SendActivity_KjFVJi()
+- Jag är "Nej"
+# SendActivity_9RVpkn()
+-Mail skickat! 
+# ChoiceInput_Prompt_lJCkPr()
+-Vill du ha en bokningsbekräftelse på mail? 

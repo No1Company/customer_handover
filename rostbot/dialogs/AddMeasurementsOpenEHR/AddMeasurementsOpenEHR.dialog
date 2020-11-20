@@ -2,7 +2,7 @@
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
     "id": "mAxXfS",
-    "name": "AddMeasurementsOpenEHR",
+    "name": "AddBloodPressureOpenEHR",
     "description": ""
   },
   "autoEndDialog": true,
