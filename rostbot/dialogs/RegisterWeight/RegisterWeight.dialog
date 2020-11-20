@@ -98,13 +98,6 @@
                     "id": "olx62Z"
                   },
                   "activity": "${SendActivity_olx62Z()}"
-                },
-                {
-                  "$kind": "Microsoft.BeginDialog",
-                  "$designer": {
-                    "id": "QhRidP"
-                  },
-                  "activityProcessed": true
                 }
               ],
               "elseActions": [
@@ -114,13 +107,6 @@
                     "id": "ZFmXto"
                   },
                   "activity": "${SendActivity_ZFmXto()}"
-                },
-                {
-                  "$kind": "Microsoft.BeginDialog",
-                  "$designer": {
-                    "id": "aUfx3P"
-                  },
-                  "activityProcessed": true
                 }
               ]
             }
