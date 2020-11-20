@@ -103,6 +103,19 @@
                 }
               ],
               "value": "Vikt"
+            },
+            {
+              "value": "Hälsoformulär",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "2TsW5G"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "Forms"
+                }
+              ]
             }
           ],
           "default": [

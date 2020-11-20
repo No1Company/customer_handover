@@ -262,6 +262,14 @@
       "intent": "HealthForm",
       "actions": [
         {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "FM8S0F"
+          },
+          "activityProcessed": true,
+          "dialog": "Forms"
+        },
+        {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
             "id": "ihAq0M"
