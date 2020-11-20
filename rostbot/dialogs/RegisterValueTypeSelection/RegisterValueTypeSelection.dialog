@@ -19,29 +19,25 @@
         {
           "$kind": "Microsoft.ChoiceInput",
           "$designer": {
-            "id": "bleO5O"
+            "id": "YzBp5p"
           },
           "defaultLocale": "en-us",
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${ChoiceInput_Prompt_bleO5O()}",
+          "prompt": "${ChoiceInput_Prompt_YzBp5p()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
           "choiceOptions": {
-            "includeNumbers": true,
-            "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ","
+            "includeNumbers": true
           },
-          "property": "dialog.registertype",
           "choices": [
             "Blodtryck",
             "Vikt"
           ],
-          "style": "auto"
+          "property": "dialog.registertype"
         },
         {
           "$kind": "Microsoft.SetProperty",
@@ -50,13 +46,6 @@
           },
           "property": "dialog.registertype",
           "value": "=toLower(dialog.registertype)"
-        },
-        {
-          "$kind": "Microsoft.SetProperty",
-          "$designer": {
-            "id": "AzmfmS"
-          },
-          "value": "="
         },
         {
           "$kind": "Microsoft.SwitchCondition",
