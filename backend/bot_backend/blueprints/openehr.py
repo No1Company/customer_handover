@@ -67,6 +67,11 @@ def add_blood_pressure(ehr_id):
 def add_weight(ehr_id):
     json = request.get_json()
     if json['weight']:
+        u = User.query.get_or_404(str(ehr_id))
+        for m in u.measurements:
+            if m.measurement.name == "Vikt":
+                m.updateTime()
+                db.session.commit()
         return ehr_com.add_weight(ehr_id, json['weight'], datetime.now())
     else:
         return {"msg": "missing parameters"}, 400

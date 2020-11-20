@@ -61,6 +61,13 @@
               "value": "=null"
             },
             {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "NfsqAU"
+              },
+              "activity": "${SendActivity_NfsqAU()}"
+            },
+            {
               "$kind": "Microsoft.RepeatDialog",
               "$designer": {
                 "id": "BquYhV"
@@ -72,29 +79,52 @@
             {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "Jm3hMQ"
+                "id": "qT8mz4"
               },
               "activityProcessed": true,
-              "dialog": "AddWeightOpenEhr",
-              "options": {
-                "weight": "${user.weight}"
-              }
+              "dialog": "AddWeightOpenEHR",
+              "resultProperty": "dialog.ok"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "RuYQKJ"
+              },
+              "condition": "=dialog.ok",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "olx62Z"
+                  },
+                  "activity": "${SendActivity_olx62Z()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "QhRidP"
+                  },
+                  "activityProcessed": true
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "ZFmXto"
+                  },
+                  "activity": "${SendActivity_ZFmXto()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "aUfx3P"
+                  },
+                  "activityProcessed": true
+                }
+              ]
             }
           ]
-        },
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "4epw0E"
-          },
-          "activityProcessed": true,
-          "dialog": "AddMeasurement",
-          "options": {
-            "url_ending": "openehr/add-weight/${user.ehr_id}",
-            "body": {
-              "weight": "${user.weight}"
-            }
-          }
         }
       ]
     }

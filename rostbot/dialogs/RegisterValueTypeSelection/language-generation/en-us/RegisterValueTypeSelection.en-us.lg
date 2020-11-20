@@ -2,3 +2,5 @@
 
 # ChoiceInput_Prompt_YzBp5p()
 - Vilken mätning vill du göra?
+# SendActivity_jh1se7()
+- Kunde tyvärr inte hämta dina tillgängliga mätningar. Fel: ${dialog.resultProperty}

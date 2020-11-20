@@ -17,6 +17,39 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "Ybo9oK"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}/user/${user.ehr_id}/available-measurements",
+          "resultProperty": "dialog.resultProperty",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "jF9iQH"
+          },
+          "condition": "=dialog.resultProperty.statusCode < 300",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "jh1se7"
+              },
+              "activity": "${SendActivity_jh1se7()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "x09DH5"
+              }
+            }
+          ],
+          "actions": []
+        },
+        {
           "$kind": "Microsoft.ChoiceInput",
           "$designer": {
             "id": "YzBp5p"
@@ -31,21 +64,12 @@
           "invalidPrompt": "",
           "defaultValueResponse": "",
           "choiceOptions": {
-            "includeNumbers": true
-          },
-          "choices": [
-            "Blodtryck",
-            "Vikt"
-          ],
-          "property": "dialog.registertype"
-        },
-        {
-          "$kind": "Microsoft.SetProperty",
-          "$designer": {
-            "id": "fFO1hl"
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
           },
           "property": "dialog.registertype",
-          "value": "=toLower(dialog.registertype)"
+          "choices": "=dialog.resultProperty.content"
         },
         {
           "$kind": "Microsoft.SwitchCondition",
@@ -55,7 +79,7 @@
           "condition": "dialog.registertype",
           "cases": [
             {
-              "value": "blodtryck",
+              "value": "Blodtryck",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -78,7 +102,7 @@
                   "dialog": "RegisterWeight"
                 }
               ],
-              "value": "vikt"
+              "value": "Vikt"
             }
           ],
           "default": [

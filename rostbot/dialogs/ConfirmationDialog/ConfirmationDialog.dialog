@@ -17,93 +17,70 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SetProperty",
+          "$kind": "Microsoft.ChoiceInput",
           "$designer": {
-            "id": "aC0dWC"
+            "id": "T9c2K0"
           },
-          "property": "dialog.loopiter",
-          "value": [
-            1,
-            2,
-            3
-          ]
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_T9c2K0()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "dialog.confirm"
         },
         {
-          "$kind": "Microsoft.Foreach",
+          "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "hoZAjj"
+            "id": "x3i27M"
           },
-          "index": "dialog.foreach.index",
-          "value": "dialog.foreach.value",
-          "actions": [
+          "condition": "dialog.confirm",
+          "cases": [
             {
-              "$kind": "Microsoft.TextInput",
-              "$designer": {
-                "id": "kOvy4a"
-              },
-              "disabled": false,
-              "maxTurnCount": 3,
-              "alwaysPrompt": false,
-              "allowInterruptions": false,
-              "unrecognizedPrompt": "",
-              "invalidPrompt": "",
-              "defaultValueResponse": "",
-              "prompt": "${TextInput_Prompt_kOvy4a()}",
-              "property": "turn.confirm",
-              "outputFormat": "=toUpper(this.value)"
+              "value": "Ja",
+              "actions": [
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "OGDVgl"
+                  },
+                  "value": "=True"
+                }
+              ]
             },
             {
-              "$kind": "Microsoft.SwitchCondition",
-              "$designer": {
-                "id": "I1E4z1"
-              },
-              "cases": [
+              "value": "Nej",
+              "actions": [
                 {
-                  "value": "JA",
-                  "actions": [
-                    {
-                      "$kind": "Microsoft.EndDialog",
-                      "$designer": {
-                        "id": "ZgJGgF"
-                      },
-                      "value": "=true"
-                    }
-                  ]
-                },
-                {
-                  "value": "NEJ",
-                  "actions": [
-                    {
-                      "$kind": "Microsoft.EndDialog",
-                      "$designer": {
-                        "id": "4KecX7"
-                      },
-                      "value": "=false"
-                    }
-                  ]
-                }
-              ],
-              "default": [
-                {
-                  "$kind": "Microsoft.SendActivity",
+                  "$kind": "Microsoft.EndDialog",
                   "$designer": {
-                    "id": "AtdfvK"
+                    "id": "SBCT5X"
                   },
-                  "activity": "${SendActivity_AtdfvK()}"
-                },
-                {
-                  "$kind": "Microsoft.SetProperty",
-                  "$designer": {
-                    "id": "jIlnAk"
-                  },
-                  "property": "turn.confirm",
-                  "value": "=null"
+                  "value": "=False"
                 }
-              ],
-              "condition": "turn.confirm"
+              ]
             }
           ],
-          "itemsProperty": "dialog.loopiter"
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ub3g4i"
+              },
+              "activity": "${SendActivity_ub3g4i()}"
+            }
+          ]
         }
       ]
     }
