@@ -22,6 +22,64 @@
           "activity": "${SendActivity_OVN7B9()}"
         },
         {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "kcopx9"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_kcopx9()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "turn.choice",
+          "choices": [
+            "Vanliga symtom",
+            "Boka en tid"
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "P8C96I"
+          },
+          "condition": "turn.choice",
+          "cases": [
+            {
+              "value": "Vanliga symtom",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "u8jh6F"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "SymtomsCheckDialog"
+                },
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "cRtxhv"
+                  }
+                }
+              ]
+            },
+            {
+              "value": "Boka en tid",
+              "actions": []
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "tklNbb"
