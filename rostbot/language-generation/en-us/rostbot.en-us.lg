@@ -156,5 +156,5 @@
 -Tack för dina svar! Dom har nu registrerats.
 # SendActivity_73zBqG()
 -
-# SendActivity_C30k0d()
-- i loop ${dialog.answers}
+# SendActivity_D58ObP()
+- ${dialog.form.instructions}

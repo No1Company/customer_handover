@@ -31,16 +31,14 @@
           "invalidPrompt": "",
           "defaultValueResponse": "",
           "property": "dialog.answer",
-          "choices": [
-            "1",
-            "2"
-          ],
           "choiceOptions": {
             "includeNumbers": true,
             "inlineOrMore": ", or ",
             "inlineOr": " or ",
             "inlineSeparator": ", "
-          }
+          },
+          "choices": "=dialog.question.answer",
+          "style": "suggestedAction"
         },
         {
           "$kind": "Microsoft.SetProperty",
