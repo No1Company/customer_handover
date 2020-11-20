@@ -53,6 +53,7 @@ def add_blood_pressure(ehr_id):
         for m in u.measurements:
             if m.measurement.name == "Blodtryck":
                 m.updateTime()
+                db.session.commit()
         return ehr_com.add_blood_pressure(ehr_id, json['systolic'], json['diastolic'], datetime.now())
     else:
         return {"msg": "missing parameters"}, 400
