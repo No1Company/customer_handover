@@ -78,8 +78,9 @@
             "id": "Lp3dFj"
           },
           "method": "POST",
-          "url": "${conversation.req_url}",
-          "body": "=dialog.answers"
+          "url": "${conversation.req_url}/measurements/register-form/${user.ehr_id}/${dialog.id}",
+          "body": "=dialog.answers",
+          "contentType": "application/json"
         },
         {
           "$kind": "Microsoft.SendActivity",
