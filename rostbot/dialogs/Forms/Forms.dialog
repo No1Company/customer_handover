@@ -1,0 +1,89 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "GXlPLV",
+    "name": "Forms",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "EySlmd"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "GrAeXb"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}",
+          "resultProperty": "dialog.form"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SafFZO"
+          },
+          "activity": "${SendActivity_SafFZO()}"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "OdgVQl"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.form.questions",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "FjuSHd"
+              },
+              "activityProcessed": true,
+              "dialog": "HealthQuestion",
+              "resultProperty": "turn.answer",
+              "options": {
+                "question": "=dialog.foreach.value"
+              }
+            },
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "rxo0Qs"
+              },
+              "changeType": "push",
+              "value": "=turn.answer",
+              "itemsProperty": "dialog.answers"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "Lp3dFj"
+          },
+          "method": "POST",
+          "url": "${conversation.req_url}",
+          "body": "=dialog.answers"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "3GzdLS"
+          },
+          "activity": "${SendActivity_3GzdLS()}"
+        }
+      ]
+    }
+  ],
+  "generator": "Forms.lg",
+  "recognizer": "Forms.lu.qna",
+  "id": "Forms"
+}
