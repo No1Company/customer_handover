@@ -27,6 +27,13 @@
           "responseType": "json"
         },
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "thrz4q"
+          },
+          "activity": "${SendActivity_thrz4q()}"
+        },
+        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "jF9iQH"
@@ -66,10 +73,18 @@
           "choiceOptions": {
             "includeNumbers": true,
             "inlineOrMore": ", or ",
-            "inlineOr": " or "
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
           },
           "property": "dialog.registertype",
-          "choices": "=dialog.resultProperty.content"
+          "choices": "=dialog.resultProperty.content.avail_measurements"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "HEADcb"
+          },
+          "activity": "${SendActivity_HEADcb()}"
         },
         {
           "$kind": "Microsoft.SwitchCondition",
@@ -103,6 +118,70 @@
                 }
               ],
               "value": "Vikt"
+            },
+            {
+              "value": "Halsoformular",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "VmSk9t"
+                  },
+                  "activity": "${SendActivity_VmSk9t()}"
+                },
+                {
+                  "$kind": "Microsoft.HttpRequest",
+                  "$designer": {
+                    "id": "pqLN73"
+                  },
+                  "method": "GET",
+                  "url": "${conversation.req_url}/measurements/get-form/${dialog.resultProperty.content.Hälsoformulär}",
+                  "resultProperty": "dialog.form"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "ZR951x"
+                  },
+                  "activity": "${SendActivity_ZR951x()}"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "kzcsYW"
+                  },
+                  "condition": "=dialog.form.statusCode < 300",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "gZ2pAx"
+                      },
+                      "activity": "${SendActivity_gZ2pAx()}"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "OXPdEO"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "HealthForm",
+                      "options": {
+                        "form": "=dialog.form.content"
+                      }
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "5wsl4g"
+                      },
+                      "activity": "${SendActivity_5wsl4g()}"
+                    }
+                  ]
+                }
+              ]
             }
           ],
           "default": [

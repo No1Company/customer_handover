@@ -1,5 +1,7 @@
-from bot_backend.models import db, User, Measurement, UserMeasurement
+from bot_backend.models import *
 from datetime import date
+
+import json
 
 
 def resetDB():
@@ -10,9 +12,11 @@ def resetDB():
 def createSmallExample():
     blodtryck = Measurement(name="Blodtryck")
     vikt = Measurement(name="Vikt")
+    halsoformular = Measurement(name="Halsoformular")
 
     db.session.add_all([blodtryck,
-                        vikt])
+                        vikt,
+                        halsoformular])
     db.session.commit()
 
     u1 = User(ehr_id='8d27c6c1-0811-4077-bb68-d9759c914cd0')
@@ -26,10 +30,32 @@ def createSmallExample():
                           next_measurement=date.today(), interval_days=1)
     um2 = UserMeasurement(user_id=u1.ehr_id, measurement_id=vikt.id,
                           next_measurement=date.today(), interval_days=1)
-    um3 = UserMeasurement(user_id=u2.ehr_id, measurement_id=blodtryck.id,
+    um3 = UserMeasurement(user_id=u1.ehr_id, measurement_id=halsoformular.id,
+                          next_measurement=date.today(), interval_days=1)
+    um4 = UserMeasurement(user_id=u2.ehr_id, measurement_id=blodtryck.id,
                           next_measurement=date.today(), interval_days=7)
-    um4 = UserMeasurement(user_id=u3.ehr_id, measurement_id=vikt.id,
+    um5 = UserMeasurement(user_id=u3.ehr_id, measurement_id=vikt.id,
                           next_measurement=date.today(), interval_days=30)
 
     db.session.add_all([um1, um2, um3, um4])
+    db.session.commit()
+
+    f = open("FormHealth.txt", 'r')
+    m = json.loads(f.read())
+    mf = MeasurementForm(name="Halsoformular", form=json.dumps(m))
+
+
+    db.session.add(mf)
+    db.session.commit()
+
+    halsoformular.form = mf.id
+    db.session.commit()
+
+    rm = RegisteredMeasurement(
+        user=User.query.get('8d27c6c1-0811-4077-bb68-d9759c914cd0').ehr_id,
+        form = mf.id,
+        date = date.today(),
+        answers = json.dumps(json.loads('[1,2,3,4,5,1,2,3,4,5]'))
+        )
+    db.session.add(rm)
     db.session.commit()

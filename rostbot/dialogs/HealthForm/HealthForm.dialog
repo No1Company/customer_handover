@@ -1,0 +1,64 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "6rDiy7",
+    "name": "HealthForm",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "0LDCCu"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "3VjR7o"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.form.questions",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "vqHdde"
+              },
+              "activityProcessed": true,
+              "dialog": "HealthQuestion",
+              "resultProperty": "turn.answer",
+              "options": {
+                "question": "=dialog.foreach.value"
+              }
+            },
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "dOXhvk"
+              },
+              "changeType": "push",
+              "value": "=turn.answer",
+              "itemsProperty": "dialog.answers"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "6NIbBc"
+          },
+          "activity": "${SendActivity_6NIbBc()}"
+        }
+      ]
+    }
+  ],
+  "generator": "HealthForm.lg",
+  "recognizer": "HealthForm.lu.qna",
+  "id": "HealthForm"
+}
