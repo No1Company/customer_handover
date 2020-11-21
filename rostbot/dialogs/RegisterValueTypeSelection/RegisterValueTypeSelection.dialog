@@ -27,13 +27,6 @@
           "responseType": "json"
         },
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "thrz4q"
-          },
-          "activity": "${SendActivity_thrz4q()}"
-        },
-        {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "jF9iQH"
@@ -80,13 +73,6 @@
           "choices": "=dialog.resultProperty.content.avail_measurements"
         },
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "HEADcb"
-          },
-          "activity": "${SendActivity_HEADcb()}"
-        },
-        {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
             "id": "HSb1RU"
@@ -120,15 +106,18 @@
               "value": "Vikt"
             },
             {
-              "value": "Hälsoformulär",
+              "value": "Halsoformular",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "2TsW5G"
+                    "id": "4XGZvg"
                   },
                   "activityProcessed": true,
-                  "dialog": "Forms"
+                  "dialog": "Forms",
+                  "options": {
+                    "id": "${dialog.resultProperty.content.Halsoformular}"
+                  }
                 }
               ]
             }
@@ -137,9 +126,9 @@
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "ToPmi7"
+                "id": "FKEaUI"
               },
-              "activity": "${SendActivity_ToPmi7()}"
+              "activity": "${SendActivity_FKEaUI()}"
             }
           ]
         }

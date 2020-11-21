@@ -22,8 +22,16 @@
             "id": "GrAeXb"
           },
           "method": "GET",
-          "url": "${conversation.req_url}",
-          "resultProperty": "dialog.form"
+          "url": "${conversation.req_url}/measurements/get-form/${dialog.id}",
+          "resultProperty": "dialog.resultProperty"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "jAfYkZ"
+          },
+          "property": "dialog.form",
+          "value": "=dialog.resultProperty.content"
         },
         {
           "$kind": "Microsoft.SendActivity",
