@@ -20,6 +20,7 @@ if __name__ == "__main__":
     # Let gitlab provide password as token
     if "--ehrpassword" in args:
         password = args[args.index("--ehrpassword")+1]
+        print('ehr length', password)
 
         with open(os.path.join("..","..",'login.txt'), 'w') as f:
             f.write("Basic " + password)
