@@ -23,5 +23,6 @@ if __name__ == "__main__":
 
         with open(os.path.join("..","..",'login.txt'), 'w') as f:
             f.write("Basic " + password)
-            
-    app.run(port=port, host=host, debug = True)
+            f.close()
+
+    app.run(port=port, host=host, debug=True)

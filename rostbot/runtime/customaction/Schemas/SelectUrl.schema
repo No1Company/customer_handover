@@ -1,0 +1,25 @@
+{
+    "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+    "$role": "implements(Microsoft.IDialog)",
+    "title": "SelectUrl",
+    "description": "If arg1 has a flask server running, it will be chosen as the address. Otherwise, arg2 (remote) will be chosen",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "arg1": {
+            "$ref": "schema:#/definitions/stringExpression",
+            "title": "Arg1",
+            "description": "The local server url (will be preferred by the bot)"
+        },
+        "arg2": {
+            "$ref": "schema:#/definitions/stringExpression",
+            "title": "Arg2",
+            "description": "The remote server url"
+        },
+        "resultProperty": {
+            "$ref": "schema:#/definitions/stringExpression",
+            "title": "Result",
+            "description": "The url that will be used"
+        }
+    }
+}
