@@ -26,8 +26,8 @@ build-flask-image:
     - export BUILDAH_ISOLATION=chroot
     - export STORAGE_DRIVER=vfs
     - export BUILDAH_FORMAT=docker
-    
-    - buildah build-using-dockerfile --build-arg ehr-pass="${EHR}" --tag "flask" "backend"
+    - echo "${EHR}"
+    - buildah build-using-dockerfile --build-arg ehr="${EHR}" --tag "flask" "backend"
     - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "flask" "docker://${CI_REGISTRY_IMAGE}/flask:latest"
 
 

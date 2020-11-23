@@ -1,6 +1,6 @@
 FROM python:3
 
-ARG ehr_pass
+ARG ehr
 
 WORKDIR /usr/src/app
 COPY . .
@@ -10,6 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 COPY . .
 
 EXPOSE 80
-
-CMD python ./run.py --port 80 --host 0.0.0.0 --ehrpassword ${ehr_pass}
+RUN echo "chk ${ehr}"
+CMD python ./run.py --port 80 --host 0.0.0.0 --ehrpassword ${ehr}
 COPY . .
