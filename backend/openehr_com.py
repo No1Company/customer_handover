@@ -16,6 +16,7 @@ try:
     authorization = loginfile.read().split('\n')[0]
 except FileNotFoundError:
     args = sys.argv
+    print(args)
     if "--ehrpassword" in args:
         authorization = str("Basic " + args[args.index("--ehrpassword")+1])
     else:
