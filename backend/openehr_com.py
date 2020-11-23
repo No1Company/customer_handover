@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+import sys
 from urllib.parse import quote
 
 class NetworkError(Exception):
@@ -10,8 +11,17 @@ baseUrl = 'https://rest.ehrscape.com/rest/v1'
 queryUrl = baseUrl + '/query'
 
 
-loginfile = open(os.path.join("..","..",'login.txt'))
-authorization = loginfile.read().split('\n')[0]
+try:
+    loginfile = open(os.path.join("..","..",'login.txt'))
+    authorization = loginfile.read().split('\n')[0]
+except FileNotFoundError:
+    args = sys.argv
+    if "--ehrpassword" in args:
+        authorization = str("Basic " + args[args.index("--ehrpassword")+1])
+    else:
+        print("EHR authorization not found in either args or file. Add file in login.txt or by running the program with arg '--ehrpassword <EHRPASSWORD>'")
+
+
 authorization_header = {'Authorization': authorization}
 
 

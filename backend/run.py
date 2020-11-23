@@ -21,15 +21,5 @@ if __name__ == "__main__":
 
     if "--host" in args:
         host = args[args.index("--host")+1]    
-    
-    # Let gitlab provide password as token
-    if "--ehrpassword" in args:
-        password = args[args.index("--ehrpassword")+1]
-        print('ehr length', password)
-
-        with open(os.path.join("..","..",'login.txt'), 'w') as f:
-            f.write("Basic " + password)
-            print("login key saved")
-            f.close()
 
     app.run(port=port, host=host, debug=True)
