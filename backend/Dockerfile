@@ -11,5 +11,5 @@ COPY . .
 WORKDIR /usr/src/app/backend
 
 EXPOSE 80
-CMD ["python", "./resetDB.py", "./run.py --port 80 --host 0.0.0.0 --ehrpassword ${ehr_pass}" ]
+CMD ["python", "run.py --port 80 --host 0.0.0.0 --ehrpassword ${ehr_pass}" ]
 COPY . .
