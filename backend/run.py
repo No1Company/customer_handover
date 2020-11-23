@@ -20,6 +20,9 @@ if __name__ == "__main__":
         port = args[args.index("--port")+1]
 
     if "--host" in args:
-        host = args[args.index("--host")+1]    
+        host = args[args.index("--host")+1]
+
+    if "--ehrpassword" in args:
+        print("ehr password of length", len(args[args.index("--ehrpassword")+1]), "was successfully used")    
 
     app.run(port=port, host=host, debug=True)
