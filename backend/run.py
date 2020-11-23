@@ -11,6 +11,8 @@ if __name__ == "__main__":
     host = "localhost"
     args = sys.argv
 
+    print(args)
+    
     if "--port" in args:
         port = args[args.index("--port")+1]
 

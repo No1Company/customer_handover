@@ -33,7 +33,8 @@ build-flask-image:
 
 deploy-bot:
   environment: 'production'
-  needs: [build-bot-image]
+  needs: 
+    job: [build-bot-image]
   rules: 
    - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
 
@@ -47,7 +48,8 @@ deploy-bot:
 
 deploy-flask:
   environment: 'production'
-  needs: [build-flask-image]
+  needs: 
+    job: [build-flask-image]
   rules: 
    - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
 
@@ -61,7 +63,8 @@ deploy-flask:
 
 deploy-ingress:
   environment: 'production'
-  needs: [deploy-bot, deploy-flask]
+  needs: 
+    job: [deploy-bot, deploy-flask]
   rules: 
    - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
 
