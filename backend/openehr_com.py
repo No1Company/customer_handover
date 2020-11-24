@@ -45,6 +45,7 @@ def generate_fake_user():
         raise NetworkError("fejka.nu unavailable")
 
     req = requests.post(baseUrl + '/ehr', headers=authorization_header)
+    print("sent a request to ehr with headers", authorization_header)
     if req.status_code < 300:
         partyData['partyAdditionalInfo'] = [
             {
