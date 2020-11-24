@@ -18,6 +18,7 @@ except FileNotFoundError:
     
     ehr = str(os.environ['ehr_pass'])
     print("Using EHR password of length", len(ehr))
+    print("." + ehr + ".")
     authorization = "Basic " + ehr
 
 authorization_header = {'Authorization': authorization}
