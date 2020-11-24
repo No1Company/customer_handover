@@ -1,7 +1,7 @@
 FROM python:3
 
 ARG ehr
-ENV ehr_pass = $ehr
+ENV ehr_pass = ${ehr}
 WORKDIR /usr/src/app
 COPY . .
 
@@ -11,5 +11,5 @@ COPY . .
 
 EXPOSE 80
 RUN echo "chk ${ehr}"
-CMD python ./run.py --port 80 --host 0.0.0.0 --ehrpassword ${ehr_pass}
+CMD ["sh", "-c", "python ./run.py --port 80 --host 0.0.0.0"]
 COPY . .

@@ -15,11 +15,7 @@ try:
     loginfile = open(os.path.join("..","..",'login.txt'))
     authorization = loginfile.read().split('\n')[0]
 except FileNotFoundError:
-    args = sys.argv
-    if "--ehrpassword" in args:
-        authorization = str("Basic " + args[args.index("--ehrpassword")+1])
-    else:
-        print("EHR authorization not found in either args or file. Add file in login.txt or by running the program with arg '--ehrpassword <EHRPASSWORD>'")
+    authorization = "Basic " + str(os.environ['ehr_pass'])
 
 print(authorization)
 authorization_header = {'Authorization': authorization}
