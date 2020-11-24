@@ -10,12 +10,14 @@ class NetworkError(Exception):
 baseUrl = 'https://rest.ehrscape.com/rest/v1'
 queryUrl = baseUrl + '/query'
 
-
 try:
     loginfile = open(os.path.join("..","..",'login.txt'))
     authorization = loginfile.read().split('\n')[0]
 except FileNotFoundError:
-    authorization = "Basic " + str(os.environ['ehr_pass'])
+    print("Login file not found, looking for environment variable to use instead")
+    ehr = str(os.environ['ehr_pass'])
+    print("Using EHR password of length", len(ehr))
+    authorization = "Basic " + ehr)
 
 authorization_header = {'Authorization': authorization}
 
