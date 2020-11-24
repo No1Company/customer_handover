@@ -15,6 +15,7 @@ try:
     authorization = loginfile.read().split('\n')[0]
 except FileNotFoundError:
     print("Login file not found, looking for environment variable to use instead")
+    
     ehr = str(os.environ['ehr_pass'])
     print("Using EHR password of length", len(ehr))
     authorization = "Basic " + ehr

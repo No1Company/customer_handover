@@ -7,7 +7,6 @@ import os
 app = Flask(__name__, static_folder = 'static', static_url_path = '/')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['APPLICATION_ROOT'] = "/data"
 
 from bot_backend.blueprints import openehr
 
