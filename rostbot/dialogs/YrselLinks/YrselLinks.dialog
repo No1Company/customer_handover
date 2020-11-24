@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "4MGlX5",
+    "name": "YrselLinks",
+    "description": "Provides links to yrsel dialog"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "3XP0bd"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "96PL52"
+          },
+          "activity": "${SendActivity_96PL52()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "J9bUnI"
+          },
+          "activity": "${SendActivity_J9bUnI()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "QYDSd9"
+          },
+          "activity": "${SendActivity_QYDSd9()}"
+        }
+      ]
+    }
+  ],
+  "generator": "YrselLinks.lg",
+  "recognizer": "YrselLinks.lu.qna",
+  "id": "YrselLinks"
+}
