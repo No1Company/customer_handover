@@ -80,10 +80,10 @@
           "$designer": {
             "id": "NNl1y7"
           },
-          "condition": "user.symptoms",
+          "condition": "toLower(user.symptoms)",
           "cases": [
             {
-              "value": "Yrsel",
+              "value": "yrsel",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -97,7 +97,7 @@
               ]
             },
             {
-              "value": "Springmask",
+              "value": "springmask",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",

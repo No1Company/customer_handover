@@ -2,6 +2,7 @@ from flask import Flask, jsonify, request
 from datetime import datetime as d
 import pickle
 import os
+import platform
 
 
 app = Flask(__name__, static_folder = 'static', static_url_path = '/')
@@ -14,8 +15,11 @@ app.register_blueprint(user.user)
 app.register_blueprint(measurements.measurements)
 
 
-cwd_data_path = os.getcwd() + "\\bot_backend\data\data.txt"
-DATA_PATH = os.path.abspath(cwd_data_path)
+cwd_data_path = os.getcwd()
+if platform.system() == 'Windows':
+    DATA_PATH = os.path.abspath(cwd_data_path + "\\bot_backend\data\data.txt")
+else: 
+    DATA_PATH = os.path.abspath(cwd_data_path + "/bot_backend/data/data.txt")
 
 def save_data(data, data_path):
     file = open(data_path, 'wb')

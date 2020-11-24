@@ -47,10 +47,10 @@
           "$designer": {
             "id": "fE5Yd5"
           },
-          "condition": "turn.input",
+          "condition": "toLower(turn.input)",
           "cases": [
             {
-              "value": "Boka konsultation",
+              "value": "boka konsultation",
               "actions": [
                 {
                   "$kind": "Microsoft.TextInput",
@@ -78,7 +78,7 @@
               ]
             },
             {
-              "value": "Vanliga symtom",
+              "value": "vanliga symtom",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
@@ -107,6 +107,14 @@
               "activityProcessed": true
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "yhrDEm"
+          },
+          "activityProcessed": true,
+          "dialog": "RestartPrompt"
         },
         {
           "$kind": "Microsoft.EndDialog",
