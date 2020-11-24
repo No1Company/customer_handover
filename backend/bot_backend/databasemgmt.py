@@ -1,5 +1,6 @@
 from bot_backend.models import *
 from datetime import date
+import os
 
 import json
 
@@ -41,10 +42,10 @@ def createSmallExample():
     db.session.commit()
 
     f = open("FormHealth.txt", 'r')
-    ft = f.read().encode('cp1252').decode('utf-8') 
-    print(ft)
-    m = json.loads(ft)
-    print(m)
+    form = f.read()
+    if (os.name == "nt"):
+        form = form.encode('cp1252').decode('utf-8')
+    m = json.loads(form)
     mf = MeasurementForm(name="Halsoformular", form=json.dumps(m))
 
 
