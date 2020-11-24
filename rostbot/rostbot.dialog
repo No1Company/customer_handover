@@ -252,24 +252,6 @@
           "dialog": "CustomActionTest"
         }
       ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "qdNFqv",
-        "name": "HealthForm"
-      },
-      "intent": "HealthForm",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "FM8S0F"
-          },
-          "activityProcessed": true,
-          "dialog": "Forms"
-        }
-      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -305,10 +287,6 @@
       {
         "intent": "CustomAction",
         "pattern": "custom"
-      },
-      {
-        "intent": "HealthForm",
-        "pattern": "test"
       },
       {
         "intent": "Questions",

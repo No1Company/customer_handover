@@ -4,6 +4,20 @@ from datetime import date, timedelta
 import json
 db = SQLAlchemy(app)
 
+def removeSweChars(swe):
+    returnList = list(swe)
+    charmap = {
+        'å': 'a',
+        'ä': 'a',
+        'ö': 'o'
+    }
+    for i in range(len(returnList)):
+        if returnList[i] in charmap:
+            returnList[i] = charmap[returnList[i]]
+
+    return ''.join(returnList)
+
+
 
 class User(db.Model):
     __tablename__ = "user"
@@ -18,7 +32,7 @@ class User(db.Model):
         returnDict = {'avail_measurements' : [m.measurement.name for m in self.measurements if m.next_measurement <= date.today()]}
         for m in self.measurements:
             if m.measurement.form:
-                returnDict[f'{m.measurement.name}'] = m.measurement.form
+                returnDict[f'{removeSweChars(m.measurement.name)}'] = m.measurement.form
         return returnDict
 
     def getMeasurements(self):

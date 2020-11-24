@@ -106,7 +106,7 @@
               "value": "Vikt"
             },
             {
-              "value": "Halsoformular",
+              "value": "Hälsoformulär",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",

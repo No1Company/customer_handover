@@ -13,7 +13,7 @@ def resetDB():
 def createSmallExample():
     blodtryck = Measurement(name="Blodtryck")
     vikt = Measurement(name="Vikt")
-    halsoformular = Measurement(name="Halsoformular")
+    halsoformular = Measurement(name="Hälsoformulär")
 
     db.session.add_all([blodtryck,
                         vikt,
@@ -46,7 +46,7 @@ def createSmallExample():
     if (os.name == "nt"):
         form = form.encode('cp1252').decode('utf-8')
     m = json.loads(form)
-    mf = MeasurementForm(name="Halsoformular", form=json.dumps(m))
+    mf = MeasurementForm(name="Hälsoformulär", form=json.dumps(m))
 
 
     db.session.add(mf)

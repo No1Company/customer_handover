@@ -14,7 +14,7 @@ def get_form(id):
 def register_form(ehr_id, id):
     u = User.query.get_or_404(str(ehr_id))
     for m in u.measurements:
-        if m.measurement.name == "Halsoformular":
+        if m.measurement.name == "Hälsoformulär":
             m.updateTime()
             db.session.commit()
     MeasurementForm.query.get_or_404(id)
