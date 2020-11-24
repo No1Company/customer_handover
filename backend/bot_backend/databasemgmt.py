@@ -41,7 +41,10 @@ def createSmallExample():
     db.session.commit()
 
     f = open("FormHealth.txt", 'r')
-    m = json.loads(f.read())
+    ft = f.read().encode('cp1252').decode('utf-8') 
+    print(ft)
+    m = json.loads(ft)
+    print(m)
     mf = MeasurementForm(name="Halsoformular", form=json.dumps(m))
 
 
