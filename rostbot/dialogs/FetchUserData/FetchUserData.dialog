@@ -51,6 +51,10 @@
                 {
                   "property": "user.last_name",
                   "value": "=dialog.resultProperty.content.lastNames"
+                },
+                {
+                  "property": "user.dateOfBirth",
+                  "value": "=dialog.resultProperty.content.dateOfBirth"
                 }
               ]
             },

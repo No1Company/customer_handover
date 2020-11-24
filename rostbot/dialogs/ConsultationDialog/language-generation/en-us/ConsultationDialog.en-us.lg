@@ -1,13 +1,8 @@
 [import](common.lg)
 
-# SendActivity_OVN7B9()
-- Du vill alltså boka en konsultation med din läkare. \n\n Ring 112 vid akuta fall.
-# SendActivity_Y3hB0L()
-- Jag förstod inte riktigt vad du menade, försök igen, gärna med korta svar som "huvudvärk", "feber", eller "buksmärtor". Om ditt alternativ inte fungerar kan du testa att ringa till vården istället, eller så kan vi boka en telefontid härifrån. 
-# TextInput_Prompt_tklNbb()
-- Vad är anledningen till att du vill boka en konsultation med läkare? 
-# SendActivity_WiLWxu()
-- Tack för ditt svar.
-
-# ChoiceInput_Prompt_kcopx9()
-- Jag kan hjälpa dig med vanliga symtom, eller så kan du boka en tid direkt med din läkare. Vad vill du göra?
+# ChoiceInput_Prompt_A4Dpqh()
+- Vill du boka en konsultation eller få svar på vanliga frågor om symtom direkt genom mig? 
+# SendActivity_XPUeI6()
+- Jag förstod tyvärr inte vad du menade, försök igen. 
+# TextInput_Prompt_lV35lA()
+- Vad är anledningen till att du vill boka en konsultation? 
