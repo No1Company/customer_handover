@@ -243,6 +243,31 @@
           "dialog": "CustomActionTest"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "0QFJzd",
+        "name": "ResetConversation"
+      },
+      "intent": "ResetConversation",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "GNHs9r"
+          },
+          "activityProcessed": true,
+          "dialog": "FetchUserData"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "WMIc2T"
+          },
+          "activity": "${SendActivity_WMIc2T()}"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -278,6 +303,10 @@
       {
         "intent": "CustomAction",
         "pattern": "custom"
+      },
+      {
+        "intent": "ResetConversation",
+        "pattern": "/återställ"
       }
     ]
   }

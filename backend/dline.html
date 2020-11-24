@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="webchat" role="main"></div>
+    <script src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"></script>
+    <script>
+      window.WebChat.renderWebChat({
+        directLine: window.WebChat.createDirectLine({
+            secret: '',
+            token: '',
+            domain: 'http://localhost:3000/directline',
+            webSocket: false // defaults to true
+        }),
+        userID: 'YOUR_USER_ID',
+        username: 'Web Chat User',
+        locale: 'en-US',
+        botAvatarInitials: 'WC',
+        userAvatarInitials: 'WW'
+      }, document.getElementById('webchat'));
+    </script>
+  </body>
+</html>
