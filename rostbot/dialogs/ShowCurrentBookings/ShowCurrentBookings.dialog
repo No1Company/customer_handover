@@ -22,7 +22,7 @@
             "id": "0jrkPN"
           },
           "method": "GET",
-          "url": "http://127.0.0.1:5000/current-bookings",
+          "url": "${conversation.req_url}/current-bookings",
           "resultProperty": "dialog.result",
           "contentType": "application/json"
         },
@@ -72,14 +72,14 @@
             "Ja",
             "Nej"
           ],
-          "property": "turn.choice"
+          "property": "dialog.choice"
         },
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
             "id": "n3FYnr"
           },
-          "condition": "turn.choice == Nej",
+          "condition": "dialog.choice == 'Nej'",
           "elseActions": [
             {
               "$kind": "Microsoft.HttpRequest",
@@ -87,7 +87,7 @@
                 "id": "ItRopo"
               },
               "method": "DELETE",
-              "url": "http://127.0.0.1:5000/current-bookings/1"
+              "url": "${conversation.req_url}/current-bookings/1"
             },
             {
               "$kind": "Microsoft.SendActivity",
@@ -97,6 +97,14 @@
               "activity": "${SendActivity_KTHVQ2()}"
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "TqbC2o"
+          },
+          "activityProcessed": true,
+          "dialog": "RestartPrompt"
         },
         {
           "$kind": "Microsoft.EndDialog",

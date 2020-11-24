@@ -138,18 +138,12 @@
           ],
           "elseActions": [
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "4QpUYG"
+                "id": "SqVeuo"
               },
-              "activity": "${SendActivity_4QpUYG()}"
-            },
-            {
-              "$kind": "Microsoft.CancelAllDialogs",
-              "$designer": {
-                "id": "Vh0Kye"
-              },
-              "activityProcessed": true
+              "activityProcessed": true,
+              "dialog": "RestartPrompt"
             }
           ]
         }

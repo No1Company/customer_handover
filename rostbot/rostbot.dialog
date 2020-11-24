@@ -244,6 +244,24 @@
           "dialog": "SymptomsCheckDialog"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "xUt0ey",
+        "name": "Restart"
+      },
+      "intent": "Restart",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "PQuqIA"
+          },
+          "activityProcessed": true,
+          "dialog": "StartDialog"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -283,6 +301,10 @@
       {
         "intent": "Questions",
         "pattern": "Övriga frågor"
+      },
+      {
+        "intent": "Restart",
+        "pattern": "Starta om"
       }
     ]
   }
