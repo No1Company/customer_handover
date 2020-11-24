@@ -3,7 +3,7 @@
   "$designer": {
     "id": "6X9jbe",
     "name": "GuideSelectionDialog",
-    "description": ""
+    "description": "Shows a card that sets the value for the user's guideType. Which in turn decides if the user gets a guide or not when registering values"
   },
   "autoEndDialog": true,
   "defaultResultProperty": "dialog.result",

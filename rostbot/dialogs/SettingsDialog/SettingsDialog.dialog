@@ -3,7 +3,7 @@
   "$designer": {
     "id": "jpRoNN",
     "name": "SettingsDialog",
-    "description": ""
+    "description": "Shows a card with options for what to do next.  Forwards to GuideSelectionDialog and  NotificationsSettingsDialog"
   },
   "autoEndDialog": true,
   "defaultResultProperty": "dialog.result",
