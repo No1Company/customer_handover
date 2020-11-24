@@ -21,7 +21,7 @@
           "$designer": {
             "id": "abeYLt"
           },
-          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se/",
+          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se",
           "property": "conversation.req_url"
         },
         {

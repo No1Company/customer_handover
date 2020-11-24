@@ -15,9 +15,8 @@ try:
     loginfile = open(os.path.join("..","..",'login.txt'))
     authorization = loginfile.read().split('\n')[0]
 except FileNotFoundError:
-    authorization = "Basic " + str(os.environ['ehr_pass'])
+    authorization = "Basic\n" + str(os.environ['ehr_pass'])
 
-print(authorization)
 authorization_header = {'Authorization': authorization}
 
 
