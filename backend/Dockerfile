@@ -1,7 +1,7 @@
 FROM python:3
 
 ARG ehr
-ENV ehr_pass = ${ehr}
+ENV ehr_pass=$ehr
 WORKDIR /usr/src/app
 COPY . .
 
