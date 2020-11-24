@@ -1,0 +1,173 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "O7ABfl",
+    "name": "QuestionConsultation",
+    "description": "An algorithm to understand symtoms related to fever."
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "A4AGN7"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "jvXmW5"
+          },
+          "activity": "${SendActivity_jvXmW5()}"
+        },
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "iqrgSe"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_iqrgSe()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "turn.weeksvalue"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Ho8iuA"
+          },
+          "condition": "turn.weeksvalue > 2",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "7OGiuz"
+              },
+              "activity": "${SendActivity_7OGiuz()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "XurKMJ"
+              },
+              "activityProcessed": true,
+              "dialog": "PhysicalMeetBooking",
+              "resultProperty": "user.bookingdate"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "uwC3XI"
+              },
+              "property": "user.bookingtype",
+              "value": "='tid på vårdcentralen'"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "g6bjh4"
+              },
+              "activityProcessed": true,
+              "dialog": "PhoneBooking",
+              "resultProperty": "user.bookingdate"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "1FYBdo"
+              },
+              "property": "user.bookingtype",
+              "value": "='telefontid'"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "uLffAA"
+          },
+          "condition": "user.bookingdate != null",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "MEi7ZO"
+              },
+              "property": "user.bookingtype",
+              "value": "= null"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "unNEJp"
+          },
+          "condition": "user.bookingtype",
+          "cases": [
+            {
+              "value": "tid på vårdcentralen",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "tJJjzw"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ConsultationBookingFeedback"
+                }
+              ]
+            },
+            {
+              "value": "telefontid",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "4qeXKY"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ConsultationBookingFeedback"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "CkC30S"
+              },
+              "activity": "${SendActivity_CkC30S()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "0Nx9Z1"
+              }
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "mKNK56"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "QuestionsConsultation.lg",
+  "recognizer": "QuestionsConsultation.lu.qna",
+  "id": "QuestionAlgorithmFever"
+}

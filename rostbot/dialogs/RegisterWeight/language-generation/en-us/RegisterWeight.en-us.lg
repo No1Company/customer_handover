@@ -1,0 +1,18 @@
+[import](common.lg)
+
+
+
+# NumberInput_Prompt_J8aA1s()
+- Mata in din vikt i kg
+- Skriv din vikt i kg
+- Vänligen berätta din vikt i kg
+- Vad väger du i kg?
+
+
+
+# SendActivity_NfsqAU()
+- Okej, då får du mata in din vikt igen
+# SendActivity_olx62Z()
+- Tack för din mätning
+# SendActivity_ZFmXto()
+- Något gick fel i kommunikationen med servern, vänligen testa igen senare.

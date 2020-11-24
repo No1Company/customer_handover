@@ -1,0 +1,6 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_VqlVPv()
+- Vill du göra något mer?
+# SendActivity_WRTWao()
+- Okej, då avslutar vi konversationen. Ifall du vill nå mig igen kan du skriva "Starta om".

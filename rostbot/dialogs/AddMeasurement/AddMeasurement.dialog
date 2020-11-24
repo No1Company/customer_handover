@@ -1,0 +1,62 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "B8RNWp",
+    "name": "AddMeasurement",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "wru346"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "qdOepV"
+          },
+          "method": "POST",
+          "contentType": "application/json",
+          "responseType": "json",
+          "resultProperty": "turn.resultProperty",
+          "url": "${conversation.req_url}/${dialog.url_ending}",
+          "body": "${dialog.body}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "Lg31YG"
+          },
+          "condition": "turn.resultProperty.statusCode < 300",
+          "actions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "cE9plb"
+              },
+              "value": true
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "EMiUTM"
+              },
+              "value": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "AddMeasurement.lg",
+  "recognizer": "AddMeasurement.lu.qna",
+  "id": "AddMeasurement"
+}

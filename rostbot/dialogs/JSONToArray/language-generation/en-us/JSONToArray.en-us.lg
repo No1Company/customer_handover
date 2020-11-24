@@ -1,0 +1,10 @@
+[import](common.lg)
+
+# SendActivity_nGqy7I()
+-
+>Non functional dialog
+
+# SendActivity_nDmY4B()
+- ${dialog.foreach.value["type"]}
+# SendActivity_MBR1Vi()
+- ${dialog.foreach.value["type"]}
