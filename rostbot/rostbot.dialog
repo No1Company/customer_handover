@@ -21,8 +21,8 @@
           "$designer": {
             "id": "abeYLt"
           },
-          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se",
-          "property": "conversation.req_url"
+          "property": "conversation.req_url",
+          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se/data"
         },
         {
           "$kind": "Microsoft.Foreach",
