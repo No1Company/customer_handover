@@ -253,9 +253,17 @@
       "intent": "ResetConversation",
       "actions": [
         {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "boiWh9"
+          },
+          "property": "conversation.req_url",
+          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se"
+        },
+        {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "GNHs9r"
+            "id": "GEeIzT"
           },
           "activityProcessed": true,
           "dialog": "FetchUserData"
@@ -263,9 +271,9 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "WMIc2T"
+            "id": "EJYcz7"
           },
-          "activity": "${SendActivity_WMIc2T()}"
+          "activity": "${SendActivity_EJYcz7()}"
         }
       ]
     }
@@ -306,7 +314,7 @@
       },
       {
         "intent": "ResetConversation",
-        "pattern": "/återställ"
+        "pattern": "återställ"
       }
     ]
   }
