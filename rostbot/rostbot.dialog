@@ -22,7 +22,7 @@
             "id": "abeYLt"
           },
           "property": "conversation.req_url",
-          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se/data"
+          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se"
         },
         {
           "$kind": "Microsoft.Foreach",
