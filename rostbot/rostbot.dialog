@@ -21,17 +21,8 @@
           "$designer": {
             "id": "abeYLt"
           },
-          "value": "http://localhost:5020",
+          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se/",
           "property": "conversation.req_url"
-        },
-        {
-          "$kind": "SelectUrl",
-          "$designer": {
-            "id": "1NARce"
-          },
-          "arg1": "=\"http://localhost:5020\"",
-          "arg2": "=\"https://tddc88-company-1-2020.kubernetes-public.it.liu.se/\"",
-          "resultProperty": "conversation.req_url"
         },
         {
           "$kind": "Microsoft.Foreach",
