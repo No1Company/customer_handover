@@ -8,9 +8,11 @@ app = Flask(__name__, static_folder = 'static', static_url_path = '/')
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-from bot_backend.blueprints import openehr, user
+from bot_backend.blueprints import openehr, user, measurements
 app.register_blueprint(openehr.openehr)
 app.register_blueprint(user.user)
+app.register_blueprint(measurements.measurements)
+
 
 cwd_data_path = os.getcwd() + "\\bot_backend\data\data.txt"
 DATA_PATH = os.path.abspath(cwd_data_path)

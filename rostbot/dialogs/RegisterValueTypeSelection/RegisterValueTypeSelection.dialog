@@ -66,10 +66,11 @@
           "choiceOptions": {
             "includeNumbers": true,
             "inlineOrMore": ", or ",
-            "inlineOr": " or "
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
           },
           "property": "dialog.registertype",
-          "choices": "=dialog.resultProperty.content"
+          "choices": "=dialog.resultProperty.content.avail_measurements"
         },
         {
           "$kind": "Microsoft.SwitchCondition",
@@ -103,15 +104,31 @@
                 }
               ],
               "value": "Vikt"
+            },
+            {
+              "value": "Hälsoformulär",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "4XGZvg"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "Forms",
+                  "options": {
+                    "id": "${dialog.resultProperty.content.Halsoformular}"
+                  }
+                }
+              ]
             }
           ],
           "default": [
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "ToPmi7"
+                "id": "FKEaUI"
               },
-              "activity": "${SendActivity_ToPmi7()}"
+              "activity": "${SendActivity_FKEaUI()}"
             }
           ]
         }
