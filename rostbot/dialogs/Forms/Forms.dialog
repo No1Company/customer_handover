@@ -134,6 +134,14 @@
             "id": "3GzdLS"
           },
           "activity": "${SendActivity_3GzdLS()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "YJOLRP"
+          },
+          "activityProcessed": true,
+          "dialog": "FinishedMeasurementDialog"
         }
       ]
     }

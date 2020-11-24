@@ -111,6 +111,14 @@
               ]
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "563kVp"
+          },
+          "activityProcessed": true,
+          "dialog": "FinishedMeasurementDialog"
         }
       ]
     }
