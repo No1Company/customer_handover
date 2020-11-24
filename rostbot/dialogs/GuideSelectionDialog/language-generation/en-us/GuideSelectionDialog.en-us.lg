@@ -10,7 +10,7 @@
 -```
 {
     "type": "AdaptiveCard",
-    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "$schema": "http://adaptivecards.io/schemas/1.3.0/adaptive-card.json",
     "version": "1.2",
     "body": [
         {
@@ -62,7 +62,7 @@
 # updatecardjson()
 -```
 {
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "$schema": "http://adaptivecards.io/1.3.0/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
   "version": "1.0",
   "body": [
