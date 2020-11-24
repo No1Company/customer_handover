@@ -22,7 +22,7 @@ spec:
               serviceName: bot-backend-service
               servicePort: 80
 
-          - path: /
+          - path: /data/
             backend:
               serviceName: flask-backend-service
               servicePort: 80

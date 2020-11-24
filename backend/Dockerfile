@@ -11,5 +11,5 @@ COPY . .
 
 EXPOSE 80
 RUN echo "chk ${ehr}"
-CMD ["sh", "-c", "python ./run.py --port 80 --host 0.0.0.0"]
+CMD ["sh", "-c", "python ./run.py --port 5000 --host 0.0.0.0"]
 COPY . .
