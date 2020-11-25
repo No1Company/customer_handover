@@ -155,15 +155,6 @@
                         },
                         "style": "positive",
                         "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg"
-                    },
-                    {
-                        "type": "Action.Submit",
-                        "title": "Radera notis",
-                        "data": {
-                            "id": "1234567890"
-                        },
-                        "style": "destructive",
-                        "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828843.svg"
                     }
                 ]
             }
@@ -242,7 +233,8 @@
                     "style": "default",
                     "verticalContentAlignment": "Center",
                     "horizontalAlignment": "Center",
-                    "separator": true
+                    "separator": true,
+                    "id": "Delet"
                 }
             ],
             "height": "stretch"
@@ -250,7 +242,5 @@
     ]
 }
 ```
-
-
 # SendActivity_jHELjD()
 - ${AdaptiveCardNotificationSettings()}
