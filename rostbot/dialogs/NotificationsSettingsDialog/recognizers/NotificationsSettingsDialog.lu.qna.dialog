@@ -1,6 +1,4 @@
 {
   "$kind": "Microsoft.CrossTrainedRecognizerSet",
-  "recognizers": [],
-  "id": "NotificationsSettingsDialog.lu.qna",
-  "generator": "NotificationsSettingsDialog.lu.qna.lg"
+  "recognizers": []
 }
