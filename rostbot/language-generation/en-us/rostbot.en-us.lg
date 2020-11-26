@@ -134,9 +134,7 @@
     {
       "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "data": {
-        "value": "Ändra inställningar"
-      }
+      "data": "Ändra inställningar"
     },
     {
       "type": "messageBack",
