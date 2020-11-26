@@ -45,56 +45,44 @@
 # adaptivecardjson()
 -```
 {
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "type": "AdaptiveCard",
-  "version": "1.2",
-  "body": [
-    {
-      "type": "Image",
-      "url": "https://yt3.ggpht.com/a-/AAuE7mDUQNiMilc9lbjLzB0kxGpeehgqWJ3ba8Wn0A=s900-mo-c-c0xffffffff-rj-k-no",
-      "size": "auto"
-    },
-    {
-      "type": "TextBlock",
-      "spacing": "medium",
-      "size": "large",
-      "weight": "bolder",
-      "text": "Hej ${user.first_name} ${user.last_name}!",
-      "wrap": true,
-      "maxLines": 0
-    },
-    {
-      "type": "TextBlock",
-      "size": "default",
-      "isSubtle": true,
-      "text": "Vad vill du göra idag? Välj från alternativen nedan.",
-      "wrap": true,
-      "maxLines": 0
-      
-    }
-  ],
-  "actions": [
-    {
-      "type": "Action.Submit",
-      "title": "Registrera värden",
-      "data": "Registrera värden"
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Ändra inställningar",
-      "data": "Ändra inställningar"
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Boka konsultation",
-      "data": "Boka konsultation"
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Övriga frågor",
-      "data": "Övriga frågor"
-    }
-  ]
+    "type": "AdaptiveCard",
+    "body": [
+        {
+            "type": "TextBlock",
+            "size": "Medium",
+            "weight": "Bolder",
+            "text": "${title}"
+        },
+        {
+            "type": "TextBlock",
+            "text": "${description}",
+            "wrap": true
+        }
+    ],
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Registrera värden",
+            "data": "Registrera värden"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Ändra inställningar",
+            "data": "Ändra inställningar"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Boka konsultation",
+            "data": "Boka konsultation"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Övriga frågor",
+            "data": "Övriga frågor"
+        }
+    ]
 }
 ```
 
