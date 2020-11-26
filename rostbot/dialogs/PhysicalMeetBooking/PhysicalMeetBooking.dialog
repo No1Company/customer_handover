@@ -40,20 +40,55 @@
               "activity": "${SendActivity_mV3BLG()}"
             },
             {
-              "$kind": "Microsoft.NumberInput",
+              "$kind": "Microsoft.ChoiceInput",
               "$designer": {
-                "id": "iHR6jL"
+                "id": "P5ffaY"
               },
               "defaultLocale": "en-us",
               "disabled": false,
               "maxTurnCount": 3,
               "alwaysPrompt": false,
               "allowInterruptions": false,
-              "prompt": "${NumberInput_Prompt_iHR6jL()}",
+              "prompt": "${ChoiceInput_Prompt_P5ffaY()}",
               "unrecognizedPrompt": "",
               "invalidPrompt": "",
               "defaultValueResponse": "",
-              "property": "dialog.datechoice"
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or "
+              },
+              "choices": [
+                "Ja",
+                "Nej"
+              ],
+              "property": "turn.confirmDate"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "QdT8uC"
+              },
+              "condition": "turn.confirmDate == 'Ja'",
+              "elseActions": [],
+              "actions": [
+                {
+                  "$kind": "Microsoft.NumberInput",
+                  "$designer": {
+                    "id": "ykdM6E"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${NumberInput_Prompt_ykdM6E()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "property": "dialog.datechoice"
+                }
+              ]
             },
             {
               "$kind": "Microsoft.SetProperty",
