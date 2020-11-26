@@ -63,6 +63,13 @@
               "resultProperty": "user.bookingdate"
             },
             {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "RXzi00"
+              },
+              "activity": "${SendActivity_RXzi00()}"
+            },
+            {
               "$kind": "Microsoft.SetProperty",
               "$designer": {
                 "id": "uwC3XI"
@@ -78,7 +85,7 @@
                 "id": "g6bjh4"
               },
               "activityProcessed": true,
-              "dialog": "PhoneBooking",
+              "dialog": "PhoneDialog",
               "resultProperty": "user.bookingdate"
             },
             {
