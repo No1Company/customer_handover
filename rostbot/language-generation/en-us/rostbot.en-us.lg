@@ -128,8 +128,12 @@
     {
       "type": "Action.Submit",
       "title": "Registrera värden",
-      "data": "Registrera värden"
-      
+      "data": {
+        "msteams": {
+          "type": "imBack",
+          "value": "Registrera värden"
+        }
+      } 
     },
     {
       "type": "Action.Submit",

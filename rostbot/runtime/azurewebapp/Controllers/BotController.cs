@@ -37,14 +37,8 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
         {
             // Delegate the processing of the HTTP POST to the adapter.
             // The adapter will invoke the bot.
-            //var configuration = builder.Build();
-            //Console.WriteLine(configuration.GetValue<string>("bot"))
-            
             Console.WriteLine("Somebody issued a POST request to ROSTBOT");
             Console.WriteLine(Request);
-            Console.WriteLine(Request.Body);
-            Console.WriteLine(Request.ContentType);
-            Console.WriteLine(Request.Headers);
             await this._adapter.ProcessAsync(Request, Response, _bot);
         }
 
@@ -54,7 +48,7 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
             Console.WriteLine("PUT request");
             await this._adapter.ProcessAsync(Request, Response, _bot);
         }
-        
+
         [HttpOptions]
         public IActionResult Index()
         {
