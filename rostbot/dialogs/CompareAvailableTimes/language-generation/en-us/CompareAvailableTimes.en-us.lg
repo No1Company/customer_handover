@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# TextInput_Prompt_Snm56F()
+- Skriv in tiden. Fungerar: 07/12/20 14:30
+# ChoiceInput_Prompt_hBTB0F()
+- Det fanns en tid vid ditt efterfrågade datum ${dialog.date}, vill du boka den? 
+# SendActivity_X784TZ()
+- Det fanns inga tider på ditt valda datum, men du kan välja bland följande närliggande tider. 

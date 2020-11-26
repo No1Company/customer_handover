@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "L8KVV3",
-    "name": "PhysicalMeetBooking",
+    "id": "nA4hgn",
+    "name": "PhoneDialog",
     "description": ""
   },
   "autoEndDialog": true,
@@ -13,13 +13,66 @@
       "$designer": {
         "name": "BeginDialog",
         "description": "",
-        "id": "3TZVOh"
+        "id": "wvIEVb"
       },
       "actions": [
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "VYT1Mw"
+          },
+          "activity": "${SendActivity_VYT1Mw()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "ZKBIdB"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_ZKBIdB()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "turn.confirm",
+          "choices": [
+            "Ja",
+            "Nej"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "mp5Y3o"
+          },
+          "condition": "turn.confirm == 'Ja'",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "U6eaqk"
+              },
+              "activity": "${SendActivity_U6eaqk()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "Lklc8e"
+              }
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "LiS2Dk"
+            "id": "R0T8un"
           },
           "method": "GET",
           "url": "${conversation.req_url}/available-times",
@@ -29,13 +82,13 @@
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "cqjam7"
+            "id": "j3zcti"
           },
           "actions": [
             {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "1t5pGp"
+                "id": "bRGgXn"
               },
               "activityProcessed": true,
               "dialog": "CompareAvailableTimes",
@@ -44,14 +97,14 @@
             {
               "$kind": "Microsoft.IfCondition",
               "$designer": {
-                "id": "9LXrCH"
+                "id": "NrDd4l"
               },
               "condition": "user.bookingdate != null",
               "actions": [
                 {
                   "$kind": "Microsoft.EndDialog",
                   "$designer": {
-                    "id": "WL12Rv"
+                    "id": "Sv47GV"
                   },
                   "value": "=user.bookingdate"
                 }
@@ -61,21 +114,21 @@
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "mV3BLG"
+                "id": "ufSel0"
               },
-              "activity": "${SendActivity_mV3BLG()}"
+              "activity": "${SendActivity_ufSel0()}"
             },
             {
               "$kind": "Microsoft.ChoiceInput",
               "$designer": {
-                "id": "P5ffaY"
+                "id": "TX9M3W"
               },
               "defaultLocale": "en-us",
               "disabled": false,
               "maxTurnCount": 3,
               "alwaysPrompt": false,
               "allowInterruptions": false,
-              "prompt": "${ChoiceInput_Prompt_P5ffaY()}",
+              "prompt": "${ChoiceInput_Prompt_TX9M3W()}",
               "unrecognizedPrompt": "",
               "invalidPrompt": "",
               "defaultValueResponse": "",
@@ -93,28 +146,28 @@
             {
               "$kind": "Microsoft.IfCondition",
               "$designer": {
-                "id": "QdT8uC"
+                "id": "tNLKOH"
               },
               "condition": "turn.confirmDate == 'Ja'",
               "elseActions": [
                 {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
-                    "id": "3Oix6k"
+                    "id": "mReVfE"
                   },
-                  "activity": "${SendActivity_3Oix6k()}"
+                  "activity": "${SendActivity_mReVfE()}"
                 },
                 {
                   "$kind": "Microsoft.ChoiceInput",
                   "$designer": {
-                    "id": "gvOI68"
+                    "id": "qwiqkJ"
                   },
                   "defaultLocale": "en-us",
                   "disabled": false,
                   "maxTurnCount": 3,
                   "alwaysPrompt": false,
                   "allowInterruptions": false,
-                  "prompt": "${ChoiceInput_Prompt_gvOI68()}",
+                  "prompt": "${ChoiceInput_Prompt_qwiqkJ()}",
                   "unrecognizedPrompt": "",
                   "invalidPrompt": "",
                   "defaultValueResponse": "",
@@ -133,21 +186,21 @@
                 {
                   "$kind": "Microsoft.IfCondition",
                   "$designer": {
-                    "id": "vODK8O"
+                    "id": "HBEp4u"
                   },
                   "condition": "turn.confirmDate2 == 'Ja'",
                   "elseActions": [
                     {
                       "$kind": "Microsoft.SendActivity",
                       "$designer": {
-                        "id": "kHQpSb"
+                        "id": "cH9hOS"
                       },
-                      "activity": "${SendActivity_kHQpSb()}"
+                      "activity": "${SendActivity_cH9hOS()}"
                     },
                     {
                       "$kind": "Microsoft.BeginDialog",
                       "$designer": {
-                        "id": "ashr5V"
+                        "id": "8A4lEC"
                       },
                       "activityProcessed": true,
                       "dialog": "RestartPrompt"
@@ -157,14 +210,14 @@
                     {
                       "$kind": "Microsoft.NumberInput",
                       "$designer": {
-                        "id": "YW0llQ"
+                        "id": "9Jf2HU"
                       },
                       "defaultLocale": "en-us",
                       "disabled": false,
                       "maxTurnCount": 3,
                       "alwaysPrompt": false,
                       "allowInterruptions": false,
-                      "prompt": "${NumberInput_Prompt_YW0llQ()}",
+                      "prompt": "${NumberInput_Prompt_9Jf2HU()}",
                       "unrecognizedPrompt": "",
                       "invalidPrompt": "",
                       "defaultValueResponse": "",
@@ -173,7 +226,7 @@
                     {
                       "$kind": "Microsoft.SetProperty",
                       "$designer": {
-                        "id": "Oqa1FG"
+                        "id": "tRGrdn"
                       },
                       "property": "dialog.datechoice",
                       "value": "=dialog.datechoice+3"
@@ -185,14 +238,14 @@
                 {
                   "$kind": "Microsoft.NumberInput",
                   "$designer": {
-                    "id": "ykdM6E"
+                    "id": "DMgZ59"
                   },
                   "defaultLocale": "en-us",
                   "disabled": false,
                   "maxTurnCount": 3,
                   "alwaysPrompt": false,
                   "allowInterruptions": false,
-                  "prompt": "${NumberInput_Prompt_ykdM6E()}",
+                  "prompt": "${NumberInput_Prompt_DMgZ59()}",
                   "unrecognizedPrompt": "",
                   "invalidPrompt": "",
                   "defaultValueResponse": "",
@@ -203,7 +256,7 @@
             {
               "$kind": "Microsoft.SetProperty",
               "$designer": {
-                "id": "uAKuhT"
+                "id": "HxlC1O"
               },
               "property": "user.bookingdate",
               "value": "${dialog.result.content[${dialog.datechoice}].start}"
@@ -211,7 +264,7 @@
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "IRsXC3"
+                "id": "10jd2N"
               },
               "value": "=user.bookingdate"
             }
@@ -220,7 +273,7 @@
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "WNblWK"
+                "id": "PMjfMl"
               },
               "value": "= '0000/00/00'"
             }
@@ -230,7 +283,7 @@
       ]
     }
   ],
-  "generator": "PhysicalMeetBooking.lg",
-  "recognizer": "PhysicalMeetBooking.lu.qna",
-  "id": "PhysicalMeetBooking"
+  "generator": "PhoneDialog.lg",
+  "recognizer": "PhoneDialog.lu.qna",
+  "id": "PhoneDialog"
 }
