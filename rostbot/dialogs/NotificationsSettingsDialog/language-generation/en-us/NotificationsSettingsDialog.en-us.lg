@@ -12,10 +12,10 @@
     "actions": [
         {
             "type": "Action.ShowCard",
-            "title": "Hantera notiser",
+            "title": "Hantera notifikationer",
             "style": "positive",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
-            "data": "Skapa ny notis",
+            "data": "Skapa ny notifikation",
             "card": {
                 "type": "AdaptiveCard",
                 "body": [
@@ -121,7 +121,7 @@
                         "type": "TextBlock",
                         "size": "Medium",
                         "weight": "Bolder",
-                        "text": "Notis via",
+                        "text": "Notifikation via",
                         "wrap": true
                     },
                     {
@@ -149,7 +149,7 @@
                 "actions": [
                     {
                         "type": "Action.Submit",
-                        "title": "Lägg till notis",
+                        "title": "Ny notifikation",
                         "data": {
                             "id": "1234567890"
                         },
@@ -168,7 +168,7 @@
     "body": [
         {
             "type": "TextBlock",
-            "text": "Notiser",
+            "text": "Notifikationer",
             "wrap": true,
             "horizontalAlignment": "Center",
             "size": "Medium",
@@ -178,7 +178,7 @@
         },
         {
             "type": "TextBlock",
-            "text": "Mina notiser",
+            "text": "Mina notifikationer",
             "wrap": true,
             "size": "Medium",
             "weight": "Bolder"
@@ -215,26 +215,6 @@
                             "height": "stretch"
                         }
                     ]
-                },
-                {
-                    "type": "Column",
-                    "width": "20px",
-                    "selectAction": {
-                        "type": "Action.Submit",
-                        "id": "cancelbutton",
-                        "value": "true"
-                    },
-                    "isVisible": false,
-                    "backgroundImage": {
-                        "horizontalAlignment": "Center",
-                        "url": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
-                        "verticalAlignment": "Center"
-                    },
-                    "style": "default",
-                    "verticalContentAlignment": "Center",
-                    "horizontalAlignment": "Center",
-                    "separator": true,
-                    "id": "Delet"
                 }
             ],
             "height": "stretch"

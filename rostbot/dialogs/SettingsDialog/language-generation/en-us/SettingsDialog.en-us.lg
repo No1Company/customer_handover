@@ -14,9 +14,9 @@
     "actions": [
         {
             "type": "Action.Submit",
-            "title": "Notiser",
+            "title": "Notifikationer",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg",
-            "data": "Notiser",
+            "data": "Notifikationer",
             "version": "1.2"
         },
         {
