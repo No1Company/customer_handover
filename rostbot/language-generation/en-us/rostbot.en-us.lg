@@ -77,7 +77,13 @@
     {
       "type": "Action.Submit",
       "title": "Registrera värden",
-      "data": "Registrera värden"
+      "data": { 
+        "Registrera värden",
+        "msteams": {
+          "type" : "imback",
+          "value" : "Registrera värden"
+        }
+      }
       
     },
     {
