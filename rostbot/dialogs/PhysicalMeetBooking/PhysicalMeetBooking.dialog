@@ -70,7 +70,15 @@
                 "id": "QdT8uC"
               },
               "condition": "turn.confirmDate == 'Ja'",
-              "elseActions": [],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "3Oix6k"
+                  },
+                  "activity": "${SendActivity_3Oix6k()}"
+                }
+              ],
               "actions": [
                 {
                   "$kind": "Microsoft.NumberInput",
