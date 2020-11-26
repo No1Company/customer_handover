@@ -75,25 +75,21 @@
   ],
   "actions": [
     {
-      "id": 1,
       "type": "Action.Submit",
       "title": "Registrera värden",
       "data": "Registrera värden"
     },
     {
-      "id": 2,
       "type": "Action.Submit",
       "title": "Ändra inställningar",
       "data": "Ändra inställningar"
     },
     {
-      "id": 3,
       "type": "Action.Submit",
       "title": "Boka konsultation",
       "data": "Boka konsultation"
     },
     {
-      "id": 4,
       "type": "Action.Submit",
       "title": "Övriga frågor",
       "data": "Övriga frågor"
@@ -132,16 +128,18 @@
         "msteams": {
           "type": "imBack",
           "value": "Registrera värden"
-        }
+        },
       } 
     },
     {
       "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "data": "Ändra inställningar"
+      "data": {
+        "value": "Ändra inställningar"
+      }
     },
     {
-      "type": "Action.Submit",
+      "type": "messageBack",
       "title": "Boka konsultation",
       "data": "Boka konsultation"
     },

@@ -5,7 +5,6 @@
 [Activity
     Attachments = ${json(guideselectcardjson())}
 ]
-
 # guideselectcardjson()
 -```
 {
