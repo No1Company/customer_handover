@@ -33,6 +33,27 @@
           },
           "actions": [
             {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "gFVmML"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${TextInput_Prompt_gFVmML()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": ""
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "PvrPkY"
+              },
+              "activity": "${SendActivity_PvrPkY()}"
+            },
+            {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
                 "id": "mV3BLG"
@@ -79,28 +100,80 @@
                   "activity": "${SendActivity_3Oix6k()}"
                 },
                 {
-                  "$kind": "Microsoft.NumberInput",
+                  "$kind": "Microsoft.ChoiceInput",
                   "$designer": {
-                    "id": "886pEi"
+                    "id": "gvOI68"
                   },
                   "defaultLocale": "en-us",
                   "disabled": false,
                   "maxTurnCount": 3,
                   "alwaysPrompt": false,
                   "allowInterruptions": false,
-                  "prompt": "${NumberInput_Prompt_886pEi()}",
+                  "prompt": "${ChoiceInput_Prompt_gvOI68()}",
                   "unrecognizedPrompt": "",
                   "invalidPrompt": "",
                   "defaultValueResponse": "",
-                  "property": "dialog.datechoice"
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "property": "turn.confirmDate2"
                 },
                 {
-                  "$kind": "Microsoft.SetProperty",
+                  "$kind": "Microsoft.IfCondition",
                   "$designer": {
-                    "id": "cgxP8R"
+                    "id": "vODK8O"
                   },
-                  "property": "dialog.datechoice",
-                  "value": "=dialog.datechoice+3"
+                  "condition": "turn.confirmDate2 == 'Ja'",
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "kHQpSb"
+                      },
+                      "activity": "${SendActivity_kHQpSb()}"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "vlt4W0"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "CancelDialog"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.NumberInput",
+                      "$designer": {
+                        "id": "YW0llQ"
+                      },
+                      "defaultLocale": "en-us",
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": false,
+                      "allowInterruptions": false,
+                      "prompt": "${NumberInput_Prompt_YW0llQ()}",
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "property": "dialog.datechoice"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "Oqa1FG"
+                      },
+                      "property": "dialog.datechoice",
+                      "value": "=dialog.datechoice+3"
+                    }
+                  ]
                 }
               ],
               "actions": [

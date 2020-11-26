@@ -187,25 +187,12 @@
       "intent": "Cancel",
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "rYwnTV"
+            "id": "lSyD74"
           },
-          "activity": "${SendActivity_rYwnTV()}"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "3RIa5x"
-          },
-          "activity": "${SendActivity_3RIa5x()}"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "AjJSLA"
-          },
-          "activityProcessed": true
+          "activityProcessed": true,
+          "dialog": "CancelDialog"
         }
       ]
     },
