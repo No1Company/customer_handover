@@ -80,23 +80,19 @@
     {
       "type": "Action.Submit",
       "title": "Registrera värden",
-      "data": "Registrera värden"
       
     },
     {
       "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "data": "Ändra inställningar"
     },
     {
       "type": "Action.Submit",
       "title": "Boka konsultation",
-      "data": "Boka konsultation"
     },
     {
       "type": "Action.Submit",
       "title": "Övriga frågor",
-      "data": "Övriga frågor"
     }
   ]
 }

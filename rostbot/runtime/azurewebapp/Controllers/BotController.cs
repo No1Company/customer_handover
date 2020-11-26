@@ -54,13 +54,11 @@ namespace Microsoft.BotFramework.Composer.WebAppTemplates.Controllers
             Console.WriteLine("PUT request");
             await this._adapter.ProcessAsync(Request, Response, _bot);
         }
-
-        //[HttpOptions("{id}")]
-        //[HttpOptions]
-        //public async Task<StatusCodeResult> OptionsAsync()
-        //{   
-        //    Console.WriteLine("Somebody issued an OPTIONS request to ROSTBOT");
-        //   return await Task.FromResult(StatusCode(200));
-        //}
+        
+        [HttpOptions]
+        public IActionResult Index()
+        {
+            return Ok();
+        }
     }
 }
