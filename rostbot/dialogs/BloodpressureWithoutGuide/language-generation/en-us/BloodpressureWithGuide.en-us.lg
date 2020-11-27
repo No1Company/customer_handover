@@ -59,7 +59,7 @@
 # TextInput_Prompt_h5Ktbw()
 [SigninCard
     text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
-    buttons = Ja värdena stämmer | Nej värdena stämmer inte
+    buttons = Ja  | Nej
     ]
 # TextInput_Prompt_ouIfx9()
 [SigninCard
@@ -69,15 +69,6 @@
 
 
 
-
-# SendActivity_44RmnG()
-- Något gick fel, vänligen testa igen senare!
-
-# TextInput_Prompt_MlpQ4j()
-[SigninCard
-    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
-    buttons= Avsluta mätning
-    ]
 
 # bloodpressurecardjson()
 -```
@@ -128,5 +119,14 @@
 
 # SendActivity_DYsQGv()
  -${AdaptiveCardBloodPressureNoGuide()}
-# SendActivity_Cll9rT()
-- ${UpdateCard()}
+# TextInput_Prompt_A12pzQ()
+[SigninCard
+    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
+    buttons= Avsluta mätning
+    ]
+
+# SendActivity_vn5ACr()
+- Något gick fel, vänligen testa igen senare!
+
+# SendActivity_prvC1W()
+- Var god försök igen.

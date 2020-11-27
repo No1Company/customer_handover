@@ -61,89 +61,89 @@
           "property": "turn.confirm"
         },
         {
-          "$kind": "Microsoft.SwitchCondition",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "Czje5t"
+            "id": "uyRbGk"
           },
-          "condition": "turn.confirm",
-          "cases": [
+          "condition": "=toLower(turn.confirm) == \"ja\"",
+          "actions": [
             {
-              "value": "Ja värdena stämmer",
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "am4Trn"
+              },
+              "activityProcessed": true,
+              "dialog": "AddMeasurementsOpenEHR",
+              "options": {
+                "systolic": "${user.sysvalue}",
+                "diastolic": "${user.diavalue}"
+              },
+              "resultProperty": "dialog.successful_request"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "WKTZif"
+              },
+              "condition": "dialog.successful_request",
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "vn5ACr"
+                  },
+                  "activity": "${SendActivity_vn5ACr()}"
+                }
+              ],
               "actions": [
                 {
-                  "$kind": "Microsoft.BeginDialog",
+                  "$kind": "Microsoft.TextInput",
                   "$designer": {
-                    "id": "Z2zHLj"
+                    "id": "A12pzQ"
                   },
-                  "activityProcessed": true,
-                  "dialog": "AddMeasurementsOpenEHR",
-                  "options": {
-                    "systolic": "${user.sysvalue}",
-                    "diastolic": "${user.diavalue}"
-                  },
-                  "resultProperty": "dialog.successful_request"
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${TextInput_Prompt_A12pzQ()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": ""
+                }
+              ]
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "cexCRX"
+              },
+              "assignments": [
+                {
+                  "property": "user.sysvalue",
+                  "value": "=null"
                 },
                 {
-                  "$kind": "Microsoft.IfCondition",
-                  "$designer": {
-                    "id": "fqPuS7"
-                  },
-                  "condition": "dialog.successful_request",
-                  "elseActions": [
-                    {
-                      "$kind": "Microsoft.SendActivity",
-                      "$designer": {
-                        "id": "44RmnG"
-                      },
-                      "activity": "${SendActivity_44RmnG()}"
-                    }
-                  ],
-                  "actions": [
-                    {
-                      "$kind": "Microsoft.TextInput",
-                      "$designer": {
-                        "id": "MlpQ4j"
-                      },
-                      "disabled": false,
-                      "maxTurnCount": 3,
-                      "alwaysPrompt": false,
-                      "allowInterruptions": false,
-                      "prompt": "${TextInput_Prompt_MlpQ4j()}",
-                      "unrecognizedPrompt": "",
-                      "invalidPrompt": "",
-                      "defaultValueResponse": ""
-                    }
-                  ]
+                  "property": "user.diavalue",
+                  "value": "=null"
                 }
               ]
             },
             {
-              "value": "Nej värdena stämmer inte",
-              "actions": [
-                {
-                  "$kind": "Microsoft.SetProperties",
-                  "$designer": {
-                    "id": "FuaAUE"
-                  },
-                  "assignments": [
-                    {
-                      "property": "user.sysvalue",
-                      "value": "=null"
-                    },
-                    {
-                      "property": "user.diavalue",
-                      "value": "=null"
-                    }
-                  ]
-                },
-                {
-                  "$kind": "Microsoft.RepeatDialog",
-                  "$designer": {
-                    "id": "t5HmTD"
-                  },
-                  "activityProcessed": true
-                }
-              ]
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "prvC1W"
+              },
+              "activity": "${SendActivity_prvC1W()}"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "BiVUBT"
+              },
+              "activityProcessed": true,
+              "allowLoop": true
             }
           ]
         },
@@ -181,11 +181,12 @@
           "elseActions": []
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "Cll9rT"
+            "id": "I411f4"
           },
-          "activity": "${SendActivity_Cll9rT()}"
+          "activityProcessed": true,
+          "dialog": "CancelDialog"
         },
         {
           "$kind": "Microsoft.EndDialog",

@@ -117,7 +117,7 @@
             {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "ghkbsK"
+                "id": "nCb28f"
               },
               "activityProcessed": true,
               "dialog": "BloodpressureWithGuide"
