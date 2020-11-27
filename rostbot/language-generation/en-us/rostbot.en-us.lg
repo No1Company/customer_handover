@@ -129,7 +129,8 @@
           "type": "imBack",
           "value": "Registrera värden"
         },
-      } 
+      },
+      "data": "Registrera värden"
     },
     {
       "type": "Action.Submit",
