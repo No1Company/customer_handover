@@ -29,13 +29,13 @@
         {
           "$kind": "Microsoft.TextInput",
           "$designer": {
-            "id": "Snm56F"
+            "id": "fhhvXl"
           },
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${TextInput_Prompt_Snm56F()}",
+          "prompt": "${TextInput_Prompt_fhhvXl()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
@@ -50,6 +50,13 @@
           "value": "dialog.foreach.value",
           "itemsProperty": "dialog.resultJSON.content",
           "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ZEuhqI"
+              },
+              "activity": "${SendActivity_ZEuhqI()}"
+            },
             {
               "$kind": "Microsoft.IfCondition",
               "$designer": {

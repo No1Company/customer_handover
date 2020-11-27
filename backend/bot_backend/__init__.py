@@ -108,7 +108,8 @@ def curr_notifications():
 current_bookings = [
         {
             "bookingdate" : "",
-            "type" : ""
+            "type" : "",
+            "free-text" : ""
         }
     ]
 
