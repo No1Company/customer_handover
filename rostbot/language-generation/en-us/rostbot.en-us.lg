@@ -124,13 +124,7 @@
     {
       "type": "Action.Submit",
       "title": "Registrera värden",
-      "data": {
-        "msteams": {
-          "type": "imBack",
-          "value": "Registrera värden"
-        },
-      },
-      "data": "Registrera värden"
+      "data": "Registrera värden",
     },
     {
       "type": "Action.Submit",
@@ -138,7 +132,7 @@
       "data": "Ändra inställningar"
     },
     {
-      "type": "messageBack",
+      "type": "Action.Submit",
       "title": "Boka konsultation",
       "data": "Boka konsultation"
     },
