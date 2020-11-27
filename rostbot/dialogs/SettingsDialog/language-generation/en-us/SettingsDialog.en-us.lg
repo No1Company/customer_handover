@@ -21,12 +21,6 @@
         },
         {
             "type": "Action.Submit",
-            "title": "Chatt",
-            "iconUrl": "https://i.postimg.cc/Qt2Jtcnz/Settings-Dialog-Chat.png",
-            "data": "Chatt"
-        },
-        {
-            "type": "Action.Submit",
             "title": "Guide-inställningar",
             "data": "Guide-inställningar",
             "iconUrl": "https://i.postimg.cc/FRJfC8sf/Settings-Dialog-Guide-Settings.png",
