@@ -1,0 +1,121 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "X02wWZ",
+    "name": "ShowCurrentBookings",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "p9RYaU"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "0jrkPN"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}/current-bookings",
+          "resultProperty": "dialog.result",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "1NLGEh"
+          },
+          "condition": "dialog.result != {}",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "CoMjdH"
+              }
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "LTVlXc"
+          },
+          "activity": "${SendActivity_LTVlXc()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "561cED"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_561cED()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "dialog.choice"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "n3FYnr"
+          },
+          "condition": "dialog.choice == 'Nej'",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "ItRopo"
+              },
+              "method": "DELETE",
+              "url": "${conversation.req_url}/current-bookings/1"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "KTHVQ2"
+              },
+              "activity": "${SendActivity_KTHVQ2()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "TqbC2o"
+          },
+          "activityProcessed": true,
+          "dialog": "RestartPrompt"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "R3dygq"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "ShowCurrentBookings.lg",
+  "recognizer": "ShowCurrentBookings.lu.qna",
+  "id": "ShowCurrentBookings"
+}

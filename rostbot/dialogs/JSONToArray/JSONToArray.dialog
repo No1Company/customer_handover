@@ -1,0 +1,62 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "m6Q3cG",
+    "name": "JSONToArray",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "uADVNe"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "Jg3ojp"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}/${dialog.url}",
+          "resultProperty": "dialog.result",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "9KrEca"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.result.content",
+          "actions": [
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "96HJET"
+              },
+              "changeType": "push",
+              "itemsProperty": "dialog.dateArray",
+              "value": "dialog.foreach.value"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "DK5N6r"
+          },
+          "value": "=dialog.dateArray"
+        }
+      ]
+    }
+  ],
+  "generator": "JSONToArray.lg",
+  "recognizer": "JSONToArray.lu.qna",
+  "id": "JSONToArray"
+}

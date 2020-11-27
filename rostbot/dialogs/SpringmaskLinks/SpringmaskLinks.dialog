@@ -1,0 +1,32 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "6RUqZT",
+    "name": "SpringmaskLinks",
+    "description": "Links to information about springmask"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "keXihH"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "20do71"
+          },
+          "activity": "${SendActivity_20do71()}"
+        }
+      ]
+    }
+  ],
+  "generator": "SpringmaskLinks.lg",
+  "recognizer": "SpringmaskLinks.lu.qna",
+  "id": "SpringmaskLinks"
+}

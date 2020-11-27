@@ -1,0 +1,17 @@
+[import](common.lg)
+
+
+# SendActivity_mV3BLG()
+-De närmast lediga tiderna som finns tillgängliga är\n\n 1: ${dialog.result.content[1].start}\n\n 2: ${dialog.result.content[2].start}\n\n 3: ${dialog.result.content[3].start}
+# ChoiceInput_Prompt_P5ffaY()
+- Passar något av ovanstående datum?
+# NumberInput_Prompt_ykdM6E()
+- Välj en siffra (1-3)
+# SendActivity_3Oix6k()
+-Nästa lediga tider som finns tillgängliga är\n\n 1: ${dialog.result.content[4].start}\n\n 2: ${dialog.result.content[5].start}\n\n 3: ${dialog.result.content[6].start}
+# ChoiceInput_Prompt_gvOI68()
+- Passar något av ovanstående datum?
+# NumberInput_Prompt_YW0llQ()
+- Välj en siffra (1-3)
+# SendActivity_kHQpSb()
+- Vi har tyvärr inga fler datum. 

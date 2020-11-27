@@ -1,0 +1,65 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "mAxXfS",
+    "name": "AddBloodPressureOpenEHR",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "UE2Me0"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "7xmtUx"
+          },
+          "method": "POST",
+          "url": "${conversation.req_url}/openehr/add-blood-pressure/${user.ehr_id}",
+          "contentType": "application/json",
+          "responseType": "json",
+          "resultProperty": "turn.resultProperty",
+          "body": {
+            "diastolic": "${user.diavalue}",
+            "systolic": "${user.sysvalue}"
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "VLNpJ5"
+          },
+          "condition": "turn.resultProperty.statusCode < 300",
+          "actions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "ZhRaIj"
+              },
+              "value": true
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "EfQnEC"
+              },
+              "value": false
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "AddMeasurementsOpenEHR.lg",
+  "recognizer": "AddMeasurementsOpenEHR.lu.qna",
+  "id": "AddMeasurementsOpenEHR"
+}

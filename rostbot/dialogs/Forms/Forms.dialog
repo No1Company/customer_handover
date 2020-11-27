@@ -1,0 +1,152 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "GXlPLV",
+    "name": "Forms",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "EySlmd"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "GrAeXb"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}/measurements/get-form/${dialog.id}",
+          "resultProperty": "dialog.resultProperty"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "apUB2H"
+          },
+          "condition": "=dialog.resultProperty.statusCode < 300",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "vZ8nnX"
+              },
+              "activity": "${SendActivity_vZ8nnX()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "nMSndo"
+              }
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "jAfYkZ"
+          },
+          "property": "dialog.form",
+          "value": "=dialog.resultProperty.content"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "SafFZO"
+          },
+          "activity": "${SendActivity_SafFZO()}"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "OdgVQl"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.form.questions",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "FjuSHd"
+              },
+              "activityProcessed": true,
+              "dialog": "HealthQuestion",
+              "resultProperty": "turn.answer",
+              "options": {
+                "question": "=dialog.foreach.value"
+              }
+            },
+            {
+              "$kind": "Microsoft.EditArray",
+              "$designer": {
+                "id": "rxo0Qs"
+              },
+              "changeType": "push",
+              "value": "=turn.answer",
+              "itemsProperty": "dialog.answers"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "Lp3dFj"
+          },
+          "method": "POST",
+          "url": "${conversation.req_url}/measurements/register-form/${user.ehr_id}/${dialog.id}",
+          "body": "=dialog.answers",
+          "contentType": "application/json",
+          "resultProperty": "dialog.resultProperty",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "KZRlrW"
+          },
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "tuw3B6"
+              },
+              "activity": "${SendActivity_tuw3B6()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "4Sl0ul"
+              }
+            }
+          ],
+          "condition": "=dialog.resultProperty.statusCode < 300"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "3GzdLS"
+          },
+          "activity": "${SendActivity_3GzdLS()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "YJOLRP"
+          },
+          "activityProcessed": true,
+          "dialog": "FinishedMeasurementDialog"
+        }
+      ]
+    }
+  ],
+  "generator": "Forms.lg",
+  "recognizer": "Forms.lu.qna",
+  "id": "Forms"
+}

@@ -1,0 +1,11 @@
+[import](common.lg)
+
+# Templatetest(param)
+[Suggestions
+ text=param
+	SuggestionActions =  10 \| cards | 20 \| cards
+  ]
+# TemplateName()
+-TemplateValue
+# ChoiceInput_Prompt_6dMFvi()
+- ${dialog.question.question}

@@ -1,0 +1,133 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "rj3SfI",
+    "name": "BloodpressureGuideSelect",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "yu4q9k"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "clAf9r"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}/guide-type",
+          "contentType": "application/json",
+          "resultProperty": "dialog.resultProperty"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "7ppGEn"
+          },
+          "property": "user.guideType",
+          "value": "${dialog.resultProperty.content[0].guidetype}"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "GhuFPG"
+          },
+          "condition": "user.guideType == \"0\"",
+          "actions": [
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "nEJWBX"
+              },
+              "property": "user.guideType"
+            },
+            {
+              "$kind": "Microsoft.TextInput",
+              "$designer": {
+                "id": "iMYIXn"
+              },
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": true,
+              "prompt": "${TextInput_Prompt_iMYIXn()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "property": "user.guideType"
+            },
+            {
+              "$kind": "Microsoft.HttpRequest",
+              "$designer": {
+                "id": "7N4gPd"
+              },
+              "method": "PUT",
+              "url": "${conversation.req_url}/guide-type",
+              "contentType": "application/json",
+              "body": {
+                "guidetype": "${user.guideType}"
+              }
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "udj9lj"
+          },
+          "condition": "user.guideType",
+          "cases": [
+            {
+              "value": "Utan guide",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "EqJmcI"
+                  },
+                  "activity": "${SendActivity_EqJmcI()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "mDRMlG"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "BloodpressureWithGuide"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "Ceg6gP"
+              },
+              "activityProcessed": true,
+              "dialog": "BloodpressureGuide"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "ghkbsK"
+              },
+              "activityProcessed": true,
+              "dialog": "BloodpressureWithGuide"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "BloodpressureGuideSelect.lg",
+  "recognizer": "BloodpressureGuideSelect.lu.qna",
+  "id": "BloodpressureGuideSelect"
+}

@@ -1,0 +1,129 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "isTgWl",
+    "name": "RegisterWeight",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "KyGx2q"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.NumberInput",
+          "$designer": {
+            "id": "J8aA1s"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${NumberInput_Prompt_J8aA1s()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "outputFormat": "this.value",
+          "property": "user.weight"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "zrVqh3"
+          },
+          "activityProcessed": true,
+          "dialog": "ConfirmationDialog",
+          "options": {
+            "confirmText": "Stämmer det att du väger ${user.weight} kg?"
+          },
+          "resultProperty": "dialog.confirmed"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "gP2W4A"
+          },
+          "condition": "dialog.confirmed",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "ucsnxU"
+              },
+              "property": "user.weight",
+              "value": "=null"
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "NfsqAU"
+              },
+              "activity": "${SendActivity_NfsqAU()}"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "BquYhV"
+              },
+              "activityProcessed": true
+            }
+          ],
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "qT8mz4"
+              },
+              "activityProcessed": true,
+              "dialog": "AddWeightOpenEHR",
+              "resultProperty": "dialog.ok"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "RuYQKJ"
+              },
+              "condition": "=dialog.ok",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "olx62Z"
+                  },
+                  "activity": "${SendActivity_olx62Z()}"
+                }
+              ],
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "ZFmXto"
+                  },
+                  "activity": "${SendActivity_ZFmXto()}"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "563kVp"
+          },
+          "activityProcessed": true,
+          "dialog": "FinishedMeasurementDialog"
+        }
+      ]
+    }
+  ],
+  "generator": "RegisterWeight.lg",
+  "recognizer": "RegisterWeight.lu.qna",
+  "id": "RegisterWeight"
+}

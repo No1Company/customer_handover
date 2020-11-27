@@ -1,0 +1,78 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "6X9jbe",
+    "name": "GuideSelectionDialog",
+    "description": "Shows a card that sets the value for the user's guideType. Which in turn decides if the user gets a guide or not when registering values"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "XS65a6"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "n9XBXG"
+          },
+          "activity": "${SendActivity_n9XBXG()}"
+        },
+        {
+          "$kind": "Microsoft.EndTurn",
+          "$designer": {
+            "id": "IYX0ae"
+          }
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "uNaYKx"
+          },
+          "property": "user.guideType",
+          "value": "=@guideselect"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "hdwFK0"
+          },
+          "method": "PUT",
+          "url": "${conversation.req_url}/guide-type",
+          "contentType": "application/json",
+          "body": {
+            "guidetype": "${user.guideType}"
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "usI5V2"
+          },
+          "activity": "${SendActivity_usI5V2()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "4SQK4P"
+          },
+          "activity": "${SendActivity_4SQK4P()}"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "S7tdc9"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "GuideSelectionDialog.lg",
+  "recognizer": "GuideSelectionDialog.lu.qna",
+  "id": "GuideSelectionDialog"
+}

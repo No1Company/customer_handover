@@ -1,0 +1,46 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "KavQSC",
+    "name": "CancelDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "PpqTqe"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "YMns1X"
+          },
+          "activity": "${SendActivity_YMns1X()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "tZ6AxU"
+          },
+          "activity": "${SendActivity_tZ6AxU()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "c7bVul"
+          },
+          "activityProcessed": true
+        }
+      ]
+    }
+  ],
+  "generator": "CancelDialog.lg",
+  "recognizer": "CancelDialog.lu.qna",
+  "id": "CancelDialog"
+}

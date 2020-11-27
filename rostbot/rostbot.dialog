@@ -1,0 +1,298 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "$designer": {
+      "name": "rostbot",
+      "description": "",
+      "id": "ldqVkE"
+    }
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnConversationUpdateActivity",
+      "$designer": {
+        "id": "376720"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "abeYLt"
+          },
+          "value": "http://localhost:5020",
+          "property": "conversation.req_url"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "518944",
+            "name": "Loop: for each item"
+          },
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "641773",
+                "name": "Branch: if/else"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "actions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "GDiBO5"
+                  },
+                  "actions": [],
+                  "condition": "user.has_fetched_data",
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "Lij1Q5"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "FetchUserData"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "g9skpW"
+                  },
+                  "activity": "${SendActivity_g9skpW()}"
+                }
+              ]
+            }
+          ],
+          "value": "dialog.foreach.value",
+          "index": "dialog.foreach.index"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnUnknownIntent",
+      "$designer": {
+        "id": "IN5w5y"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "VvcgOJ"
+          },
+          "activity": "${SendActivity_VvcgOJ()}"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "nW2GGt",
+        "name": "Settings"
+      },
+      "intent": "Settings",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "vlz9sK"
+          },
+          "activityProcessed": true,
+          "dialog": "SettingsDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "95zDOa",
+        "name": "Consultation"
+      },
+      "intent": "Consultation",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "tGetCF"
+          },
+          "activityProcessed": true,
+          "dialog": "ConsultationDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Uq3ZgS",
+        "name": "Questions"
+      },
+      "intent": "Questions",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "rBVTQQ"
+          },
+          "activityProcessed": true,
+          "dialog": "QuestionMainDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "pZWzTm",
+        "name": "Register-measurement"
+      },
+      "intent": "Register-measurement",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "NOVnk5"
+          },
+          "activityProcessed": true,
+          "dialog": "RegisterValueTypeSelection"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "kgPRAT",
+        "name": "HelpTriggerMenuDialog"
+      },
+      "intent": "HelpTriggerMenuDialog",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "HLT8qq"
+          },
+          "activityProcessed": true,
+          "dialog": "HelpDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "wQlnrc",
+        "name": "Cancel"
+      },
+      "intent": "Cancel",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "lSyD74"
+          },
+          "activityProcessed": true,
+          "dialog": "CancelDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "FSYy31",
+        "name": "ShowBooking"
+      },
+      "intent": "ShowBooking",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "C7WkKZ"
+          },
+          "activityProcessed": true,
+          "dialog": "ShowCurrentBookings"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "SZXZ1w",
+        "name": "CustomAction"
+      },
+      "intent": "CustomAction",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "01lbaR"
+          },
+          "activityProcessed": true,
+          "dialog": "SymptomsCheckDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "xUt0ey",
+        "name": "Restart"
+      },
+      "intent": "Restart",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "PQuqIA"
+          },
+          "activityProcessed": true,
+          "dialog": "StartDialog"
+        }
+      ]
+    }
+  ],
+  "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
+  "generator": "rostbot.lg",
+  "id": "rostbot",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": [
+      {
+        "intent": "Register-measurement",
+        "pattern": "Registrera värden"
+      },
+      {
+        "intent": "Settings",
+        "pattern": "Ändra inställningar"
+      },
+      {
+        "intent": "HelpTriggerMenuDialog",
+        "pattern": "Hjälp"
+      },
+      {
+        "intent": "Cancel",
+        "pattern": "Avbryt"
+      },
+      {
+        "intent": "Consultation",
+        "pattern": "Boka konsultation"
+      },
+      {
+        "intent": "ShowBooking",
+        "pattern": "Visa mina bokningar"
+      },
+      {
+        "intent": "CustomAction",
+        "pattern": "custom"
+      },
+      {
+        "intent": "Questions",
+        "pattern": "Övriga frågor"
+      },
+      {
+        "intent": "Restart",
+        "pattern": "Starta om"
+      }
+    ]
+  }
+}

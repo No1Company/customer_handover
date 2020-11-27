@@ -1,0 +1,8 @@
+[import](common.lg)
+
+# TextInput_Prompt_T20fa1()
+-Vad är din mailadress? 
+# ChoiceInput_Prompt_8cDaNQ()
+-Stämmer ${user.email}?
+# SendActivity_4vD5W6()
+-Okej, vi skickar ett mail med din bokningsbekräftelse till ${user.email}!

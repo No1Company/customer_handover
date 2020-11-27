@@ -1,0 +1,16 @@
+
+
+# SendActivity_EqJmcI()
+- Du har i inställningarna valt att inte ha en guide för din mätning av blodtryck, stämmer inte detta så kan du ändra detta i inställningar. \n\n Okej då kör vi igång!
+# TextInput_Prompt_iMYIXn()
+[SigninCard
+    text = Hur vill du bli instruerad vid mätning?
+    buttons = Med guide | Utan guide   
+     ]
+
+
+
+# SendActivity_fcg99c()
+- ${dialog.api_response.content[0].guidetype}
+
+

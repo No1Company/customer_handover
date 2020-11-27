@@ -1,0 +1,289 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "nA4hgn",
+    "name": "PhoneDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "wvIEVb"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "VYT1Mw"
+          },
+          "activity": "${SendActivity_VYT1Mw()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "ZKBIdB"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_ZKBIdB()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "property": "turn.confirm",
+          "choices": [
+            "Ja",
+            "Nej"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "mp5Y3o"
+          },
+          "condition": "turn.confirm == 'Ja'",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "U6eaqk"
+              },
+              "activity": "${SendActivity_U6eaqk()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "Lklc8e"
+              }
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "R0T8un"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}/available-times",
+          "resultProperty": "dialog.result",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "j3zcti"
+          },
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "bRGgXn"
+              },
+              "activityProcessed": true,
+              "dialog": "CompareAvailableTimes",
+              "resultProperty": "user.bookingdate"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "NrDd4l"
+              },
+              "condition": "user.bookingdate != null",
+              "actions": [
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "Sv47GV"
+                  },
+                  "value": "=user.bookingdate"
+                }
+              ],
+              "elseActions": []
+            },
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ufSel0"
+              },
+              "activity": "${SendActivity_ufSel0()}"
+            },
+            {
+              "$kind": "Microsoft.ChoiceInput",
+              "$designer": {
+                "id": "TX9M3W"
+              },
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_TX9M3W()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or "
+              },
+              "choices": [
+                "Ja",
+                "Nej"
+              ],
+              "property": "turn.confirmDate"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "tNLKOH"
+              },
+              "condition": "turn.confirmDate == 'Ja'",
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "mReVfE"
+                  },
+                  "activity": "${SendActivity_mReVfE()}"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "qwiqkJ"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_qwiqkJ()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "property": "turn.confirmDate2"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "HBEp4u"
+                  },
+                  "condition": "turn.confirmDate2 == 'Ja'",
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "cH9hOS"
+                      },
+                      "activity": "${SendActivity_cH9hOS()}"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "8A4lEC"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "RestartPrompt"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.NumberInput",
+                      "$designer": {
+                        "id": "9Jf2HU"
+                      },
+                      "defaultLocale": "en-us",
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": false,
+                      "allowInterruptions": false,
+                      "prompt": "${NumberInput_Prompt_9Jf2HU()}",
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "property": "dialog.datechoice"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "tRGrdn"
+                      },
+                      "property": "dialog.datechoice",
+                      "value": "=dialog.datechoice+3"
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "$kind": "Microsoft.NumberInput",
+                  "$designer": {
+                    "id": "DMgZ59"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${NumberInput_Prompt_DMgZ59()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "property": "dialog.datechoice"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "HxlC1O"
+              },
+              "property": "user.bookingdate",
+              "value": "${dialog.result.content[${dialog.datechoice}].start}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "10jd2N"
+              },
+              "value": "=user.bookingdate"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "PMjfMl"
+              },
+              "value": "= '0000/00/00'"
+            }
+          ],
+          "condition": "dialog.result.statusCode == 200"
+        }
+      ]
+    }
+  ],
+  "generator": "PhoneDialog.lg",
+  "recognizer": "PhoneDialog.lu.qna",
+  "id": "PhoneDialog"
+}

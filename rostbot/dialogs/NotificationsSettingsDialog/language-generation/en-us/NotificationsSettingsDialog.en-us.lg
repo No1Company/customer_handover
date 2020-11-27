@@ -1,0 +1,226 @@
+# AdaptiveCardNotificationSettings()
+[Activity
+    Attachments = ${json(settingnotifications())}
+]
+
+# settingnotifications()
+-```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "actions": [
+        {
+            "type": "Action.ShowCard",
+            "title": "Hantera notifikationer",
+            "style": "positive",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
+            "data": "Skapa ny notifikation",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "size": "default",
+                        "weight": "Bolder",
+                        "text": " Detaljer",
+                        "horizontalAlignment": "Center",
+                        "wrap": true,
+                        "separator": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Välj mätningar",
+                        "size": "Medium",
+                        "wrap": true,
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "Input.ChoiceSet",
+                        "choices": [
+                            {
+                                "title": "Blodtryck",
+                                "value": " Blodtryck"
+                            },
+                            {
+                                "title": "Vikt",
+                                "value": " Vikt"
+                            },
+                            {
+                                "title": "Kroppstemperatur",
+                                "value": " Kroppstemperatur"
+                            }
+                        ],
+                        "placeholder": "Placeholder text",
+                        "style": "expanded",
+                        "id": "notisMeasurments",
+                        "isMultiSelect": true,
+                        "value": ""
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Påminnelse före mätning",
+                        "wrap": true,
+                        "weight": "Bolder",
+                        "size": "Medium"
+                    },
+                    {
+                        "type": "Input.ChoiceSet",
+                        "id": "timeBefore",
+                        "value": "1 timme innan",
+                        "choices": [
+                            {
+                                "title": "1 timme innan",
+                                "value": "1 timme innan"
+                            },
+                            {
+                                "title": "2 timmar innan",
+                                "value": "2 timmar innan"
+                            },
+                            {
+                                "title": "3 timmar innan",
+                                "value": "3 timmar innan"
+                            },
+                            {
+                                "title": "Ingen påminnelse",
+                                "value": "Ingen påminnelse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Påminnelse vid utebliven mätning",
+                        "wrap": true,
+                        "size": "Medium",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "Input.ChoiceSet",
+                        "id": "timeAfter",
+                        "value": "Ingen påminnelse",
+                        "choices": [
+                            {
+                                "title": "1 timme efter",
+                                "value": "1 timme efter"
+                            },
+                            {
+                                "title": "2 timmar efter",
+                                "value": "2 timmar efter"
+                            },
+                            {
+                                "title": "3 timmar efter",
+                                "value": "3 timmar efter"
+                            },
+                            {
+                                "title": "Ingen påminnelse",
+                                "value": "Ingen påminnelse"
+                            }
+                        ]
+                    },
+                    {
+                        "type": "TextBlock",
+                        "size": "Medium",
+                        "weight": "Bolder",
+                        "text": "Notifikation via",
+                        "wrap": true
+                    },
+                    {
+                        "type": "Input.ChoiceSet",
+                        "choices": [
+                            {
+                                "title": "Meddelande",
+                                "value": " Meddelande"
+                            },
+                            {
+                                "title": "Chat",
+                                "value": " Chat"
+                            },
+                            {
+                                "title": "E-mail",
+                                "value": " E-mail"
+                            }
+                        ],
+                        "placeholder": "Placeholder text",
+                        "style": "expanded",
+                        "id": "notisVia",
+                        "isMultiSelect": true
+                    }
+                ],
+                "actions": [
+                    {
+                        "type": "Action.Submit",
+                        "title": "Ny notifikation",
+                        "data": {
+                            "id": "1234567890"
+                        },
+                        "style": "positive",
+                        "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Action.Submit",
+            "data": "Avbryt",
+            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg"
+        }
+    ],
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "Notifikationer",
+            "wrap": true,
+            "horizontalAlignment": "Center",
+            "size": "Medium",
+            "weight": "Bolder",
+            "color": "Accent",
+            "isSubtle": true
+        },
+        {
+            "type": "TextBlock",
+            "text": "Mina notifikationer",
+            "wrap": true,
+            "size": "Medium",
+            "weight": "Bolder"
+        },
+        {
+            "type": "ColumnSet",
+            "bleed": true,
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "FactSet",
+                            "facts": [
+                                {
+                                    "title": "Typ: ",
+                                    "value": "${user.notis.measurments}"
+                                },
+                                {
+                                    "title": "Via: ",
+                                    "value": "${user.notis.via}"
+                                },
+                                {
+                                    "title": "Innan: ",
+                                    "value": "${user.notis.time.before}"
+                                },
+                                {
+                                    "title": "Snooze: ",
+                                    "value": "${user.notis.time.after}"
+                                }
+                            ],
+                            "separator": true,
+                            "height": "stretch"
+                        }
+                    ]
+                }
+            ],
+            "height": "stretch"
+        }
+    ]
+}
+```
+# SendActivity_jHELjD()
+- ${AdaptiveCardNotificationSettings()}

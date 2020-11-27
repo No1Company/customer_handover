@@ -1,0 +1,141 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "NlZnib",
+    "name": "RegisterValueTypeSelection",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "oKhTzU"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "Ybo9oK"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}/user/${user.ehr_id}/available-measurements",
+          "resultProperty": "dialog.resultProperty",
+          "responseType": "json"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "jF9iQH"
+          },
+          "condition": "=dialog.resultProperty.statusCode < 300",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "jh1se7"
+              },
+              "activity": "${SendActivity_jh1se7()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "x09DH5"
+              }
+            }
+          ],
+          "actions": []
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "YzBp5p"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_YzBp5p()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "property": "dialog.registertype",
+          "choices": "=dialog.resultProperty.content.avail_measurements"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "HSb1RU"
+          },
+          "condition": "dialog.registertype",
+          "cases": [
+            {
+              "value": "Blodtryck",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "SayO6L"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "BloodpressureGuideSelect"
+                }
+              ]
+            },
+            {
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "P2CNmU"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "RegisterWeight"
+                }
+              ],
+              "value": "Vikt"
+            },
+            {
+              "value": "Hälsoformulär",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "4XGZvg"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "Forms",
+                  "options": {
+                    "id": "${dialog.resultProperty.content.Halsoformular}"
+                  }
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "FKEaUI"
+              },
+              "activity": "${SendActivity_FKEaUI()}"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "RegisterValueTypeSelection.lg",
+  "recognizer": "RegisterValueTypeSelection.lu.qna",
+  "id": "RegisterValueTypeSelection"
+}

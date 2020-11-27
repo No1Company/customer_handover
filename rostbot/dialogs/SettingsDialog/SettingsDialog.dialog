@@ -1,0 +1,95 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "jpRoNN",
+    "name": "SettingsDialog",
+    "description": "Shows a card with options for what to do next.  Forwards to GuideSelectionDialog and  NotificationsSettingsDialog"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "id": "hgMxpP"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.DeleteProperty",
+          "$designer": {
+            "id": "FzNwOd"
+          },
+          "property": "user.choice"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "12D1pq"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": true,
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "user.choice ",
+          "prompt": "${TextInput_Prompt_12D1pq()}"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "OjOO4K"
+          },
+          "condition": "user.choice",
+          "cases": [
+            {
+              "value": "Notifikationer",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "vOqJax"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "NotificationsSettingsDialog"
+                }
+              ]
+            },
+            {
+              "value": "Chatt"
+            },
+            {
+              "value": "Annat"
+            },
+            {
+              "value": "Guide-inställningar",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "2S0QOh"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "GuideSelectionDialog"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "s1Ofv5"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "SettingsDialog.lg",
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "SettingsDialog"
+}
