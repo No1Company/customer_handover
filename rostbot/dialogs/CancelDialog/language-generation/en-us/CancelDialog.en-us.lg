@@ -15,7 +15,7 @@
       "type": "TextBlock",
       "size": "default",
       "isSubtle": true,
-      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
+      "text": "Vad kan jag hjälpa dig med?",
       "wrap": true,
       "maxLines": 0
       
@@ -24,8 +24,8 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Registrera värden",
-      "data": "Registrera värden"
+      "title": "Utföra mätning",
+      "data": "Utföra mätning"
       
     },
     {
@@ -40,8 +40,8 @@
     },
     {
       "type": "Action.Submit",
-      "title": "Övriga frågor",
-      "data": "Övriga frågor"
+      "title": "Fråga frågor",
+      "data": "Fråga frågor"
     }
   ]
 }
