@@ -14,7 +14,7 @@
             "type": "Action.ShowCard",
             "title": "Hantera notifikationer",
             "style": "positive",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
+            "iconUrl": "https://i.postimg.cc/vHKtKL3V/1.png",
             "data": "Skapa ny notifikation",
             "card": {
                 "type": "AdaptiveCard",
@@ -154,7 +154,7 @@
                             "id": "1234567890"
                         },
                         "style": "positive",
-                        "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg"
+                        "iconUrl": "https://i.postimg.cc/FRJfC8sf/Settings-Dialog-Guide-Settings.png"
                     }
                 ]
             }
@@ -162,7 +162,7 @@
         {
             "type": "Action.Submit",
             "data": "Avbryt",
-            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg"
+            "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png"
         }
     ],
     "body": [
