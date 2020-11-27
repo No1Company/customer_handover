@@ -66,11 +66,11 @@ namespace Microsoft.BotFramework.Composer.CustomAction
             string[] monthsArray = { "januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december" };
             month_string = month_string.ToLower();
 
-            for (int i = 0; i <= monthsArray.Length; i++)
+            for (int i = 0; i < monthsArray.Length; i++)
             {
                 if (month_string == monthsArray[i])
                 {
-                    month = i.ToString();
+                    month = (i + 1).ToString();
                     if (month.Length == 1)
                     {
                         month = "0" + month;

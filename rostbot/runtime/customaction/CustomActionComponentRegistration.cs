@@ -15,6 +15,7 @@ namespace Microsoft.BotFramework.Composer.CustomAction
             yield return new DeclarativeType<MultiplyDialog>(MultiplyDialog.Kind);
             yield return new DeclarativeType<AddString>(AddString.Kind);
             yield return new DeclarativeType<SimpleDateFormat>(SimpleDateFormat.Kind);
+            yield return new DeclarativeType<SubstringDate>(SubstringDate.Kind);
         }
 
         public IEnumerable<JsonConverter> GetConverters(ResourceExplorer resourceExplorer, SourceContext sourceContext)

@@ -42,6 +42,21 @@
           "property": "dialog.date"
         },
         {
+          "$kind": "SimpleDateFormat",
+          "$designer": {
+            "id": "RViWz7"
+          },
+          "simpledate": "${dialog.date}",
+          "dateresult": "dialog.convertedDate"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "tntYE2"
+          },
+          "activity": "${SendActivity_tntYE2()}"
+        },
+        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "id": "qJ83bX"
@@ -51,18 +66,19 @@
           "itemsProperty": "dialog.resultJSON.content",
           "actions": [
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "SubstringDate",
               "$designer": {
-                "id": "ZEuhqI"
+                "id": "4mzqRn"
               },
-              "activity": "${SendActivity_ZEuhqI()}"
+              "fulldate": "${dialog.foreach.value[\"start\"]}",
+              "dateresult": "dialog.substringDate"
             },
             {
               "$kind": "Microsoft.IfCondition",
               "$designer": {
                 "id": "xqwcQ2"
               },
-              "condition": "dialog.date == dialog.foreach.value[\"start\"]",
+              "condition": "dialog.convertedDate == dialog.substringDate",
               "actions": [
                 {
                   "$kind": "Microsoft.ChoiceInput",
