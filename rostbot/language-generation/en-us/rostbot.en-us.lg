@@ -68,7 +68,7 @@
             "type": "TextBlock",
             "size": "default",
             "isSubtle": false,
-            "text": "Välkommen till Region Östergötlands chat-bot. Mitt namn är Number One Bot och jag finns här för att hjälpa dig",
+            "text": "Välkommen till Region Östergötlands chat-bot. Mitt namn är Number One Bot och jag finns här för att hjälpa dig.",
             "wrap": true,
             "maxLines": 0
         },
