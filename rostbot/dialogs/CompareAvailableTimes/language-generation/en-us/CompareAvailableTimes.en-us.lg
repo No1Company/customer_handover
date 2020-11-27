@@ -1,8 +1,13 @@
 [import](common.lg)
 
-# TextInput_Prompt_Snm56F()
-- Skriv in tiden. Fungerar: 07/12/20 14:30
 # ChoiceInput_Prompt_hBTB0F()
-- Det fanns en tid vid ditt efterfrågade datum ${dialog.date}, vill du boka den? 
+- Det fanns en tid vid ditt efterfrågade datum ${dialog.foreach.value["start"]}, vill du boka den? 
 # SendActivity_X784TZ()
 - Det fanns inga tider på ditt valda datum, men du kan välja bland följande närliggande tider. 
+# TextInput_Prompt_fhhvXl()
+- Vilket datum fungerar för dig? Du kan skriva datumet i formatet "3 december".
+
+
+
+# SendActivity_tntYE2()
+- ${dialog.convertedDate}
