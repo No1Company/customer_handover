@@ -17,7 +17,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.0",
+  "version": "1.2",
   "body": [
          {
       "type": "TextBlock",
@@ -32,24 +32,43 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Registrera värden",
-      "data": "Registrera värden"
-      
+      "title": "Utföra mätning",
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Utföra mätning"
+        }
+      } 
     },
     {
       "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "data": "Ändra inställningar"
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Utföra mätning"
+        }
+      } 
     },
     {
       "type": "Action.Submit",
       "title": "Boka konsultation",
-      "data": "Boka konsultation"
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Boka konsultation"
+        }
+      } 
     },
     {
       "type": "Action.Submit",
-      "title": "Övriga frågor",
-      "data": "Övriga frågor"
+      "title": "Fråga frågor",
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Fråga frågor"
+        }
+      } 
     }
   ]
 }
@@ -57,12 +76,12 @@
 
 
 # TextInput_Prompt_h5Ktbw()
-[SigninCard
+[HeroCard
     text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
     buttons = Ja  | Nej
     ]
 # TextInput_Prompt_ouIfx9()
-[SigninCard
+[HeroCard
     text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
     buttons= Återgå till start | Registrera ytterligare värden
     ]
@@ -108,11 +127,18 @@
         }
     ],
     "actions": [
-        {
-            "type": "Action.Submit",
-            "title": "Skicka",
-            "style": "positive"
+         {
+      "type": "Action.Submit",
+      "title": "Skicka",
+      "style": "positive",
+     "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Skicka"
         }
+      } 
+    }       
+        
     ]
 }
 ```
@@ -120,10 +146,13 @@
 # SendActivity_DYsQGv()
  -${AdaptiveCardBloodPressureNoGuide()}
 # TextInput_Prompt_A12pzQ()
-[SigninCard
+[HeroCard
     text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
     buttons= Avsluta mätning
     ]
+
+
+
 
 # SendActivity_vn5ACr()
 - Något gick fel, vänligen testa igen senare!

@@ -9,7 +9,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.0",
+  "version": "1.2",
   "body": [
          {
       "type": "TextBlock",
@@ -25,23 +25,42 @@
     {
       "type": "Action.Submit",
       "title": "Utföra mätning",
-      "data": "Utföra mätning"
-      
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Utföra mätning"
+        }
+      } 
     },
     {
       "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "data": "Ändra inställningar"
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Utföra mätning"
+        }
+      } 
     },
     {
       "type": "Action.Submit",
       "title": "Boka konsultation",
-      "data": "Boka konsultation"
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Boka konsultation"
+        }
+      } 
     },
     {
       "type": "Action.Submit",
       "title": "Fråga frågor",
-      "data": "Fråga frågor"
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Fråga frågor"
+        }
+      } 
     }
   ]
 }

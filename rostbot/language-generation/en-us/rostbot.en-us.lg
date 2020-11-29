@@ -81,27 +81,47 @@
             "maxLines": 0
         }
     ],
-    "actions": [
-        {
-            "type": "Action.Submit",
-            "title": "Utföra mätning",
-            "data": "Utföra mätning"
-        },
-        {
-            "type": "Action.Submit",
-            "title": "Ändra inställningar",
-            "data": "Ändra inställningar"
-        },
-        {
-            "type": "Action.Submit",
-            "title": "Boka konsultation",
-            "data": "Boka konsultation"
-        },
-        {
-            "type": "Action.Submit",
-            "title": "Fråga frågor",
-            "data": "Fråga frågor"
+     "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Utföra mätning",
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Utföra mätning"
         }
+      } 
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Ändra inställningar",
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Utföra mätning"
+        }
+      } 
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Boka konsultation",
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Boka konsultation"
+        }
+      } 
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Fråga frågor",
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Fråga frågor"
+        }
+      } 
+    }
     ]
 }
 ```
@@ -127,27 +147,46 @@
       
     }
   ],
-  "actions": [
+   "actions": [
     {
       "type": "Action.Submit",
       "title": "Utföra mätning",
-      "data": "Utföra mätning"
-      
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Utföra mätning"
+        }
+      } 
     },
     {
       "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "data": "Ändra inställningar"
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Utföra mätning"
+        }
+      } 
     },
     {
       "type": "Action.Submit",
       "title": "Boka konsultation",
-      "data": "Boka konsultation"
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Boka konsultation"
+        }
+      } 
     },
     {
       "type": "Action.Submit",
       "title": "Fråga frågor",
-      "data": "Fråga frågor"
+      "data": {
+      "msteams": {
+      "type": "imBack",
+      "value": "Fråga frågor"
+        }
+      } 
     }
   ]
 }
