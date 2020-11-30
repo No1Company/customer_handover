@@ -128,14 +128,6 @@
               "activity": "${SendActivity_R0nvyK()}"
             }
           ]
-        },
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "kOQg8Z"
-          },
-          "activityProcessed": true,
-          "dialog": "RestartPrompt"
         }
       ]
     }
