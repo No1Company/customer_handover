@@ -121,17 +121,11 @@
         }
     ],
     "actions": [
-         {
-      "type": "Action.Submit",
-      "title": "Skicka",
-      "style": "positive",
-     "data": {
-      "msteams": {
-      "type": "imBack",
-      "value": "Skicka"
-        }
-      } 
-    }       
+      {
+        "type": "Action.Submit",
+        "title": "Skicka",
+        "style": "positive",
+      }       
         
     ]
 }
