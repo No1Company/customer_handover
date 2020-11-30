@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request
 from datetime import datetime as d
-import pickle
 import os
 import platform
 
@@ -13,27 +12,6 @@ from bot_backend.blueprints import openehr, user, measurements
 app.register_blueprint(openehr.openehr)
 app.register_blueprint(user.user)
 app.register_blueprint(measurements.measurements)
-
-
-cwd_data_path = os.getcwd()
-if platform.system() == 'Windows':
-    DATA_PATH = os.path.abspath(cwd_data_path + "\\bot_backend\data\data.txt")
-else: 
-    DATA_PATH = os.path.abspath(cwd_data_path + "/bot_backend/data/data.txt")
-
-def save_data(data, data_path):
-    file = open(data_path, 'wb')
-    pickle.dump(data, file)
-    file.close()
-
-def load_data(data_path):
-    
-    try: 
-        file = pickle.load(open(data_path, 'rb'))
-    except EOFError:
-        file = []
-    
-    return file
 
 @app.route('/')
 def main():
@@ -130,19 +108,16 @@ def curr_notifications():
 current_bookings = [
         {
             "bookingdate" : "",
-            "type" : ""
+            "type" : "",
+            "free-text" : ""
         }
     ]
 
 @app.route('/current-bookings', methods=['GET', 'POST'])
 def all_current_bookings():
-    
-    current_bookings = load_data(DATA_PATH)
 
     if request.method == "POST":
         current_bookings.append(request.get_json())
-        save_data(current_bookings, DATA_PATH)
-        print(current_bookings)
         return "200"
 
     elif request.method == "GET":
@@ -151,14 +126,11 @@ def all_current_bookings():
 @app.route('/current-bookings/<int:booking_id>', methods=['GET', 'DELETE'])
 def specific_current_booking(booking_id):
 
-    current_bookings = load_data(DATA_PATH)
-
     if request.method == "GET":
         return jsonify(current_bookings[booking_id])
 
     elif request.method == "DELETE":
         current_bookings.pop(booking_id)
-        save_data(current_bookings, DATA_PATH)
         return "200"
         
     
