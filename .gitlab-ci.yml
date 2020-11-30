@@ -8,6 +8,8 @@ build-bot-image: #used to build the bot's docker image
   stage: build-images
   image: docker.io/buildah/buildah
   needs: []
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "adaptivecards-to-match-teams-syntax"' #Change to master
   script:
     - export _BUILDAH_STARTED_IN_USERNS=''
     - export BUILDAH_ISOLATION=chroot
@@ -21,6 +23,8 @@ build-flask-image:
   stage: build-images
   image: docker.io/buildah/buildah
   needs: []
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "adaptivecards-to-match-teams-syntax"' #Change to master
   script:
     - export _BUILDAH_STARTED_IN_USERNS=''
     - export BUILDAH_ISOLATION=chroot
