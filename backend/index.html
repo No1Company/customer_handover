@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script
+      crossorigin="anonymous"
+      src="https://cdn.botframework.com/botframework-webchat/latest/webchat.js"
+    ></script>
+    <style>
+      html,
+      body {
+         height: 100%;
+      }
+
+      body {
+        margin: 0;
+      }
+
+      #webchat {
+        height: 100%;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="webchat" role="main"></div>
+    <script>
+      window.WebChat.renderWebChat(
+        {
+          directLine: window.WebChat.createDirectLine({
+            token: 'ew0KICAiYWxnIjogIlJTMjU2IiwNCiAgImtpZCI6ICJsY0oxTXFpNkdKYXdCZEw5Y0dieEt5S1R6OE0iLA0KICAieDV0IjogImxjSjFNcWk2R0phd0JkTDljR2J4S3lLVHo4TSIsDQogICJ0eXAiOiAiSldUIg0KfQ.ew0KICAiYm90IjogInJvc3Rib3QiLA0KICAic2l0ZSI6ICJvckFhSjNVYVVaVSIsDQogICJjb252IjogIkNWbTR3NlFWbmZXQk9nNkFKME5JUEUtbSIsDQogICJ1c2VyIjogImRsXzEyMyIsDQogICJ1c2VybmFtZSI6ICJzdHJpbmciLA0KICAib3JpZ2luIjogWw0KICAgICJodHRwOi8vbG9jYWxob3N0IiwNCiAgICAiaHR0cHM6Ly90ZGRjODgtY29tcGFueS0xLTIwMjAua3ViZXJuZXRlcy1wdWJsaWMuaXQubGl1LnNlLyIsDQogICAgImh0dHBzOi8vcG9ydGFsLmF6dXJlLmNvbSINCiAgXSwNCiAgIm5iZiI6IDE2MDYyNDM4MDEsDQogICJleHAiOiAxNjA2MjQ3NDAxLA0KICAiaXNzIjogImh0dHBzOi8vZGlyZWN0bGluZS5ib3RmcmFtZXdvcmsuY29tLyIsDQogICJhdWQiOiAiaHR0cHM6Ly9kaXJlY3RsaW5lLmJvdGZyYW1ld29yay5jb20vIg0KfQ.THiga2gTmIzeWdXIf_UiAqsOWvAx_dvqedq2JSqD1xaRiJKo0oqsbauxl0y2TRNMgMfvp25RuvwZEAoL1Vv1GJy7DF6sx3ritOhFc0j2I_xa93YHPY87uqYw28r_aGKU1ncZewAJaEp09JIGTTtWhRZ1eyaQZP5fS5szFIRhLfC02yhwa7c-x8KGl4uJTv83zSQd80jb7HwktxodVWqPwYL0xEcG1l9rNXeXAngYILZGMa-5AhidLNp5U-Kw46TbiaWibnQOuwRXZidKWnxzfp2nt4RcL0MKoPIFudUDOkzB9abAhdRb4M9aEu-7COrGR3sRUiwQFyn9J7hMtEBcTw'
+          }),
+          userID: 'dl_123',
+          username: 'Web Chat User',
+          locale: 'en-US'
+        },
+        document.getElementById('webchat')
+      );
+    </script>
+  </body>
+</html>

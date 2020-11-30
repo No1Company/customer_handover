@@ -21,8 +21,8 @@
           "$designer": {
             "id": "abeYLt"
           },
-          "value": "http://localhost:5020",
-          "property": "conversation.req_url"
+          "property": "conversation.req_url",
+          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se"
         },
         {
           "$kind": "Microsoft.Foreach",
@@ -38,7 +38,7 @@
                 "id": "641773",
                 "name": "Branch: if/else"
               },
-              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id)",
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id) ",
               "actions": [
                 {
                   "$kind": "Microsoft.IfCondition",
@@ -65,7 +65,8 @@
                   },
                   "activity": "${SendActivity_g9skpW()}"
                 }
-              ]
+              ],
+              "elseActions": []
             }
           ],
           "value": "dialog.foreach.value",
@@ -249,6 +250,39 @@
           "dialog": "StartDialog"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "0QFJzd",
+        "name": "ResetConversation"
+      },
+      "intent": "ResetConversation",
+      "actions": [
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "boiWh9"
+          },
+          "property": "conversation.req_url",
+          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "GEeIzT"
+          },
+          "activityProcessed": true,
+          "dialog": "FetchUserData"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "EJYcz7"
+          },
+          "activity": "${SendActivity_EJYcz7()}"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -292,6 +326,10 @@
       {
         "intent": "Restart",
         "pattern": "Starta om"
+      },
+      {
+        "intent": "ResetConversation",
+        "pattern": "återställ"
       }
     ]
   }
