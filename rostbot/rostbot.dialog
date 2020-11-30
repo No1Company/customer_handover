@@ -249,6 +249,37 @@
           "dialog": "StartDialog"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "jtqZrj",
+        "name": "Hello"
+      },
+      "intent": "Hello",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "EwFxwt"
+          },
+          "activity": "${SendActivity_EwFxwt()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "3vuWML"
+          },
+          "activity": "${SendActivity_3vuWML()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "VzzqhI"
+          },
+          "activityProcessed": true
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -292,6 +323,10 @@
       {
         "intent": "Restart",
         "pattern": "Starta om"
+      },
+      {
+        "intent": "Hello",
+        "pattern": "Hej"
       }
     ]
   }
