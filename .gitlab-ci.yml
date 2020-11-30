@@ -34,7 +34,6 @@ build-flask-image:
 deploy-bot:
   environment: 'production'
   needs: 
-    - build-flask-image
     - build-bot-image
   rules: 
    - if: '$CI_COMMIT_BRANCH == "adaptivecards-to-match-teams-syntax"' #Change to master
@@ -68,7 +67,7 @@ deploy-ingress:
     - deploy-bot
     - deploy-flask
   rules: 
-   - if: '$CI_COMMIT_BRANCH == "adaptivecards-to-match-teams-syntax"' #Change to master
+   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
 
   stage: ingress
   image: lachlanevenson/k8s-kubectl
