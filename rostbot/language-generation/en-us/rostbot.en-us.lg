@@ -98,7 +98,7 @@
       "data": {
       "msteams": {
       "type": "imBack",
-      "value": "Utföra mätning"
+      "value": "Ändra inställningar"
         }
       } 
     },
@@ -164,7 +164,7 @@
       "data": {
       "msteams": {
       "type": "imBack",
-      "value": "Utföra mätning"
+      "value": "Ändra inställningar"
         }
       } 
     },
