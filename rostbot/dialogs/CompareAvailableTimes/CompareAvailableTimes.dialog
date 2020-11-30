@@ -50,13 +50,6 @@
           "dateresult": "dialog.convertedDate"
         },
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "tntYE2"
-          },
-          "activity": "${SendActivity_tntYE2()}"
-        },
-        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "id": "qJ83bX"
