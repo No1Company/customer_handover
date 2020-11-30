@@ -37,7 +37,6 @@
    }
 }
 ```
-
 # AdaptiveCard()
 [Activity
     Attachments = ${json(adaptivecardjson())}
@@ -156,3 +155,5 @@
  -${AdaptiveCard()}
 # SendActivity_73zBqG()
 -
+# SendActivity_3vuWML()
+ -${AdaptiveCard()}
