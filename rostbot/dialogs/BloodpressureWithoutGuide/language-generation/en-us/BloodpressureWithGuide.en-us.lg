@@ -73,8 +73,6 @@
   ]
 }
 ```
-
-
 # TextInput_Prompt_h5Ktbw()
 [HeroCard
     text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
@@ -85,10 +83,6 @@
     text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
     buttons= Återgå till start | Registrera ytterligare värden
     ]
-
-
-
-
 # bloodpressurecardjson()
 -```
 
@@ -142,7 +136,6 @@
     ]
 }
 ```
-
 # SendActivity_DYsQGv()
  -${AdaptiveCardBloodPressureNoGuide()}
 # TextInput_Prompt_A12pzQ()

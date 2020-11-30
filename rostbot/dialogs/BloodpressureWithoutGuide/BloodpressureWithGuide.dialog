@@ -122,11 +122,11 @@
               "assignments": [
                 {
                   "property": "user.sysvalue",
-                  "value": "=null"
+                  "value": ""
                 },
                 {
                   "property": "user.diavalue",
-                  "value": "=null"
+                  "value": ""
                 }
               ]
             },
