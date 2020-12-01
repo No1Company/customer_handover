@@ -260,19 +260,33 @@
       "intent": "ResetConversation",
       "actions": [
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "yowPcE"
+          },
+          "activity": "${SendActivity_yowPcE()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "yu5r4B"
+          },
+          "activityProcessed": true
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Pxz3Na"
+          },
+          "activity": "${SendActivity_Pxz3Na()}"
+        },
+        {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
             "id": "boiWh9"
           },
           "property": "conversation.req_url",
           "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "YJnH5i"
-          },
-          "activityProcessed": true
         },
         {
           "$kind": "Microsoft.BeginDialog",
