@@ -262,20 +262,6 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "yowPcE"
-          },
-          "activity": "${SendActivity_yowPcE()}"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "yu5r4B"
-          },
-          "activityProcessed": true
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
             "id": "Pxz3Na"
           },
           "activity": "${SendActivity_Pxz3Na()}"
