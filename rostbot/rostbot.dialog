@@ -236,24 +236,6 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "xUt0ey",
-        "name": "Restart"
-      },
-      "intent": "Restart",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "PQuqIA"
-          },
-          "activityProcessed": true,
-          "dialog": "StartDialog"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
         "id": "0QFJzd",
         "name": "ResetConversation"
       },
@@ -322,10 +304,6 @@
       {
         "intent": "Questions",
         "pattern": "Fråga frågor"
-      },
-      {
-        "intent": "Restart",
-        "pattern": "Starta om"
       },
       {
         "intent": "ResetConversation",
