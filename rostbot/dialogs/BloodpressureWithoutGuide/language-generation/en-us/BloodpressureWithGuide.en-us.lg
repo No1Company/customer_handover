@@ -125,6 +125,7 @@
         "type": "Action.Submit",
         "title": "Skicka",
         "style": "positive",
+        "value": "Skicka"
       }       
         
     ]
