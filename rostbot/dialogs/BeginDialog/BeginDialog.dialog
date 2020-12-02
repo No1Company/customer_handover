@@ -1,0 +1,85 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "BGaA9H",
+    "name": "BeginDialog",
+    "description": "Repeats the Greeting trigger"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "J2bfgG"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "li93LX"
+          },
+          "activityProcessed": true
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "4gbWdH"
+          },
+          "property": "conversation.req_url",
+          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se"
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "H8kiwR"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "turn.Activity.membersAdded",
+          "actions": [
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "mIWFvR"
+              },
+              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id) ",
+              "actions": [
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "thDuDt"
+                  },
+                  "condition": "user.has_fetched_data",
+                  "actions": [],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "94dEPR"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "FetchUserData"
+                    }
+                  ]
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "5POzBe"
+                  },
+                  "activity": "${SendActivity_5POzBe()}"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "BeginDialog.lg",
+  "recognizer": "BeginDialog.lu.qna",
+  "id": "BeginDialog"
+}

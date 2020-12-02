@@ -290,6 +290,55 @@
           "activity": "${SendActivity_EJYcz7()}"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "Wa53aY",
+        "name": "RemoveDialogs"
+      },
+      "intent": "RemoveDialogs",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "rq3sWo"
+          },
+          "activity": "${SendActivity_rq3sWo()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "GaKIzm"
+          },
+          "activityProcessed": true,
+          "dialog": "BeginDialog"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "t5b25e",
+        "name": "SubstituteThisDialog"
+      },
+      "intent": "SubstituteThisDialog",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "MPZYcG"
+          },
+          "activity": "${SendActivity_MPZYcG()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "kxFTRk"
+          },
+          "activityProcessed": true
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -337,6 +386,14 @@
       {
         "intent": "ResetConversation",
         "pattern": "återställ"
+      },
+      {
+        "intent": "RemoveDialogs",
+        "pattern": "ny profil"
+      },
+      {
+        "intent": "SubstituteThisDialog",
+        "pattern": "ersätt"
       }
     ]
   }
