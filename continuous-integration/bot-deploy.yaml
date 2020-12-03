@@ -23,7 +23,6 @@ spec:
       containers:
         - name: bot
           image: gitlab.liu.se:5000/tddc88-company-1-2020/deploy/rostbot:latest
-          imagePullPolicy: Always
           env:
           ports:
             - containerPort: 80
