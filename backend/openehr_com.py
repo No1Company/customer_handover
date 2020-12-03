@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+import sys
 from urllib.parse import quote
 
 
@@ -11,8 +12,16 @@ class NetworkError(Exception):
 baseUrl = 'https://rest.ehrscape.com/rest/v1'
 queryUrl = baseUrl + '/query'
 
-loginfile = open(os.path.join("..", "..", 'login.txt'))
-authorization = loginfile.read().split('\n')[0]
+try:
+    loginfile = open(os.path.join("..","..",'login.txt'))
+    authorization = loginfile.read().split('\n')[0]
+except FileNotFoundError:
+    print("Login file not found, looking for environment variable to use instead")
+    
+    ehr = str(os.environ['ehr_pass'])
+    print("Using EHR password of length", len(ehr))
+    authorization = "Basic " + ehr
+
 authorization_header = {'Authorization': authorization}
 
 
@@ -38,6 +47,7 @@ def generate_fake_user():
         raise NetworkError("fejka.nu unavailable")
 
     req = requests.post(baseUrl + '/ehr', headers=authorization_header)
+    print("sent a request to ehr with headers", authorization_header)
     if req.status_code < 300:
         partyData['partyAdditionalInfo'] = [
             {
