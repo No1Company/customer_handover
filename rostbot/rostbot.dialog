@@ -242,6 +242,13 @@
       "intent": "ResetConversation",
       "actions": [
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "mGOL8E"
+          },
+          "activity": "${SendActivity_mGOL8E()}"
+        },
+        {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
             "id": "boiWh9"
