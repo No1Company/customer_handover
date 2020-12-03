@@ -47,12 +47,7 @@
          {
             "type": "Action.Submit",
             "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
-            "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Avbryt"
-          }
-      }
+            "data": "Avbryt"
         }
     ]
 }
@@ -83,43 +78,23 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Utföra mätning",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Utföra mätning"
-          }
-      }
+      "title": "Registrera värden",
+      "data": "Registrera värden"
     },
     {
       "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Ändra inställningar"
-          }
-      }
+      "data": "Ändra inställningar"
     },
     {
       "type": "Action.Submit",
       "title": "Boka konsultation",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Boka konsultation"
-          }
-      }
+      "data": "Boka konsultation"
     },
     {
       "type": "Action.Submit",
-      "title": "Fråga frågor",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Fråga frågor"
-          }
-      }
+      "title": "Övriga frågor",
+      "data": "Övriga frågor"
     }
   ]
 }

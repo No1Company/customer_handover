@@ -16,23 +16,13 @@
             "type": "Action.Submit",
             "title": "Notifikationer",
             "iconUrl": "https://i.postimg.cc/J7HTLzdg/4.png",
-            "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Notifikationer"
-            }
-            },
+            "data": "Notifikationer",
             "version": "1.2"
         },
         {
             "type": "Action.Submit",
             "title": "Guide-inställningar",
-            "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Guide-inställningar"
-            }
-            },
+            "data": "Guide-inställningar",
             "iconUrl": "https://i.postimg.cc/FRJfC8sf/Settings-Dialog-Guide-Settings.png",
            
         },
@@ -40,22 +30,12 @@
             "type": "Action.Submit",
             "title": "Annat",
             "iconUrl": "https://i.postimg.cc/Z5s3nrWL/Settings-Dialog-Other.png",
-            "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Annat"
-            }
-            }
+            "data": "Annat"
         },
         {
             "type": "Action.Submit",
             "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png",
-            "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Avbryt"
-            }
-            }
+            "data": "Avbryt"
         }
     ],
     "body": [

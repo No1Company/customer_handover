@@ -25,43 +25,23 @@
     {
       "type": "Action.Submit",
       "title": "Utföra mätning",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Utföra mätning"
-          }
-      }
+      "data": "Utföra mätning"
       
     },
     {
       "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Ändra inställningar"
-          }
-      }
+      "data": "Ändra inställningar"
     },
     {
       "type": "Action.Submit",
       "title": "Boka konsultation",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Boka konsultation"
-          }
-      }
+      "data": "Boka konsultation"
     },
     {
       "type": "Action.Submit",
       "title": "Fråga frågor",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Fråga frågor"
-          }
-      }
+      "data": "Fråga frågor"
     }
   ]
 }

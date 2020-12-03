@@ -19,24 +19,14 @@
             "type": "Action.Submit",
             "title": "Notiser",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg",
-            "data": {
-                "msteams": {
-                    "type": "imBack",
-                    "value": "Notiser"
-                }
-            }
+            "data": "Notiser",
             "version": "1.2"
         },
         {
             "type": "Action.Submit",
             "title": "Chatt",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/61/61559.svg",
-            "data": {
-                "msteams": {
-                    "type": "imBack",
-                    "value": "Chatt"
-                }
-            }
+            "data": "Chatt"
         },
         {
             "type": "Action.ShowCard",
@@ -81,23 +71,12 @@
             "type": "Action.Submit",
             "title": "Annat",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/0/859.svg",
-            "data": {
-                "msteams": {
-                    "type": "imBack",
-                    "value": "Annat"
-                }
-            }
+            "data": "Annat"
         },
         {
             "type": "Action.Submit",
-            "title": "Avbryt",
             "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
-            "data": {
-                "msteams": {
-                    "type": "imBack",
-                    "value": "Avbryt"
-                }
-            }
+            "data": "Avbryt"
         }
     ],
     "body": [
@@ -132,12 +111,7 @@
             "title": "Hantera notiser",
             "style": "positive",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
-            "data": {
-                "msteams": {
-                    "type": "imBack",
-                    "value": "Skapa ny notis"
-                }
-            }
+            "data": "Skapa ny notis",
             "card": {
                 "type": "AdaptiveCard",
                 "body": [
@@ -292,12 +266,7 @@
         },
         {
             "type": "Action.Submit",
-            "data": {
-                "msteams": {
-                    "type": "imBack",
-                    "value": "Avbryt"
-                }
-            }
+            "data": "Avbryt",
             "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg"
         }
     ],
