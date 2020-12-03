@@ -149,7 +149,12 @@
         },
         {
             "type": "Action.Submit",
-            "data": "Avbryt",
+            "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Avbryt"
+            }
+            },
             "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png"
         }
     ]

@@ -15,7 +15,12 @@
             "title": "Hantera notifikationer",
             "style": "positive",
             "iconUrl": "https://i.postimg.cc/vHKtKL3V/1.png",
-            "data": "Skapa ny notifikation",
+            "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Skapa ny notifikation"
+            }
+            },
             "card": {
                 "type": "AdaptiveCard",
                 "body": [
@@ -152,6 +157,7 @@
                         "title": "Ny notifikation",
                         "data": {
                             "id": "1234567890"
+                            }
                         },
                         "style": "positive",
                         "iconUrl": "https://i.postimg.cc/FRJfC8sf/Settings-Dialog-Guide-Settings.png"
@@ -161,7 +167,12 @@
         },
         {
             "type": "Action.Submit",
-            "data": "Avbryt",
+            "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Avbryt"
+          }
+      },
             "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png"
         }
     ],

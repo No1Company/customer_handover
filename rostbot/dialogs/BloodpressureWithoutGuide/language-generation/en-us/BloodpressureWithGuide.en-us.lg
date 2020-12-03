@@ -32,24 +32,43 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Registrera värden",
-      "data": "Registrera värden"
-      
+      "title": "Utföra mätning",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Utföra mätning"
+          }
+      }
     },
     {
       "type": "Action.Submit",
       "title": "Ändra inställningar",
-      "data": "Ändra inställningar"
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Ändra inställningar"
+          }
+      }
     },
     {
       "type": "Action.Submit",
       "title": "Boka konsultation",
-      "data": "Boka konsultation"
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Boka konsultation"
+          }
+      }
     },
     {
       "type": "Action.Submit",
-      "title": "Övriga frågor",
-      "data": "Övriga frågor"
+      "title": "Fråga frågor",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Fråga frågor"
+          }
+      }
     }
   ]
 }
