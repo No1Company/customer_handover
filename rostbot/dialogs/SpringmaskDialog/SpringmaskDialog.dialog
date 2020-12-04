@@ -114,6 +114,65 @@
                   },
                   "activityProcessed": true,
                   "dialog": "SpringmaskLinks"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "qSIxzC"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_qSIxzC()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "property": "dialog.newChoice"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "vhM3BM"
+                  },
+                  "condition": "=dialog.newChoice == Ja",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "4FZMpV"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "mbX0Av"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "SymptomsCheckDialog"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "KKaGag"
+                      },
+                      "property": "dialog.newChoice"
+                    }
+                  ]
                 }
               ]
             }

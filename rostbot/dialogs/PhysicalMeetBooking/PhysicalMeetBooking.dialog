@@ -19,7 +19,7 @@
         {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "LiS2Dk"
+            "id": "hkJUCw"
           },
           "method": "GET",
           "url": "${conversation.req_url}/available-times",
