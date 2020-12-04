@@ -46,7 +46,7 @@
                 "id": "TookO7"
               },
               "activityProcessed": true,
-              "dialog": "StartDialog"
+              "dialog": "CancelMeasurment"
             }
           ]
         },
@@ -71,9 +71,24 @@
                 "id": "JfguDJ"
               },
               "activityProcessed": true,
-              "dialog": "StartDialog"
+              "dialog": "CancelMeasurment"
             }
           ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "59SLAM"
+          },
+          "activity": "${SendActivity_59SLAM()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "NJ0Blv"
+          },
+          "activityProcessed": true,
+          "dialog": "CancelMeasurment"
         },
         {
           "$kind": "Microsoft.ChoiceInput",

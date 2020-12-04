@@ -3,7 +3,7 @@
 # SendActivity_SafFZO()
 - ${dialog.form.instructions}
 # SendActivity_3GzdLS()
--Tack för dina svar! Dom har nu registrerats.
+-Tack för dina svar! De har nu registrerats.
 # SendActivity_vZ8nnX()
 - Det gick inte att hämta formuläret från servern. Vänligen testa igen senare. Felkod: ${dialog.resultProperty}
 # SendActivity_tuw3B6()
