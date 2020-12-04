@@ -228,7 +228,7 @@
             "id": "01lbaR"
           },
           "activityProcessed": true,
-          "dialog": "SymptomsCheckDialog"
+          "dialog": "CustomActionTest"
         }
       ]
     },
@@ -247,30 +247,6 @@
           },
           "activityProcessed": true,
           "dialog": "StartDialog"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "jtqZrj",
-        "name": "Hello"
-      },
-      "intent": "Hello",
-      "actions": [
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "3vuWML"
-          },
-          "activity": "${SendActivity_3vuWML()}"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "VzzqhI"
-          },
-          "activityProcessed": true
         }
       ]
     }
@@ -316,10 +292,6 @@
       {
         "intent": "Restart",
         "pattern": "Starta om"
-      },
-      {
-        "intent": "Hello",
-        "pattern": "Hej"
       }
     ]
   }
