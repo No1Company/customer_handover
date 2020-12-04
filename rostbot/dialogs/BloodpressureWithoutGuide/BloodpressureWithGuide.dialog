@@ -148,6 +148,14 @@
           ]
         },
         {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "KQ1rII"
+          },
+          "activityProcessed": true,
+          "dialog": "FinishedMeasurementDialog"
+        },
+        {
           "$kind": "Microsoft.TextInput",
           "$designer": {
             "id": "ouIfx9"

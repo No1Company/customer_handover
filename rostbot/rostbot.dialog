@@ -151,6 +151,65 @@
       "intent": "Register-measurement",
       "actions": [
         {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "NqPwoC"
+          },
+          "url": "${conversation.req_url}/user/${user.ehr_id}/available-measurements",
+          "method": "GET",
+          "responseType": "json",
+          "resultProperty": "dialog.resultProperty"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "35BUZd"
+          },
+          "condition": "=dialog.resultProperty.statusCode < 300",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "qzdt71"
+              },
+              "activity": "${SendActivity_qzdt71()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "vFacg9"
+              },
+              "activityProcessed": true,
+              "dialog": "CancelMeasurment"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "9aYph0"
+          },
+          "condition": "=dialog.resultProperty.content.avail_measurements != []",
+          "actions": [],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "8wTgTi"
+              },
+              "activity": "${SendActivity_8wTgTi()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "D9E3bL"
+              },
+              "activityProcessed": true,
+              "dialog": "CancelMeasurment"
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
             "id": "NOVnk5"
