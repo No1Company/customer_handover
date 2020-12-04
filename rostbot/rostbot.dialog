@@ -332,6 +332,60 @@
           "activityProcessed": true
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "EiPejW",
+        "name": "StartRegisterBloodPressure"
+      },
+      "intent": "StartRegisterBloodPressure",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "njp4NS"
+          },
+          "activityProcessed": true,
+          "dialog": "BloodpressureGuideSelect"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "cwkJFp",
+        "name": "StartRegisterWeight"
+      },
+      "intent": "StartRegisterWeight",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "l3APgE"
+          },
+          "activityProcessed": true,
+          "dialog": "RegisterWeight"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "7HVzYo",
+        "name": "StartForms"
+      },
+      "intent": "StartForms",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "vNKTqG"
+          },
+          "activityProcessed": true,
+          "dialog": "Forms"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -379,6 +433,18 @@
       {
         "intent": "Hello",
         "pattern": "Hej"
+      },
+      {
+        "intent": "StartRegisterBloodPressure",
+        "pattern": "Jag vill registrera mitt blodtryck"
+      },
+      {
+        "intent": "StartRegisterWeight",
+        "pattern": "Jag vill registrera min vikt"
+      },
+      {
+        "intent": "StartForms",
+        "pattern": "Jag vill registrera mitt hälsoformulär"
       }
     ]
   }
