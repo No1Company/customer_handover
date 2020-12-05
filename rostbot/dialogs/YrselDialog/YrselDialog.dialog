@@ -82,11 +82,71 @@
                   "dialog": "YrselLinks"
                 },
                 {
-                  "$kind": "Microsoft.SendActivity",
+                  "$kind": "Microsoft.ChoiceInput",
                   "$designer": {
-                    "id": "jomEwP"
+                    "id": "mp74fR"
                   },
-                  "activity": "${SendActivity_jomEwP()}"
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_mp74fR()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "property": "dialog.newChoice"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "YrcGrs"
+                  },
+                  "condition": "dialog.newChoice == \"Ja\"",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "RiYUx4"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "Ra9vKU"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "SymptomsCheckDialog"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "Ed7PLI"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "H9Lx8I"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "CancelDialog"
+                    }
+                  ]
                 }
               ]
             },
@@ -153,7 +213,7 @@
                   "$designer": {
                     "id": "VC8rct"
                   },
-                  "condition": "=dialog.newChoice == Ja",
+                  "condition": "dialog.newChoice == \"Ja\"",
                   "actions": [
                     {
                       "$kind": "Microsoft.DeleteProperty",
@@ -178,6 +238,14 @@
                         "id": "uhIcYn"
                       },
                       "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "d0IBQP"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "CancelDialog"
                     }
                   ]
                 }
