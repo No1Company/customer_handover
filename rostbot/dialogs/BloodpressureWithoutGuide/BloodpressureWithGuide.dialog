@@ -65,7 +65,7 @@
           "$designer": {
             "id": "uyRbGk"
           },
-          "condition": "=toLower(turn.confirm) == \"ja\"",
+          "condition": "toLower(turn.confirm) == \"ja\"",
           "actions": [
             {
               "$kind": "Microsoft.BeginDialog",
