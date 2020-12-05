@@ -57,7 +57,7 @@ def avail_times():
         ]
 
 
-    return jsonify([ {"start": time["start"].strftime("%d/%m/%y") + " " + time["start"].strftime("%X")[:-3], "stop": time["stop"].strftime("%d/%m/%y") + " " + time["stop"].strftime("%X")[:-3]} for time in times ])
+    return jsonify([ {"start": time["start"].strftime("%y/%m/%d") + " " + time["start"].strftime("%X")[:-3], "stop": time["stop"].strftime("%y/%m/%d") + " " + time["stop"].strftime("%X")[:-3]} for time in times ])
 
 
 userguidetypes = [
