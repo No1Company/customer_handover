@@ -19,20 +19,6 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "96PL52"
-          },
-          "activity": "${SendActivity_96PL52()}"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "J9bUnI"
-          },
-          "activity": "${SendActivity_J9bUnI()}"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
             "id": "QYDSd9"
           },
           "activity": "${SendActivity_QYDSd9()}"
