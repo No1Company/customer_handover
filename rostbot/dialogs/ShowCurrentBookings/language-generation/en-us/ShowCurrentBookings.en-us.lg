@@ -5,6 +5,6 @@
 # ChoiceInput_Prompt_hl1auJ()
 - Vill du avboka din tid?
 # ChoiceInput_Prompt_Hi8I73()
-- - Bokningen den ${dialog.removedDate} är nu avbokad, vill du boka en annan tid?
+-Bokningen den ${dialog.removedDate} är nu avbokad, vill du boka en annan tid?
 # SendActivity_TWePxc()
 - Du har inga bokningar.
