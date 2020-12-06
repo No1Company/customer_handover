@@ -68,6 +68,13 @@
                   "property": "user.symptoms"
                 },
                 {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "pLSqyv"
+                  },
+                  "activity": "${SendActivity_pLSqyv()}"
+                },
+                {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
                     "id": "eUP8ge"
