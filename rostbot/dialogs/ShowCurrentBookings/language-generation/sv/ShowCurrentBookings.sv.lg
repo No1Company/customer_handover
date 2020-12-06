@@ -5,5 +5,5 @@
 # SendActivity_LTVlXc()
 >Ovan fungerar inte, tills vi löser JSON till array och kan testa mot en tom array. 
 -Du har en ${dialog.result.content[1].type} den ${dialog.result.content[1].bookingdate} med id:t 1.
-# SendActivity_KTHVQ2()
-- Din tid är avbokad.
+# ChoiceInput_Prompt_6oePzs()
+- 

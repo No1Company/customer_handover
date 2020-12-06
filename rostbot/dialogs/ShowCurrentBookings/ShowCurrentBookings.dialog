@@ -82,6 +82,14 @@
           "condition": "dialog.choice == 'Nej'",
           "elseActions": [
             {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "3Qaek6"
+              },
+              "value": "${dialog.result.content[1].bookingdate}",
+              "property": "dialog.removedDate"
+            },
+            {
               "$kind": "Microsoft.HttpRequest",
               "$designer": {
                 "id": "ItRopo"
@@ -90,11 +98,53 @@
               "url": "${conversation.req_url}/current-bookings/1"
             },
             {
-              "$kind": "Microsoft.SendActivity",
+              "$kind": "Microsoft.ChoiceInput",
               "$designer": {
-                "id": "KTHVQ2"
+                "id": "6oePzs"
               },
-              "activity": "${SendActivity_KTHVQ2()}"
+              "defaultLocale": "en-us",
+              "disabled": false,
+              "maxTurnCount": 3,
+              "alwaysPrompt": false,
+              "allowInterruptions": false,
+              "prompt": "${ChoiceInput_Prompt_6oePzs()}",
+              "unrecognizedPrompt": "",
+              "invalidPrompt": "",
+              "defaultValueResponse": "",
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or "
+              },
+              "choices": [
+                "Ja",
+                "Nej"
+              ],
+              "property": "dialog.choice2"
+            },
+            {
+              "$kind": "Microsoft.DeleteProperty",
+              "$designer": {
+                "id": "Jm8OMU"
+              },
+              "property": "dialog.removedDate"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "2IwlLP"
+              },
+              "condition": "dialog.choice2 == \"Ja\"",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "p7zoOY"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "ConsultationDialog"
+                }
+              ]
             }
           ]
         },
