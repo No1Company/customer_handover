@@ -20,7 +20,7 @@
       "type": "TextBlock",
       "size": "default",
       "isSubtle": true,
-      "text": "Vad kan jag hjälpa dig med?",
+      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
       "wrap": true,
       "maxLines": 0
       
@@ -45,8 +45,8 @@
     },
     {
       "type": "Action.Submit",
-      "title": "Fråga frågor",
-      "data": "Fråga frågor"
+      "title": "Övriga frågor",
+      "data": "Övriga frågor"
     }
   ]
 }
