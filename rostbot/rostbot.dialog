@@ -284,6 +284,13 @@
       "intent": "ResetConversation",
       "actions": [
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "M5Vw39"
+          },
+          "activity": "${SendActivity_M5Vw39()}"
+        },
+        {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
             "id": "boiWh9"
@@ -357,7 +364,7 @@
       },
       {
         "intent": "ResetConversation",
-        "pattern": "återställ"
+        "pattern": "reset"
       }
     ]
   }
