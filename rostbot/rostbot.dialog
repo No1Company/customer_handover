@@ -391,22 +391,22 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "0QFJzd",
-        "name": "ResetConversation"
+        "id": "qU69ui",
+        "name": "ResetConv"
       },
-      "intent": "ResetConversation",
+      "intent": "ResetConv",
       "actions": [
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "hrdjnA"
+            "id": "CGaYrH"
           },
-          "activity": "${SendActivity_hrdjnA()}"
+          "activity": "${SendActivity_CGaYrH()}"
         },
         {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
-            "id": "boiWh9"
+            "id": "6pNITe"
           },
           "property": "conversation.req_url",
           "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se"
@@ -414,7 +414,7 @@
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "GEeIzT"
+            "id": "il4xNI"
           },
           "activityProcessed": true,
           "dialog": "FetchUserData"
@@ -422,9 +422,9 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "EJYcz7"
+            "id": "A6eNxt"
           },
-          "activity": "${SendActivity_EJYcz7()}"
+          "activity": "${SendActivity_A6eNxt()}"
         }
       ]
     }
@@ -486,6 +486,10 @@
       {
         "intent": "StartForms",
         "pattern": "Jag vill registrera mitt hälsoformulär"
+      },
+      {
+        "intent": "ResetConv",
+        "pattern": "reset"
       }
     ]
   }

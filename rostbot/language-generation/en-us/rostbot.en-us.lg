@@ -161,3 +161,8 @@
 - Fick felaktiskt svar från servern, vänligen testa igen senare. Fel: ${dialog.resultProperty}
 # SendActivity_8wTgTi()
 - Du har inga fler mätningar att göra idag. Återgår till start!
+
+# SendActivity_CGaYrH()
+-Resetting
+# SendActivity_A6eNxt()
+-${AdaptiveCard()}
