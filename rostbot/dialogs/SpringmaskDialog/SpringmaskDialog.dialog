@@ -1,0 +1,278 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "HFzrav",
+    "name": "SpringmaskDialog",
+    "description": "Dialog för att sortera ut användaren till rätt typ av vård inom springmask"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "2vZiKN"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "jqPAwV"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_jqPAwV()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "Springmask trots att du har behandlat två gånger med två till tre veckors mellanrum",
+            "Springmask"
+          ],
+          "property": "dialog.input"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "1j1CgX"
+          },
+          "condition": "dialog.input",
+          "cases": [
+            {
+              "value": "Springmask trots att du har behandlat två gånger med två till tre veckors mellanrum",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "PEPIet"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "FindCareDialog",
+                  "options": {}
+                }
+              ]
+            },
+            {
+              "value": "Springmask",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "XOw931"
+                  },
+                  "activity": "${SendActivity_XOw931()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "zFEu3V"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "SpringmaskLinks"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "6sgg3n"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_6sgg3n()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "property": "dialog.newChoice"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "26dhgu"
+                  },
+                  "condition": "dialog.newChoice == \"Ja\"",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "pQEc1W"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "ziyvPN"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "SymptomsCheckDialog"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "nmr4BB"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "vPoaWC"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "CancelDialog"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "1",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "w1q6qq"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "FindCareDialog",
+                  "options": {}
+                }
+              ]
+            },
+            {
+              "value": "2",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "44sf27"
+                  },
+                  "activity": "${SendActivity_44sf27()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "pxTT54"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "SpringmaskLinks"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "qSIxzC"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_qSIxzC()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "property": "dialog.newChoice"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "vhM3BM"
+                  },
+                  "condition": "dialog.newChoice == \"Ja\"",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "4FZMpV"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "mbX0Av"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "SymptomsCheckDialog"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "KKaGag"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "uhVAwY"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "CancelDialog"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "8oDLjh"
+              },
+              "activity": "${SendActivity_8oDLjh()}"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "J0vFWA"
+              },
+              "activityProcessed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "SpringmaskDialog.lg",
+  "recognizer": "SpringmaskDialog.lu.qna",
+  "id": "SpringmaskDialog"
+}

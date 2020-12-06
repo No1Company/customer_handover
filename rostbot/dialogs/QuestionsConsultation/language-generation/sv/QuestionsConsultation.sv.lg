@@ -1,0 +1,12 @@
+[import](common.lg)
+
+# SendActivity_jvXmW5()
+-Du kommer nu få några frågor gällande din ${user.symptoms}
+# NumberInput_Prompt_iqrgSe()
+-Hur många veckor skulle du säga att du har haft symptom? 
+>Detta kommer ersättas med vårdcentralens egna frågeformulär
+
+# SendActivity_7OGiuz()
+- Jag bedömer att du behöver boka tid på vårdcentralen, välj bland lediga tider som följer
+# SendActivity_CkC30S()
+- Jag har inte bokat någon tid. 

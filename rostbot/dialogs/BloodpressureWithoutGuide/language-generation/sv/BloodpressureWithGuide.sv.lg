@@ -1,0 +1,36 @@
+[import](common.lg)
+
+
+
+
+
+
+
+
+# TextInput_Prompt_h5Ktbw()
+[SigninCard
+    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
+    buttons = Ja värdena stämmer | Nej värdena stämmer inte
+    ]
+# TextInput_Prompt_ouIfx9()
+[SigninCard
+    text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
+    buttons= Återgå till start | Registrera ytterligare värden
+    ]
+
+
+
+
+# NumberInput_Prompt_VsXcIN()
+>User.sysvalue kommer finnas kvar vid repetitioner av dialogen, det gör inte turn, men använder man turn på sysvalue finns den inte kvar tillräckligt länge för att hämtas i bekräftelserutan. 
+-Vilket värde har du på det systoliska trycket (övertrycket)?
+
+
+# NumberInput_Prompt_Yu9Psp()
+-Vad är resultatet för undertrycket?
+# TextInput_Prompt_A12pzQ()
+- 
+# SendActivity_vn5ACr()
+- 
+# SendActivity_prvC1W()
+- 

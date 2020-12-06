@@ -1,0 +1,9 @@
+[import](common.lg)
+
+# NumberInput_Prompt_4hQYyD()
+- Börja med att skriva ålder för den symtomen gäller.
+# SendActivity_0ukohw()
+- Det finns ännu ingen distinktion mellan över 18 och under 18. Du kommer därför få samma val som en person som är över 18.
+# ChoiceInput_Prompt_7jgNlE()
+- Vad har du för symtom?
+- Välj den beskrivning som stämmer bäst

@@ -17,28 +17,12 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SetProperties",
-          "$designer": {
-            "id": "vRkMvI"
-          },
-          "assignments": [
-            {
-              "property": "user.in",
-              "value": 8
-            },
-            {
-              "property": "user.in2",
-              "value": 9
-            }
-          ]
-        },
-        {
           "$kind": "MultiplyDialog",
           "$designer": {
-            "id": "ijNswV"
+            "id": "58GlEz"
           },
-          "arg1": "=user.in",
-          "arg2": "=user.in2",
+          "arg1": 99,
+          "arg2": 99,
           "resultProperty": "user.out"
         },
         {
@@ -47,22 +31,6 @@
             "id": "L7psDB"
           },
           "activity": "${SendActivity_L7psDB()}"
-        },
-        {
-          "$kind": "AddString",
-          "$designer": {
-            "id": "HNp4XP"
-          },
-          "arg1": "=user.in",
-          "arg2": "=user.in2",
-          "resultProperty": "user.out2"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "AHG7Nt"
-          },
-          "activity": "${SendActivity_AHG7Nt()}"
         }
       ]
     }

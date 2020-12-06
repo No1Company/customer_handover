@@ -1,0 +1,184 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "jJVFEB",
+    "name": "FinishedMeasurementDialog",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "FPijh7"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "PCVJmA"
+          },
+          "url": "${conversation.req_url}/user/${user.ehr_id}/available-measurements",
+          "method": "GET",
+          "responseType": "json",
+          "resultProperty": "dialog.resultProperty"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "0FR0mo"
+          },
+          "condition": "=dialog.resultProperty.statusCode < 300",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "CnblHW"
+              },
+              "activity": "${SendActivity_CnblHW()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "TookO7"
+              },
+              "activityProcessed": true,
+              "dialog": "CancelMeasurment"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "geJy0A"
+          },
+          "condition": "=dialog.resultProperty.content.avail_measurements != []",
+          "actions": [],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "xnU2A9"
+              },
+              "activity": "${SendActivity_xnU2A9()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "JfguDJ"
+              },
+              "activityProcessed": true,
+              "dialog": "CancelMeasurment"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "59SLAM"
+          },
+          "activity": "${SendActivity_59SLAM()}"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "NJ0Blv"
+          },
+          "activityProcessed": true,
+          "dialog": "CancelMeasurment"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "UZu7pm"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_UZu7pm()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "dialog.continue"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "U63hkx"
+          },
+          "cases": [
+            {
+              "value": "Ja",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "kUSqld"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "RegisterValueTypeSelection"
+                }
+              ]
+            },
+            {
+              "value": "Nej",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "4wN43Y"
+                  },
+                  "activity": "${SendActivity_4wN43Y()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "qD2dAn"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "StartDialog"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "ey696y"
+              },
+              "activity": "${SendActivity_ey696y()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "2YdINH"
+              },
+              "activityProcessed": true,
+              "dialog": "StartDialog"
+            }
+          ],
+          "condition": "dialog.continue"
+        }
+      ]
+    }
+  ],
+  "generator": "FinishedMeasurementDialog.lg",
+  "recognizer": "FinishedMeasurementDialog.lu.qna",
+  "id": "FinishedMeasurementDialog"
+}

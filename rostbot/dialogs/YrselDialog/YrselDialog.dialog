@@ -1,0 +1,278 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "K7uvUA",
+    "name": "YrselDialog",
+    "description": "En dialog som tar användaren igenom de olika grenarna inom yrsel"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "0f3XdI"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "RLD40P"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_RLD40P()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
+          },
+          "choices": [
+            "Svår yrsel eller yrsel i flera dagar",
+            "Tillfällig yrsel"
+          ],
+          "property": "dialog.input"
+        },
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "S3TkOB"
+          },
+          "condition": "dialog.input",
+          "cases": [
+            {
+              "value": "Svår yrsel eller yrsel i flera dagar",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "mgB19o"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "FindCareDialog",
+                  "options": {}
+                }
+              ]
+            },
+            {
+              "value": "Tillfällig yrsel",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "nkOzpv"
+                  },
+                  "activity": "${SendActivity_nkOzpv()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "083UhN"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "YrselLinks"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "mp74fR"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_mp74fR()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "property": "dialog.newChoice"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "YrcGrs"
+                  },
+                  "condition": "dialog.newChoice == \"Ja\"",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "RiYUx4"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "Ra9vKU"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "SymptomsCheckDialog"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "Ed7PLI"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "H9Lx8I"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "CancelDialog"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "value": "1",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "8EHvH0"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "FindCareDialog",
+                  "options": {}
+                }
+              ]
+            },
+            {
+              "value": "2",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "Ofp69i"
+                  },
+                  "activity": "${SendActivity_Ofp69i()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "YgM1kP"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "YrselLinks"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "AjFsRK"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_AjFsRK()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "property": "dialog.newChoice"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "VC8rct"
+                  },
+                  "condition": "dialog.newChoice == \"Ja\"",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "C27UeL"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "hkM4cW"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "SymptomsCheckDialog"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.DeleteProperty",
+                      "$designer": {
+                        "id": "uhIcYn"
+                      },
+                      "property": "dialog.newChoice"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "d0IBQP"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "CancelDialog"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "RoD2CQ"
+              },
+              "activity": "${SendActivity_RoD2CQ()}"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "F406xv"
+              },
+              "activityProcessed": true
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "YrselDialog.lg",
+  "recognizer": "YrselDialog.lu.qna",
+  "id": "YrselDialog"
+}

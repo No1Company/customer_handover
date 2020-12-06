@@ -19,7 +19,7 @@
         {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "LiS2Dk"
+            "id": "hkJUCw"
           },
           "method": "GET",
           "url": "${conversation.req_url}/available-times",
@@ -33,6 +33,32 @@
           },
           "actions": [
             {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "1t5pGp"
+              },
+              "activityProcessed": true,
+              "dialog": "CompareAvailableTimes",
+              "resultProperty": "user.bookingdate"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "9LXrCH"
+              },
+              "condition": "user.bookingdate != null",
+              "actions": [
+                {
+                  "$kind": "Microsoft.EndDialog",
+                  "$designer": {
+                    "id": "WL12Rv"
+                  },
+                  "value": "=user.bookingdate"
+                }
+              ],
+              "elseActions": []
+            },
+            {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
                 "id": "mV3BLG"
@@ -40,20 +66,139 @@
               "activity": "${SendActivity_mV3BLG()}"
             },
             {
-              "$kind": "Microsoft.NumberInput",
+              "$kind": "Microsoft.ChoiceInput",
               "$designer": {
-                "id": "iHR6jL"
+                "id": "P5ffaY"
               },
               "defaultLocale": "en-us",
               "disabled": false,
               "maxTurnCount": 3,
               "alwaysPrompt": false,
               "allowInterruptions": false,
-              "prompt": "${NumberInput_Prompt_iHR6jL()}",
+              "prompt": "${ChoiceInput_Prompt_P5ffaY()}",
               "unrecognizedPrompt": "",
               "invalidPrompt": "",
               "defaultValueResponse": "",
-              "property": "dialog.datechoice"
+              "choiceOptions": {
+                "includeNumbers": true,
+                "inlineOrMore": ", or ",
+                "inlineOr": " or "
+              },
+              "choices": [
+                "Ja",
+                "Nej"
+              ],
+              "property": "turn.confirmDate"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "QdT8uC"
+              },
+              "condition": "turn.confirmDate == 'Ja'",
+              "elseActions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "3Oix6k"
+                  },
+                  "activity": "${SendActivity_3Oix6k()}"
+                },
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "gvOI68"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${ChoiceInput_Prompt_gvOI68()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "property": "turn.confirmDate2"
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "vODK8O"
+                  },
+                  "condition": "turn.confirmDate2 == 'Ja'",
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.SendActivity",
+                      "$designer": {
+                        "id": "kHQpSb"
+                      },
+                      "activity": "${SendActivity_kHQpSb()}"
+                    },
+                    {
+                      "$kind": "Microsoft.BeginDialog",
+                      "$designer": {
+                        "id": "ashr5V"
+                      },
+                      "activityProcessed": true,
+                      "dialog": "RestartPrompt"
+                    }
+                  ],
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.NumberInput",
+                      "$designer": {
+                        "id": "YW0llQ"
+                      },
+                      "defaultLocale": "en-us",
+                      "disabled": false,
+                      "maxTurnCount": 3,
+                      "alwaysPrompt": false,
+                      "allowInterruptions": false,
+                      "prompt": "${NumberInput_Prompt_YW0llQ()}",
+                      "unrecognizedPrompt": "",
+                      "invalidPrompt": "",
+                      "defaultValueResponse": "",
+                      "property": "dialog.datechoice"
+                    },
+                    {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "Oqa1FG"
+                      },
+                      "property": "dialog.datechoice",
+                      "value": "=dialog.datechoice+3"
+                    }
+                  ]
+                }
+              ],
+              "actions": [
+                {
+                  "$kind": "Microsoft.NumberInput",
+                  "$designer": {
+                    "id": "ykdM6E"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "prompt": "${NumberInput_Prompt_ykdM6E()}",
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "property": "dialog.datechoice"
+                }
+              ]
             },
             {
               "$kind": "Microsoft.SetProperty",

@@ -8,7 +8,7 @@ build-bot-image: #used to build the bot's docker image
   stage: build-images
   image: docker.io/buildah/buildah
   rules: 
-   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+   - if: '$CI_COMMIT_BRANCH == "merge-ci-test"' #Change to master
   needs: []
   script:
     - export _BUILDAH_STARTED_IN_USERNS=''
@@ -24,7 +24,7 @@ build-flask-image:
   image: docker.io/buildah/buildah
   needs: []
   rules: 
-   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+   - if: '$CI_COMMIT_BRANCH == "merge-ci-test"' #Change to master
   script:
     - export _BUILDAH_STARTED_IN_USERNS=''
     - export BUILDAH_ISOLATION=chroot
@@ -41,7 +41,7 @@ deploy-bot:
     - build-flask-image
     - build-bot-image
   rules: 
-   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+   - if: '$CI_COMMIT_BRANCH == "merge-ci-test"' #Change to master
 
   stage: deploy
   image: lachlanevenson/k8s-kubectl
@@ -56,7 +56,7 @@ deploy-flask:
   needs: 
     - build-flask-image
   rules: 
-   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+   - if: '$CI_COMMIT_BRANCH == "merge-ci-test"' #Change to master
 
   stage: deploy
   image: lachlanevenson/k8s-kubectl
@@ -72,7 +72,7 @@ deploy-ingress:
     - deploy-bot
     - deploy-flask
   rules: 
-   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+   - if: '$CI_COMMIT_BRANCH == "merge-ci-test"' #Change to master
 
   stage: ingress
   image: lachlanevenson/k8s-kubectl

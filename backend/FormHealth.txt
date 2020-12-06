@@ -1,0 +1,105 @@
+{
+  "instructions": "Du ska nu få svara på några frågor gällande din allmänna hälsa. Besvara varje fråga genom att välja ett alternativ",
+  "questions": [
+    {
+      "question": "Hur tycker du din hälsa är i allmänhet på en skala 1-5?",
+      "answer": [
+        "5-Utmärkt",
+        "4-Mycket bra",
+        "3-Bra",
+        "2-Någorlunda",
+        "1-Dålig/t"
+      ]
+    },
+    {
+      "question": "Hur tycker du din livskvalitet är i allmänhet?",
+      "answer": [
+        "5-Utmärkt",
+        "4-Mycket bra",
+        "3-Bra",
+        "2-Någorlunda",
+        "1-Dålig/t"
+      ]
+    },
+    {
+      "question": "Hur tycker du din fysiska hälsa är i allmänhet?",
+      "answer": [
+        "5-Utmärkt",
+        "4-Mycket bra",
+        "3-Bra",
+        "2-Någorlunda",
+        "1-Dålig/t"
+      ]
+    },
+    {
+      "question": "Hur tycker du din psykiska hälsa är i allmänhet, inklusive humör och förmåga att tänka?",
+      "answer": [
+        "5-Utmärkt",
+        "4-Mycket bra",
+        "3-Bra",
+        "2-Någorlunda",
+        "1-Dålig/t"
+      ]
+    },
+    {
+      "question": "Hur trivs du med dina sociala aktiviteter och relationer i allmänhet?",
+      "answer": [
+        "5-Utmärkt",
+        "4-Mycket bra",
+        "3-Bra",
+        "2-Någorlunda",
+        "1-Dålig/t"
+      ]
+    },
+    {
+      "question": "Hur trivs du med dina vardagliga sociala aktiviteter och roller (i familjen, på arbetet eller med andra) i allmänhet?",
+      "answer": [
+        "5-Utmärkt",
+        "4-Mycket bra",
+        "3-Bra",
+        "2-Någorlunda",
+        "1-Dålig/t"
+      ]
+    },
+    {
+      "question": "I vilken utsträckning klarar du dina vardagliga fysiska aktiviteter, t.ex. att promenera, gå i trappor, bära matkassar eller flytta en stol",
+      "answer": [
+        "5-Helt och hållet",
+        "4-I stor utsträckning",
+        "3-I viss utsträckning",
+        "2-I liten utsträckning",
+        "1-Inte alls"
+      ]
+    },
+    {
+      "question": "Hur ofta de senaste 7 dagarna har du besvärats av känslomässiga besvär, t.ex. känt dig orolig, nedstämd eller lättirriterad?",
+      "answer": [
+        "5-Alltid",
+        "4-Ofta",
+        "3-Ibland",
+        "2-Sällan",
+        "1-Aldrig"
+      ]
+    },
+    {
+      "question": "Hur trött har du känt dig de 7 senaste dagarna?",
+      "answer": [
+        "5-Inte alls",
+        "4-Lite",
+        "3-Måttligt",
+        "2-Ofta",
+        "1-Alltid"
+      ]
+    },
+    {
+      "question": "Hur har din smärta varit i genomsnitt de senaste 7 dagarna på en skala 1-5?",
+      "answer": [
+        "5-Värsta tänkbara smärta",
+        "4-Väldigt ont",
+        "3-Gör ont",
+        "2-Hanterbar smärta",
+        "1-Ingen smärta alls"
+      ]
+    }
+  ]
+}

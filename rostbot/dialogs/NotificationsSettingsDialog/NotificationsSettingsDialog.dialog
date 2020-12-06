@@ -3,7 +3,7 @@
   "$designer": {
     "id": "lmMIcd",
     "name": "NotificationsSettingsDialog",
-    "description": ""
+    "description": "Shows a card that allows you to set options for your notifications. Does not at the moment allow for printing several notifications or removing them. When cancelled shows UpdateCard()"
   },
   "autoEndDialog": true,
   "defaultResultProperty": "dialog.result",

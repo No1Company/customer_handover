@@ -1,0 +1,24 @@
+[import](common.lg)
+
+# SendActivity_DJ7jQx()
+- Jag bedömer att du inte behöver besöka en vårdcentral, men ifall du ändå vill prata med vårdcentralen direkt kan du ringa [nummber till vårdcentralen], eller 1177 för rådgivning. 
+# ConfirmInput_Prompt_G6vt5a()
+- Du kan även genom mig välja att boka en telefontid. Vill du göra det? 
+# SendActivity_WASoIJ()
+-Okej! 
+# ChoiceInput_Prompt_KIyFFR()
+- Vill du boka en telefontid? 
+# SendActivity_cCcy19()
+- 
+# ChoiceInput_Prompt_rmdKFR()
+- 
+# NumberInput_Prompt_PKHASm()
+- 
+# SendActivity_w4NK4k()
+- 
+# ChoiceInput_Prompt_DDLVE5()
+- 
+# NumberInput_Prompt_I8mtYl()
+- 
+# SendActivity_Hvl2zO()
+- 

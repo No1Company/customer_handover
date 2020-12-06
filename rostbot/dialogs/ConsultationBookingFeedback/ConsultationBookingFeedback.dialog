@@ -17,19 +17,6 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.HttpRequest",
-          "$designer": {
-            "id": "jAMrgh"
-          },
-          "method": "POST",
-          "url": "${conversation.req_url}/current-bookings",
-          "body": {
-            "bookingdate": "${user.bookingdate}",
-            "type": "${user.bookingtype}"
-          },
-          "contentType": "application/json"
-        },
-        {
           "$kind": "Microsoft.ChoiceInput",
           "$designer": {
             "id": "GuCMjZ"
@@ -83,16 +70,64 @@
                 "id": "1oVfhV"
               },
               "activity": "${SendActivity_1oVfhV()}"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "cAZHsr"
+              },
+              "property": "dialog.consultationcontext",
+              "value": "='N/A'"
             }
           ]
         },
         {
-          "$kind": "Microsoft.BeginDialog",
+          "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "Yt7EmI"
+            "id": "7zUVSN"
           },
-          "activityProcessed": true,
-          "dialog": "EmailConfirmation"
+          "method": "POST",
+          "url": "${conversation.req_url}/current-bookings",
+          "body": {
+            "bookingdate": "${user.bookingdate}",
+            "type": "${user.bookingtype}",
+            "free-text": "${dialog.consultationcontext}"
+          },
+          "contentType": "application/json",
+          "resultProperty": "dialog.result_post"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "ND71Ip"
+          },
+          "condition": "dialog.result_post.statusCode == 200",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "0BUwKp"
+              },
+              "activity": "${SendActivity_0BUwKp()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "Q7Tbty"
+              },
+              "activityProcessed": true,
+              "dialog": "EmailConfirmation"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "R0nvyK"
+              },
+              "activity": "${SendActivity_R0nvyK()}"
+            }
+          ]
         }
       ]
     }

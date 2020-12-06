@@ -1,0 +1,159 @@
+[import](common.lg)
+
+# AdaptiveCardQuestions()
+[Activity
+    Attachments = ${json(questionscardjson())}
+]
+
+# questionscardjson()
+-```
+{
+    "type": "AdaptiveCard",
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "TextBlock",
+            "text": "FAQ",
+            "wrap": true,
+            "horizontalAlignment": "Center",
+            "size": "Large",
+            "weight": "Bolder"
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.ShowCard",
+            "title": "Frågor om botten",
+            "iconUrl": "https://i.postimg.cc/yxvvxMmQ/2.png",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "text": "F1. Vilka kommandon kan jag använda mig av i boten?",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Du kan alltid skriva 'Avbryt' för att avbryta eller 'Hjälp' för att få hjälp.",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "F2.",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Svar",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "F3",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Svar",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "F4.",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Svar",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "F5.",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Svar",
+                        "wrap": true
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Action.ShowCard",
+            "title": "Frågor om min hälsa",
+            "iconUrl": "https://i.postimg.cc/bw1v1p5B/3.png",
+            "card": {
+                "type": "AdaptiveCard",
+                "body": [
+                    {
+                        "type": "TextBlock",
+                        "text": "F1.  Vad är normalt blodtryck?",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Enligt WHO är ett normalt blodtryck under 140 systoliskt och under 90 diastoliskt. En variation på 30 mm mellan blodtrycksmätningarna av det systoliska trycket är inte ovanligt.",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "F2.",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Svar",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "F3",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Svar",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "F4.",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Svar",
+                        "wrap": true
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "F5.",
+                        "weight": "Bolder"
+                    },
+                    {
+                        "type": "TextBlock",
+                        "text": "Svar",
+                        "wrap": true
+                    }
+                ]
+            }
+        },
+        {
+            "type": "Action.OpenUrl",
+            "title": "Tryck här för att gå till 1177",
+            "url": "https://www.1177.se/Ostergotland/kontakt/"
+        },
+        {
+            "type": "Action.Submit",
+            "data": "Avbryt",
+            "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png"
+        }
+    ]
+}
+```
+# SendActivity_70Q5rT()
+- ${AdaptiveCardQuestions()}

@@ -1,0 +1,18 @@
+[import](common.lg)
+
+
+
+# ChoiceInput_Prompt_GuCMjZ()
+-Jag har nu bokat en ${user.bookingtype} den ${user.bookingdate}. Vill du tillägga något till din bokning? Du kan beskriva dina symptom ytterligare för att underlätta för vårdpersonalen.  
+
+
+
+
+# TextInput_Prompt_TFyExH()
+- Vänligen skriv din ytterligare information i chatten.
+# SendActivity_1oVfhV()
+- Då hoppar vi över det!
+# SendActivity_0BUwKp()
+- 
+# SendActivity_R0nvyK()
+- 

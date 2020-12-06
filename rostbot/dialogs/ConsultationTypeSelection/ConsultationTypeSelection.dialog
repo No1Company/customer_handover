@@ -1,0 +1,99 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "v44a0J",
+    "name": "ConsultationTypeSelection",
+    "description": "Switch case of choices to get help for"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "1xypHS"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "6wpZio"
+          },
+          "cases": [
+            {
+              "value": "huvudvärk",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "v48Psh"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "QuestionsConsultation",
+                  "resultProperty": "user.bookingdate"
+                }
+              ]
+            },
+            {
+              "value": "feber",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "7qF5UG"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "QuestionsConsultation",
+                  "resultProperty": "user.bookingdate"
+                }
+              ]
+            },
+            {
+              "value": "buksmärtor",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "dIMUhk"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "QuestionsConsultation",
+                  "resultProperty": "user.bookingdate"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "7DS1bN"
+              },
+              "activity": "${SendActivity_7DS1bN()}"
+            }
+          ],
+          "condition": "toLower(user.symptoms)"
+        },
+        {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "lJOUsZ"
+          },
+          "property": "user.symptoms",
+          "value": "= null"
+        },
+        {
+          "$kind": "Microsoft.EndDialog",
+          "$designer": {
+            "id": "UGKK42"
+          }
+        }
+      ]
+    }
+  ],
+  "generator": "ConsultationTypeSelection.lg",
+  "recognizer": "ConsultationTypeSelection.lu.qna",
+  "id": "ConsultationTypeSelection"
+}

@@ -1,0 +1,156 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Rc9IHy",
+    "name": "FindCareDialog",
+    "description": "Dialog for retriving find-care on 1177"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "6Lt5kr"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SwitchCondition",
+          "$designer": {
+            "id": "HjPe7i"
+          },
+          "condition": "user.symptoms",
+          "cases": [
+            {
+              "value": "Springmask",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "RdVxX7"
+                  },
+                  "activity": "${SendActivity_RdVxX7()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "SJJG1p"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "SpringmaskLinks"
+                }
+              ]
+            },
+            {
+              "value": "Yrsel",
+              "actions": [
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "UurctB"
+                  },
+                  "activity": "${SendActivity_UurctB()}"
+                },
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "UGM01o"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "YrselLinks"
+                }
+              ]
+            }
+          ],
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "tjtQK3"
+              },
+              "activity": "${SendActivity_tjtQK3()}"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "CBvVHm"
+          },
+          "activity": "${SendActivity_CBvVHm()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "ojaT0Q"
+          },
+          "activity": "${SendActivity_ojaT0Q()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "PCcIgv"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_PCcIgv()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true
+          },
+          "property": "turn.confirm",
+          "choices": [
+            "Ja",
+            "Nej"
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "qYWXRH"
+          },
+          "condition": "turn.confirm == 'Ja'",
+          "actions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "5ZXKma"
+              },
+              "activityProcessed": true,
+              "dialog": "QuestionsConsultation",
+              "resultProperty": "user.bookingdate"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "EZUKRY"
+              },
+              "property": "user.symptoms",
+              "value": "= null "
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "SqVeuo"
+              },
+              "activityProcessed": true,
+              "dialog": "RestartPrompt"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "generator": "FindCareDialog.lg",
+  "recognizer": "FindCareDialog.lu.qna",
+  "id": "FindCareDialog"
+}

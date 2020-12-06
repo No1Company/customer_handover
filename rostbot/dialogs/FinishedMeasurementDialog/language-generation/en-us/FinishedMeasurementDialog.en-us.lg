@@ -1,0 +1,14 @@
+[import](common.lg)
+
+# ChoiceInput_Prompt_UZu7pm()
+- Du har mätning(ar) kvar att göra idag, vill du registrera dem nu?
+# SendActivity_CnblHW()
+- Fick felaktiskt svar från servern, vänligen testa igen senare. Fel: ${dialog.resultProperty}
+# SendActivity_xnU2A9()
+- Du har inga fler mätningar att göra idag. Återgår till start!
+# SendActivity_ey696y()
+- Jag förstår dig inte
+# SendActivity_4wN43Y()
+- Okej, återgår till start
+# SendActivity_59SLAM()
+- Du har mätning(ar) kvar att göra idag, för att påbörja en ny mätning klicka på "Utföra mätning"
