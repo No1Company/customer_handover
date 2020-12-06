@@ -14,34 +14,79 @@
     "actions": [
         {
             "type": "Action.Submit",
-            "title": "Notiser",
+            "title": {
+"msteams": {
+"type": "imBack",
+"value": "Notiser"
+}
+},
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg",
-            "data": "Notiser",
+            "data": {
+"msteams": {
+"type": "imBack",
+"value": "Notiser"
+}
+},
             "version": "1.2"
         },
         {
             "type": "Action.Submit",
-            "title": "Chatt",
+            "title": {
+"msteams": {
+"type": "imBack",
+"value": "Chatt"
+}
+},
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/61/61559.svg",
-            "data": "Chatt"
+            "data": {
+"msteams": {
+"type": "imBack",
+"value": "Chatt"
+}
+}
         },
         {
             "type": "Action.Submit",
-            "title": "Guide-inställningar",
-            "data": "Guide-inställningar",
+            "title": {
+"msteams": {
+"type": "imBack",
+"value": "Guide-inställningar"
+}
+},
+            "data": {
+"msteams": {
+"type": "imBack",
+"value": "Guide-inställningar"
+}
+},
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg",
            
         },
         {
             "type": "Action.Submit",
-            "title": "Annat",
+            "title": {
+"msteams": {
+"type": "imBack",
+"value": "Annat"
+}
+},
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/0/859.svg",
-            "data": "Annat"
+            "data": {
+"msteams": {
+"type": "imBack",
+"value": "Annat"
+}
+}
         },
         {
             "type": "Action.Submit",
             "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
-            "data": "Avbryt"
+            "data": {
+                "msteams": {
+                    "type": "imBack",
+                    "value": "Avbryt"
+                }
+            }
         }
     ],
     "body": [

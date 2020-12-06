@@ -32,24 +32,64 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Registrera värden",
-      "data": "Registrera värden"
+      "title": {
+"msteams": {
+"type": "imBack",
+"value": "Registrera värden"
+}
+},
+      "data": {
+"msteams": {
+"type": "imBack",
+"value": "Registrera värden"
+}
+}
       
     },
     {
       "type": "Action.Submit",
-      "title": "Ändra inställningar",
-      "data": "Ändra inställningar"
+      "title": {
+"msteams": {
+"type": "imBack",
+"value": "Ändra inställningar"
+}
+},
+      "data": {
+"msteams": {
+"type": "imBack",
+"value": "Ändra inställningar"
+}
+}
     },
     {
       "type": "Action.Submit",
-      "title": "Boka konsultation",
-      "data": "Boka konsultation"
+      "title": {
+"msteams": {
+"type": "imBack",
+"value": "Boka konsultation"
+}
+},
+      "data": {
+"msteams": {
+"type": "imBack",
+"value": "Boka konsultation"
+}
+}
     },
     {
       "type": "Action.Submit",
-      "title": "Övriga frågor",
-      "data": "Övriga frågor"
+      "title": {
+"msteams": {
+"type": "imBack",
+"value": "Övriga frågor"
+}
+},
+      "data": {
+"msteams": {
+"type": "imBack",
+"value": "Övriga frågor"
+}
+}
     }
   ]
 }
