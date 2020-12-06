@@ -33,8 +33,7 @@
           "choiceOptions": {
             "includeNumbers": true,
             "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ", "
+            "inlineOr": " or "
           },
           "choices": [
             "Ja",

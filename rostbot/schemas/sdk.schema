@@ -320,10 +320,7 @@
       "$ref": "#/definitions/MultiplyDialog"
     },
     {
-      "$ref": "#/definitions/SimpleDateFormat"
-    },
-    {
-      "$ref": "#/definitions/SubstringDate"
+      "$ref": "#/definitions/SelectUrl"
     }
   ],
   "definitions": {
@@ -3642,10 +3639,7 @@
           "$ref": "#/definitions/MultiplyDialog"
         },
         {
-          "$ref": "#/definitions/SimpleDateFormat"
-        },
-        {
-          "$ref": "#/definitions/SubstringDate"
+          "$ref": "#/definitions/SelectUrl"
         },
         {
           "type": "string"
@@ -8628,10 +8622,10 @@
         }
       }
     },
-    "SimpleDateFormat": {
+    "SelectUrl": {
       "$role": "implements(Microsoft.IDialog)",
-      "title": "SimpleDateFormat",
-      "description": "This will return the date in the format",
+      "title": "SelectUrl",
+      "description": "If arg1 has a flask server running, it will be chosen as the address. Otherwise, arg2 (remote) will be chosen",
       "type": "object",
       "required": [
         "$kind"
@@ -8644,62 +8638,27 @@
         }
       },
       "properties": {
-        "simpledate": {
+        "arg1": {
           "$ref": "#/definitions/stringExpression",
-          "title": "SimpleDate",
-          "description": "Value from callers memory to use as arg 1"
+          "title": "Arg1",
+          "description": "The local server url (will be preferred by the bot)"
         },
-        "dateresult": {
+        "arg2": {
           "$ref": "#/definitions/stringExpression",
-          "title": "FullResult",
-          "description": "Value from callers memory to store the resulting time in DD/MM/YY HH:MM "
+          "title": "Arg2",
+          "description": "The remote server url"
+        },
+        "resultProperty": {
+          "$ref": "#/definitions/stringExpression",
+          "title": "Result",
+          "description": "The url that will be used"
         },
         "$kind": {
           "title": "Kind of dialog object",
           "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
           "type": "string",
           "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
-          "const": "SimpleDateFormat"
-        },
-        "$designer": {
-          "title": "Designer information",
-          "type": "object",
-          "description": "Extra information for the Bot Framework Composer."
-        }
-      }
-    },
-    "SubstringDate": {
-      "$role": "implements(Microsoft.IDialog)",
-      "title": "SubstringDate",
-      "description": "This will return the date in the format DD/MM/YY",
-      "type": "object",
-      "required": [
-        "$kind"
-      ],
-      "additionalProperties": false,
-      "patternProperties": {
-        "^\\$": {
-          "title": "Tooling property",
-          "description": "Open ended property for tooling."
-        }
-      },
-      "properties": {
-        "fulldate": {
-          "$ref": "#/definitions/stringExpression",
-          "title": "FullDate",
-          "description": "Value from callers memory to use as arg 1"
-        },
-        "dateresult": {
-          "$ref": "#/definitions/stringExpression",
-          "title": "DateShort",
-          "description": "Value from callers memory to store the resulting time in DD/MM/YY HH:MM "
-        },
-        "$kind": {
-          "title": "Kind of dialog object",
-          "description": "Defines the valid properties for the component you are configuring (from a dialog .schema file)",
-          "type": "string",
-          "pattern": "^[a-zA-Z][a-zA-Z0-9.]*$",
-          "const": "SubstringDate"
+          "const": "SelectUrl"
         },
         "$designer": {
           "title": "Designer information",

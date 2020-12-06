@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "L8KVV3",
-    "name": "PhysicalMeetBooking",
+    "id": "6b9eqx",
+    "name": "PhoneBooking",
     "description": ""
   },
   "autoEndDialog": true,
@@ -13,13 +13,67 @@
       "$designer": {
         "name": "BeginDialog",
         "description": "",
-        "id": "3TZVOh"
+        "id": "jnqCMD"
       },
       "actions": [
         {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "DJ7jQx"
+          },
+          "activity": "${SendActivity_DJ7jQx()}"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "KIyFFR"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_KIyFFR()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or ",
+            "inlineOr": " or "
+          },
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "turn.confirm"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "AR3ABV"
+          },
+          "condition": "turn.confirm == 'Ja'",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "WASoIJ"
+              },
+              "activity": "${SendActivity_WASoIJ()}"
+            },
+            {
+              "$kind": "Microsoft.EndDialog",
+              "$designer": {
+                "id": "gwQ3gS"
+              }
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "LiS2Dk"
+            "id": "AJZLrP"
           },
           "method": "GET",
           "url": "${conversation.req_url}/available-times",
@@ -29,27 +83,27 @@
         {
           "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "cqjam7"
+            "id": "toiLSt"
           },
           "actions": [
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "mV3BLG"
+                "id": "d7PN0P"
               },
-              "activity": "${SendActivity_mV3BLG()}"
+              "activity": "${SendActivity_d7PN0P()}"
             },
             {
               "$kind": "Microsoft.NumberInput",
               "$designer": {
-                "id": "iHR6jL"
+                "id": "HCBe3t"
               },
               "defaultLocale": "en-us",
               "disabled": false,
               "maxTurnCount": 3,
               "alwaysPrompt": false,
               "allowInterruptions": false,
-              "prompt": "${NumberInput_Prompt_iHR6jL()}",
+              "prompt": "${NumberInput_Prompt_HCBe3t()}",
               "unrecognizedPrompt": "",
               "invalidPrompt": "",
               "defaultValueResponse": "",
@@ -58,7 +112,7 @@
             {
               "$kind": "Microsoft.SetProperty",
               "$designer": {
-                "id": "uAKuhT"
+                "id": "XurgT1"
               },
               "property": "user.bookingdate",
               "value": "${dialog.result.content[${dialog.datechoice}].start}"
@@ -66,7 +120,7 @@
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "IRsXC3"
+                "id": "GQcF9u"
               },
               "value": "=user.bookingdate"
             }
@@ -75,9 +129,8 @@
             {
               "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "WNblWK"
-              },
-              "value": "= '0000/00/00'"
+                "id": "VLJZ0u"
+              }
             }
           ],
           "condition": "dialog.result.statusCode == 200"
@@ -85,7 +138,7 @@
       ]
     }
   ],
-  "generator": "PhysicalMeetBooking.lg",
-  "recognizer": "PhysicalMeetBooking.lu.qna",
-  "id": "PhysicalMeetBooking"
+  "generator": "PhoneBooking.lg",
+  "recognizer": "PhoneBooking.lu.qna",
+  "id": "PhoneBooking"
 }

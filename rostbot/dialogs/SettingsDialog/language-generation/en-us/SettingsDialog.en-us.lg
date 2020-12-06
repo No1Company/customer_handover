@@ -14,27 +14,33 @@
     "actions": [
         {
             "type": "Action.Submit",
-            "title": "Notifikationer",
-            "iconUrl": "https://i.postimg.cc/J7HTLzdg/4.png",
-            "data": "Notifikationer",
+            "title": "Notiser",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/2478/2478142.svg",
+            "data": "Notiser",
             "version": "1.2"
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Chatt",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/61/61559.svg",
+            "data": "Chatt"
         },
         {
             "type": "Action.Submit",
             "title": "Guide-inställningar",
             "data": "Guide-inställningar",
-            "iconUrl": "https://i.postimg.cc/FRJfC8sf/Settings-Dialog-Guide-Settings.png",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg",
            
         },
         {
             "type": "Action.Submit",
             "title": "Annat",
-            "iconUrl": "https://i.postimg.cc/Z5s3nrWL/Settings-Dialog-Other.png",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/0/859.svg",
             "data": "Annat"
         },
         {
             "type": "Action.Submit",
-            "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png",
+            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
             "data": "Avbryt"
         }
     ],

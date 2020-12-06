@@ -132,16 +132,7 @@
         "name": "Questions"
       },
       "intent": "Questions",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "rBVTQQ"
-          },
-          "activityProcessed": true,
-          "dialog": "QuestionMainDialog"
-        }
-      ]
+      "actions": []
     },
     {
       "$kind": "Microsoft.OnIntent",
@@ -151,65 +142,6 @@
       },
       "intent": "Register-measurement",
       "actions": [
-        {
-          "$kind": "Microsoft.HttpRequest",
-          "$designer": {
-            "id": "NqPwoC"
-          },
-          "url": "${conversation.req_url}/user/${user.ehr_id}/available-measurements",
-          "method": "GET",
-          "responseType": "json",
-          "resultProperty": "dialog.resultProperty"
-        },
-        {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "35BUZd"
-          },
-          "condition": "=dialog.resultProperty.statusCode < 300",
-          "elseActions": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "qzdt71"
-              },
-              "activity": "${SendActivity_qzdt71()}"
-            },
-            {
-              "$kind": "Microsoft.BeginDialog",
-              "$designer": {
-                "id": "vFacg9"
-              },
-              "activityProcessed": true,
-              "dialog": "CancelMeasurment"
-            }
-          ]
-        },
-        {
-          "$kind": "Microsoft.IfCondition",
-          "$designer": {
-            "id": "9aYph0"
-          },
-          "condition": "=dialog.resultProperty.content.avail_measurements != []",
-          "actions": [],
-          "elseActions": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "8wTgTi"
-              },
-              "activity": "${SendActivity_8wTgTi()}"
-            },
-            {
-              "$kind": "Microsoft.BeginDialog",
-              "$designer": {
-                "id": "D9E3bL"
-              },
-              "activityProcessed": true,
-              "dialog": "CancelMeasurment"
-            }
-          ]
-        },
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
@@ -247,12 +179,25 @@
       "intent": "Cancel",
       "actions": [
         {
-          "$kind": "Microsoft.BeginDialog",
+          "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "lSyD74"
+            "id": "rYwnTV"
           },
-          "activityProcessed": true,
-          "dialog": "CancelDialog"
+          "activity": "${SendActivity_rYwnTV()}"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "3RIa5x"
+          },
+          "activity": "${SendActivity_3RIa5x()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "AjJSLA"
+          },
+          "activityProcessed": true
         }
       ]
     },
@@ -285,7 +230,15 @@
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "01lbaR"
+            "id": "XDUbSm"
+          },
+          "activityProcessed": true,
+          "dialog": "JSONToArray"
+        },
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "Jzv3Yh"
           },
           "activityProcessed": true,
           "dialog": "CustomActionTest"
@@ -295,118 +248,22 @@
     {
       "$kind": "Microsoft.OnIntent",
       "$designer": {
-        "id": "xUt0ey",
-        "name": "Restart"
+        "id": "0QFJzd",
+        "name": "ResetConversation"
       },
-      "intent": "Restart",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "PQuqIA"
-          },
-          "activityProcessed": true,
-          "dialog": "StartDialog"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "jtqZrj",
-        "name": "Hello"
-      },
-      "intent": "Hello",
+      "intent": "ResetConversation",
       "actions": [
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "3vuWML"
+            "id": "hrdjnA"
           },
-          "activity": "${SendActivity_3vuWML()}"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "VzzqhI"
-          },
-          "activityProcessed": true
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "EiPejW",
-        "name": "StartRegisterBloodPressure"
-      },
-      "intent": "StartRegisterBloodPressure",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "njp4NS"
-          },
-          "activityProcessed": true,
-          "dialog": "BloodpressureGuideSelect"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "cwkJFp",
-        "name": "StartRegisterWeight"
-      },
-      "intent": "StartRegisterWeight",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "l3APgE"
-          },
-          "activityProcessed": true,
-          "dialog": "RegisterWeight"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "7HVzYo",
-        "name": "StartForms"
-      },
-      "intent": "StartForms",
-      "actions": [
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "vNKTqG"
-          },
-          "activityProcessed": true,
-          "dialog": "Forms"
-        }
-      ]
-    },
-    {
-      "$kind": "Microsoft.OnIntent",
-      "$designer": {
-        "id": "qU69ui",
-        "name": "ResetConv"
-      },
-      "intent": "ResetConv",
-      "actions": [
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "CGaYrH"
-          },
-          "activity": "${SendActivity_CGaYrH()}"
+          "activity": "${SendActivity_hrdjnA()}"
         },
         {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
-            "id": "6pNITe"
+            "id": "boiWh9"
           },
           "property": "conversation.req_url",
           "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se"
@@ -414,7 +271,7 @@
         {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "il4xNI"
+            "id": "GEeIzT"
           },
           "activityProcessed": true,
           "dialog": "FetchUserData"
@@ -422,9 +279,9 @@
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "A6eNxt"
+            "id": "EJYcz7"
           },
-          "activity": "${SendActivity_A6eNxt()}"
+          "activity": "${SendActivity_EJYcz7()}"
         }
       ]
     }
@@ -437,7 +294,7 @@
     "intents": [
       {
         "intent": "Register-measurement",
-        "pattern": "Utföra mätning"
+        "pattern": "Registrera värden"
       },
       {
         "intent": "Settings",
@@ -464,31 +321,7 @@
         "pattern": "custom"
       },
       {
-        "intent": "Questions",
-        "pattern": "Fråga frågor"
-      },
-      {
-        "intent": "Restart",
-        "pattern": "Starta om"
-      },
-      {
-        "intent": "Hello",
-        "pattern": "Hej"
-      },
-      {
-        "intent": "StartRegisterBloodPressure",
-        "pattern": "Jag vill registrera mitt blodtryck"
-      },
-      {
-        "intent": "StartRegisterWeight",
-        "pattern": "Jag vill registrera min vikt"
-      },
-      {
-        "intent": "StartForms",
-        "pattern": "Jag vill registrera mitt hälsoformulär"
-      },
-      {
-        "intent": "ResetConv",
+        "intent": "ResetConversation",
         "pattern": "reset"
       }
     ]

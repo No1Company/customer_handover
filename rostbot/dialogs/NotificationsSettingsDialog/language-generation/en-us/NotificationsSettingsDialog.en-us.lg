@@ -12,10 +12,10 @@
     "actions": [
         {
             "type": "Action.ShowCard",
-            "title": "Hantera notifikationer",
+            "title": "Hantera notiser",
             "style": "positive",
-            "iconUrl": "https://i.postimg.cc/vHKtKL3V/1.png",
-            "data": "Skapa ny notifikation",
+            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
+            "data": "Skapa ny notis",
             "card": {
                 "type": "AdaptiveCard",
                 "body": [
@@ -121,7 +121,7 @@
                         "type": "TextBlock",
                         "size": "Medium",
                         "weight": "Bolder",
-                        "text": "Notifikation via",
+                        "text": "Notis via",
                         "wrap": true
                     },
                     {
@@ -149,12 +149,21 @@
                 "actions": [
                     {
                         "type": "Action.Submit",
-                        "title": "Ny notifikation",
+                        "title": "Lägg till notis",
                         "data": {
                             "id": "1234567890"
                         },
                         "style": "positive",
-                        "iconUrl": "https://i.postimg.cc/FRJfC8sf/Settings-Dialog-Guide-Settings.png"
+                        "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg"
+                    },
+                    {
+                        "type": "Action.Submit",
+                        "title": "Radera notis",
+                        "data": {
+                            "id": "1234567890"
+                        },
+                        "style": "destructive",
+                        "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828843.svg"
                     }
                 ]
             }
@@ -162,13 +171,13 @@
         {
             "type": "Action.Submit",
             "data": "Avbryt",
-            "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png"
+            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg"
         }
     ],
     "body": [
         {
             "type": "TextBlock",
-            "text": "Notifikationer",
+            "text": "Notiser",
             "wrap": true,
             "horizontalAlignment": "Center",
             "size": "Medium",
@@ -178,7 +187,7 @@
         },
         {
             "type": "TextBlock",
-            "text": "Mina notifikationer",
+            "text": "Mina notiser",
             "wrap": true,
             "size": "Medium",
             "weight": "Bolder"
@@ -215,6 +224,25 @@
                             "height": "stretch"
                         }
                     ]
+                },
+                {
+                    "type": "Column",
+                    "width": "20px",
+                    "selectAction": {
+                        "type": "Action.Submit",
+                        "id": "cancelbutton",
+                        "value": "true"
+                    },
+                    "isVisible": false,
+                    "backgroundImage": {
+                        "horizontalAlignment": "Center",
+                        "url": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
+                        "verticalAlignment": "Center"
+                    },
+                    "style": "default",
+                    "verticalContentAlignment": "Center",
+                    "horizontalAlignment": "Center",
+                    "separator": true
                 }
             ],
             "height": "stretch"
@@ -222,5 +250,7 @@
     ]
 }
 ```
+
+
 # SendActivity_jHELjD()
 - ${AdaptiveCardNotificationSettings()}

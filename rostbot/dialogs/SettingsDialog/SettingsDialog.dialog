@@ -3,7 +3,7 @@
   "$designer": {
     "id": "jpRoNN",
     "name": "SettingsDialog",
-    "description": "Shows a card with options for what to do next.  Forwards to GuideSelectionDialog and  NotificationsSettingsDialog"
+    "description": ""
   },
   "autoEndDialog": true,
   "defaultResultProperty": "dialog.result",
@@ -44,7 +44,7 @@
           "condition": "user.choice",
           "cases": [
             {
-              "value": "Notifikationer",
+              "value": "Notiser",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",

@@ -1,92 +1,93 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "T7GsSI",
-    "name": "ConsultationDialog",
-    "description": "Takes the user through selecting an available symptom"
+    "id": "jpRoNN",
+    "name": "SettingsDialog",
+    "description": ""
   },
   "autoEndDialog": true,
-  "defaultResultProperty": "dialog.result",
+  "defaultResultProperty": "dialog.symptom",
   "triggers": [
     {
       "$kind": "Microsoft.OnBeginDialog",
       "$designer": {
-        "name": "BeginDialog",
-        "description": "",
-        "id": "arJ13f"
+        "id": "hgMxpP"
       },
       "actions": [
         {
-          "$kind": "Microsoft.ChoiceInput",
+          "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "A4Dpqh"
+            "id": "OVN7B9"
           },
-          "defaultLocale": "en-us",
+          "activity": "${SendActivity_OVN7B9()}"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "tklNbb"
+          },
           "disabled": false,
           "maxTurnCount": 3,
           "alwaysPrompt": false,
           "allowInterruptions": false,
-          "prompt": "${ChoiceInput_Prompt_A4Dpqh()}",
+          "prompt": "${TextInput_Prompt_tklNbb()}",
           "unrecognizedPrompt": "",
           "invalidPrompt": "",
           "defaultValueResponse": "",
-          "choiceOptions": {
-            "includeNumbers": true,
-            "inlineOrMore": ", or ",
-            "inlineOr": " or ",
-            "inlineSeparator": ", "
+          "property": "user.symptoms"
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "WiLWxu"
           },
-          "choices": [
-            "Boka konsultation",
-            "Vanliga symtom"
-          ],
-          "property": "turn.input"
+          "activity": "${SendActivity_WiLWxu()}"
         },
         {
           "$kind": "Microsoft.SwitchCondition",
           "$designer": {
-            "id": "fE5Yd5"
+            "id": "dpWB4q"
           },
-          "condition": "toLower(turn.input)",
           "cases": [
             {
-              "value": "boka konsultation",
+              "value": "huvudvärk",
               "actions": [
-                {
-                  "$kind": "Microsoft.TextInput",
-                  "$designer": {
-                    "id": "lV35lA"
-                  },
-                  "disabled": false,
-                  "maxTurnCount": 3,
-                  "alwaysPrompt": false,
-                  "allowInterruptions": false,
-                  "prompt": "${TextInput_Prompt_lV35lA()}",
-                  "unrecognizedPrompt": "",
-                  "invalidPrompt": "",
-                  "defaultValueResponse": "",
-                  "property": "user.symptoms"
-                },
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "eUP8ge"
+                    "id": "d8JXI6"
                   },
                   "activityProcessed": true,
-                  "dialog": "ConsultationTypeSelection"
+                  "dialog": "QuestionsConsultation",
+                  "resultProperty": "user.bookingdate"
                 }
               ]
             },
             {
-              "value": "vanliga symtom",
+              "value": "feber",
               "actions": [
                 {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
-                    "id": "9R7skX"
+                    "id": "8fPutb"
                   },
                   "activityProcessed": true,
-                  "dialog": "SymptomsCheckDialog"
+                  "dialog": "QuestionsConsultation",
+                  "resultProperty": "user.bookingdate"
+                }
+              ]
+            },
+            {
+              "value": "buksmärtor",
+              "actions": [
+                {
+                  "$kind": "Microsoft.BeginDialog",
+                  "$designer": {
+                    "id": "LzylfM"
+                  },
+                  "activityProcessed": true,
+                  "dialog": "QuestionsConsultation",
+                  "resultProperty": "user.bookingdate"
                 }
               ]
             }
@@ -95,37 +96,34 @@
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "XPUeI6"
+                "id": "Y3hB0L"
               },
-              "activity": "${SendActivity_XPUeI6()}"
-            },
-            {
-              "$kind": "Microsoft.RepeatDialog",
-              "$designer": {
-                "id": "q0YgG8"
-              },
-              "activityProcessed": true
+              "activity": "${SendActivity_Y3hB0L()}"
             }
-          ]
+          ],
+          "condition": "user.symptoms"
         },
         {
-          "$kind": "Microsoft.BeginDialog",
+          "$kind": "Microsoft.SetProperty",
           "$designer": {
-            "id": "yhrDEm"
+            "id": "QBouzl"
           },
-          "activityProcessed": true,
-          "dialog": "RestartPrompt"
+          "property": "user.symptoms",
+          "value": "= null"
         },
         {
           "$kind": "Microsoft.EndDialog",
           "$designer": {
-            "id": "scmuGv"
+            "id": "3vAfYm"
           }
         }
       ]
     }
   ],
   "generator": "ConsultationDialog.lg",
-  "recognizer": "ConsultationDialog.lu.qna",
-  "id": "ConsultationDialog"
+  "recognizer": {
+    "$kind": "Microsoft.RegexRecognizer",
+    "intents": []
+  },
+  "id": "SettingsDialog"
 }

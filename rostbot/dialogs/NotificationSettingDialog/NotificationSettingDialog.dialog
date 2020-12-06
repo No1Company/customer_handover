@@ -1,8 +1,8 @@
 {
   "$kind": "Microsoft.AdaptiveDialog",
   "$designer": {
-    "id": "lmMIcd",
-    "name": "NotificationsSettingsDialog",
+    "id": "1m69Yp",
+    "name": "NotificationSettingDialog",
     "description": ""
   },
   "autoEndDialog": true,
@@ -13,23 +13,23 @@
       "$designer": {
         "name": "BeginDialog",
         "description": "",
-        "id": "6HAJko"
+        "id": "idWMYZ"
       },
       "actions": [
         {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
-            "id": "qIec1U"
+            "id": "6qTu75"
           },
           "method": "GET",
-          "url": "${conversation.req_url}/current-notifications",
+          "url": "http://127.0.0.1:5000/current-notifications",
           "resultProperty": "dialog.resultProperty",
           "contentType": "application/json"
         },
         {
           "$kind": "Microsoft.SetProperties",
           "$designer": {
-            "id": "SBsOuE"
+            "id": "oUVLpp"
           },
           "assignments": [
             {
@@ -53,7 +53,7 @@
         {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
-            "id": "3CykmE"
+            "id": "6mxIVN"
           },
           "property": "user.test.array",
           "value": [
@@ -115,7 +115,7 @@
         {
           "$kind": "Microsoft.Foreach",
           "$designer": {
-            "id": "TfJoKu"
+            "id": "us99Gp"
           },
           "value": "dialog.foreach.value",
           "itemsProperty": "user.test.array",
@@ -123,20 +123,20 @@
             {
               "$kind": "Microsoft.SendActivity",
               "$designer": {
-                "id": "jHELjD"
+                "id": "8Hu5VX"
               },
-              "activity": "${SendActivity_jHELjD()}"
+              "activity": "${SendActivity_8Hu5VX()}"
             },
             {
               "$kind": "Microsoft.EndTurn",
               "$designer": {
-                "id": "ohsrev"
+                "id": "GqIj1P"
               }
             },
             {
               "$kind": "Microsoft.SetProperties",
               "$designer": {
-                "id": "bjyKCu"
+                "id": "apC7Dp"
               },
               "assignments": [
                 {
@@ -164,9 +164,9 @@
             {
               "$kind": "Microsoft.HttpRequest",
               "$designer": {
-                "id": "W0kGC8"
+                "id": "pa8L7Q"
               },
-              "url": "${conversation.req_url}/current-notifications",
+              "url": "http://127.0.0.1:5000/current-notifications",
               "method": "PUT",
               "headers": {},
               "contentType": "application/json",
@@ -181,17 +181,17 @@
             {
               "$kind": "Microsoft.HttpRequest",
               "$designer": {
-                "id": "ajbY3X"
+                "id": "cMweO2"
               },
               "method": "GET",
-              "url": "${conversation.req_url}/current-notifications",
+              "url": "http://127.0.0.1:5000/current-notifications",
               "resultProperty": "dialog.resultProperty",
               "contentType": "application/json"
             },
             {
               "$kind": "Microsoft.SetProperties",
               "$designer": {
-                "id": "VK1EOK"
+                "id": "2xT8NV"
               },
               "assignments": [
                 {
@@ -218,13 +218,13 @@
         {
           "$kind": "Microsoft.EndDialog",
           "$designer": {
-            "id": "RHnIr5"
+            "id": "kBc88L"
           }
         }
       ]
     }
   ],
-  "generator": "NotificationsSettingsDialog.lg",
-  "recognizer": "NotificationsSettingsDialog.lu.qna",
-  "id": "NotificationsSettingsDialog"
+  "generator": "NotificationSettingDialog.lg",
+  "recognizer": "NotificationSettingDialog.lu.qna",
+  "id": "NotificationSettingDialog"
 }

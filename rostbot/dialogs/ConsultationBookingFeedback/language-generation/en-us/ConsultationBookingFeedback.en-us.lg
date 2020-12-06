@@ -3,7 +3,7 @@
 
 
 # ChoiceInput_Prompt_GuCMjZ()
--Vill du tillägga något till din bokning? Du kan beskriva dina symtom ytterligare för att underlätta för vårdpersonalen.  
+-Jag har nu bokat en ${user.bookingtype} den ${user.bookingdate}. Vill du tillägga något till din bokning? Du kan beskriva dina symptom ytterligare för att underlätta för vårdpersonalen.  
 
 
 
@@ -12,7 +12,3 @@
 - Vänligen skriv din ytterligare information i chatten.
 # SendActivity_1oVfhV()
 - Då hoppar vi över det!
-# SendActivity_0BUwKp()
-- Jag har nu bokat en ${user.bookingtype} den ${user.bookingdate}. 
-# SendActivity_R0nvyK()
-- Något gick fel i kommunikationen med servern. Vänligen försök igen senare.
