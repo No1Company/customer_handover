@@ -67,13 +67,6 @@
               "value": "feber",
               "actions": [
                 {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "pLSqyv"
-                  },
-                  "activity": "${SendActivity_pLSqyv()}"
-                },
-                {
                   "$kind": "Microsoft.BeginDialog",
                   "$designer": {
                     "id": "8fPutb"

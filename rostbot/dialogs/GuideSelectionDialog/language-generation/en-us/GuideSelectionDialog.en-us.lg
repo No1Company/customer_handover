@@ -78,9 +78,8 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Utföra mätning",
-      "data": "Utföra mätning"
-      
+      "title": "Registrera värden",
+      "data": "Registrera värden"
     },
     {
       "type": "Action.Submit",

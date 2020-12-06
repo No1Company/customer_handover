@@ -82,7 +82,7 @@ namespace Microsoft.BotFramework.Composer.CustomAction
                 }
             }
 
-            string fulldate = year + "/" + month + "/" + day;
+            string fulldate = day + "/" + month + "/" + year;
 
             if (this.DateResult != null)
             {

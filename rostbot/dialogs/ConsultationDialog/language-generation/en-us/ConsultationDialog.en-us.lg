@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 [import](common.lg)
 
 # SendActivity_OVN7B9()
@@ -9,15 +8,3 @@
 - Vad är anledningen till att du vill boka en konsultation med läkare? 
 # SendActivity_WiLWxu()
 - Tack för ditt svar.
-=======
-[import](common.lg)
-
-# ChoiceInput_Prompt_A4Dpqh()
-- Vill du boka en konsultation eller få svar på vanliga frågor om symtom direkt genom mig? 
-# SendActivity_XPUeI6()
-- Jag förstod tyvärr inte vad du menade, försök igen. 
-# TextInput_Prompt_lV35lA()
-- Vad är anledningen till att du vill boka en konsultation? 
-# SendActivity_pLSqyv()
-- Tack för ditt svar.
->>>>>>> develop

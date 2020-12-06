@@ -5,8 +5,26 @@
 # SendActivity_X784TZ()
 - Det fanns inga tider på ditt valda datum, men du kan välja bland följande närliggande tider. 
 # TextInput_Prompt_fhhvXl()
-- Vilket dag vill du boka din tid på? Du kan skriva datumet i formatet "20 augusti".
+- Vilket dag vill du boka vårdbesöket på? Du kan skriva datumet i formatet "20/12/08 11:00".
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # SendActivity_Nbrmxb()
 - G
-# ChoiceInput_Prompt_xzSN8y()
-- Är ${dialog.convertedDate} rätt datum?

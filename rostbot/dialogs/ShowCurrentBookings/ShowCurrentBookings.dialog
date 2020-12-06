@@ -27,146 +27,23 @@
           "contentType": "application/json"
         },
         {
-          "$kind": "Microsoft.Foreach",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "dCGpv6"
+            "id": "1NLGEh"
           },
-          "index": "dialog.foreach.index",
-          "value": "dialog.foreach.value",
-          "itemsProperty": "dialog.result.content",
-          "actions": [
+          "condition": "dialog.result != {}",
+          "elseActions": [
             {
-              "$kind": "Microsoft.IfCondition",
+              "$kind": "Microsoft.EndDialog",
               "$designer": {
-                "id": "J3G0sx"
-              },
-              "condition": "dialog.foreach.value[\"type\"] != \"\"",
-              "actions": [
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "WM4lTv"
-                  },
-                  "activity": "${SendActivity_WM4lTv()}"
-                },
-                {
-                  "$kind": "Microsoft.ChoiceInput",
-                  "$designer": {
-                    "id": "hl1auJ"
-                  },
-                  "defaultLocale": "en-us",
-                  "disabled": false,
-                  "maxTurnCount": 3,
-                  "alwaysPrompt": false,
-                  "allowInterruptions": false,
-                  "prompt": "${ChoiceInput_Prompt_hl1auJ()}",
-                  "unrecognizedPrompt": "",
-                  "invalidPrompt": "",
-                  "defaultValueResponse": "",
-                  "choiceOptions": {
-                    "includeNumbers": true
-                  },
-                  "property": "dialog.choice",
-                  "choices": [
-                    "Ja",
-                    "Nej"
-                  ]
-                },
-                {
-                  "$kind": "Microsoft.IfCondition",
-                  "$designer": {
-                    "id": "4jY6bY"
-                  },
-                  "condition": "dialog.choice == \"Nej\"",
-                  "elseActions": [
-                    {
-                      "$kind": "Microsoft.SetProperty",
-                      "$designer": {
-                        "id": "SMPIIO"
-                      },
-                      "value": "${dialog.result.content[1].bookingdate}",
-                      "property": "dialog.removedDate"
-                    },
-                    {
-                      "$kind": "Microsoft.HttpRequest",
-                      "$designer": {
-                        "id": "Pe6A8g"
-                      },
-                      "method": "DELETE",
-                      "url": "${conversation.req_url}/current-bookings/1"
-                    },
-                    {
-                      "$kind": "Microsoft.ChoiceInput",
-                      "$designer": {
-                        "id": "Hi8I73"
-                      },
-                      "defaultLocale": "en-us",
-                      "disabled": false,
-                      "maxTurnCount": 3,
-                      "alwaysPrompt": false,
-                      "allowInterruptions": false,
-                      "prompt": "${ChoiceInput_Prompt_Hi8I73()}",
-                      "unrecognizedPrompt": "",
-                      "invalidPrompt": "",
-                      "defaultValueResponse": "",
-                      "choiceOptions": {
-                        "includeNumbers": true
-                      },
-                      "choices": [
-                        "Ja",
-                        "Nej"
-                      ],
-                      "property": "dialog.choice2"
-                    },
-                    {
-                      "$kind": "Microsoft.DeleteProperty",
-                      "$designer": {
-                        "id": "oqSUDb"
-                      },
-                      "property": "dialog.removedDate"
-                    },
-                    {
-                      "$kind": "Microsoft.IfCondition",
-                      "$designer": {
-                        "id": "AW97fa"
-                      },
-                      "condition": "dialog.choice2 == \"Ja\"",
-                      "actions": [
-                        {
-                          "$kind": "Microsoft.BeginDialog",
-                          "$designer": {
-                            "id": "B97okJ"
-                          },
-                          "activityProcessed": true,
-                          "dialog": "ConsultationDialog"
-                        }
-                      ]
-                    }
-                  ]
-                },
-                {
-                  "$kind": "Microsoft.BeginDialog",
-                  "$designer": {
-                    "id": "GgEyUN"
-                  },
-                  "activityProcessed": true,
-                  "dialog": "RestartPrompt"
-                },
-                {
-                  "$kind": "Microsoft.EndDialog",
-                  "$designer": {
-                    "id": "SEdLJ7"
-                  }
-                }
-              ],
-              "elseActions": []
+                "id": "CoMjdH"
+              }
             }
           ]
         },
         {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
-<<<<<<< HEAD
             "id": "LTVlXc"
           },
           "activity": "${SendActivity_LTVlXc()}"
@@ -222,24 +99,9 @@
           ]
         },
         {
-=======
-            "id": "TWePxc"
-          },
-          "activity": "${SendActivity_TWePxc()}"
-        },
-        {
-          "$kind": "Microsoft.BeginDialog",
-          "$designer": {
-            "id": "qZAJWB"
-          },
-          "activityProcessed": true,
-          "dialog": "RestartPrompt"
-        },
-        {
->>>>>>> develop
           "$kind": "Microsoft.EndDialog",
           "$designer": {
-            "id": "AjiLJN"
+            "id": "R3dygq"
           }
         }
       ]

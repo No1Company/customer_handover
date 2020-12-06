@@ -1,10 +1,9 @@
 [import](common.lg)
 
-# SendActivity_WM4lTv()
+# ChoiceInput_Prompt_561cED()
+-Vill du avboka din tid?
+# SendActivity_LTVlXc()
+>Ovan fungerar inte, tills vi löser JSON till array och kan testa mot en tom array. 
 -Du har en ${dialog.result.content[1].type} den ${dialog.result.content[1].bookingdate} med id:t 1.
-# ChoiceInput_Prompt_hl1auJ()
-- Vill du avboka din tid?
-# ChoiceInput_Prompt_Hi8I73()
--Bokningen den ${dialog.removedDate} är nu avbokad, vill du boka en annan tid?
-# SendActivity_TWePxc()
-- Du har inga bokningar.
+# SendActivity_KTHVQ2()
+- Din tid är avbokad.
