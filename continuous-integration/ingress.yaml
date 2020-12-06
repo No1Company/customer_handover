@@ -1,0 +1,28 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations: # This is information to the Ingress modules of kubernetes, to note that you want the endpoint publicly accessible.
+    kubernetes.io/ingress.class: nginx-public
+    nginx.ingress.kubernetes.io/enable-cors: "true"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+  name: rostbot-public
+  labels:
+    app: rostbot
+spec:
+  tls:
+    - hosts:
+        - tddc88-company-1-2020.kubernetes-public.it.liu.se
+      secretName: ssl-cert
+  rules:
+    - host: tddc88-company-1-2020.kubernetes-public.it.liu.se
+      http:
+        paths:
+          - path: /api/
+            backend:
+              serviceName: bot-backend-service
+              servicePort: 80
+
+          - path: /
+            backend:
+              serviceName: flask-backend-service
+              servicePort: 80

@@ -36,7 +36,8 @@ namespace Microsoft.BotFramework.Composer.Functions
             // Delegate the processing of the HTTP POST to the adapter.
             // The adapter will invoke the bot.
             await _adapter.ProcessAsync(req, req.HttpContext.Response, _bot);
-
+            Console.WriteLine("Request BODY:");
+            Console.WriteLine(req.Body.ToString());
             if (req.HttpContext.Response.StatusCode == (int) HttpStatusCode.OK || req.HttpContext.Response.StatusCode == (int)HttpStatusCode.Accepted)
             {
                 return new OkResult();

@@ -1,0 +1,81 @@
+stages:
+  - build-images
+  - deploy
+  - ingress
+
+
+build-bot-image: #used to build the bot's docker image
+  stage: build-images
+  image: docker.io/buildah/buildah
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+  needs: []
+  script:
+    - export _BUILDAH_STARTED_IN_USERNS=''
+    - export BUILDAH_ISOLATION=chroot
+    - export STORAGE_DRIVER=vfs
+    - export BUILDAH_FORMAT=docker
+    
+    - buildah build-using-dockerfile --tag "rostbot" "rostbot"
+    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "rostbot" "docker://${CI_REGISTRY_IMAGE}/rostbot:latest"
+
+build-flask-image: 
+  stage: build-images
+  image: docker.io/buildah/buildah
+  needs: []
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+  script:
+    - export _BUILDAH_STARTED_IN_USERNS=''
+    - export BUILDAH_ISOLATION=chroot
+    - export STORAGE_DRIVER=vfs
+    - export BUILDAH_FORMAT=docker
+    - echo "${EHR}"
+    - buildah build-using-dockerfile --build-arg ehr="${EHR}" --tag "flask" "backend"
+    - buildah push --creds "${CI_REGISTRY_USER}:${CI_JOB_TOKEN}" "flask" "docker://${CI_REGISTRY_IMAGE}/flask:latest"
+
+
+deploy-bot:
+  environment: 'production'
+  needs: 
+    - build-flask-image
+    - build-bot-image
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+
+  stage: deploy
+  image: lachlanevenson/k8s-kubectl
+  script:
+   - kubectl get all
+   - kubectl apply -f continuous-integration/bot-deploy.yaml
+   - kubectl apply -f continuous-integration/bot-service.yaml
+   - kubectl get all # display container status
+
+deploy-flask:
+  environment: 'production'
+  needs: 
+    - build-flask-image
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+
+  stage: deploy
+  image: lachlanevenson/k8s-kubectl
+  script:
+   - kubectl get all
+   - kubectl apply -f continuous-integration/backend-flask-deploy.yaml
+   - kubectl apply -f continuous-integration/backend-flask-service.yaml
+   - kubectl get all # display container status
+
+deploy-ingress:
+  environment: 'production'
+  needs: 
+    - deploy-bot
+    - deploy-flask
+  rules: 
+   - if: '$CI_COMMIT_BRANCH == "merge-ci"' #Change to master
+
+  stage: ingress
+  image: lachlanevenson/k8s-kubectl
+  script:
+   - kubectl apply -f continuous-integration/ingress.yaml
+   - kubectl get all # display container status

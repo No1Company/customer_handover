@@ -20,7 +20,7 @@ namespace Microsoft.BotFramework.Composer.Core
             }
             else
             {
-                settings["bot"] = "ComposerDialogs";
+                settings["bot"] = "../../";
             }
             builder.AddInMemoryCollection(settings);
             return builder;
