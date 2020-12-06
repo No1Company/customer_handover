@@ -282,60 +282,11 @@
       "intent": "TotalReset",
       "actions": [
         {
-          "$kind": "Microsoft.SetProperty",
+          "$kind": "Microsoft.SendActivity",
           "$designer": {
-            "id": "LtJzsS"
+            "id": "IVZow8"
           },
-          "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se",
-          "property": "conversation.req_url"
-        },
-        {
-          "$kind": "Microsoft.Foreach",
-          "$designer": {
-            "id": "3iCqWR",
-            "name": "Loop: for each item"
-          },
-          "itemsProperty": "turn.Activity.membersAdded",
-          "actions": [
-            {
-              "$kind": "Microsoft.IfCondition",
-              "$designer": {
-                "id": "0MWVUm",
-                "name": "Branch: if/else"
-              },
-              "condition": "string(dialog.foreach.value.id) != string(turn.Activity.Recipient.id) ",
-              "actions": [
-                {
-                  "$kind": "Microsoft.IfCondition",
-                  "$designer": {
-                    "id": "ccaPn8"
-                  },
-                  "actions": [],
-                  "condition": "user.has_fetched_data",
-                  "elseActions": [
-                    {
-                      "$kind": "Microsoft.BeginDialog",
-                      "$designer": {
-                        "id": "59hnV1"
-                      },
-                      "activityProcessed": true,
-                      "dialog": "FetchUserData"
-                    }
-                  ]
-                },
-                {
-                  "$kind": "Microsoft.SendActivity",
-                  "$designer": {
-                    "id": "4CWHOy"
-                  },
-                  "activity": "${SendActivity_4CWHOy()}"
-                }
-              ],
-              "elseActions": []
-            }
-          ],
-          "value": "dialog.foreach.value",
-          "index": "dialog.foreach.index"
+          "activity": "${SendActivity_IVZow8()}"
         }
       ]
     }
@@ -380,7 +331,7 @@
       },
       {
         "intent": "ResetConversation",
-        "pattern": "återställ"
+        "pattern": "reset"
       },
       {
         "intent": "TotalReset",
