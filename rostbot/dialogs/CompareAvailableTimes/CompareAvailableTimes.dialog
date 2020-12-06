@@ -42,6 +42,13 @@
           "property": "dialog.date"
         },
         {
+          "$kind": "SimpleDateFormat",
+          "$designer": {
+            "id": "W31d4r"
+          },
+          "simpledate": "${dialog.date}"
+        },
+        {
           "$kind": "Microsoft.Foreach",
           "$designer": {
             "id": "qJ83bX"
