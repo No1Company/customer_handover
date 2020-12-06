@@ -7,7 +7,7 @@
 ]
 
 
-#UpdateCard
+# UpdateCard()
 [Activity
     Attachments = ${json(updatecardjson())}
 ]
@@ -17,7 +17,7 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.2",
+  "version": "1.0",
   "body": [
          {
       "type": "TextBlock",
@@ -32,8 +32,8 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Registrera värden",
-      "data": "Registrera värden"
+      "title": "Utföra mätning",
+      "data": "Utföra mätning"
       
     },
     {
@@ -59,7 +59,7 @@
 # TextInput_Prompt_h5Ktbw()
 [SigninCard
     text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
-    buttons = Ja värdena stämmer | Nej värdena stämmer inte
+    buttons = Ja  | Nej
     ]
 # TextInput_Prompt_ouIfx9()
 [SigninCard
@@ -70,18 +70,8 @@
 
 
 
-# SendActivity_44RmnG()
-- Något gick fel, vänligen testa igen senare!
-
-# TextInput_Prompt_MlpQ4j()
-[SigninCard
-    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
-    buttons= Avsluta mätning
-    ]
-
 # bloodpressurecardjson()
 -```
-
 {
     "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
     "type": "AdaptiveCard",
@@ -97,23 +87,68 @@
         },
         {
             "type": "TextBlock",
-            "text": "Vilket värde har du på det systoliska trycket (övertrycket)?",
+            "text": "Vad är ditt blodtryck?",
             "wrap": true
         },
         {
-            "type": "Input.Number",
-            "id": "systolisk",
-            "placeholder": "Övertryck"
-        },
-        {
-            "type": "TextBlock",
-            "text": "Vilket värde har du på det diastoliska trycket (undertrycket)?",
-            "wrap": true
-        },
-        {
-            "type": "Input.Number",
-            "id": "diastolisk",
-            "placeholder": "Undertryck"
+            "type": "ColumnSet",
+            "columns": [
+                {
+                    "type": "Column",
+                    "width": "stretch",
+                    "items": [
+                        {
+                            "type": "ColumnSet",
+                            "columns": [
+                                {
+                                    "type": "Column",
+                                    "width": "90px",
+                                    "height": "stretch",
+                                    "items": [
+                                        {
+                                            "type": "Input.Number",
+                                            "placeholder": "Övertryck",
+                                            "separator": true,
+                                            "id": "systolisk"
+                                        }
+                                    ],
+                                    "spacing": "None"
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "auto",
+                                    "spacing": "None",
+                                    "verticalContentAlignment": "Center",
+                                    "items": [
+                                        {
+                                            "type": "TextBlock",
+                                            "text": "/",
+                                            "wrap": true,
+                                            "horizontalAlignment": "Center",
+                                            "separator": true,
+                                            "height": "stretch",
+                                            "size": "Medium"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Column",
+                                    "width": "100px",
+                                    "items": [
+                                        {
+                                            "type": "Input.Number",
+                                            "placeholder": "Undertryck",
+                                            "separator": true,
+                                            "id": "diastolisk"
+                                        }
+                                    ],
+                                    "spacing": "None"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
         }
     ],
     "actions": [
@@ -125,8 +160,16 @@
     ]
 }
 ```
-
 # SendActivity_DYsQGv()
  -${AdaptiveCardBloodPressureNoGuide()}
-# SendActivity_Cll9rT()
-- ${UpdateCard()}
+# TextInput_Prompt_A12pzQ()
+[SigninCard
+    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
+    buttons= Avsluta mätning
+    ]
+
+# SendActivity_vn5ACr()
+- Något gick fel, vänligen testa igen senare!
+
+# SendActivity_prvC1W()
+- Var god försök igen.
