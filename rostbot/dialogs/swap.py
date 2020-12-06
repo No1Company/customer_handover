@@ -17,19 +17,15 @@ for subdir, dirs, files in os.walk(rootdir):
                         value = value.replace("\n", "")
                         value = value.replace(",", "")
                         if "{" not in value:
+                            print("ersätt")
+                            print(value)
                             values.append(value)
+                            
+                text = fr.read()
+                for value in values:
+                    text.replace(value, '{\n"msteams": {\n"type": "imBack",\n"value": '+value+'\n}\n}')
                 fr.close()
 
-            text = ""
-            with open(path, "rt") as fr:
-                text = fr.read()
-                
-                for value in values:
-                    
-                    print(value in text)    
-                    text = text.replace(value, '{\n"msteams": {\n"type": "imBack",\n"value": '+value+'\n}\n}')
-                fr.close()
-                
             with open(path, "wt") as fw:
                 fw.write(text)
                 fw.close()

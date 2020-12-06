@@ -17,12 +17,7 @@
             "title": "Hantera notiser",
             "style": "positive",
             "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
-            "data": {
-"msteams": {
-"type": "imBack",
-"value": "Skapa ny notis"
-}
-},
+            "data": "Skapa ny notis",
             "card": {
                 "type": "AdaptiveCard",
                 "body": [
@@ -177,12 +172,7 @@
         },
         {
             "type": "Action.Submit",
-            "data": {
-"msteams": {
-"type": "imBack",
-"value": "Avbryt"
-}
-},
+            "data": "Avbryt",
             "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg"
         }
     ],
