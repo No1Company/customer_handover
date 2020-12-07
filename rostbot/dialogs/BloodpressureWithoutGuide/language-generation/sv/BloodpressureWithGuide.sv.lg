@@ -10,7 +10,7 @@
 # TextInput_Prompt_h5Ktbw()
 [HeroCard
     text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
-    buttons = Ja värdena stämmer | Nej värdena stämmer inte
+    buttons = Ja  | Nej
     ]
 # TextInput_Prompt_ouIfx9()
 [HeroCard
