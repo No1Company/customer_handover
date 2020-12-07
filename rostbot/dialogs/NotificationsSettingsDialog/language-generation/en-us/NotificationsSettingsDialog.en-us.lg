@@ -163,6 +163,12 @@
             "type": "Action.Submit",
             "value": " ",
             "title": "Radera notifikation",
+            "data": {
+                            "notisVia": "",
+                            "timeAfter":"",
+                            "timeBefore":"",
+                            "notisMeasurments":""
+                        },
             "id": "radera",
             "style": "destructive",
             "iconUrl": "https://i.postimg.cc/XvLQfbyg/minus.png",
