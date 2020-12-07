@@ -84,7 +84,7 @@
                       "$designer": {
                         "id": "SMPIIO"
                       },
-                      "value": "${dialog.result.content[1].bookingdate}",
+                      "value": "${dialog.result.content[dialog.foreach.index].bookingdate}",
                       "property": "dialog.removedDate"
                     },
                     {
@@ -93,7 +93,7 @@
                         "id": "Pe6A8g"
                       },
                       "method": "DELETE",
-                      "url": "${conversation.req_url}/current-bookings/1"
+                      "url": "${conversation.req_url}/current-bookings/${dialog.foreach.index}"
                     },
                     {
                       "$kind": "Microsoft.ChoiceInput",
