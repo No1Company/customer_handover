@@ -149,7 +149,7 @@
         },
         {
             "type": "Action.Submit",
-            "title": "",
+            "title": "Avbryt",
             "data": {
                 "msteams": {
                     "type": "imBack",

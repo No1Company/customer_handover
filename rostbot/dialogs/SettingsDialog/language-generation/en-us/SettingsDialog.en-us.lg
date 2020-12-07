@@ -49,7 +49,7 @@
         },
         {
             "type": "Action.Submit",
-            "title": "",
+            "title": "Avbryt",
             "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png",
             "data": {
              "msteams": {
