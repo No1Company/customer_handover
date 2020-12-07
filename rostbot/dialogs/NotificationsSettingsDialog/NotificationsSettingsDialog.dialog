@@ -246,26 +246,61 @@
               ]
             },
             {
-              "$kind": "Microsoft.SetProperties",
+              "$kind": "Microsoft.IfCondition",
               "$designer": {
-                "id": "QrEfFi"
+                "id": "meqZxU"
               },
-              "assignments": [
+              "condition": "=user.notis.via == \"\"",
+              "elseActions": [
                 {
-                  "property": "user.notisTyp",
-                  "value": "Typ: "
-                },
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "XD9SHj"
+                  },
+                  "assignments": [
+                    {
+                      "property": "user.notisTyp",
+                      "value": "Typ: "
+                    },
+                    {
+                      "property": "user.notisVia",
+                      "value": "Via: "
+                    },
+                    {
+                      "value": "Snooze: ",
+                      "property": "user.notisSnooze"
+                    },
+                    {
+                      "property": "user.notisInnan",
+                      "value": "Innan: "
+                    }
+                  ]
+                }
+              ],
+              "actions": [
                 {
-                  "property": "user.notisVia",
-                  "value": "Via: "
-                },
-                {
-                  "value": "Snooze: ",
-                  "property": "user.notisSnooze"
-                },
-                {
-                  "property": "user.notisInnan",
-                  "value": "Innan: "
+                  "$kind": "Microsoft.SetProperties",
+                  "$designer": {
+                    "id": "ryUryS"
+                  },
+                  "assignments": [
+                    {
+                      "property": "user.notisTyp",
+                      "value": ""
+                    },
+                    {
+                      "property": "user.notisVia",
+                      "value": ""
+                    },
+                    {
+                      "property": "user.notisSnooze",
+                      "value": ""
+                    },
+                    {
+                      "property": "user.notisInnan",
+                      "value": ""
+                    }
+                  ]
                 }
               ]
             }
