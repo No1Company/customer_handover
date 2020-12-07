@@ -1,10 +1,6 @@
-_When ready for output, create a pdf file and put it in the output file of Teams._
 
-    Document Status: under progress
-    Inspected by: Firstname Lastname Date, ...
-    Contact Person: Albin Jonfelt (Integrator)
-    Written by: Albin Jonfelt (Integrator), Erik Lundin (Deployment Manager)
-    Manager:
+# Rostbot - Healthcare Bot for Region Östergötland's Patients 
+
 # Table Of Content
 The table of content is done manually, and not mandatory for documents   
 [1. Dependencies and installation](# 1. Dependencies and installation)  
@@ -45,13 +41,13 @@ The table of content is done manually, and not mandatory for documents
 
 [3.2 Custom Actions](## 3.2 Custom Actions)
 
-[4. Deployment Manager's Notebook](## 4. Deployment Manager's Notebook)
+[4. Deployment Manager's Notebook](# 4. Deployment Manager's Notebook)
 
-[4.1 Brief Introduction](### 4.1 Brief Introduction)
+[4.1 Brief Introduction](## 4.1 Brief Introduction)
 
-[4.2 Some notes regarding the framework](### 4.2 Some notes regarding the framework)   
+[4.2 Some notes regarding the framework](## 4.2 Some notes regarding the framework)   
 
-[4.3 How is a Microsoft Bot Hosted?](### 4.3 How is a Microsoft Bot Hosted?)
+[4.3 How is a Microsoft Bot Hosted?](## 4.3 How is a Microsoft Bot Hosted?)
 
 
 # 1. Dependencies and installation
@@ -144,13 +140,13 @@ A quick guide for setting up custom actions is following.
 12. Press the custom action and set variables to send in to the custom action. If using variables, the input needs to be in the format ${scope.var}, the output however, doesn't. 
 A more thorough guide is as mentioned located in the readme file in the runtime folder. 
 
-## 4. Deployment Manager's Notebook
+# 4. Deployment Manager's Notebook
 
-### 4.1 Brief Introduction
+## 4.1 Brief Introduction
 
 The purpose of this chapter is to act as a documentation for all work related to the deployment of [rostbot](https://gitlab.liu.se/tddc88-company-1-2020/deploy), and to aid the reader in making decisions related to deploying a bot built with [Microsoft Bot Framework (MSB)](https://dev.botframework.com/). The chapter will describe the decisions that year 2020's Company 1 made related to deployment of the health care bot, as well as to provide a healthy discussion regarding these decisions and whether or not they were optimal for the task at hand.
 
-### 4.2 Some notes regarding the framework
+## 4.2 Some notes regarding the framework
 
 Although there are several ways to build a bot with Microsoft Bot Framework (as mentioned in the Architecture Notebook), there are some common factors that all bots share. Microsoft has build the framework in such a way that it is tightly integrated with Microsoft Azure. This means that, although it is perfectly possible to deploy the bot on any server platform (AWS, Google Cloud, or your own servers), it is necessary to register the bot via the Microsoft Azure Portal. The reason for this is that despite the different SDKs that exist, they all share a common underlying structure. Specifically, they all implement the same HTTP Adapter. This Adapter is what handles the logic when the bot server receives chat request from different *channels*.
 
