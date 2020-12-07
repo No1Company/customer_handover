@@ -1,9 +1,8 @@
 [import](common.lg)
 
 # TextInput_Prompt_7g4qoR()
-[SigninCard
+[HeroCard
     text = Först och främst ser du till att du är lugn och avslappnad för att kunna mäta blodtrycket korrekt. \n\nSlappna av, ta djupa andetag, se till att du inte får i dig något som kan öka hjärtslagen som till exempel kaffe eller tobak. Det bästa är om du har haft möjlighet att vila dig en stund innan.
-
     buttons = Nästa steg
 ]
 # TextInput_Prompt_41FIq1()

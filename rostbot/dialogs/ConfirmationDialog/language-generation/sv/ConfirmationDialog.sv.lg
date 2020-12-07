@@ -1,7 +1,7 @@
 [import](common.lg)
 
 # TextInput_Prompt_kOvy4a()
-[SigninCard
+[HeroCard
     text = ${dialog.confirmText}
     buttons = Ja | Nej
     ]
