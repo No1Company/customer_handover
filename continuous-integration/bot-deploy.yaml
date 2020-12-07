@@ -33,4 +33,4 @@ spec:
               memory: 156Mi
             requests:
               cpu: 200m
-              memory: 200Mi
+              memory: 156Mi
