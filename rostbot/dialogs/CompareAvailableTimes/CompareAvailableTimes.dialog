@@ -64,13 +64,17 @@
           "invalidPrompt": "",
           "defaultValueResponse": "",
           "choiceOptions": {
-            "includeNumbers": true
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
           },
           "choices": [
             "Ja",
             "Nej"
           ],
-          "property": "turn.confirm3"
+          "property": "turn.confirm3",
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
         },
         {
           "$kind": "Microsoft.IfCondition",
@@ -79,6 +83,14 @@
           },
           "condition": "turn.confirm3 == 'Ja'",
           "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "zGMgwv"
+              },
+              "property": "dialog.date",
+              "value": "=null"
+            },
             {
               "$kind": "Microsoft.RepeatDialog",
               "$designer": {
@@ -136,7 +148,10 @@
                   "choices": [
                     "Ja",
                     "Nej"
-                  ]
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true
+                  }
                 },
                 {
                   "$kind": "Microsoft.IfCondition",
@@ -150,7 +165,7 @@
                       "$designer": {
                         "id": "LQwnMg"
                       },
-                      "value": "=dialog.date"
+                      "value": "=dialog.foreach.value[\"start\"]"
                     }
                   ],
                   "elseActions": [
