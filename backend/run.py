@@ -2,7 +2,7 @@
 #Kod för att köra igång systemet.
 
 from bot_backend import app
-from bot_backend.databasemgmt import resetDB
+from bot_backend.databasemgmt import resetDB, createSmallExample
 import sys
 import os
 
@@ -13,6 +13,7 @@ if __name__ == "__main__":
     args = sys.argv
 
     resetDB()
+    createSmallExample()
 
     if "--port" in args:
         port = args[args.index("--port")+1]
