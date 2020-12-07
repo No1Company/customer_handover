@@ -19,7 +19,8 @@
     ]
 
 
-
+# SendActivity_DYsQGv()
+ -${AdaptiveCardBloodPressureNoGuide()}
 
 # NumberInput_Prompt_VsXcIN()
 >User.sysvalue kommer finnas kvar vid repetitioner av dialogen, det gör inte turn, men använder man turn på sysvalue finns den inte kvar tillräckligt länge för att hämtas i bekräftelserutan. 
@@ -29,8 +30,12 @@
 # NumberInput_Prompt_Yu9Psp()
 -Vad är resultatet för undertrycket?
 # TextInput_Prompt_A12pzQ()
-- 
+[HeroCard
+    text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
+    buttons= Avsluta mätning
+    ]
 # SendActivity_vn5ACr()
-- 
+- Något gick fel, vänligen testa igen senare!
+
 # SendActivity_prvC1W()
-- 
+- Var god försök igen.
