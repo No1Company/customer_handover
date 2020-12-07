@@ -41,8 +41,6 @@ namespace Microsoft.BotFramework.Composer.CustomAction
         /// </value>
         [JsonProperty("dateresult")]
         public StringExpression DateResult { get; set; }
-
-
         public override Task<DialogTurnResult> BeginDialogAsync(DialogContext dc, object options = null, CancellationToken cancellationToken = default(CancellationToken))
         {
             string inputdate = SimpleDate.GetValue(dc.State);
@@ -59,10 +57,10 @@ namespace Microsoft.BotFramework.Composer.CustomAction
             }
 
             DateTime current = DateTime.Now;
-            string year = current.Year.ToString().Substring(2, 2);
-
+            int year = current.Year;
+            int curr_month = current.Month;
             string month_string = inputdate.Substring((separatorIndex + 1), (inputdate.Length - separatorIndex - 1));
-            string month = "";
+            int month = 0;
             string[] monthsArray = { "januari", "februari", "mars", "april", "maj", "juni", "juli", "augusti", "september", "oktober", "november", "december" };
             month_string = month_string.ToLower();
 
@@ -70,19 +68,30 @@ namespace Microsoft.BotFramework.Composer.CustomAction
             {
                 if (month_string == monthsArray[i])
                 {
-                    month = (i + 1).ToString();
-                    if (month.Length == 1)
-                    {
-                        month = "0" + month;
-                    }
+                    month = (i + 1);
+                    break;
+                    
                 } 
                 else 
                 {
-                    month = "00";
+                    month = 0;
                 }
             }
 
-            string fulldate = day + "/" + month + "/" + year;
+            if(curr_month > month && month != 0)
+            {
+                year++;
+            }
+
+            string year_string = year.ToString().Substring(2, 2);
+            month_string = month.ToString();
+
+            if (month_string.Length == 1)
+            {
+                month_string = "0" + month_string;
+            }
+
+            string fulldate = year_string + "/" + month_string + "/" + day;
 
             if (this.DateResult != null)
             {

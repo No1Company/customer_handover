@@ -76,8 +76,8 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Registrera värden",
-      "data": "Registrera värden"
+      "title": "Utföra mätning",
+      "data": "Utföra mätning"
       
     },
     {
@@ -124,8 +124,8 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Registrera värden",
-      "data": "Registrera värden"
+      "title": "Utföra mätning",
+      "data": "Utföra mätning"
       
     },
     {
@@ -148,3 +148,9 @@
 ```
 # SendActivity_g9skpW()
  -${AdaptiveCard()}
+# SendActivity_3vuWML()
+- 
+# SendActivity_qzdt71()
+- 
+# SendActivity_8wTgTi()
+- 

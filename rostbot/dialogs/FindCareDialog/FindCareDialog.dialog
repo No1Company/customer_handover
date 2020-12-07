@@ -121,10 +121,10 @@
             {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "5ZXKma"
+                "id": "mnITg6"
               },
               "activityProcessed": true,
-              "dialog": "QuestionsConsultation",
+              "dialog": "PhysicalMeetBooking",
               "resultProperty": "user.bookingdate"
             },
             {

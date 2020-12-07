@@ -21,43 +21,43 @@ def main():
 def avail_times():
     times = [
             {
-                "start" : d(2020, 12, 7, 14, 30),
-                "stop"  : d(2020, 12, 7, 15, 30)
+                "start" : d(2020, 12, 14, 14, 30),
+                "stop"  : d(2020, 12, 14, 15, 30)
             },
 
             {
-                "start" : d(2020, 12, 8, 11, 0),
-                "stop"  : d(2020, 12, 8, 11, 30)
+                "start" : d(2020, 12, 15, 11, 0),
+                "stop"  : d(2020, 12, 15, 11, 30)
             },
             
             {
-                "start" : d(2020, 12, 8, 14, 30),
-                "stop"  : d(2020, 12, 8, 15, 30)
+                "start" : d(2020, 12, 18, 14, 30),
+                "stop"  : d(2020, 12, 18, 15, 30)
             },
             
             {
-                "start" : d(2020, 12, 9, 8, 15),
-                "stop"  : d(2020, 12, 9, 8, 45)
+                "start" : d(2020, 12, 20, 8, 15),
+                "stop"  : d(2020, 12, 20, 8, 45)
             },
             
             {
-                "start" : d(2020, 12, 9, 10, 30),
-                "stop"  : d(2020, 12, 9, 11, 00)
+                "start" : d(2020, 12, 22, 10, 30),
+                "stop"  : d(2020, 12, 22, 11, 00)
             },
             
             {
-                "start" : d(2020, 12, 14, 10, 15),
-                "stop"  : d(2020, 12, 14, 10, 45)
+                "start" : d(2021, 2, 15, 10, 15),
+                "stop"  : d(2021, 2, 15, 10, 45)
             },
             
             {
-                "start" : d(2020, 12, 16, 8, 30),
-                "stop"  : d(2020, 12, 16, 9, 00)
+                "start" : d(2021, 1, 23, 8, 30),
+                "stop"  : d(2021, 1, 23, 9, 00)
             }
         ]
 
 
-    return jsonify([ {"start": time["start"].strftime("%d/%m/%y") + " " + time["start"].strftime("%X")[:-3], "stop": time["stop"].strftime("%d/%m/%y") + " " + time["stop"].strftime("%X")[:-3]} for time in times ])
+    return jsonify([ {"start": time["start"].strftime("%y/%m/%d") + " " + time["start"].strftime("%X")[:-3], "stop": time["stop"].strftime("%y/%m/%d") + " " + time["stop"].strftime("%X")[:-3]} for time in times ])
 
 
 userguidetypes = [

@@ -37,7 +37,6 @@
    }
 }
 ```
-
 # AdaptiveCard()
 [Activity
     Attachments = ${json(adaptivecardjson())}
@@ -156,3 +155,9 @@
  -${AdaptiveCard()}
 # SendActivity_73zBqG()
 -
+# SendActivity_3vuWML()
+ -${AdaptiveCard()}
+# SendActivity_qzdt71()
+- Fick felaktiskt svar från servern, vänligen testa igen senare. Fel: ${dialog.resultProperty}
+# SendActivity_8wTgTi()
+- Du har inga fler mätningar att göra idag. Återgår till start!

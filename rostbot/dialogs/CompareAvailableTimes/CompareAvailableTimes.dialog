@@ -44,10 +44,61 @@
         {
           "$kind": "SimpleDateFormat",
           "$designer": {
-            "id": "RViWz7"
+            "id": "Huu9LJ"
           },
           "simpledate": "${dialog.date}",
           "dateresult": "dialog.convertedDate"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "xzSN8y"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_xzSN8y()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "turn.confirm3",
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "iXQ5Ze"
+          },
+          "condition": "turn.confirm3 == 'Ja'",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "zGMgwv"
+              },
+              "property": "dialog.date",
+              "value": "=null"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "qwJW92"
+              },
+              "activityProcessed": true
+            }
+          ]
         },
         {
           "$kind": "Microsoft.Foreach",
@@ -61,17 +112,17 @@
             {
               "$kind": "SubstringDate",
               "$designer": {
-                "id": "4mzqRn"
+                "id": "bfwTLg"
               },
               "fulldate": "${dialog.foreach.value[\"start\"]}",
-              "dateresult": "dialog.substringDate"
+              "dateresult": "dialog.subDate"
             },
             {
               "$kind": "Microsoft.IfCondition",
               "$designer": {
                 "id": "xqwcQ2"
               },
-              "condition": "dialog.convertedDate == dialog.substringDate",
+              "condition": "dialog.convertedDate == dialog.subDate",
               "actions": [
                 {
                   "$kind": "Microsoft.ChoiceInput",
@@ -90,27 +141,31 @@
                   "choiceOptions": {
                     "includeNumbers": true,
                     "inlineOrMore": ", or ",
-                    "inlineOr": " or "
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
                   },
-                  "property": "turn.confirm3",
+                  "property": "turn.confirm4",
                   "choices": [
                     "Ja",
                     "Nej"
-                  ]
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true
+                  }
                 },
                 {
                   "$kind": "Microsoft.IfCondition",
                   "$designer": {
                     "id": "fOBSuV"
                   },
-                  "condition": "turn.confirm3 == 'Ja'",
+                  "condition": "turn.confirm4 == 'Ja'",
                   "actions": [
                     {
                       "$kind": "Microsoft.EndDialog",
                       "$designer": {
                         "id": "LQwnMg"
                       },
-                      "value": "=dialog.date"
+                      "value": "=dialog.foreach.value[\"start\"]"
                     }
                   ],
                   "elseActions": [

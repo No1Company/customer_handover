@@ -40,7 +40,11 @@
             "Ja",
             "Nej"
           ],
-          "property": "turn.confirm"
+          "property": "turn.confirm",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          }
         },
         {
           "$kind": "Microsoft.SwitchCondition",
