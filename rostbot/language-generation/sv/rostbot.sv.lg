@@ -188,8 +188,12 @@
 # SendActivity_g9skpW()
  -${AdaptiveCard()}
 # SendActivity_3vuWML()
-- 
+ -${AdaptiveCard()}
 # SendActivity_qzdt71()
-- 
+- Fick felaktiskt svar från servern, vänligen testa igen senare. Fel: ${dialog.resultProperty}
 # SendActivity_8wTgTi()
-- 
+- Du har inga fler mätningar att göra idag. Återgår till start!
+# SendActivity_EJYcz7()
+ -${AdaptiveCard()}
+# SendActivity_hrdjnA()
+- resetting
