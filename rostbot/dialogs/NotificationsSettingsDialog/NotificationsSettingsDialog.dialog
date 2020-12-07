@@ -17,6 +17,46 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "I14ASf"
+          },
+          "condition": "user.notisTyp == null",
+          "actions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "4Ltppn"
+              },
+              "activity": "${SendActivity_4Ltppn()}"
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "DEWt9O"
+              },
+              "assignments": [
+                {
+                  "property": "user.notisTyp",
+                  "value": ""
+                },
+                {
+                  "property": "user.notisVia",
+                  "value": ""
+                },
+                {
+                  "property": "user.notisSnooze",
+                  "value": ""
+                },
+                {
+                  "property": "user.notisInnan",
+                  "value": ""
+                }
+              ]
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "qIec1U"
@@ -209,6 +249,30 @@
                 {
                   "value": "${dialog.resultProperty.content[0].type}",
                   "property": "user.notis.measurments"
+                }
+              ]
+            },
+            {
+              "$kind": "Microsoft.SetProperties",
+              "$designer": {
+                "id": "QrEfFi"
+              },
+              "assignments": [
+                {
+                  "property": "user.notisTyp",
+                  "value": "Typ: "
+                },
+                {
+                  "property": "user.notisVia",
+                  "value": "Via: "
+                },
+                {
+                  "value": "Snooze: ",
+                  "property": "user.notisSnooze"
+                },
+                {
+                  "property": "user.notisInnan",
+                  "value": "Innan: "
                 }
               ]
             }

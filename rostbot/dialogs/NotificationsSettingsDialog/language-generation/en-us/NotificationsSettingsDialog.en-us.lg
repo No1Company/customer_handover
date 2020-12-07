@@ -195,19 +195,19 @@
                             "type": "FactSet",
                             "facts": [
                                 {
-                                    "title": "Typ: ",
+                                    "title": "${user.notisTyp}",
                                     "value": "${user.notis.measurments}"
                                 },
                                 {
-                                    "title": "Via: ",
+                                    "title": "${user.notisVia}",
                                     "value": "${user.notis.via}"
                                 },
                                 {
-                                    "title": "Innan: ",
+                                    "title": "${user.notisInnan} ",
                                     "value": "${user.notis.time.before}"
                                 },
                                 {
-                                    "title": "Snooze: ",
+                                    "title": "${user.notisSnooze}",
                                     "value": "${user.notis.time.after}"
                                 }
                             ],
@@ -224,3 +224,5 @@
 ```
 # SendActivity_jHELjD()
 - ${AdaptiveCardNotificationSettings()}
+# SendActivity_4Ltppn()
+- ${user.notisTyp}
