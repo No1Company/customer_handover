@@ -49,6 +49,7 @@
         },
         {
             "type": "Action.Submit",
+            "title": ""
             "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png",
             "data": {
              "msteams": {

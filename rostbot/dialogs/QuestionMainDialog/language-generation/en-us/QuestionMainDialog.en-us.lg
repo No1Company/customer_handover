@@ -149,6 +149,7 @@
         },
         {
             "type": "Action.Submit",
+            title: "",
             "data": {
                 "msteams": {
                     "type": "imBack",
