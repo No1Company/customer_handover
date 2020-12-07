@@ -161,12 +161,30 @@
         },
         {
             "type": "Action.Submit",
-            "title": "Avbryt",
+            "value": " ",
+            "title": "Radera notifikation",
+            "data": {
+                            "notisVia": "",
+                            "timeAfter":"",
+                            "timeBefore":"",
+                            "notisMeasurments":"",
+
+                            "msteams": {
+                                "type": "imBack",
+                                "value": "Radera notifikation",
+                            },
+                        },
+            "id": "radera",
+            "style": "destructive",
+            "iconUrl": "https://i.postimg.cc/XvLQfbyg/minus.png",
+        },
+        {
+            "type": "Action.Submit",
             "data": {
                 "msteams": {
                     "type": "imBack",
                     "value": "Avbryt",
-                }
+                },
             },
             "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png"
         }
@@ -201,19 +219,19 @@
                             "type": "FactSet",
                             "facts": [
                                 {
-                                    "title": "Typ: ",
+                                    "title": "${user.notisTyp} ",
                                     "value": "${user.notis.measurments}"
                                 },
                                 {
-                                    "title": "Via: ",
+                                    "title": "${user.notisVia}",
                                     "value": "${user.notis.via}"
                                 },
                                 {
-                                    "title": "Innan: ",
+                                    "title": "${user.notisInnan}",
                                     "value": "${user.notis.time.before}"
                                 },
                                 {
-                                    "title": "Snooze: ",
+                                    "title": "${user.notisSnooze}",
                                     "value": "${user.notis.time.after}"
                                 }
                             ],
@@ -228,5 +246,5 @@
     ]
 }
 ```
-# SendActivity_jHELjD()
+# SendActivity_Pl11TG()
 - ${AdaptiveCardNotificationSettings()}
