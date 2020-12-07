@@ -40,7 +40,11 @@
             "Boka konsultation",
             "Vanliga symtom"
           ],
-          "property": "turn.input"
+          "property": "turn.input",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          }
         },
         {
           "$kind": "Microsoft.SwitchCondition",

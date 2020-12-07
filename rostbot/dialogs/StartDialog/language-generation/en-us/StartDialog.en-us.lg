@@ -45,8 +45,8 @@
     },
     {
       "type": "Action.Submit",
-      "title": "Övriga frågor",
-      "data": "Övriga frågor"
+      "title": "Fråga frågor",
+      "data": "Fråga frågor"
     }
   ]
 }
