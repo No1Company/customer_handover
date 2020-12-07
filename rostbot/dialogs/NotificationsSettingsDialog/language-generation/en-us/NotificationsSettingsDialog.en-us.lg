@@ -161,6 +161,14 @@
         },
         {
             "type": "Action.Submit",
+            "value": " ",
+            "title": "Radera notifikation",
+            "id": "radera",
+            "style": "destructive",
+            "iconUrl": "https://i.postimg.cc/XvLQfbyg/minus.png",
+        },
+        {
+            "type": "Action.Submit",
             "data": "Avbryt",
             "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png"
         }
@@ -195,7 +203,7 @@
                             "type": "FactSet",
                             "facts": [
                                 {
-                                    "title": "${user.notisTyp}",
+                                    "title": "${user.notisTyp} ",
                                     "value": "${user.notis.measurments}"
                                 },
                                 {
@@ -203,7 +211,7 @@
                                     "value": "${user.notis.via}"
                                 },
                                 {
-                                    "title": "${user.notisInnan} ",
+                                    "title": "${user.notisInnan}",
                                     "value": "${user.notis.time.before}"
                                 },
                                 {
@@ -224,5 +232,3 @@
 ```
 # SendActivity_jHELjD()
 - ${AdaptiveCardNotificationSettings()}
-# SendActivity_4Ltppn()
-- ${user.notisTyp}

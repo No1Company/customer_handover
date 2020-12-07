@@ -24,13 +24,6 @@
           "condition": "user.notisTyp == null",
           "actions": [
             {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "4Ltppn"
-              },
-              "activity": "${SendActivity_4Ltppn()}"
-            },
-            {
               "$kind": "Microsoft.SetProperties",
               "$designer": {
                 "id": "DEWt9O"
