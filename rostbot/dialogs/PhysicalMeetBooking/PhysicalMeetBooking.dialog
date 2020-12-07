@@ -145,12 +145,19 @@
                       "activity": "${SendActivity_kHQpSb()}"
                     },
                     {
-                      "$kind": "Microsoft.BeginDialog",
+                      "$kind": "Microsoft.SetProperty",
                       "$designer": {
-                        "id": "ashr5V"
+                        "id": "TtNCRq"
                       },
-                      "activityProcessed": true,
-                      "dialog": "RestartPrompt"
+                      "property": "user.bookingdate",
+                      "value": "=null"
+                    },
+                    {
+                      "$kind": "Microsoft.EndDialog",
+                      "$designer": {
+                        "id": "EzenRt"
+                      },
+                      "value": "=user.bookingdate"
                     }
                   ],
                   "actions": [

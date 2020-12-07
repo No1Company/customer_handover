@@ -4,7 +4,6 @@
 -Du kommer nu få några frågor gällande din ${toLower(user.symptoms)}.
 # NumberInput_Prompt_iqrgSe()
 -Hur många veckor skulle du säga att du har haft symtom? 
->Detta kommer ersättas med vårdcentralens egna frågeformulär
 
 # SendActivity_7OGiuz()
 - Jag bedömer att du behöver boka tid på vårdcentralen.
