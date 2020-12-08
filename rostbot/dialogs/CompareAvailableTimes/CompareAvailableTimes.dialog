@@ -170,11 +170,19 @@
                   ],
                   "elseActions": [
                     {
+                      "$kind": "Microsoft.SetProperty",
+                      "$designer": {
+                        "id": "bJk0Lx"
+                      },
+                      "property": "dialog.date",
+                      "value": "=null"
+                    },
+                    {
                       "$kind": "Microsoft.EndDialog",
                       "$designer": {
                         "id": "AMJ0LM"
                       },
-                      "value": "=null"
+                      "value": "=dialog.date"
                     }
                   ]
                 }
