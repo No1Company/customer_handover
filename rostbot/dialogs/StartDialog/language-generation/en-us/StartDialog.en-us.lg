@@ -60,11 +60,11 @@
     },
     {
       "type": "Action.Submit",
-      "title": "Ställ frågor",
+      "title": "Fråga frågor",
       "data": {
           "msteams": {
               "type": "imBack",
-              "value": "Ställ frågor"
+              "value": "Fråga frågor"
           }
       }
     }

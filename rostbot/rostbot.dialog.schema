@@ -14,10 +14,10 @@
       "$ref": "#/definitions/stringExpression",
       "title": "Boka Konsultation"
     },
-    "Övriga frågor": {
+    "Fråga frågor": {
       "description": "Questions",
       "$ref": "#/definitions/stringExpression",
-      "title": "Ovriga Fragor"
+      "title": "Fraga Fragor"
     },
     "Registrera värden": {
       "description": "Register",
