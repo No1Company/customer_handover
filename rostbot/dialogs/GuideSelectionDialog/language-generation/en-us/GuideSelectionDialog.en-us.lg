@@ -40,19 +40,24 @@
         {
             "type": "Action.Submit",
             "title": "Ok",
+            "data": {
+                "msteams": {
+                    "type": "imBack",
+                    "value": "Ok"
+                }
+            },
             "style": "positive",
             "id": "guideselection",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg"
         },
          {
             "type": "Action.Submit",
-            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
+            "title": "Avbryt",
             "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Avbryt"
-          }
-      }
+                "msteams": {
+                    "type": "imBack",
+                    "value": "Avbryt"
+                }
+            }
         }
     ]
 }
@@ -114,11 +119,11 @@
     },
     {
       "type": "Action.Submit",
-      "title": "Övriga frågor",
+      "title": "Fråga frågor",
       "data": {
           "msteams": {
               "type": "imBack",
-              "value": "Övriga frågor"
+              "value": "Fråga frågor"
           }
       }
     }
