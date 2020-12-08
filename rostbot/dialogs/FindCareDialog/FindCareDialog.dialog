@@ -119,13 +119,28 @@
           "condition": "turn.confirm == 'Ja'",
           "actions": [
             {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "VbzfmW"
+              },
+              "property": "user.bookingtype",
+              "value": "='tid på vårdcentralen'"
+            },
+            {
               "$kind": "Microsoft.BeginDialog",
               "$designer": {
                 "id": "mnITg6"
               },
               "activityProcessed": true,
-              "dialog": "PhysicalMeetBooking",
-              "resultProperty": "user.bookingdate"
+              "dialog": "PhysicalMeetBooking"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "3IthOH"
+              },
+              "activityProcessed": true,
+              "dialog": "ConsultationBookingFeedback"
             },
             {
               "$kind": "Microsoft.SetProperty",

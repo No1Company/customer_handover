@@ -91,6 +91,14 @@
               "property": "turn.confirmDate"
             },
             {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "cYHNBX"
+              },
+              "property": "dialog.datechoice",
+              "value": "=null"
+            },
+            {
               "$kind": "Microsoft.IfCondition",
               "$designer": {
                 "id": "QdT8uC"
@@ -213,7 +221,15 @@
                 "id": "uAKuhT"
               },
               "property": "user.bookingdate",
-              "value": "${dialog.result.content[${dialog.datechoice}].start}"
+              "value": "${dialog.result.content[dialog.datechoice].start}"
+            },
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "JlChiL"
+              },
+              "property": "dialog.datechoice",
+              "value": "=null"
             },
             {
               "$kind": "Microsoft.EndDialog",
