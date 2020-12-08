@@ -1,12 +1,5 @@
 [import](common.lg)
 
-
-# AdaptiveCardBloodPressureNoGuide()
-[Activity
-    Attachments = ${json(bloodpressurecardjson())}
-]
-
-
 # UpdateCard()
 [Activity
     Attachments = ${json(updatecardjson())}
@@ -75,10 +68,9 @@
 }
 ```
 
-
 # TextInput_Prompt_h5Ktbw()
 [HeroCard
-    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
+    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck.   \n\nÖvertryck: ${user.sysvalue}\n\n  Undertryck: ${user.diavalue}\n\n  Stämmer detta?
     buttons = Ja  | Nej
     ]
 # TextInput_Prompt_ouIfx9()
@@ -87,8 +79,10 @@
     buttons= Återgå till start | Registrera ytterligare värden
     ]
 
-
-
+# AdaptiveCardBloodPressureNoGuide()
+[Activity
+    Attachments = ${json(bloodpressurecardjson())}
+]
 
 # bloodpressurecardjson()
 -```
@@ -181,7 +175,7 @@
 }
 ```
 # SendActivity_DYsQGv()
- -${AdaptiveCardBloodPressureNoGuide()}
+-${AdaptiveCardBloodPressureNoGuide()}
 # TextInput_Prompt_A12pzQ()
 [HeroCard
     text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.

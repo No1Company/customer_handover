@@ -98,6 +98,14 @@
                     "id": "olx62Z"
                   },
                   "activity": "${SendActivity_olx62Z()}"
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "NqswyZ"
+                  },
+                  "property": "user.weight",
+                  "value": "=null"
                 }
               ],
               "elseActions": [
@@ -107,6 +115,14 @@
                     "id": "ZFmXto"
                   },
                   "activity": "${SendActivity_ZFmXto()}"
+                },
+                {
+                  "$kind": "Microsoft.SetProperty",
+                  "$designer": {
+                    "id": "itoBEk"
+                  },
+                  "property": "user.weight",
+                  "value": "=null"
                 }
               ]
             }

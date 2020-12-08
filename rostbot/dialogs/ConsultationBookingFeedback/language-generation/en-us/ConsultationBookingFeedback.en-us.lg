@@ -3,7 +3,11 @@
 
 
 # ChoiceInput_Prompt_GuCMjZ()
--Jag har nu bokat en ${user.bookingtype} den ${user.bookingdate}. Vill du tillägga något till din bokning? Du kan beskriva dina symptom ytterligare för att underlätta för vårdpersonalen.  
+-Du kan beskriva dina symptom ytterligare för att underlätta för vårdpersonalen. Vill du göra det?
+
+
+
+
 
 
 

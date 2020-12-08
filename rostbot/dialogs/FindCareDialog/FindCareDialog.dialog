@@ -151,16 +151,7 @@
               "value": "= null "
             }
           ],
-          "elseActions": [
-            {
-              "$kind": "Microsoft.BeginDialog",
-              "$designer": {
-                "id": "SqVeuo"
-              },
-              "activityProcessed": true,
-              "dialog": "RestartPrompt"
-            }
-          ]
+          "elseActions": []
         }
       ]
     }
