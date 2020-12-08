@@ -180,6 +180,7 @@
         },
         {
             "type": "Action.Submit",
+            "title": "Avbryt",
             "data": {
                 "msteams": {
                     "type": "imBack",
