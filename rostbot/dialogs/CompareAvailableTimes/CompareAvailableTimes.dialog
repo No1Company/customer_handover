@@ -173,7 +173,8 @@
                       "$kind": "Microsoft.EndDialog",
                       "$designer": {
                         "id": "AMJ0LM"
-                      }
+                      },
+                      "value": "=null"
                     }
                   ]
                 }
