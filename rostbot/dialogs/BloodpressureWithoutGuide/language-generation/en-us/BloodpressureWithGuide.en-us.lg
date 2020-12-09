@@ -1,95 +1,9 @@
 [import](common.lg)
 
-
 # AdaptiveCardBloodPressureNoGuide()
 [Activity
     Attachments = ${json(bloodpressurecardjson())}
 ]
-
-
-# UpdateCard()
-[Activity
-    Attachments = ${json(updatecardjson())}
-]
-
-# updatecardjson()
--```
-{
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "type": "AdaptiveCard",
-  "version": "1.0",
-  "body": [
-         {
-      "type": "TextBlock",
-      "size": "default",
-      "isSubtle": true,
-      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
-      "wrap": true,
-      "maxLines": 0
-      
-    }
-  ],
-  "actions": [
-    {
-      "type": "Action.Submit",
-      "title": "Utföra mätning",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Utföra mätning"
-          }
-      }
-      
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Ändra inställningar",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Ändra inställningar"
-          }
-      }
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Boka konsultation",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Boka konsultation"
-          }
-      }
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Fråga frågor",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Fråga frågor"
-          }
-      }
-    }
-  ]
-}
-```
-
-
-# TextInput_Prompt_h5Ktbw()
-[HeroCard
-    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
-    buttons = Ja  | Nej
-    ]
-# TextInput_Prompt_ouIfx9()
-[HeroCard
-    text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
-    buttons= Återgå till start | Registrera ytterligare värden
-    ]
-
-
-
-
 # bloodpressurecardjson()
 -```
 {
@@ -180,8 +94,88 @@
     ]
 }
 ```
-# SendActivity_DYsQGv()
- -${AdaptiveCardBloodPressureNoGuide()}
+
+# UpdateCard()
+[Activity
+    Attachments = ${json(updatecardjson())}
+]
+
+# updatecardjson()
+-```
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+         {
+      "type": "TextBlock",
+      "size": "default",
+      "isSubtle": true,
+      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
+      "wrap": true,
+      "maxLines": 0
+      
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Utföra mätning",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Utföra mätning"
+          }
+      }
+      
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Ändra inställningar",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Ändra inställningar"
+          }
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Boka konsultation",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Boka konsultation"
+          }
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Fråga frågor",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Fråga frågor"
+          }
+      }
+    }
+  ]
+}
+```
+
+
+# TextInput_Prompt_h5Ktbw()
+[HeroCard
+    text = Okej, om jag har förstått rätt så vill du registrera dessa värden för dagens blodtryck. \n\nÖvertryck: ${user.sysvalue}\n\nUndertryck: ${user.diavalue}\n\nStämmer detta?
+    buttons = Ja  | Nej
+    ]
+# TextInput_Prompt_ouIfx9()
+[HeroCard
+    text= Härligt! Alla dina mätningar för dagen är nu registrerade!\n\nDin nästa mätning är på onsdag den 14/10.
+    buttons= Återgå till start | Registrera ytterligare värden
+    ]
+
+
 # TextInput_Prompt_A12pzQ()
 [HeroCard
     text= Bra jobbat! Tack för att du registrerade dagens mätning av ditt blodtryck.\n\nDu är nu klar med mätningen, dina värden är sparade.
@@ -191,3 +185,6 @@
 - Något gick fel, vänligen testa igen senare!
 # SendActivity_prvC1W()
 - Var god försök igen.
+
+# SendActivity_DYsQGv()
+-${AdaptiveCardBloodPressureNoGuide()}

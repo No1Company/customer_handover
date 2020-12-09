@@ -19,9 +19,6 @@
     ]
 
 
-# SendActivity_DYsQGv()
- -${AdaptiveCardBloodPressureNoGuide()}
-
 # NumberInput_Prompt_VsXcIN()
 >User.sysvalue kommer finnas kvar vid repetitioner av dialogen, det gör inte turn, men använder man turn på sysvalue finns den inte kvar tillräckligt länge för att hämtas i bekräftelserutan. 
 -Vilket värde har du på det systoliska trycket (övertrycket)?
@@ -39,3 +36,7 @@
 
 # SendActivity_prvC1W()
 - Var god försök igen.
+# bloodpressurecardjson()
+- 
+# SendActivity_DYsQGv()
+- 
