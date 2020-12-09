@@ -20,7 +20,7 @@ Multiple ways of creating automated tests have been explored, but there has not 
 
 ## 2. Unit testing <a name="unittesting"></a>
 
-Initially, there was some success making a few sample test cases. The next step was to move on to automating the creation of test cases. However, the development team decided on another approach which utilizes Microsoft composer. The framework generates files with all the required codes that client communication with the bot has to be able to respond to. This saves them the work of creating manual response codes. This change made the old test cases obsolete. In a meeting with the development team, they suggested looking at testing options provided by Microsoft, the library CURL and the framework Selenium.
+Initially, there was some success making a few sample test cases. The next step was to move on to automating the creation of test cases. However, the development team decided on another approach which utilizes Microsoft composer. The framework generates files with all the required codes that client communication with the bot has to be able to respond to. This saves them the work of creating manual response codes. This change made the old test cases obsolete. In a meeting with the development team, they suggested looking at other testing options provided by Microsoft and the framework Selenium.
 
 Microsoft’s testing options were investigated first. The issue with the sample codes was that they were adapted for programming purposes such as C# or Node.js but not for Microsoft composer. At this point there was not enough time to code a solution from scratch. A more thorough study of the composer was conducted, but no solution was found. Eventually, testing management decided on a different approach.
 
