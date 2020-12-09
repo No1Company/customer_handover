@@ -404,13 +404,6 @@
           "activity": "${SendActivity_hrdjnA()}"
         },
         {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "lsl4cy"
-          },
-          "activityProcessed": true
-        },
-        {
           "$kind": "Microsoft.SetProperties",
           "$designer": {
             "id": "8aF2ru"
