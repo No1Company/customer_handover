@@ -404,6 +404,25 @@
           "activity": "${SendActivity_hrdjnA()}"
         },
         {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "lsl4cy"
+          },
+          "activityProcessed": true
+        },
+        {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "8aF2ru"
+          },
+          "assignments": [
+            {
+              "property": "user.guideType",
+              "value": "=\"0\""
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
             "id": "boiWh9"
