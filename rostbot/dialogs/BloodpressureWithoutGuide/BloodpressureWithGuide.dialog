@@ -17,6 +17,22 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.SetProperties",
+          "$designer": {
+            "id": "CVZsf6"
+          },
+          "assignments": [
+            {
+              "property": "user.sysvalue",
+              "value": "=null"
+            },
+            {
+              "property": "user.diavalue",
+              "value": "=null"
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.SendActivity",
           "$designer": {
             "id": "DYsQGv"
@@ -26,7 +42,7 @@
         {
           "$kind": "Microsoft.EndTurn",
           "$designer": {
-            "id": "HgKwWU"
+            "id": "mkyhT3"
           }
         },
         {

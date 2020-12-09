@@ -4,6 +4,75 @@
 [Activity
     Attachments = ${json(bloodpressurecardjson())}
 ]
+
+# UpdateCard()
+[Activity
+    Attachments = ${json(updatecardjson())}
+]
+
+# updatecardjson()
+-```
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+         {
+      "type": "TextBlock",
+      "size": "default",
+      "isSubtle": true,
+      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
+      "wrap": true,
+      "maxLines": 0
+      
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Utföra mätning",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Utföra mätning"
+          }
+      }
+      
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Ändra inställningar",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Ändra inställningar"
+          }
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Boka konsultation",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Boka konsultation"
+          }
+      }
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Fråga frågor",
+      "data": {
+          "msteams": {
+              "type": "imBack",
+              "value": "Fråga frågor"
+          }
+      }
+    }
+  ]
+}
+```
+
 # bloodpressurecardjson()
 -```
 {
@@ -94,75 +163,6 @@
     ]
 }
 ```
-
-# UpdateCard()
-[Activity
-    Attachments = ${json(updatecardjson())}
-]
-
-# updatecardjson()
--```
-{
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "type": "AdaptiveCard",
-  "version": "1.0",
-  "body": [
-         {
-      "type": "TextBlock",
-      "size": "default",
-      "isSubtle": true,
-      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
-      "wrap": true,
-      "maxLines": 0
-      
-    }
-  ],
-  "actions": [
-    {
-      "type": "Action.Submit",
-      "title": "Utföra mätning",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Utföra mätning"
-          }
-      }
-      
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Ändra inställningar",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Ändra inställningar"
-          }
-      }
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Boka konsultation",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Boka konsultation"
-          }
-      }
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Fråga frågor",
-      "data": {
-          "msteams": {
-              "type": "imBack",
-              "value": "Fråga frågor"
-          }
-      }
-    }
-  ]
-}
-```
-
 
 # TextInput_Prompt_h5Ktbw()
 [HeroCard
