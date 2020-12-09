@@ -133,7 +133,5 @@
 ```
 # SendActivity_n9XBXG()
  -${AdaptiveCardGuideSelection()}
-# SendActivity_usI5V2()
-- Du har nu ändrat till att registerera värden ${user.guideType}
 # SendActivity_4SQK4P()
 -${UpdateCard()}

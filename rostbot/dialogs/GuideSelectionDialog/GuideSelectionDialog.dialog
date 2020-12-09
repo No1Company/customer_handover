@@ -30,12 +30,31 @@
           }
         },
         {
-          "$kind": "Microsoft.SetProperty",
+          "$kind": "Microsoft.IfCondition",
           "$designer": {
-            "id": "uNaYKx"
+            "id": "crp7oQ"
           },
-          "property": "user.guideType",
-          "value": "=@guideselect"
+          "condition": "@guideselect == 'Med guide'",
+          "actions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "fWVqfj"
+              },
+              "property": "user.guideType",
+              "value": "='Med guide'"
+            }
+          ],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "CvF2eE"
+              },
+              "property": "user.guideType",
+              "value": "='Utan guide'"
+            }
+          ]
         },
         {
           "$kind": "Microsoft.HttpRequest",
@@ -48,13 +67,6 @@
           "body": {
             "guidetype": "${user.guideType}"
           }
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "usI5V2"
-          },
-          "activity": "${SendActivity_usI5V2()}"
         },
         {
           "$kind": "Microsoft.SendActivity",

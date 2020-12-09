@@ -62,18 +62,6 @@
               "invalidPrompt": "",
               "defaultValueResponse": "",
               "property": "user.guideType"
-            },
-            {
-              "$kind": "Microsoft.HttpRequest",
-              "$designer": {
-                "id": "7N4gPd"
-              },
-              "method": "PUT",
-              "url": "${conversation.req_url}/guide-type",
-              "contentType": "application/json",
-              "body": {
-                "guidetype": "${user.guideType}"
-              }
             }
           ]
         },

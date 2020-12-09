@@ -412,6 +412,33 @@
           "value": "https://tddc88-company-1-2020.kubernetes-public.it.liu.se"
         },
         {
+          "$kind": "Microsoft.SetProperty",
+          "$designer": {
+            "id": "VIEA8x"
+          },
+          "property": "user.guideType",
+          "value": "='0'"
+        },
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "dicNpE"
+          },
+          "method": "PUT",
+          "url": "${conversation.req_url}/guide-type",
+          "contentType": "application/json",
+          "body": {
+            "guidetype": "${user.guideType}"
+          }
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "mETx1P"
+          },
+          "activity": "${SendActivity_mETx1P()}"
+        },
+        {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
             "id": "GEeIzT"
