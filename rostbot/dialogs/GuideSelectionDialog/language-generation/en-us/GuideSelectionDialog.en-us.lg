@@ -20,7 +20,6 @@
         },
         {
             "type": "Input.ChoiceSet",
-            "id": "guideselect",
             "value": "${user.guideType}",
             "choices": [
                 {

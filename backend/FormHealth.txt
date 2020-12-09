@@ -1,8 +1,8 @@
 {
-  "instructions": "Du ska nu få svara på några frågor gällande din allmänna hälsa. Besvara varje fråga genom att skriva en siffra som motsvarar ett alternativ",
+  "instructions": "Du ska nu få svara på några frågor gällande din allmänna hälsa. Besvara varje fråga genom att välja ett alternativ",
   "questions": [
     {
-      "question": "Hur tycker du din hälsa är i allmänhet på en skala 1-5?\n 1 - dålig(t), 2 - någotlunda, 3 - bra, 4 - mycket bra, 5 - utmärkt",
+      "question": "Hur tycker du din hälsa är i allmänhet på en skala 1-5?",
       "answer": [
         "5-Utmärkt",
         "4-Mycket bra",
@@ -12,7 +12,7 @@
       ]
     },
     {
-      "question": "Hur tycker du din livskvalitet är i allmänhet?\n  1 - dålig(t), 2 - någotlunda, 3 - bra, 4 - mycket bra, 5 - utmärkt",
+      "question": "Hur tycker du din livskvalitet är i allmänhet?",
       "answer": [
         "5-Utmärkt",
         "4-Mycket bra",
@@ -22,7 +22,7 @@
       ]
     },
     {
-      "question": "Hur tycker du din fysiska hälsa är i allmänhet? 1 - dålig(t), 2 - någotlunda, 3 - bra, 4 - mycket bra, 5 - utmärkt",
+      "question": "Hur tycker du din fysiska hälsa är i allmänhet?",
       "answer": [
         "5-Utmärkt",
         "4-Mycket bra",
@@ -32,7 +32,7 @@
       ]
     },
     {
-      "question": "Hur tycker du din psykiska hälsa är i allmänhet, inklusive humör och förmåga att tänka?\n 1 - dålig(t), 2 - någotlunda, 3 - bra, 4 - mycket bra, 5 - utmärkt",
+      "question": "Hur tycker du din psykiska hälsa är i allmänhet, inklusive humör och förmåga att tänka?",
       "answer": [
         "5-Utmärkt",
         "4-Mycket bra",
@@ -42,7 +42,7 @@
       ]
     },
     {
-      "question": "Hur trivs du med dina sociala aktiviteter och relationer i allmänhet?\n 1 - dålig(t), 2 - någotlunda, 3 - bra, 4 - mycket bra, 5 - utmärkt",
+      "question": "Hur trivs du med dina sociala aktiviteter och relationer i allmänhet?",
       "answer": [
         "5-Utmärkt",
         "4-Mycket bra",
@@ -52,7 +52,7 @@
       ]
     },
     {
-      "question": "Hur trivs du med dina vardagliga sociala aktiviteter och roller (i familjen, på arbetet eller med andra) i allmänhet?\n 1 - dålig(t), 2 - någotlunda, 3 - bra, 4 - mycket bra, 5 - utmärkt",
+      "question": "Hur trivs du med dina vardagliga sociala aktiviteter och roller (i familjen, på arbetet eller med andra) i allmänhet?",
       "answer": [
         "5-Utmärkt",
         "4-Mycket bra",
@@ -62,7 +62,7 @@
       ]
     },
     {
-      "question": "I vilken utsträckning klarar du dina vardagliga fysiska aktiviteter, t.ex. att promenera, gå i trappor, bära matkassar eller flytta en stol\n 1 - inte alls, 2 - i liten utsträckning, 3 - i viss utsträckning, 4 - i stor utsträckning, 5 - helt och hållet",
+      "question": "I vilken utsträckning klarar du dina vardagliga fysiska aktiviteter, t.ex. att promenera, gå i trappor, bära matkassar eller flytta en stol",
       "answer": [
         "5-Helt och hållet",
         "4-I stor utsträckning",
@@ -72,7 +72,7 @@
       ]
     },
     {
-      "question": "Hur ofta de senaste 7 dagarna har du besvärats av känslomässiga besvär, t.ex. känt dig orolig, nedstämd eller lättirriterad?\n 1 - aldrig, 2 - sällan, 3 - ibland, 4 - ofta, 5 - alltid",
+      "question": "Hur ofta de senaste 7 dagarna har du besvärats av känslomässiga besvär, t.ex. känt dig orolig, nedstämd eller lättirriterad?",
       "answer": [
         "5-Alltid",
         "4-Ofta",
@@ -82,7 +82,7 @@
       ]
     },
     {
-      "question": "Hur trött har du känt dig de 7 senaste dagarna?\n 1 - alltid, 2 - ofta, 3 - måttligt, 4 - lite, 5 - inte alls",
+      "question": "Hur trött har du känt dig de 7 senaste dagarna?",
       "answer": [
         "5-Inte alls",
         "4-Lite",
@@ -92,7 +92,7 @@
       ]
     },
     {
-      "question": "Hur har din smärta varit i genomsnitt de senaste 7 dagarna på en skala 1-5?\n 1 - ingen smärta alls, 2 - hanterbar smärta, 3 - gör ont, 4 - väldigt ont, 5 - värsta tänkbara smärta",
+      "question": "Hur har din smärta varit i genomsnitt de senaste 7 dagarna på en skala 1-5?",
       "answer": [
         "5-Värsta tänkbara smärta",
         "4-Väldigt ont",

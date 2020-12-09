@@ -122,7 +122,15 @@
               ]
             }
           ],
-          "default": []
+          "default": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "FKEaUI"
+              },
+              "activity": "${SendActivity_FKEaUI()}"
+            }
+          ]
         }
       ]
     }
