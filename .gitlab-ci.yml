@@ -50,8 +50,6 @@ deploy-bot:
    - kubectl apply -f continuous-integration/bot-deploy.yaml
    - kubectl apply -f continuous-integration/bot-service.yaml
    - sleep 15
-   - kubectl -n service rollout restart deployment deploy-bot
-   - sleep 15
    - kubectl get all # display container status
 
 deploy-flask:
@@ -67,8 +65,6 @@ deploy-flask:
    - kubectl get all
    - kubectl apply -f continuous-integration/backend-flask-deploy.yaml
    - kubectl apply -f continuous-integration/backend-flask-service.yaml
-   - sleep 15
-   - kubectl -n service rollout restart deployment deploy-flask
    - sleep 15
    - kubectl get all # display container status
 
