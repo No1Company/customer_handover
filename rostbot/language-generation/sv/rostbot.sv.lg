@@ -37,7 +37,6 @@
    }
 }
 ```
-
 # AdaptiveCard()
 [Activity
     Attachments = ${json(adaptivecardjson())}
@@ -45,79 +44,86 @@
 # adaptivecardjson()
 -```
 {
-  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
-  "type": "AdaptiveCard",
-  "version": "1.0",
-  "body": [
-    {
-      "type": "Image",
-      "url": "https://yt3.ggpht.com/a-/AAuE7mDUQNiMilc9lbjLzB0kxGpeehgqWJ3ba8Wn0A=s900-mo-c-c0xffffffff-rj-k-no",
-      "size": "auto"
-    },
-    {
-      "type": "TextBlock",
-      "spacing": "medium",
-      "size": "large",
-      "weight": "bolder",
-      "text": "Hej ${user.first_name} ${user.last_name}!",
-      "wrap": true,
-      "maxLines": 0
-    },
-    {
-      "type": "TextBlock",
-      "size": "default",
-      "isSubtle": true,
-      "text": "Vad vill du göra idag? Välj från alternativen nedan.",
-      "wrap": true,
-      "maxLines": 0
-      
-    }
-  ],
-  "actions": [
-    {
-      "type": "Action.Submit",
-      "title": "Utföra mätning",
-      "data": {
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.2",
+    "body": [
+        {
+            "type": "Image",
+            "url": "https://yt3.ggpht.com/a-/AAuE7mDUQNiMilc9lbjLzB0kxGpeehgqWJ3ba8Wn0A=s900-mo-c-c0xffffffff-rj-k-no",
+            "size": "Large",
+            "horizontalAlignment": "Center"
+        },
+        {
+            "type": "TextBlock",
+            "spacing": "Medium",
+            "size": "Large",
+            "weight": "Bolder",
+            "text": "Hej ${user.first_name} ${user.last_name}!",
+            "wrap": true,
+            "maxLines": 0
+        },
+       {
+            "type": "TextBlock",
+            "size": "default",
+            "isSubtle": false,
+            "text": "Välkommen till Region Östergötlands chat-bot. Mitt namn är Number One Bot och jag finns här för att hjälpa dig.",
+            "wrap": true,
+            "maxLines": 0
+        },
+        {
+            "type": "TextBlock",
+            "size": "default",
+            "isSubtle": true,
+            "text": "Vad kan jag hjälpa dig med?",
+            "wrap": true,
+            "maxLines": 0
+        }
+    ],
+    "actions": [
+        {
+            "type": "Action.Submit",
+            "title": "Utföra mätning",
+            "data": {
           "msteams": {
               "type": "imBack",
               "value": "Utföra mätning"
           }
       }
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Ändra inställningar",
-      "data": {
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Ändra inställningar",
+            "data": {
           "msteams": {
               "type": "imBack",
               "value": "Ändra inställningar"
           }
       }
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Boka konsultation",
-      "data": {
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Boka konsultation",
+            "data": {
           "msteams": {
               "type": "imBack",
               "value": "Boka konsultation"
           }
       }
-    },
-    {
-      "type": "Action.Submit",
-      "title": "Fråga frågor",
-      "data": {
+        },
+        {
+            "type": "Action.Submit",
+            "title": "Fråga frågor",
+            "data": {
           "msteams": {
               "type": "imBack",
               "value": "Fråga frågor"
           }
       }
-    }
-  ]
+        }
+    ]
 }
 ```
-
 #UpdateCard
 [Activity
     Attachments = ${json(updatecardjson())}
@@ -128,13 +134,13 @@
 {
   "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
   "type": "AdaptiveCard",
-  "version": "1.0",
+  "version": "1.2",
   "body": [
          {
       "type": "TextBlock",
       "size": "default",
       "isSubtle": true,
-      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
+      "text": "Vad kan jag hjälpa dig med?",
       "wrap": true,
       "maxLines": 0
       
@@ -196,7 +202,16 @@
 # SendActivity_EJYcz7()
  -${AdaptiveCard()}
 # SendActivity_hrdjnA()
-- resetting
+- Resetting conversation
+
+
+
+
+
+
+
+
+
 
 # SendActivity_mETx1P()
-- 
+- Reset guide type
