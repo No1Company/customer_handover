@@ -41,22 +41,22 @@
                     },
                     {
                         "type": "TextBlock",
-                        "text": "F2. Vad kan jag göra om jag har symtom som jag vill kolla upp?.",
+                        "text": "F2.",
                         "weight": "Bolder"
                     },
                     {
                         "type": "TextBlock",
-                        "text": "Region Östergötlands chattbot kan hjälpa dig få hjälp med vanliga symtom. Hjälpen grundar sig i 1177:s vårdguide där du får svara på några frågor om dina symtom. Chattbotten kommer sedan att ge ett förslag på åtgärd samt eventuellt hjälpa dig att boka in en konsultation via ett möte på vårdcentral eller över telefon. Detta kan du hitta i Boka konsultation, och sedan på Vanliga symtom",
+                        "text": "Svar",
                         "wrap": true
                     },
                     {
                         "type": "TextBlock",
-                        "text": "F3. Vad kan jag göra ifall jag vill ha en tid inbokad med en sjuksköterska?",
+                        "text": "F3",
                         "weight": "Bolder"
                     },
                     {
                         "type": "TextBlock",
-                        "text": "Du kan då gå genom Boka konsultation, och sedan skriva vad du söker om, och du kommer sedan att bli rekommenderad att få en telefontid eller ett fysiskt möte inbokat.",
+                        "text": "Svar",
                         "wrap": true
                     },
                     {
