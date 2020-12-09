@@ -63,7 +63,7 @@ deploy-flask:
   image: lachlanevenson/k8s-kubectl
   script:
    - kubectl get all
-   - python resetDB.py
+   - python3 resetDB.py
    - kubectl apply -f continuous-integration/backend-flask-deploy.yaml
    - kubectl apply -f continuous-integration/backend-flask-service.yaml
    - kubectl get all # display container status
