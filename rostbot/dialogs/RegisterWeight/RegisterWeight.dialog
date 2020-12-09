@@ -102,14 +102,6 @@
               ],
               "elseActions": [
                 {
-                  "$kind": "Microsoft.SetProperty",
-                  "$designer": {
-                    "id": "XtT0xJ"
-                  },
-                  "property": "user.weight",
-                  "value": "=null"
-                },
-                {
                   "$kind": "Microsoft.SendActivity",
                   "$designer": {
                     "id": "ZFmXto"

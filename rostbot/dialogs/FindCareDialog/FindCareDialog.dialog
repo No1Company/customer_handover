@@ -153,12 +153,12 @@
           ],
           "elseActions": [
             {
-              "$kind": "Microsoft.SetProperty",
+              "$kind": "Microsoft.BeginDialog",
               "$designer": {
-                "id": "F6vDSO"
+                "id": "SqVeuo"
               },
-              "property": "user.symptoms",
-              "value": "= null "
+              "activityProcessed": true,
+              "dialog": "RestartPrompt"
             }
           ]
         }
