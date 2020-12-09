@@ -47,9 +47,11 @@ deploy-bot:
   image: lachlanevenson/k8s-kubectl
   script:
    - kubectl get all
-   - kubectl delete deployment deploy-bot
    - kubectl apply -f continuous-integration/bot-deploy.yaml
    - kubectl apply -f continuous-integration/bot-service.yaml
+   - sleep 15
+   - kubectl rollout restart deployment deploy-bot
+   - sleep 15
    - kubectl get all # display container status
 
 deploy-flask:
@@ -63,9 +65,11 @@ deploy-flask:
   image: lachlanevenson/k8s-kubectl
   script:
    - kubectl get all
-   - python3 resetDB.py
    - kubectl apply -f continuous-integration/backend-flask-deploy.yaml
    - kubectl apply -f continuous-integration/backend-flask-service.yaml
+   - sleep 15
+   - kubectl rollout restart deployment deploy-flask
+   - sleep 15
    - kubectl get all # display container status
 
 deploy-ingress:
