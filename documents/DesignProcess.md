@@ -15,7 +15,8 @@
 [3.3 Phase 3](##phasethree) 
 [3.4 Phase 4](##phasefour)    
 [4. Future work](#futurework)   
- 
+[4. References](#references)  
+
 ## 1. Introduction <a name="introduction"></a>
 
 
@@ -37,5 +38,13 @@
 ### 3.4 Phase 4 <a name="phasefour"></a>
 
 
-## 4. futurework <a name="futurework"></a>
+## 4. Futurework <a name="futurework"></a>
+
+## 5 References <a name="references"></a>
+[1]: Microsoft, Design a bot's first user interaction, https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-first-interaction?view=azure-bot-service-4.0 (2020-12-09) 
+
+[2]: Microsoft, Principles of bot design, https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-principles?view=azure-bot-service-4.0 (2020-12-09) 
+
+
+
 
