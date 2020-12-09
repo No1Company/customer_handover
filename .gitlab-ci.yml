@@ -58,13 +58,12 @@ deploy-flask:
     - build-flask-image
   rules: 
    - if: '$CI_COMMIT_BRANCH == "ms-teams"' #Change to master
-  scripts: 
-   - python resetDB.py
-
+   
   stage: deploy
   image: lachlanevenson/k8s-kubectl
   script:
    - kubectl get all
+   - python resetDB.py
    - kubectl apply -f continuous-integration/backend-flask-deploy.yaml
    - kubectl apply -f continuous-integration/backend-flask-service.yaml
    - kubectl get all # display container status
