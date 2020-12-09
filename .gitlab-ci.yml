@@ -47,6 +47,7 @@ deploy-bot:
   image: lachlanevenson/k8s-kubectl
   script:
    - kubectl get all
+   - kubectl delete deployment deploy-bot
    - kubectl apply -f continuous-integration/bot-deploy.yaml
    - kubectl apply -f continuous-integration/bot-service.yaml
    - kubectl get all # display container status
@@ -77,5 +78,6 @@ deploy-ingress:
   stage: ingress
   image: lachlanevenson/k8s-kubectl
   script:
+   - python resetDB.py
    - kubectl apply -f continuous-integration/ingress.yaml
    - kubectl get all # display container status
