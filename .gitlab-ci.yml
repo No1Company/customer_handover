@@ -49,6 +49,7 @@ deploy-bot:
    - kubectl get all
    - kubectl apply -f continuous-integration/bot-deploy.yaml
    - kubectl apply -f continuous-integration/bot-service.yaml
+   - kubectl patch deployment deploy-bot -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
    - kubectl get all # display container status
 
 deploy-flask:
@@ -64,6 +65,7 @@ deploy-flask:
    - kubectl get all
    - kubectl apply -f continuous-integration/backend-flask-deploy.yaml
    - kubectl apply -f continuous-integration/backend-flask-service.yaml
+   - kubectl patch deployment deploy-flask -p "{\"spec\":{\"template\":{\"metadata\":{\"labels\":{\"date\":\"`date +'%s'`\"}}}}}"
    - kubectl get all # display container status
 
 deploy-ingress:
