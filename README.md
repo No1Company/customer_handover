@@ -16,7 +16,7 @@ Several documents have been written to serve as a complement to the bot. In thes
 
 - **[Market research](documents/MarketResearch.md)** - This document contains analysis of both internal and external aspects of market factors and how these aspects affect our solution. An analysis of the current market and how it affects the viability of our solution is also included.
 
-- **[Design process](DesignProcess.md)** - A description of the design process and the use of prototypes and user tests.
+- **[Design process](documents/DesignProcess.md)** - A description of the design process and the use of prototypes and user tests.
 
 - **[Automated testing](documents/AutomatedTesting.md)** - A document describing problems encountered with automated testing and possible solutions to these problems.
 
