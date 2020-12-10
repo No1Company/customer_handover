@@ -1,42 +1,47 @@
 # Main document
 
-
 ## Table of contents
-[1. Introduction](#introduction)   
-[2. Unit testing](#unittesting)   
-[2.1 Possible solution](##unitsolution)   
-[3. UI testing](#uitesting)   
-[3.1 Possible solution](##uisolution)   
-[4. Client API testing](#clientapitesting)   
+[1. Description of documents](#descriptiondocuments)   
+[2. The bot's main functionality](#mainfunctionality)   
  
-## 1. Description of documents <a name="introduction"></a>
-
-- Beskrivning av dokumenten
-- Hur man hittar dokumenten 
-- Länkar kanske inte funkar (krav i kursen)
+## 1. Description of documents <a name="descriptiondocuments"></a>
 
 Several documents have been written to serve as a complment to the bot, all with different purpose. In these documents it might exist links that doesn't work, this is because these documents have been required by course staff with criteria of such links. These are the attached documents:
 
 - Rostbot guide
 
+This document includes a quickstart guide and relevant information about implementation and deployment.
+
 - System requirement specification
+
+The purpose of this document is to describe the features and behavior of the bot.
+(The purpose of this document is to describe the features and behavior of the solution we develop towards Region Östergötland's home monitoring system.)
 
 - Future development
 
+This document exists to highlight what we in Number One Company believe to be the next steps our product needs to take in order to become a complete solution.
+
 - Market Research
+
+This document contains analysis of both internal and external aspects and how these aspects affect our solution.
 
 - Design Process
 
+A despription of the design process and the use of prototypes and user tests.
+
 - Automated testing
+
+A document describing problems that we have had with automating tests and possible solutions to these problems.
 
 - Development decisions
 
+This document briefly describes important decisions made by the development team. It is intended to give the customer insight in the development process as well as understanding why certain choices were made. It discusses our choice of framework and development tools, backend and server usage, which platform the chatbot is deployed to and some discussion about functionality and dialogue design.
+
 - Architecture overview
 
+The purpose of this document is to communicate how the system works to anyone who, after our development stops, will work with or read our code.
 
-
-
-## 2. The bot's main functionality <a name="unittesting"></a>
+## 2. The bot's main functionality <a name="mainfunctionality"></a>
 
 The bot enables the user to interact using both clickable buttons and text input, though the bot's ability to interpret is limited. The idea is that the user most of the times should be able to type instead of using the buttons, but the bot doesn't understand that many inputs and text input therefore often has to match the button precisesly. The bot has a few core features, these are:
 
