@@ -7,15 +7,15 @@
     Written by: Firstname Lastname (Title), Firstname Lastname (Title)…
     Manager:
 ## Table of contents
-[1. Introduction](#introduction)   
-[2. Design research](#unittesting)      
-[3. Prototype development](#uitesting)   
-[3.1 Phase 1](##phaseone)
-[3.2 Phase 2](##phasetwo) 
-[3.3 Phase 3](##phasethree) 
-[3.4 Phase 4](##phasefour)    
-[4. Future work](#futurework)   
-[4. References](#references)  
+[**1. Introduction**](#introduction)   
+[**2. Design research**](#desinresearch)      
+[**3. Prototype development**](#prototypedevelopment)   
+&nbsp;&nbsp;[3.1 Phase 1](##phaseone)   
+&nbsp;&nbsp;[3.2 Phase 2](##phasetwo)   
+&nbsp;&nbsp;[3.3 Phase 3](##phasethree)   
+&nbsp;&nbsp;[3.4 Phase 4](##phasefour)   
+[**4. Future work**](#futurework)   
+[**5. References**](#references)  
 
 ## 1. Introduction <a name="introduction"></a>
 
@@ -25,9 +25,9 @@ The tools used for prototyping are Bosociety, Figma and Botmock. Botsociety was 
 
 ## 2. Design research <a name="designresearch"></a>
 
-Research indicates that it is helpful to have a welcome message accompanied by a menu in the beginning of the interaction with a bot. A menu makes it clear for the user what the bot is capable of, the bot’s limitations and how the user can interact with the bot. Communicating transparency in terms of what the bot can and cannot do with the user facilitates a higher degree of trust towards the bot. Additionally, it is important that it is made clear early on that the user is interacting with a bot. One way of doing so is having a suitable picture next to the bot’s message. Furthermore, the user’s trust in the bot is also affected by its language and grammar, which makes careful design of the message protocol important. Buttons have the advantage of promoting ease of use, since pressing a button is much faster than writing input manually. Buttons also have the advantage of reducing complexity in development, since there are fewer possibilities that the developers have to consider.
+Research indicates that it is helpful to have a welcome message accompanied by a menu in the beginning of the interaction with a bot. A menu makes it clear for the user what the bot is capable of, the bot’s limitations and how the user can interact with the bot. Communicating transparency in terms of what the bot can and cannot do with the user facilitates a higher degree of trust towards the bot. Additionally, it is important that it is made clear early on that the user is interacting with a bot. One way of doing so is having a suitable picture next to the bot’s message. Furthermore, the user’s trust in the bot is also affected by its language and grammar, which makes careful design of the message protocol important. Buttons have the advantage of promoting ease of use, since pressing a button is much faster than writing input manually. Buttons also have the advantage of reducing complexity in development, since there are fewer possibilities that the developers have to consider. [1]
 
-## 3. Prototype development <a name="uitesting"></a>
+## 3. Prototype development <a name="prototypedevelopment"></a>
 
 Prototype development is divided into four phases. In each phase, except the first, user testing from the previous phase is used to iterate on and improve the prototype. For instance, the user feedback from the first round of user testing is used for the development of the second prototype. Similarly, the user feedback from round two of user testing lays the groundwork for the third prototype, and so on until the fourth and final prototype.
 
@@ -73,7 +73,6 @@ Testers found the health form to be easy to use, but some would have liked to be
 ## 5 References <a name="references"></a>
 [1]: Microsoft, Design a bot's first user interaction, https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-first-interaction?view=azure-bot-service-4.0 (2020-12-09) 
 
-[2]: Microsoft, Principles of bot design, https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-principles?view=azure-bot-service-4.0 (2020-12-09) 
 
 
 
