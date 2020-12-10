@@ -168,7 +168,7 @@ Implementing most of the chat bot’s functionality on messenger would probably 
 
 Unfortunately, there are some aspects of the bot that we deem impossible or require too much effort to implement on Facebook Messenger due to the restrictions of the platform. For example, a message can only have three clickable buttons as input options; we require four. This can be worked around by instead numbering the options in the message (see example [below](#messagebutton)). To register a measurement (Utföra mätning), the user would click on the first option on the message to the left and respond “1” to the message to the right.
 
-![Message Button](MessageButtonAltMockUp.png) <a name="messagebutton"></a>
+![Message Button](pictures/MessageButtonAltMockUp.png) <a name="messagebutton"></a>
 _Figure 1, Message example_
 
 However, there are some restrictions that can’t be worked around. The most impactful of these are how and when notifications can be sent. The chat bot can only respond to a user’s message; it is not allowed to start a conversation. That means that the bot can’t send reminders to a user, which is a very important part of our solution. In addition to this, offering this chat bot via Facebook messenger is dependent on Facebook continuing support for Microsoft Bot Framework. Facebook has expressed interest in developing their own bot and if they do, they might not be interested in supporting their competitor’s frameworks on their platform.
