@@ -62,7 +62,7 @@ The booking consultation functionality was the same as in the previous prototype
 
 Finally, the functionality for asking questions also changed. There are new menus and changed texts. In the main question menu, the “My measurements” button has been split into two buttons, one called “Measured values” and another “Upcoming measurements”, both of which have new menus and new options. Another change in the main question menu is that settings now is a button.
 
-## 4. Futurework <a name="futurework"></a>
+## 4. Future work <a name="futurework"></a>
 
 The fifth round of user testing was on the final product. The results of these are therefore a basis for future development. Most testers were positive about the registering of measurements. The amount of information and clicks necessary to measure blood pressure was appropriate and the option to skip having a guide was good. Although some of them wanted the measurement to be possible with even fewer steps, they generally expressed that the functionality was easy to use. They would have preferred the guide to be more easily added or removed directly when registering measurements, rather than configured through the settings which some of them found difficult to find.
 
