@@ -1,11 +1,10 @@
 # Automated testing 
 
 
-    Document Status: Finished/ under progress
-    Inspected by: Firstname Lastname Date, ...
-    Contact Person: Firstname Lastname (Title)
-    Written by: Firstname Lastname (Title), Firstname Lastname (Title)…
-    Manager:
+    Document Status: Finished
+    Inspected by: Filip Nyberg (Quality Coordinator) on 2020-12-10
+    Contact Person: Ola Friberg (Technical Writer)
+    Written by: Ola Friberg (Technical Writer)
 ## Table of contents
 [**1. Introduction**](#introduction)   
 [**2. Unit testing**](#unittesting)   
