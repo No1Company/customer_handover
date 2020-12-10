@@ -148,7 +148,7 @@ For key functionality to work the chatbot system need access to a few resources:
 - To get patient data and store measurements it needs access to patient data. This is done in OpenEHR through another server to simplify the requests.
 - In order to book meetings, the system needs an interface to the Region&#39;s booking system. This is simulated with a server which composer communicates with.
 
-![](./IllustrationOfSystem.png)
+![](pictures/IllustrationOfSystem.png)
 
 _Figure 1: Illustration of the system_
 
@@ -195,7 +195,7 @@ This means that our service will have to be able to take different measurements 
 
 This group of people want to be involved with their healthcare and want to feel that they are in control and understand the situation. This group is open to try new solution and often use other kinds of monitoring devices, such as smart watches. Their biggest fear with home monitoring is that it could give them less control over their sickness if implemented in a way where the patient has no insight. If implemented so that the user feel a sense of control, the option to pre-treat conditions and have direct communication with the healthcare system should be highly rated by this group.
 
-![](./bot_boka.png)
+![](pictures/bot_boka.png)
 
 _Figure 2: The user can book a consultation directly via the chat bot._
 
@@ -209,7 +209,7 @@ The chatbot has the strength that it can be implemented on many different platfo
 
 To make this group approach home monitoring the solution needs to be accessible and easy to use. The chatbot should be developed with this in mind, it needs to help the user and it cannot depend on the user&#39;s knowledge of &quot;commands&quot;.
 
-![](./bot_UI.png)
+![](pictures/bot_UI.png)
 
 _Figure 3: By supplementing the user with short cut buttons, users wont have to memorize commands_
 
