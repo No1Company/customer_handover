@@ -6,7 +6,7 @@
  
 ## 1. Description of documents <a name="descriptiondocuments"></a>
 
-Several documents have been written to serve as a complement to the bot. In these documents there might exist links that do not work. This is because some links required by course criteria may be broken. These are the attached documents:
+Several documents have been written to serve as a complement to the bot. In these documents there might exist links that do not work. This is because some links required by course criteria may be broken. In Github, there are two folders named develop and ms-teams. Develop runs in the emulator and ms-teams is the Teams implementation. These are the attached documents:
 
 - **Rostbot guide** - This document includes a quickstart guide and relevant information about implementation and deployment.
 
