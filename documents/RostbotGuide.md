@@ -187,6 +187,6 @@ Another thing to note is that the deployment process varies depending on what SD
 
 To summarize, the easy path is to deploy the bot via Azure. This also assures that professional technical support can be accessed from Microsofts own Bot Framework and Azure Team. During our development phase, it became apparent that the Bot Framework project, although well established and popular among bot developers, is still relatively new and consists of a lot of branching projects. Poor decision making can lead to "side tracks", such as our choice to develop the bot with Composer and hosting it on LiU:s server platform. I would advise to choose between the following "setups" when developing a bot with Microsoft Bot Framework:
 
-![deployment_decisions](deploymentdecisions.png)
+![deployment_decisions](pictures/deploymentdecisions.png)
 
 The BotBuilder framework is a project that is based on Microsoft's Bot Framework and removes some of the "Azure shackles" that are imposed upon those that choose to develop a bot with Microsoft Bot Framework. It also offers more versatility in terms of customizing the bot's behaviour on different channels, in contrast of MSB where the BotAdapter handles all channels under the hood, granted that the bot is properly set up with Azure's API:s. If what you are after is simplicity at the cost of some flexibility, Microsoft's Bot Framework used with Azure is the way to go. If you want more flexibility at the cost of simplicity, a more custom solution with a framework like BotBuilder might be more appropriate.
