@@ -17,6 +17,13 @@
       },
       "actions": [
         {
+          "$kind": "Microsoft.DeleteProperty",
+          "$designer": {
+            "id": "bwn0Er"
+          },
+          "property": "user.symptoms"
+        },
+        {
           "$kind": "Microsoft.NumberInput",
           "$designer": {
             "id": "4hQYyD"
@@ -110,14 +117,6 @@
               ]
             }
           ]
-        },
-        {
-          "$kind": "Microsoft.SetProperty",
-          "$designer": {
-            "id": "oNLQfz"
-          },
-          "property": "user.symptoms",
-          "value": "= null"
         }
       ]
     }

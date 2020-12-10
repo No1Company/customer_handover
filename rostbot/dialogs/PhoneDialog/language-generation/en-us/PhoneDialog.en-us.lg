@@ -1,0 +1,22 @@
+[import](common.lg)
+
+# SendActivity_ufSel0()
+-De närmast lediga tiderna som finns tillgängliga är\n\n 1: ${dialog.result.content[1].start}\n\n 2: ${dialog.result.content[2].start}\n\n 3: ${dialog.result.content[3].start}
+# ChoiceInput_Prompt_TX9M3W()
+- Passar något av ovanstående datum?
+# NumberInput_Prompt_DMgZ59()
+- Välj en siffra (1-3)
+# SendActivity_mReVfE()
+-Nästa lediga tider som finns tillgängliga är\n\n 1: ${dialog.result.content[4].start}\n\n 2: ${dialog.result.content[5].start}\n\n 3: ${dialog.result.content[6].start}
+# ChoiceInput_Prompt_qwiqkJ()
+- Passar något av ovanstående datum?
+# NumberInput_Prompt_9Jf2HU()
+- Välj en siffra (1-3)
+# SendActivity_cH9hOS()
+- Vi har tyvärr inga fler datum. 
+# SendActivity_VYT1Mw()
+- Jag bedömer att du inte behöver besöka en vårdcentral, men ifall du ändå vill prata med vårdcentralen direkt kan du ringa [nummber till vårdcentralen], eller 1177 för rådgivning. 
+# SendActivity_U6eaqk()
+-Okej! 
+# ChoiceInput_Prompt_ZKBIdB()
+- Vill du boka en telefontid?

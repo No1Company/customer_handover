@@ -32,13 +32,19 @@
           "defaultValueResponse": "",
           "choiceOptions": {
             "includeNumbers": true,
-            "inlineOrMore": ", or "
+            "inlineOrMore": ", or ",
+            "inlineOr": " or ",
+            "inlineSeparator": ", "
           },
           "choices": [
             "Ja",
             "Nej"
           ],
-          "property": "dialog.confirm"
+          "property": "dialog.confirm",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          }
         },
         {
           "$kind": "Microsoft.SwitchCondition",

@@ -25,7 +25,7 @@
         {
             "type": "Action.ShowCard",
             "title": "Frågor om botten",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/3616/3616673.svg",
+            "iconUrl": "https://i.postimg.cc/yxvvxMmQ/2.png",
             "card": {
                 "type": "AdaptiveCard",
                 "body": [
@@ -85,7 +85,7 @@
         {
             "type": "Action.ShowCard",
             "title": "Frågor om min hälsa",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/684/684262.svg",
+            "iconUrl": "https://i.postimg.cc/bw1v1p5B/3.png",
             "card": {
                 "type": "AdaptiveCard",
                 "body": [
@@ -150,7 +150,7 @@
         {
             "type": "Action.Submit",
             "data": "Avbryt",
-            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg"
+            "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png"
         }
     ]
 }

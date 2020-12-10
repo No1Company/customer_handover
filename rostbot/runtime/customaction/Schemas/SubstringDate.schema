@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schemas.botframework.com/schemas/component/v1.0/component.schema",
+    "$role": "implements(Microsoft.IDialog)",
+    "title": "SubstringDate",
+    "description": "This will return the date in the format DD/MM/YY",
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+        "fulldate": {
+            "$ref": "schema:#/definitions/stringExpression",
+            "title": "FullDate",
+            "description": "Value from callers memory to use as arg 1"
+        },
+        "dateresult": {
+            "$ref": "schema:#/definitions/stringExpression",
+            "title": "DateShort",
+            "description": "Value from callers memory to store the resulting time in DD/MM/YY HH:MM "
+        }
+    }
+}

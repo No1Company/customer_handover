@@ -17,19 +17,12 @@
       },
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "nGqy7I"
-          },
-          "activity": "${SendActivity_nGqy7I()}"
-        },
-        {
           "$kind": "Microsoft.HttpRequest",
           "$designer": {
             "id": "Jg3ojp"
           },
           "method": "GET",
-          "url": "${conversation.req_url}/current-bookings",
+          "url": "${conversation.req_url}/${dialog.url}",
           "resultProperty": "dialog.result",
           "contentType": "application/json"
         },
@@ -48,35 +41,17 @@
                 "id": "96HJET"
               },
               "changeType": "push",
-              "itemsProperty": "dialog.datearray",
-              "value": "= dialog.foreach.value"
-            },
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "MBR1Vi"
-              },
-              "activity": "${SendActivity_MBR1Vi()}"
+              "itemsProperty": "dialog.dateArray",
+              "value": "dialog.foreach.value"
             }
           ]
         },
         {
-          "$kind": "Microsoft.Foreach",
+          "$kind": "Microsoft.EndDialog",
           "$designer": {
-            "id": "Wh6m8d"
+            "id": "DK5N6r"
           },
-          "index": "dialog.foreach.index",
-          "value": "dialog.foreach.value",
-          "itemsProperty": "dialog.datearray",
-          "actions": [
-            {
-              "$kind": "Microsoft.SendActivity",
-              "$designer": {
-                "id": "nDmY4B"
-              },
-              "activity": "${SendActivity_nDmY4B()}"
-            }
-          ]
+          "value": "=dialog.dateArray"
         }
       ]
     }

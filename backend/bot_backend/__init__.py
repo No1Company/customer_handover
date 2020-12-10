@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request
 from datetime import datetime as d
-import pickle
 import os
 import platform
 
@@ -14,27 +13,6 @@ app.register_blueprint(openehr.openehr)
 app.register_blueprint(user.user)
 app.register_blueprint(measurements.measurements)
 
-
-cwd_data_path = os.getcwd()
-if platform.system() == 'Windows':
-    DATA_PATH = os.path.abspath(cwd_data_path + "\\bot_backend\data\data.txt")
-else: 
-    DATA_PATH = os.path.abspath(cwd_data_path + "/bot_backend/data/data.txt")
-
-def save_data(data, data_path):
-    file = open(data_path, 'wb')
-    pickle.dump(data, file)
-    file.close()
-
-def load_data(data_path):
-    
-    try: 
-        file = pickle.load(open(data_path, 'rb'))
-    except EOFError:
-        file = []
-    
-    return file
-
 @app.route('/')
 def main():
     return 'Hello world'
@@ -43,33 +21,43 @@ def main():
 def avail_times():
     times = [
             {
-                "start" : d(2020, 11, 7, 14, 30, 0),
-                "stop"  : d(2020, 11, 7, 15, 30, 0)
+                "start" : d(2020, 12, 14, 14, 30),
+                "stop"  : d(2020, 12, 14, 15, 30)
             },
 
             {
-                "start" : d(2020, 11, 8, 11, 0, 0),
-                "stop"  : d(2020, 11, 8, 11, 30, 0)
+                "start" : d(2020, 12, 15, 11, 0),
+                "stop"  : d(2020, 12, 15, 11, 30)
             },
             
             {
-                "start" : d(2020, 11, 8, 14, 30, 0),
-                "stop"  : d(2020, 11, 8, 15, 30, 0)
+                "start" : d(2020, 12, 18, 14, 30),
+                "stop"  : d(2020, 12, 18, 15, 30)
             },
             
             {
-                "start" : d(2020, 11, 9, 8, 15, 0),
-                "stop"  : d(2020, 11, 9, 8, 45, 0)
+                "start" : d(2020, 12, 20, 8, 15),
+                "stop"  : d(2020, 12, 20, 8, 45)
             },
             
             {
-                "start" : d(2020, 11, 9, 10, 30, 0),
-                "stop"  : d(2020, 11, 9, 11, 00, 0)
+                "start" : d(2020, 12, 22, 10, 30),
+                "stop"  : d(2020, 12, 22, 11, 00)
+            },
+            
+            {
+                "start" : d(2021, 2, 15, 10, 15),
+                "stop"  : d(2021, 2, 15, 10, 45)
+            },
+            
+            {
+                "start" : d(2021, 1, 23, 8, 30),
+                "stop"  : d(2021, 1, 23, 9, 00)
             }
         ]
 
 
-    return jsonify([ {"start": time["start"].isoformat(), "stop" : time["stop"].isoformat()} for time in times ])
+    return jsonify([ {"start": time["start"].strftime("%y/%m/%d") + " " + time["start"].strftime("%X")[:-3], "stop": time["stop"].strftime("%y/%m/%d") + " " + time["stop"].strftime("%X")[:-3]} for time in times ])
 
 
 userguidetypes = [
@@ -120,19 +108,16 @@ def curr_notifications():
 current_bookings = [
         {
             "bookingdate" : "",
-            "type" : ""
+            "type" : "",
+            "free-text" : ""
         }
     ]
 
 @app.route('/current-bookings', methods=['GET', 'POST'])
 def all_current_bookings():
-    
-    current_bookings = load_data(DATA_PATH)
 
     if request.method == "POST":
         current_bookings.append(request.get_json())
-        save_data(current_bookings, DATA_PATH)
-        print(current_bookings)
         return "200"
 
     elif request.method == "GET":
@@ -141,14 +126,11 @@ def all_current_bookings():
 @app.route('/current-bookings/<int:booking_id>', methods=['GET', 'DELETE'])
 def specific_current_booking(booking_id):
 
-    current_bookings = load_data(DATA_PATH)
-
     if request.method == "GET":
         return jsonify(current_bookings[booking_id])
 
     elif request.method == "DELETE":
         current_bookings.pop(booking_id)
-        save_data(current_bookings, DATA_PATH)
         return "200"
         
     

@@ -37,7 +37,6 @@
    }
 }
 ```
-
 # AdaptiveCard()
 [Activity
     Attachments = ${json(adaptivecardjson())}
@@ -64,11 +63,19 @@
             "wrap": true,
             "maxLines": 0
         },
+       {
+            "type": "TextBlock",
+            "size": "default",
+            "isSubtle": false,
+            "text": "Välkommen till Region Östergötlands chat-bot. Mitt namn är Number One Bot och jag finns här för att hjälpa dig.",
+            "wrap": true,
+            "maxLines": 0
+        },
         {
             "type": "TextBlock",
             "size": "default",
             "isSubtle": true,
-            "text": "Vad vill du göra idag? Välj från alternativen nedan.",
+            "text": "Vad kan jag hjälpa dig med?",
             "wrap": true,
             "maxLines": 0
         }
@@ -76,8 +83,8 @@
     "actions": [
         {
             "type": "Action.Submit",
-            "title": "Registrera värden",
-            "data": "Registrera värden"
+            "title": "Utföra mätning",
+            "data": "Utföra mätning"
         },
         {
             "type": "Action.Submit",
@@ -91,13 +98,12 @@
         },
         {
             "type": "Action.Submit",
-            "title": "Övriga frågor",
-            "data": "Övriga frågor"
+            "title": "Fråga frågor",
+            "data": "Fråga frågor"
         }
     ]
 }
 ```
-
 #UpdateCard
 [Activity
     Attachments = ${json(updatecardjson())}
@@ -114,7 +120,7 @@
       "type": "TextBlock",
       "size": "default",
       "isSubtle": true,
-      "text": "Vad vill du göra nu? Välj från alternativen nedan.",
+      "text": "Vad kan jag hjälpa dig med?",
       "wrap": true,
       "maxLines": 0
       
@@ -123,8 +129,8 @@
   "actions": [
     {
       "type": "Action.Submit",
-      "title": "Registrera värden",
-      "data": "Registrera värden"
+      "title": "Utföra mätning",
+      "data": "Utföra mätning"
       
     },
     {
@@ -139,17 +145,19 @@
     },
     {
       "type": "Action.Submit",
-      "title": "Övriga frågor",
-      "data": "Övriga frågor"
+      "title": "Fråga frågor",
+      "data": "Fråga frågor"
     }
   ]
 }
 ```
-# SendActivity_rYwnTV()
-- Avbryter!
-# SendActivity_3RIa5x()
--${UpdateCard()}
 # SendActivity_g9skpW()
  -${AdaptiveCard()}
 # SendActivity_73zBqG()
 -
+# SendActivity_3vuWML()
+ -${AdaptiveCard()}
+# SendActivity_qzdt71()
+- Fick felaktiskt svar från servern, vänligen testa igen senare. Fel: ${dialog.resultProperty}
+# SendActivity_8wTgTi()
+- Du har inga fler mätningar att göra idag. Återgår till start!

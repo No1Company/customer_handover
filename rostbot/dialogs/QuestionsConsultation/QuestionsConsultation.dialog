@@ -78,7 +78,7 @@
                 "id": "g6bjh4"
               },
               "activityProcessed": true,
-              "dialog": "PhoneBooking",
+              "dialog": "PhoneDialog",
               "resultProperty": "user.bookingdate"
             },
             {

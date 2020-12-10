@@ -12,10 +12,10 @@
     "actions": [
         {
             "type": "Action.ShowCard",
-            "title": "Hantera notiser",
+            "title": "Hantera notifikationer",
             "style": "positive",
-            "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828817.svg",
-            "data": "Skapa ny notis",
+            "iconUrl": "https://i.postimg.cc/vHKtKL3V/1.png",
+            "data": "Skapa ny notifikation",
             "card": {
                 "type": "AdaptiveCard",
                 "body": [
@@ -121,7 +121,7 @@
                         "type": "TextBlock",
                         "size": "Medium",
                         "weight": "Bolder",
-                        "text": "Notis via",
+                        "text": "Notifikation via",
                         "wrap": true
                     },
                     {
@@ -149,35 +149,40 @@
                 "actions": [
                     {
                         "type": "Action.Submit",
-                        "title": "Lägg till notis",
+                        "title": "Ny notifikation",
                         "data": {
                             "id": "1234567890"
                         },
                         "style": "positive",
-                        "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1271/1271380.svg"
-                    },
-                    {
-                        "type": "Action.Submit",
-                        "title": "Radera notis",
-                        "data": {
-                            "id": "1234567890"
-                        },
-                        "style": "destructive",
-                        "iconUrl": "https://www.flaticon.com/svg/static/icons/svg/1828/1828843.svg"
+                        "iconUrl": "https://i.postimg.cc/FRJfC8sf/Settings-Dialog-Guide-Settings.png"
                     }
                 ]
             }
         },
         {
             "type": "Action.Submit",
+            "value": " ",
+            "title": "Radera notifikation",
+            "data": {
+                            "notisVia": "",
+                            "timeAfter":"",
+                            "timeBefore":"",
+                            "notisMeasurments":""
+                        },
+            "id": "radera",
+            "style": "destructive",
+            "iconUrl": "https://i.postimg.cc/XvLQfbyg/minus.png",
+        },
+        {
+            "type": "Action.Submit",
             "data": "Avbryt",
-            "iconUrl": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg"
+            "iconUrl": "https://i.postimg.cc/RV5YYmhm/cancel.png"
         }
     ],
     "body": [
         {
             "type": "TextBlock",
-            "text": "Notiser",
+            "text": "Notifikationer",
             "wrap": true,
             "horizontalAlignment": "Center",
             "size": "Medium",
@@ -187,7 +192,7 @@
         },
         {
             "type": "TextBlock",
-            "text": "Mina notiser",
+            "text": "Mina notifikationer",
             "wrap": true,
             "size": "Medium",
             "weight": "Bolder"
@@ -204,19 +209,19 @@
                             "type": "FactSet",
                             "facts": [
                                 {
-                                    "title": "Typ: ",
+                                    "title": "${user.notisTyp} ",
                                     "value": "${user.notis.measurments}"
                                 },
                                 {
-                                    "title": "Via: ",
+                                    "title": "${user.notisVia}",
                                     "value": "${user.notis.via}"
                                 },
                                 {
-                                    "title": "Innan: ",
+                                    "title": "${user.notisInnan}",
                                     "value": "${user.notis.time.before}"
                                 },
                                 {
-                                    "title": "Snooze: ",
+                                    "title": "${user.notisSnooze}",
                                     "value": "${user.notis.time.after}"
                                 }
                             ],
@@ -224,25 +229,6 @@
                             "height": "stretch"
                         }
                     ]
-                },
-                {
-                    "type": "Column",
-                    "width": "20px",
-                    "selectAction": {
-                        "type": "Action.Submit",
-                        "id": "cancelbutton",
-                        "value": "true"
-                    },
-                    "isVisible": false,
-                    "backgroundImage": {
-                        "horizontalAlignment": "Center",
-                        "url": "https://www.flaticon.com/premium-icon/icons/svg/2723/2723639.svg",
-                        "verticalAlignment": "Center"
-                    },
-                    "style": "default",
-                    "verticalContentAlignment": "Center",
-                    "horizontalAlignment": "Center",
-                    "separator": true
                 }
             ],
             "height": "stretch"
@@ -250,7 +236,5 @@
     ]
 }
 ```
-
-
-# SendActivity_jHELjD()
+# SendActivity_Pl11TG()
 - ${AdaptiveCardNotificationSettings()}
