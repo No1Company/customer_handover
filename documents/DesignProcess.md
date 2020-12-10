@@ -1,11 +1,11 @@
 # Design process
 
-
-    Document Status: Finished/ under progress
-    Inspected by: Firstname Lastname Date, ...
-    Contact Person: Firstname Lastname (Title)
-    Written by: Firstname Lastname (Title), Firstname Lastname (Title)…
+    Document Status: Finished
+    Inspected by: Filip Nyberg (Quality Coordinator)
+    Contact Person: Ola Friberg (Technical Writer)
+    Written by: Ola Friberg (Technical Writer)
     Manager:
+
 ## Table of contents
 [**1. Introduction**](#introduction)   
 [**2. Design research**](#desinresearch)      
@@ -21,7 +21,7 @@
 
 The design team started with researching the topic of bot design. This research laid the foundation of the first prototype but was also continuously referred to in order to guide the development of subsequent iterations. A summary of the findings of this research will be described, which will be followed by descriptions of the different prototypes with comments from user testing.
 
-The tools used for prototyping are Bosociety, Figma and Botmock. Botsociety was used in the earlier prototypes (first and second prototypes), but because of its limitations this tool was later replaced by Botmock. One of these limitations is a max limit of 30 messages per prototype, which forced us to split our prototype up into multiple prototypes. There was also a lack of input formats available, which lead to the earlier prototypes having buttons where there was supposed to be text input.
+The tools used for prototyping are Botsociety, Figma and Botmock. Botsociety was used in the earlier prototypes (first and second prototypes), but because of its limitations this tool was later replaced by Botmock. One of these limitations is a max limit of 30 messages per prototype, which forced us to split our prototype up into multiple prototypes. There was also a lack of input formats available, which lead to the earlier prototypes having buttons where there was supposed to be text input.
 
 ## 2. Design research <a name="designresearch"></a>
 
@@ -33,7 +33,7 @@ Prototype development is divided into four phases. In each phase, except the fir
 
 ### 3.1 Phase 1 <a name="phaseone"></a>
 
-The prototype for registering measurements, asking questions and booking consultations was created using Botsociety. The different features were designed quite similarly. The prototype was designed according to the sources described in the initial design research, and the regeistering measurements features was later user tested. The design consisted of a welcome message with a menu of clickable buttons that displays the available options to the user. After clicking the “register measurement” button, a procedure to measure blood pressure is initiated. This procedure guides you through each step of measuring blood pressure. When the user finally enters the blood pressure values, limited in the prototype to two specific blood pressures values, there is a request to double-check whether the user entered the correct values. All input is submitted via clickable buttons that send texts corresponding to the text on the button itself. Next to each message received from the bot, there is a small picture that clarifies to the user that it is communicating with the bot.
+The prototype for registering measurements, asking questions and booking consultations was created using Botsociety. The different features were designed quite similarly. The prototype was designed according to the sources described in the initial design research, and the registering measurements features was later user tested. The design consisted of a welcome message with a menu of clickable buttons that displays the available options to the user. After clicking the “register measurement” button, a procedure to measure blood pressure is initiated. This procedure guides you through each step of measuring blood pressure. When the user finally enters the blood pressure values, limited in the prototype to two specific blood pressures values, there is a request to double-check whether the user entered the correct values. All input is submitted via clickable buttons that send texts corresponding to the text on the button itself. Next to each message received from the bot, there is a small picture that clarifies to the user that it is communicating with the bot.
 
 The prototype for notification settings was created with Figma. The design differed from the prototype using Botsociety. Both started with presenting a welcome message and a menu of available options to the user, but in this case only the functionality for the notification settings had been implemented. When clicking the button to show notification settings, the notification settings for each type of measurement are listed separately. This information includes how often notifications will be given before/after the measurements are due and if the notification is to be sent via a chat message, SMS or email. At the bottom there is a clickable button with the text “new notification”. When creating a new notification, the type of measurement and notification option are selected with the help of checkboxes, while the time for the notification is selected with the help of a scroll-function.
 
@@ -42,7 +42,7 @@ The prototype for notification settings was created with Figma. The design diffe
 
 The second prototype for registering measurements, booking consultations and asking questions was also created in Botsociety. The user tests for registering measurements in phase one indicated that the bot was easy to use and it was not often that a tester felt lost in the process. People, for example, were content with the buttons, and so they remained mostly the same. However, there were some complaints about the overall process. Some testers reported a perceived lack of clarity in the texts. Changes were thus made to the texts in the second prototype. This includes a more detailed presentation about the bot in the welcome message.  The picture next to the bot’s messages was also changed to be more human-like. One version still retained the previous picture, however. Moreover, user feedback indicated the dialogue was too complicated with too many clicks. Some users also suggested that the bot should allow for registering measurements without a guide, so as to speed up the process. This resulted in two separate prototypes, one with the guide and one without. Additionally, the option to select either to measure weight or blood pressure was implemented.
 
-When the user selects the option “ask questions” in the menu, the bot responds by asking what the user wants to know. When the user responds with their question, the bot answers by asking if the user wants to be redirected to another part of the bot which can answer the question. The user can then respond with yes or no by clicking on buttons. If the user says no, the bot asks if the user wants to ask another question and the user can again answer with buttons.
+When the user selects the option “ask questions” in the menu, the bot responds by asking what the user wants to know. When the user responds with their question, the bot answers by asking if the user wants to be redirected to another part of the bot which can answer the question. The user can then respond with yes or no by clicking on buttons. If the user responds with no, the bot asks if the user wants to ask another question and the user can again answer with buttons.
 
 The prototype for notification settings is still created in Figma and there were almost no changes compared to the first prototype. The user testers on the first prototype were positive about that it was easy to use, though they sometimes clicked the wrong buttons. The user tests also indicated that users had problem using the scroll-function. The changes to the second prototype were that the ”add notification” button was higher up and that one button had its text changed.
 
@@ -71,7 +71,7 @@ They were also mostly positive about the functionality for changing notification
 Testers found the health form to be easy to use, but some would have liked to be able to edit answers to questions retroactively. Another possible improvement is numbering the questions so that the user knows how many are left. There was also some inconsistency in the scales used for the questions, which may lead to mistakes in filling the health form.
 
 ## 5 References <a name="references"></a>
-[1]: Microsoft, Design a bot's first user interaction, https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-first-interaction?view=azure-bot-service-4.0 (2020-12-09) 
+[1]: Microsoft, Design a bot's first user interaction, https://docs.microsoft.com/en-us/azure/bot-service/bot-service-design-first-interaction?view=azure-bot-service-4.0 (2020-12-09)
 
 
 
