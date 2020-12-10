@@ -1,7 +1,7 @@
 # Design process
 
     Document Status: Finished
-    Inspected by: Filip Nyberg (Quality Coordinator)
+    Inspected by: Filip Nyberg (Quality Coordinator) on 2020-12-10
     Contact Person: Ola Friberg (Technical Writer)
     Written by: Ola Friberg (Technical Writer)
     Manager:
