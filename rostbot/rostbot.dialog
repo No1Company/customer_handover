@@ -397,13 +397,6 @@
       "intent": "ResetConversation",
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "hrdjnA"
-          },
-          "activity": "${SendActivity_hrdjnA()}"
-        },
-        {
           "$kind": "Microsoft.SetProperty",
           "$designer": {
             "id": "boiWh9"
@@ -432,11 +425,11 @@
           }
         },
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.DeleteProperty",
           "$designer": {
-            "id": "mETx1P"
+            "id": "AOPP2L"
           },
-          "activity": "${SendActivity_mETx1P()}"
+          "property": "user.email"
         },
         {
           "$kind": "Microsoft.BeginDialog",
