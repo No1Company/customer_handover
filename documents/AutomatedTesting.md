@@ -7,12 +7,12 @@
     Written by: Firstname Lastname (Title), Firstname Lastname (Title)…
     Manager:
 ## Table of contents
-[1. Introduction](#introduction)   
-[2. Unit testing](#unittesting)   
+[**1. Introduction**](#introduction)   
+[**2. Unit testing**](#unittesting)   
 [2.1 Possible solution](##unitsolution)   
-[3. UI testing](#uitesting)   
+[**3. UI testing**](#uitesting)   
 [3.1 Possible solution](##uisolution)   
-[4. Client API testing](#clientapitesting)   
+[**4. Client API testing**](#clientapitesting)   
  
 ## 1. Introduction <a name="introduction"></a>
 
