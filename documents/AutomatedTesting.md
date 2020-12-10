@@ -2,7 +2,7 @@
 
 
     Document Status: Finished
-    Inspected by: Filip Nyberg (Quality Coordinator) on 2020-12-10
+    Inspected by: Jonathan Snäll (Test Leader) and Filip Nyberg (Quality Coordinator) on 2020-12-10
     Contact Person: Ola Friberg (Technical Writer)
     Written by: Ola Friberg (Technical Writer)
 ## Table of contents
