@@ -151,6 +151,65 @@
       "intent": "Register-measurement",
       "actions": [
         {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "NqPwoC"
+          },
+          "url": "${conversation.req_url}/user/${user.ehr_id}/available-measurements",
+          "method": "GET",
+          "responseType": "json",
+          "resultProperty": "dialog.resultProperty"
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "35BUZd"
+          },
+          "condition": "=dialog.resultProperty.statusCode < 300",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "qzdt71"
+              },
+              "activity": "${SendActivity_qzdt71()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "vFacg9"
+              },
+              "activityProcessed": true,
+              "dialog": "CancelMeasurment"
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "9aYph0"
+          },
+          "condition": "=dialog.resultProperty.content.avail_measurements != []",
+          "actions": [],
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SendActivity",
+              "$designer": {
+                "id": "8wTgTi"
+              },
+              "activity": "${SendActivity_8wTgTi()}"
+            },
+            {
+              "$kind": "Microsoft.BeginDialog",
+              "$designer": {
+                "id": "D9E3bL"
+              },
+              "activityProcessed": true,
+              "dialog": "CancelMeasurment"
+            }
+          ]
+        },
+        {
           "$kind": "Microsoft.BeginDialog",
           "$designer": {
             "id": "NOVnk5"
@@ -187,25 +246,12 @@
       "intent": "Cancel",
       "actions": [
         {
-          "$kind": "Microsoft.SendActivity",
+          "$kind": "Microsoft.BeginDialog",
           "$designer": {
-            "id": "rYwnTV"
+            "id": "lSyD74"
           },
-          "activity": "${SendActivity_rYwnTV()}"
-        },
-        {
-          "$kind": "Microsoft.SendActivity",
-          "$designer": {
-            "id": "3RIa5x"
-          },
-          "activity": "${SendActivity_3RIa5x()}"
-        },
-        {
-          "$kind": "Microsoft.CancelAllDialogs",
-          "$designer": {
-            "id": "AjJSLA"
-          },
-          "activityProcessed": true
+          "activityProcessed": true,
+          "dialog": "CancelDialog"
         }
       ]
     },
@@ -241,7 +287,7 @@
             "id": "01lbaR"
           },
           "activityProcessed": true,
-          "dialog": "SymptomsCheckDialog"
+          "dialog": "CustomActionTest"
         }
       ]
     },
@@ -262,6 +308,84 @@
           "dialog": "StartDialog"
         }
       ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "jtqZrj",
+        "name": "Hello"
+      },
+      "intent": "Hello",
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "3vuWML"
+          },
+          "activity": "${SendActivity_3vuWML()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "VzzqhI"
+          },
+          "activityProcessed": true
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "EiPejW",
+        "name": "StartRegisterBloodPressure"
+      },
+      "intent": "StartRegisterBloodPressure",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "njp4NS"
+          },
+          "activityProcessed": true,
+          "dialog": "BloodpressureGuideSelect"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "cwkJFp",
+        "name": "StartRegisterWeight"
+      },
+      "intent": "StartRegisterWeight",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "l3APgE"
+          },
+          "activityProcessed": true,
+          "dialog": "RegisterWeight"
+        }
+      ]
+    },
+    {
+      "$kind": "Microsoft.OnIntent",
+      "$designer": {
+        "id": "7HVzYo",
+        "name": "StartForms"
+      },
+      "intent": "StartForms",
+      "actions": [
+        {
+          "$kind": "Microsoft.BeginDialog",
+          "$designer": {
+            "id": "vNKTqG"
+          },
+          "activityProcessed": true,
+          "dialog": "Forms"
+        }
+      ]
     }
   ],
   "$schema": "https://raw.githubusercontent.com/microsoft/BotFramework-Composer/stable/Composer/packages/server/schemas/sdk.schema",
@@ -272,7 +396,7 @@
     "intents": [
       {
         "intent": "Register-measurement",
-        "pattern": "Registrera värden"
+        "pattern": "Utföra mätning"
       },
       {
         "intent": "Settings",
@@ -300,11 +424,27 @@
       },
       {
         "intent": "Questions",
-        "pattern": "Övriga frågor"
+        "pattern": "Fråga frågor"
       },
       {
         "intent": "Restart",
         "pattern": "Starta om"
+      },
+      {
+        "intent": "Hello",
+        "pattern": "Hej"
+      },
+      {
+        "intent": "StartRegisterBloodPressure",
+        "pattern": "Jag vill registrera mitt blodtryck"
+      },
+      {
+        "intent": "StartRegisterWeight",
+        "pattern": "Jag vill registrera min vikt"
+      },
+      {
+        "intent": "StartForms",
+        "pattern": "Jag vill registrera mitt hälsoformulär"
       }
     ]
   }

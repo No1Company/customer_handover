@@ -1,0 +1,39 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "27w6iE",
+    "name": "CancelMeasurment",
+    "description": "To cancel measurment"
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "7fj7H9"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "Fnuciq"
+          },
+          "activity": "${SendActivity_Fnuciq()}"
+        },
+        {
+          "$kind": "Microsoft.CancelAllDialogs",
+          "$designer": {
+            "id": "6Ztan7"
+          },
+          "activityProcessed": true
+        }
+      ]
+    }
+  ],
+  "generator": "CancelMeasurment.lg",
+  "recognizer": "CancelMeasurment.lu.qna",
+  "id": "CancelMeasurment"
+}

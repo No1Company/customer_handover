@@ -40,7 +40,11 @@
             "Boka konsultation",
             "Vanliga symtom"
           ],
-          "property": "turn.input"
+          "property": "turn.input",
+          "recognizerOptions": {
+            "recognizeOrdinals": true,
+            "recognizeNumbers": true
+          }
         },
         {
           "$kind": "Microsoft.SwitchCondition",
@@ -66,6 +70,13 @@
                   "invalidPrompt": "",
                   "defaultValueResponse": "",
                   "property": "user.symptoms"
+                },
+                {
+                  "$kind": "Microsoft.SendActivity",
+                  "$designer": {
+                    "id": "pLSqyv"
+                  },
+                  "activity": "${SendActivity_pLSqyv()}"
                 },
                 {
                   "$kind": "Microsoft.BeginDialog",

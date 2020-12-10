@@ -4,14 +4,21 @@
 - Jag bedömer att du inte behöver besöka en vårdcentral, men ifall du ändå vill prata med vårdcentralen direkt kan du ringa [nummber till vårdcentralen], eller 1177 för rådgivning. 
 # ConfirmInput_Prompt_G6vt5a()
 - Du kan även genom mig välja att boka en telefontid. Vill du göra det? 
-# SendActivity_d7PN0P()
--De lediga tiderna som finns tillgängliga är\n\n 1: ${dialog.result.content[1].start}\n\n 2: ${dialog.result.content[2].start}\n\n 3: ${dialog.result.content[3].start}
--De lediga tiderna som finns tillgängliga är\n\n${dialog.result.content[0].start}\n\n${dialog.result.content[1].start}\n\n${dialog.result.content[2].start}
-
-
-# NumberInput_Prompt_HCBe3t()
-- Välj en siffra (1-3)
 # SendActivity_WASoIJ()
 -Okej! 
 # ChoiceInput_Prompt_KIyFFR()
 - Vill du boka en telefontid? 
+# SendActivity_cCcy19()
+- 
+# ChoiceInput_Prompt_rmdKFR()
+- 
+# NumberInput_Prompt_PKHASm()
+- 
+# SendActivity_w4NK4k()
+- 
+# ChoiceInput_Prompt_DDLVE5()
+- 
+# NumberInput_Prompt_I8mtYl()
+- 
+# SendActivity_Hvl2zO()
+- 

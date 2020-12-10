@@ -1,0 +1,52 @@
+[import](common.lg)
+
+#UpdateCard
+[Activity
+    Attachments = ${json(updatecardjson())}
+]
+
+# updatecardjson()
+-```
+{
+  "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+  "type": "AdaptiveCard",
+  "version": "1.0",
+  "body": [
+         {
+      "type": "TextBlock",
+      "size": "default",
+      "isSubtle": true,
+      "text": "Vad kan jag hjälpa dig med?",
+      "wrap": true,
+      "maxLines": 0
+      
+    }
+  ],
+  "actions": [
+    {
+      "type": "Action.Submit",
+      "title": "Utföra mätning",
+      "data": "Utföra mätning"
+      
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Ändra inställningar",
+      "data": "Ändra inställningar"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Boka konsultation",
+      "data": "Boka konsultation"
+    },
+    {
+      "type": "Action.Submit",
+      "title": "Fråga frågor",
+      "data": "Fråga frågor"
+    }
+  ]
+}
+```
+# SendActivity_Fnuciq()
+-${UpdateCard()}
+

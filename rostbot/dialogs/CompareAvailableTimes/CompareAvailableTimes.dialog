@@ -1,0 +1,197 @@
+{
+  "$kind": "Microsoft.AdaptiveDialog",
+  "$designer": {
+    "id": "Y10G6c",
+    "name": "CompareAvailableTimes",
+    "description": ""
+  },
+  "autoEndDialog": true,
+  "defaultResultProperty": "dialog.result",
+  "triggers": [
+    {
+      "$kind": "Microsoft.OnBeginDialog",
+      "$designer": {
+        "name": "BeginDialog",
+        "description": "",
+        "id": "Kl9Vw8"
+      },
+      "actions": [
+        {
+          "$kind": "Microsoft.HttpRequest",
+          "$designer": {
+            "id": "w6IaQK"
+          },
+          "method": "GET",
+          "url": "${conversation.req_url}/available-times",
+          "resultProperty": "dialog.resultJSON",
+          "contentType": "application/json"
+        },
+        {
+          "$kind": "Microsoft.TextInput",
+          "$designer": {
+            "id": "fhhvXl"
+          },
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${TextInput_Prompt_fhhvXl()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "property": "dialog.date"
+        },
+        {
+          "$kind": "SimpleDateFormat",
+          "$designer": {
+            "id": "Huu9LJ"
+          },
+          "simpledate": "${dialog.date}",
+          "dateresult": "dialog.convertedDate"
+        },
+        {
+          "$kind": "Microsoft.ChoiceInput",
+          "$designer": {
+            "id": "xzSN8y"
+          },
+          "defaultLocale": "en-us",
+          "disabled": false,
+          "maxTurnCount": 3,
+          "alwaysPrompt": false,
+          "allowInterruptions": false,
+          "prompt": "${ChoiceInput_Prompt_xzSN8y()}",
+          "unrecognizedPrompt": "",
+          "invalidPrompt": "",
+          "defaultValueResponse": "",
+          "choiceOptions": {
+            "includeNumbers": true,
+            "inlineOrMore": ", or "
+          },
+          "choices": [
+            "Ja",
+            "Nej"
+          ],
+          "property": "turn.confirm3",
+          "recognizerOptions": {
+            "recognizeOrdinals": true
+          }
+        },
+        {
+          "$kind": "Microsoft.IfCondition",
+          "$designer": {
+            "id": "iXQ5Ze"
+          },
+          "condition": "turn.confirm3 == 'Ja'",
+          "elseActions": [
+            {
+              "$kind": "Microsoft.SetProperty",
+              "$designer": {
+                "id": "zGMgwv"
+              },
+              "property": "dialog.date",
+              "value": "=null"
+            },
+            {
+              "$kind": "Microsoft.RepeatDialog",
+              "$designer": {
+                "id": "qwJW92"
+              },
+              "activityProcessed": true
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.Foreach",
+          "$designer": {
+            "id": "qJ83bX"
+          },
+          "index": "dialog.foreach.index",
+          "value": "dialog.foreach.value",
+          "itemsProperty": "dialog.resultJSON.content",
+          "actions": [
+            {
+              "$kind": "SubstringDate",
+              "$designer": {
+                "id": "bfwTLg"
+              },
+              "fulldate": "${dialog.foreach.value[\"start\"]}",
+              "dateresult": "dialog.subDate"
+            },
+            {
+              "$kind": "Microsoft.IfCondition",
+              "$designer": {
+                "id": "xqwcQ2"
+              },
+              "condition": "dialog.convertedDate == dialog.subDate",
+              "actions": [
+                {
+                  "$kind": "Microsoft.ChoiceInput",
+                  "$designer": {
+                    "id": "hBTB0F"
+                  },
+                  "defaultLocale": "en-us",
+                  "disabled": false,
+                  "maxTurnCount": 3,
+                  "alwaysPrompt": false,
+                  "allowInterruptions": false,
+                  "unrecognizedPrompt": "",
+                  "invalidPrompt": "",
+                  "defaultValueResponse": "",
+                  "prompt": "${ChoiceInput_Prompt_hBTB0F()}",
+                  "choiceOptions": {
+                    "includeNumbers": true,
+                    "inlineOrMore": ", or ",
+                    "inlineOr": " or ",
+                    "inlineSeparator": ", "
+                  },
+                  "property": "turn.confirm4",
+                  "choices": [
+                    "Ja",
+                    "Nej"
+                  ],
+                  "recognizerOptions": {
+                    "recognizeOrdinals": true
+                  }
+                },
+                {
+                  "$kind": "Microsoft.IfCondition",
+                  "$designer": {
+                    "id": "fOBSuV"
+                  },
+                  "condition": "turn.confirm4 == 'Ja'",
+                  "actions": [
+                    {
+                      "$kind": "Microsoft.EndDialog",
+                      "$designer": {
+                        "id": "LQwnMg"
+                      },
+                      "value": "=dialog.foreach.value[\"start\"]"
+                    }
+                  ],
+                  "elseActions": [
+                    {
+                      "$kind": "Microsoft.EndDialog",
+                      "$designer": {
+                        "id": "AMJ0LM"
+                      }
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "$kind": "Microsoft.SendActivity",
+          "$designer": {
+            "id": "X784TZ"
+          },
+          "activity": "${SendActivity_X784TZ()}"
+        }
+      ]
+    }
+  ],
+  "generator": "CompareAvailableTimes.lg",
+  "recognizer": "CompareAvailableTimes.lu.qna",
+  "id": "CompareAvailableTimes"
+}
